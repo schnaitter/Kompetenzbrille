@@ -134,6 +134,14 @@ derived from the module descriptions; adjust `level`/`note` in the data files
 to refine them. Careful with YAML types: quote codes like `"1.1"` and ids like
 `"4"` so they stay strings, not floats/ints.
 
+**Note:** the module lists are complete catalogues as defined in the SPOs,
+including elective modules that are alternatives, so summing the credits does
+*not* yield the degree total: the MA Information Science requires three of its
+twelve elective modules (30 of the 120 elective LP shown) plus 20 LP in the
+überfachliche Wahlpflichtbereich, the MA Wissenschaftsforschung requires two of
+its seven elective modules, and the BA is a Kombinationsstudiengang (Kernfach
+90 LP) whose Ergänzungsbereich is not part of this data.
+
 For study programs offered in German only, the German content is shown in both
 UI languages.
 
