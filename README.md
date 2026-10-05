@@ -23,9 +23,11 @@ It provides bidirectional views/filters:
   mapping.
 - **Matrix view**: heatmap of competencies × modules for a program.
 
-The QUADRIGA **Orientierungswissen** (the grey box of prior knowledge outside
-the data-flow phases; English: “conceptual knowledge”) is shown as a
-foundation strip above the phases; it is not mapped to individual modules.
+The QUADRIGA **Orientierungswissen** (English: “conceptual knowledge”) is
+represented as **phase 0**: it lies outside the data-flow phases and forms
+the foundation of all of them. It currently defines no competencies, so it
+shows up in the views as an empty phase and is not mapped to individual
+modules.
 
 A single **Language** switcher (Sprache) controls the UI strings, the framework
 translation and the bilingual mapping notes at once.
@@ -81,10 +83,11 @@ language: de              # locale of this file
 title: …
 source: assets/….pdf      # optional link
 doi: https://doi.org/…    # optional
-orientation:             # optional; prior knowledge outside the phases
-  title: Orientierungswissen
-  text: …
 phases:
+  - id: "0"               # Orientierungswissen — outside the data flow
+    title: Orientierungswissen
+    text: …               # optional phase description
+    note: …               # optional (e.g. “forms the foundation of all phases”)
   - id: "1"
     title: Planung
 dimensions:
