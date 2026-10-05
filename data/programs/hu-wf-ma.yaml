@@ -154,7 +154,31 @@ modules:
       - Institutionen der Wissenschaftsförderung und -verwaltung
       - Forschungsstarke Unternehmen und Institutionen der wissenschaftlichen Politikberatung
       - Dokumentation des Praktikums
-    mappings: []
+    mappings:
+      - framework: quadriga-dlf
+        competency: "3.1"
+        level: 1
+        note:
+          de: Praktische Fähigkeiten im Projektmanagement; Datenbezug je nach Einsatzfeld.
+          en: Practical skills in project management; the data aspect depends on the placement.
+      - framework: quadriga-dlf
+        competency: "2.3"
+        level: 1
+        note:
+          de: Datenaufbereitung je nach Einsatzfeld.
+          en: Data preparation depending on the placement.
+      - framework: quadriga-dlf
+        competency: "4.1"
+        level: 1
+        note:
+          de: Datenanalyse je nach Einsatzfeld.
+          en: Data analysis depending on the placement.
+      - framework: quadriga-dlf
+        competency: "5.3"
+        level: 1
+        note:
+          de: Berichtslegung und Kommunikation wissenschaftlicher Inhalte je nach Einsatzfeld.
+          en: Reporting and communication of scholarly content, depending on the placement.
   - code: MP7
     title: Masterarbeit und Verteidigung
     credits: 30
