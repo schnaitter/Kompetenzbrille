@@ -5,8 +5,10 @@
   "id": "hu-berlin-is-ma",
   "title": "MA Information Science",
   "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
+  "institutionAbbr": "HU",
   "language": "de",
   "sourceLabel": "Fachspezifische Studien- und Prüfungsordnung (Nichtamtliche Lesefassung, Verkündungsstand 03.05.2023)",
+  "institutionUrl": "https://www.hu-berlin.de/",
   "source": "https://schnaitter.github.io/Kompetenzbrille/assets/lesefassung_ma_informations_science.pdf",
   "categories": [
     {

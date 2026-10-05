@@ -2,6 +2,8 @@ $schema: data/schemas/program-schema.json
 id: hu-berlin-is-ma
 title: MA Information Science
 institution: Humboldt-Universität zu Berlin, Philosophische Fakultät
+institutionAbbr: HU
+institutionUrl: https://www.hu-berlin.de/
 language: de
 source: assets/lesefassung_ma_informations_science.pdf
 sourceLabel: Fachspezifische Studien- und Prüfungsordnung (Nichtamtliche Lesefassung, Verkündungsstand 03.05.2023)

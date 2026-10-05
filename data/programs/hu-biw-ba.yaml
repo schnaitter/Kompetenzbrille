@@ -2,6 +2,8 @@ $schema: data/schemas/program-schema.json
 id: hu-berlin-biw-ba
 title: BA Bibliotheks- und Informationswissenschaft
 institution: Humboldt-Universität zu Berlin, Philosophische Fakultät
+institutionAbbr: HU
+institutionUrl: https://www.hu-berlin.de/
 language: de
 source: assets/lesefassung_spo_ba.pdf
 sourceLabel: Fachspezifische Studien- und Prüfungsordnung (Nichtamtliche Lesefassung, Verkündungsstand 29.09.2025)

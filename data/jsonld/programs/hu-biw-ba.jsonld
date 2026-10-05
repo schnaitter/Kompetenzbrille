@@ -5,8 +5,10 @@
   "id": "hu-berlin-biw-ba",
   "title": "BA Bibliotheks- und Informationswissenschaft",
   "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
+  "institutionAbbr": "HU",
   "language": "de",
   "sourceLabel": "Fachspezifische Studien- und Prüfungsordnung (Nichtamtliche Lesefassung, Verkündungsstand 29.09.2025)",
+  "institutionUrl": "https://www.hu-berlin.de/",
   "source": "https://schnaitter.github.io/Kompetenzbrille/assets/lesefassung_spo_ba.pdf",
   "categories": [
     {
