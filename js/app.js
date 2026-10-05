@@ -22,9 +22,18 @@
 
   /* fetch + parse a YAML data file (parser: js-yaml, vendored at js/vendor/) */
   function fetchYaml(path) {
-    if (!window.jsyaml) return Promise.reject(new Error("js-yaml not loaded"));
+    if (!window.jsyaml) {
+      var setupErr = new Error("js-yaml not loaded");
+      setupErr.code = "setup";
+      return Promise.reject(setupErr);
+    }
     return fetch(path).then(function (r) {
-      if (!r.ok) throw new Error(path);
+      if (!r.ok) {
+        var httpErr = new Error("HTTP " + r.status + " for " + path);
+        httpErr.status = r.status;
+        httpErr.path = path;
+        throw httpErr;
+      }
       return r.text();
     }).then(function (txt) {
       return window.jsyaml.load(txt);
@@ -225,12 +234,33 @@
       })
       .catch(function (err) {
         console.error(err);
-        var extra = !window.jsyaml
-          ? '<p>' + esc(t("yamlError")) + "</p>"
-          : "<p><code>python3 -m http.server 8000</code> &rarr; <code>http://localhost:8000</code></p>";
-        document.getElementById("main").innerHTML =
-          '<div class="load-error"><strong>Fehler / Error</strong><p>' + esc(t("loadError")) + "</p>" + extra + "</div>";
+        showLoadError(err);
       });
+  }
+
+  /* Friendly failure screen: a 404 for missing data, otherwise a 503. */
+  function showLoadError(err) {
+    var status = "503";
+    var titleKey = "errorUnavailable";
+    var msgKey = "errorUnavailableMsg";
+    if (err && err.code === "setup") {
+      msgKey = "errorSetup";
+    } else if (err && err.status === 404) {
+      status = "404";
+      titleKey = "errorNotFound";
+      msgKey = "errorNotFoundMsg";
+    }
+    var main = document.getElementById("main");
+    if (!main) return;
+    main.innerHTML =
+      '<div class="load-error">' +
+        '<div class="load-error-code">' + status + "</div>" +
+        "<h2>" + esc(t(titleKey)) + "</h2>" +
+        "<p>" + esc(t(msgKey)) + "</p>" +
+        '<button type="button" class="load-error-retry">' + esc(t("retry")) + "</button>" +
+      "</div>";
+    var btn = main.querySelector(".load-error-retry");
+    if (btn) btn.addEventListener("click", function () { location.reload(); });
   }
 
   function validateState() {

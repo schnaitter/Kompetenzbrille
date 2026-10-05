@@ -486,15 +486,43 @@ table.matrix td.cell.empty:hover { outline: none; }
   color: var(--ink-soft);
 }
 .load-error {
-  margin: 40px auto;
-  max-width: 640px;
-  background: #fdf2f2;
-  border: 1px solid #e7b4b4;
-  color: #8c2f2f;
+  max-width: 520px;
+  margin: 64px auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 18px 22px;
+  box-shadow: var(--shadow);
+  padding: 40px 32px;
+  text-align: center;
 }
-.load-error code { background: #fff; padding: 2px 6px; border-radius: 4px; }
+.load-error-code {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+.load-error h2 {
+  margin: 14px 0 6px;
+  font-size: 20px;
+  color: var(--ink);
+}
+.load-error p {
+  margin: 0 auto 22px;
+  max-width: 42ch;
+  color: var(--ink-soft);
+}
+.load-error-retry {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.load-error-retry:hover { filter: brightness(1.08); }
 
 @media (max-width: 980px) {
   .layout { grid-template-columns: 1fr; }
