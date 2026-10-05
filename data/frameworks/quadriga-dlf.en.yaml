@@ -7,11 +7,11 @@ shortTitle: QUADRIGA v4
 source: assets/QUADRIGA-DataLiteracyFramework_v4.pdf
 doi: https://doi.org/10.5281/zenodo.19470557
 description: The QUADRIGA data literacy framework additionally aims to promote scientific integrity and reflective thinking. It seeks to support an inherently open attitude (in line with the guiding principle of being as open as possible and as closed as necessary) towards the sharing and reuse of research data. To achieve this, the necessary skills are taught at every step of the data-based research process (see data flow).
-orientation:
-  title: Conceptual knowledge
-  text: Prior knowledge of basic concepts of research data management and Open X, as well as knowledge of areas of application for data, are helpful.
-  note: The conceptual knowledge (Orientierungswissen) lies outside the data flow and the individual competencies; it forms the foundation for all phases.
 phases:
+  - id: "0"
+    title: Conceptual knowledge
+    text: Prior knowledge of basic concepts of research data management and Open X, as well as knowledge of areas of application for data, are helpful.
+    note: The conceptual knowledge (Orientierungswissen) lies outside the data flow and the individual competencies; it forms the foundation of all phases.
   - id: "1"
     title: Planning
   - id: "2"
