@@ -52,6 +52,7 @@
     { "@id": "kb:mappingLevel", "@type": "rdf:Property", "rdfs:domain": "kb:CompetencyMapping", "rdfs:range": "kb:Level", "rdfs:comment": "Integer 1..3 or IRI of kb:peripheral/kb:partial/kb:core." },
     { "@id": "kb:rationale", "@type": "rdf:Property", "rdfs:domain": "kb:CompetencyMapping", "rdfs:comment": "Why the module addresses the competency (language-tagged or per-language notes)." },
     { "@id": "kb:sourceLabel", "@type": "rdf:Property", "rdfs:label": "source label", "rdfs:comment": "Human-readable citation of the source document." },
+    { "@id": "kb:institutionAbbr", "@type": "rdf:Property", "rdfs:label": "institution abbreviation", "rdfs:comment": "Short abbreviation of the institution offering a study program (e.g. HU, HTWK, FHGR)." },
 
     { "@id": "kb:localizedText", "@type": "rdf:Property", "rdfs:label": "localized text" }
   ]

@@ -17,6 +17,8 @@
     "type": "@type",
 
     "institution": { "@id": "schema:provider", "@type": "@id" },
+    "institutionAbbr": { "@id": "kb:institutionAbbr", "@type": "xsd:string" },
+    "institutionUrl": { "@id": "schema:url", "@type": "@id" },
     "language": { "@id": "dcterms:language" },
     "title": "dcterms:title",
     "description": "dcterms:description",

@@ -82,9 +82,10 @@ function programToJsonLd(pr, frameworkVersions) {
     '@id': docIri,
     '@type': 'StudyProgram',
   };
-  for (const key of ['id', 'title', 'institution', 'language', 'sourceLabel']) {
+  for (const key of ['id', 'title', 'institution', 'institutionAbbr', 'language', 'sourceLabel']) {
     if (pr[key] !== undefined) doc[key] = pr[key];
   }
+  if (pr.institutionUrl !== undefined) doc.institutionUrl = pr.institutionUrl;
   if (pr.source !== undefined) doc.source = BASE + pr.source;
   doc.categories = pr.categories.map((c) => ({
     '@id': catIri(c.id), '@type': 'ModuleCategory', id: c.id, label: c.label,
