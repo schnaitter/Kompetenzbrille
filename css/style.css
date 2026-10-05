@@ -7,6 +7,7 @@
   --line: #e2e5ea;
   --accent: #2f5fb3;
   --accent-soft: #e8effb;
+  --phase-0: #6b7280;
   --phase-1: #7c5cd6;
   --phase-2: #2f9ad0;
   --phase-3: #2ea88a;
@@ -159,29 +160,9 @@ html, body {
 .small { font-size: 12.5px; }
 .hidden { display: none !important; }
 
-/* ---------- orientation strip ---------- */
-.orientation {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  background: #eef0f3;
-  border: 1px dashed #c3c9d2;
-  border-radius: var(--radius);
-  padding: 12px 16px;
-  margin-bottom: 18px;
-}
-.orientation .badge {
-  background: #6b7280;
-  color: #fff;
-  border-radius: 6px;
-  padding: 2px 9px;
-  font-size: 12px;
-  font-weight: 600;
-  white-space: nowrap;
-  margin-top: 2px;
-}
-.orientation p { margin: 0; }
-.orientation .hint { font-size: 12px; color: var(--ink-soft); margin-top: 3px; }
+/* ---------- phase blurb (phases without competencies, e.g. Orientierungswissen) ---------- */
+.phase-blurb { margin: 2px 0 0; font-size: 13px; }
+.phase-blurb-note { margin: 5px 0 0; font-size: 12px; color: var(--ink-soft); }
 
 /* ---------- coverage ---------- */
 .coverage {

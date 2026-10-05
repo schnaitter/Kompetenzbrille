@@ -83,6 +83,11 @@
 
   function phaseColorVar(phaseId) { return "var(--phase-" + phaseId + ")"; }
 
+  /* phases outside the data flow (Orientierungswissen, id "0") are shown without a number */
+  function phaseNumbered(ph) { return ph.id !== "0"; }
+  function phaseTitle(ph) { return phaseNumbered(ph) ? ph.id + ". " + ph.title : ph.title; }
+  function phaseNoBadge(ph) { return phaseNumbered(ph) ? '<span class="phase-no">' + esc(ph.id) + "</span>" : ""; }
+
   /* mappings for a module, restricted to the QUADRIGA framework */
   function moduleMappings(mod) {
     if (!mod.mappings) return [];
@@ -324,17 +329,19 @@
       h += '<section class="filter-section"><h3>' + esc(t("phases")) + '</h3>' +
         '<div class="check-tools"><button data-action="phases-all">' + esc(t("all")) + '</button><button data-action="phases-none">' + esc(t("none")) + "</button></div>";
       f.phases.forEach(function (ph) {
-        h += '<label><input type="checkbox" data-action="toggle-phase" value="' + esc(ph.id) + '"' +
+        h += '<label title="' + esc(ph.note || ph.text || "") + '"><input type="checkbox" data-action="toggle-phase" value="' + esc(ph.id) + '"' +
           (!state.phases || state.phases.has(ph.id) ? " checked" : "") + '><span><span class="phase-dot" style="background:' +
-          phaseColorVar(ph.id) + '"></span>' + esc(ph.id + ". " + ph.title) + "</span></label>";
+          phaseColorVar(ph.id) + '"></span>' + esc(phaseTitle(ph)) + "</span></label>";
       });
       h += "</section>";
 
       h += '<section class="filter-section"><h3>' + esc(t("competencies")) + '</h3>' +
         '<div class="check-tools"><button data-action="comps-all">' + esc(t("all")) + '</button><button data-action="comps-none">' + esc(t("none")) + "</button></div>";
       f.phases.forEach(function (ph) {
+        var comps = f.competencies.filter(function (c) { return c.phase === ph.id; });
+        if (!comps.length) return;   /* e.g. Orientierungswissen (phase 0) defines no competencies yet */
         h += '<span class="filter-group-label"><span class="phase-dot" style="background:' + phaseColorVar(ph.id) + '"></span>' + esc(ph.title) + "</span>";
-        f.competencies.filter(function (c) { return c.phase === ph.id; }).forEach(function (c) {
+        comps.forEach(function (c) {
           h += '<label><input type="checkbox" data-action="toggle-comp" value="' + esc(c.code) + '"' +
             (!state.comps || state.comps.has(c.code) ? " checked" : "") + "> " + esc(c.code + " " + c.title) + "</label>";
         });
@@ -359,12 +366,11 @@
 
   /* ================= shared fragments ================= */
 
-  function orientationStrip(f) {
-    if (!f.orientation) return "";
-    return '<div class="orientation"><span class="badge">' + esc(f.orientation.title || t("orientation")) + "</span>" +
-      "<div><p>" + esc(f.orientation.text) + "</p>" +
-      (f.orientation.note ? '<p class="hint">' + esc(f.orientation.note) + "</p>" : '<p class="hint">' + esc(t("orientationHint")) + "</p>") +
-      "</div></div>";
+  /* description fragment for phases that define no competencies (e.g. Orientierungswissen, phase 0) */
+  function phaseBlurb(ph) {
+    var h = '<p class="phase-blurb">' + esc(ph.text || t("phaseNoComps")) + "</p>";
+    if (ph.note) h += '<p class="phase-blurb-note">' + esc(ph.note) + "</p>";
+    return h;
   }
 
   function frameworkSourceLine(f) {
@@ -399,7 +405,7 @@
     if (!f || !p) { main.innerHTML = '<div class="hint-box">' + esc(t("selectProgramHint")) + "</div>"; return; }
 
     var idx = competencyIndex([p.id]);
-    var h = orientationStrip(f) + coverageBlock(f, p, idx);
+    var h = coverageBlock(f, p, idx);
 
     if (state.arrange === "byModule") {
       h += renderByModule(f, p, idx);
@@ -435,13 +441,20 @@
       if (!phasesPass(ph.id)) return;
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id && compsPass(c.code); });
       if (state.onlyAddressed) comps = comps.filter(function (c) { return idx[c.code] && idx[c.code].length; });
+      if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
+        /* phase without competencies (Orientierungswissen) — show its description */
+        h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+          '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2></div>" +
+          phaseBlurb(ph) + "</section>";
+        return;
+      }
       if (!comps.length) return;
 
       var cov = f.competencies.filter(function (c) { return c.phase === ph.id && idx[c.code] && idx[c.code].length; }).length;
       var all = f.competencies.filter(function (c) { return c.phase === ph.id; }).length;
 
       h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
-        '<div class="phase-header"><span class="phase-no">' + esc(ph.id) + "</span><h2>" + esc(ph.title) + "</h2>" +
+        '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2>" +
         '<span class="coverage-mini">' + cov + "/" + all + " " + esc(t("competenciesAddressed")) + '</span></div><div class="comp-grid">';
 
       comps.forEach(function (c) {
@@ -508,21 +521,26 @@
     if (!f) { main.innerHTML = '<div class="hint-box"></div>'; return; }
     var idx = competencyIndex(state.programIds);
 
-    var h = orientationStrip(f);
+    var h = "";
 
     /* picker grouped by phase */
     f.phases.forEach(function (ph) {
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id; });
       h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
-        '<div class="phase-header"><span class="phase-no">' + esc(ph.id) + "</span><h2>" + esc(ph.title) + "</h2></div>" +
-        '<div class="picker-grid">';
-      comps.forEach(function (c) {
-        var n = (idx[c.code] || []).length;
-        h += '<button class="picker-btn' + (state.selectedComp === c.code ? " active" : "") + '" data-action="select-comp" data-comp="' + esc(c.code) + '">' +
-          '<span class="code">' + esc(c.code) + "</span>" + esc(c.title) +
-          '<span class="count' + (n ? "" : " zero") + '">' + n + "</span></button>";
-      });
-      h += "</div></section>";
+        '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2></div>";
+      if (comps.length) {
+        h += '<div class="picker-grid">';
+        comps.forEach(function (c) {
+          var n = (idx[c.code] || []).length;
+          h += '<button class="picker-btn' + (state.selectedComp === c.code ? " active" : "") + '" data-action="select-comp" data-comp="' + esc(c.code) + '">' +
+            '<span class="code">' + esc(c.code) + "</span>" + esc(c.title) +
+            '<span class="count' + (n ? "" : " zero") + '">' + n + "</span></button>";
+        });
+        h += "</div>";
+      } else {
+        h += phaseBlurb(ph);
+      }
+      h += "</section>";
     });
 
     /* detail of selected competency */
@@ -576,7 +594,7 @@
     var mods = p.modules.filter(catsPass);
     var idx = competencyIndex([p.id]);
 
-    var h = orientationStrip(f);
+    var h = "";
 
     /* legend */
     h += '<div class="legend"><strong>' + esc(t("legend")) + ":</strong>";
@@ -596,8 +614,14 @@
     f.phases.forEach(function (ph) {
       if (!phasesPass(ph.id)) return;
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id && compsPass(c.code); });
+      if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
+        /* phase without competencies (Orientierungswissen) — a lone phase row, description as tooltip */
+        h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '"><td colspan="' + (mods.length + 1) + '" title="' +
+          esc(ph.note || ph.text || "") + '">' + esc(phaseTitle(ph)) + "</td></tr>";
+        return;
+      }
       if (!comps.length) return;
-      h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '"><td colspan="' + (mods.length + 1) + '">' + esc(ph.id + ". " + ph.title) + "</td></tr>";
+      h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '"><td colspan="' + (mods.length + 1) + '">' + esc(phaseTitle(ph)) + "</td></tr>";
       comps.forEach(function (c) {
         h += '<tr style="--phase-color:' + phaseColorVar(c.phase) + '"><td class="row-head" data-action="open-comp" data-pop="comp" data-comp="' + esc(c.code) + '"><span class="code">' + esc(c.code) + "</span>" + esc(c.title) + "</td>";
         mods.forEach(function (m) {
@@ -670,7 +694,7 @@
     var n = (idx[c.code] || []).length;
 
     var h = '<div class="pop-head"><span class="pop-code" style="color:' + phaseColorVar(c.phase) + '">' + esc(c.code) + "</span>" + esc(c.title) + "</div>";
-    h += '<p class="pop-kv">' + esc(ph.id + ". " + ph.title) + "</p>";
+    h += '<p class="pop-kv">' + esc(phaseTitle(ph)) + "</p>";
     f.dimensions.forEach(function (d) {
       if (!c[d.id]) return;
       h += '<div class="pop-dim"><span class="dim-label">' + esc(d.label) + ":</span> " + esc(truncate(c[d.id], 130)) + "</div>";
@@ -803,13 +827,11 @@
     var c = f && compByCode(f, code);
     if (!c) return;
     var ph = phaseById(f, c.phase);
-    var body = '<p class="kv">' + esc(ph.id + ". " + ph.title) + "</p>";
+    var body = '<p class="kv">' + esc(phaseTitle(ph)) + "</p>";
     var savedDims = state.dims;
     state.dims = { knowledge: true, skills: true, examples: true };
     body += dimRows(f, c);
     state.dims = savedDims;
-    if (f.orientation) body += '<p class="small muted" style="margin-top:8px">' + esc(f.orientation.title) + ": " + esc(f.orientation.text) + "</p>";
-
     var ids = state.view === "framework" ? state.programIds : [state.programId];
     var entries = (competencyIndex(ids)[c.code] || []).sort(function (a, b) {
       return b.mapping.level - a.mapping.level || a.module.code.localeCompare(b.module.code);
