@@ -526,10 +526,9 @@
         maps.sort(function (a, b) { return a.competency.localeCompare(b.competency, undefined, { numeric: true }); });
         maps.forEach(function (m) {
           var c = compByCode(f, m.competency);
-          var ph = phaseById(f, c.phase);
           h += '<div class="mapping-row" style="--phase-color:' + phaseColorVar(c.phase) + '">' +
             '<div><span class="m-comp" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(c.code + " " + c.title) + "</span>" +
-            '<div class="mapping-lvl">' + levelDots(m.level) + " " + esc(levelLabel(m.level)) + " · " + esc(ph.title) + "</div></div>" +
+            '<div class="mapping-lvl">' + levelDots(m.level) + " " + esc(levelLabel(m.level)) + "</div></div>" +
             '<div class="m-note">' + esc(noteText(m)) + "</div></div>";
         });
         h += "</div>";
