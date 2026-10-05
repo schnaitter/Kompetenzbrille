@@ -49,16 +49,10 @@ function frameworkToJsonLd(fw) {
     if (fw[key] !== undefined) doc[key] = fw[key];
   }
   if (fw.source !== undefined) doc.source = BASE + fw.source;
-  if (fw.orientation !== undefined) {
-    doc.orientation = {
-      '@type': 'Orientation',
-      title: fw.orientation.title,
-      text: fw.orientation.text,
-      ...(fw.orientation.note !== undefined ? { note: fw.orientation.note } : {}),
-    };
-  }
   doc.phases = fw.phases.map((p) => ({
     '@id': phaseIri(p.id), '@type': 'Phase', id: p.id, title: p.title,
+    ...(p.text !== undefined ? { text: p.text } : {}),
+    ...(p.note !== undefined ? { note: p.note } : {}),
   }));
   doc.dimensions = fw.dimensions.map((d) => ({
     '@id': dimIri(d.id), '@type': 'Dimension', id: d.id, label: d.label,
