@@ -36,18 +36,6 @@
       "pattern": "^(https://doi\\.org/10\\..*|10\\.[^\\s/]+/\\S+)$",
       "description": "Persistent identifier of the framework document."
     },
-    "orientation": {
-      "type": "object",
-      "description": "Prior knowledge ('Orientierungswissen') that lies outside the data flow and forms the foundation of all phases.",
-      "required": ["title", "text"],
-      "additionalProperties": false,
-      "properties": {
-        "@type": { "type": "string", "const": "Orientation" },
-        "title": { "type": "string", "minLength": 1 },
-        "text": { "type": "string", "minLength": 1 },
-        "note": { "type": "string" }
-      }
-    },
     "phases": {
       "type": "array",
       "minItems": 1,
@@ -158,11 +146,6 @@
       "shortTitle": "QUADRIGA v4",
       "source": "assets/QUADRIGA-Datenkompetenzframework_v4.pdf",
       "doi": "https://doi.org/10.5281/zenodo.19470557",
-      "orientation": {
-        "title": "Orientierungswissen",
-        "text": "…",
-        "note": "…"
-      },
       "phases": [
         { "id": "1", "title": "Planung" }
       ],

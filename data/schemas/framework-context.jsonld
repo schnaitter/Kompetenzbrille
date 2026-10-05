@@ -11,7 +11,6 @@
     "Phase": "kb:Phase",
     "Dimension": "kb:Dimension",
     "Competency": "kb:Competency",
-    "Orientation": "kb:Orientation",
 
     "id": { "@id": "kb:id", "@type": "xsd:string" },
     "type": "@type",
@@ -24,7 +23,6 @@
     "source": { "@id": "dcterms:source", "@type": "@id" },
     "doi": "schema:identifier",
 
-    "orientation": { "@id": "kb:orientation", "@container": "@graph" },
     "text": "dcterms:description",
     "note": "skos:scopeNote",
 
