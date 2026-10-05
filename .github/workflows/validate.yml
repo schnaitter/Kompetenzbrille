@@ -13,39 +13,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Validate data files (JSON Schema + cross-references)
-        run: node scripts/validate-data.js
-
-      - name: Regenerate JSON-LD serializations
-        run: node scripts/yaml-to-jsonld.js
-
-      - name: Check JSON-LD serializations are up to date
-        run: |
-          if ! git diff --exit-code data/jsonld/; then
-            echo "::error::data/jsonld/ is out of date — run 'node scripts/yaml-to-jsonld.js' and commit the result."
-            exit 1
-          fi
-
-  # Validate every individual commit of a pull request (not just the tip),
-  # so the branch history stays bisectable. Commits that predate the
-  # validator are skipped with a warning instead of failing the job.
-  validate-each-commit:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    steps:
-      - name: Checkout (full history)
+      - name: Checkout (full history, needed for per-commit validation on PRs)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -56,14 +24,19 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install dependencies (from PR tip)
+      - name: Install dependencies
         run: npm ci
 
-      - name: Validate every commit in this PR
+      # On pull requests, validate every individual commit (not just the tip),
+      # so the branch history stays bisectable. Commits that predate the
+      # validator are skipped with a warning instead of failing the job.
+      # The final checkout returns to the tip, which the steps below then
+      # validate (again, but only once per event — no job-level duplication).
+      - name: Validate each commit of the pull request
+        if: github.event_name == 'pull_request'
         run: |
           base="${{ github.event.pull_request.base.sha }}"
           head="${{ github.event.pull_request.head.sha }}"
-          git checkout --quiet --detach "$head"
           commits=$(git rev-list --reverse "$base..$head")
           if [ -z "$commits" ]; then
             echo "No commits in range $base..$head — nothing to validate."
@@ -84,4 +57,18 @@ jobs:
               status=1
             fi
           done
+          git checkout --quiet --detach "$head"
           exit $status
+
+      - name: Validate data files (JSON Schema + cross-references)
+        run: node scripts/validate-data.js
+
+      - name: Regenerate JSON-LD serializations
+        run: node scripts/yaml-to-jsonld.js
+
+      - name: Check JSON-LD serializations are up to date
+        run: |
+          if ! git diff --exit-code data/jsonld/; then
+            echo "::error::data/jsonld/ is out of date — run 'node scripts/yaml-to-jsonld.js' and commit the result."
+            exit 1
+          fi
