@@ -72,3 +72,13 @@ jobs:
             echo "::error::data/jsonld/ is out of date — run 'node scripts/yaml-to-jsonld.js' and commit the result."
             exit 1
           fi
+
+      - name: Regenerate favicon from assets/logo.svg
+        run: node scripts/svg-to-favicon.js
+
+      - name: Check favicon is up to date
+        run: |
+          if ! git diff --exit-code assets/favicon.ico; then
+            echo "::error::assets/favicon.ico is out of date — run 'npm run favicon' and commit the result."
+            exit 1
+          fi
