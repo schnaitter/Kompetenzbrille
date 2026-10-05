@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  contents: read   # required for checkout (explicit permissions drop implicit defaults)
   pages: write
   id-token: write
 
