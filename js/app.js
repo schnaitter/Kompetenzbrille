@@ -14,11 +14,22 @@
 
   var FRAMEWORK_ID = "quadriga-dlf";
   var FRAMEWORK_FILES = {
-    de: "data/frameworks/quadriga-dlf.de.json",
-    en: "data/frameworks/quadriga-dlf.en.json"
+    de: "data/frameworks/quadriga-dlf.de.yaml",
+    en: "data/frameworks/quadriga-dlf.en.yaml"
   };
   var FWLOCALES = {};   // lang -> framework data
   var PROGRAMS = [];    // program data objects
+
+  /* fetch + parse a YAML data file (parser: js-yaml, loaded from CDN) */
+  function fetchYaml(path) {
+    if (!window.jsyaml) return Promise.reject(new Error("js-yaml not loaded"));
+    return fetch(path).then(function (r) {
+      if (!r.ok) throw new Error(path);
+      return r.text();
+    }).then(function (txt) {
+      return window.jsyaml.load(txt);
+    });
+  }
 
   /* ================= state ================= */
 
@@ -185,24 +196,15 @@
   function boot() {
     var jobs = [];
     Object.keys(FRAMEWORK_FILES).forEach(function (lang) {
-      jobs.push(fetch(FRAMEWORK_FILES[lang]).then(function (r) {
-        if (!r.ok) throw new Error(FRAMEWORK_FILES[lang]);
-        return r.json();
-      }).then(function (fwData) {
+      jobs.push(fetchYaml(FRAMEWORK_FILES[lang]).then(function (fwData) {
         FWLOCALES[fwData.language || lang] = fwData;
       }));
     });
-    jobs.push(fetch("data/manifest.json").then(function (r) {
-      if (!r.ok) throw new Error("manifest");
-      return r.json();
-    }).then(function (manifest) {
+    jobs.push(fetchYaml("data/manifest.yaml").then(function (manifest) {
       /* load sequentially to keep the manifest order (stable UI + default) */
       return (manifest.programs || []).reduce(function (chain, path) {
         return chain.then(function () {
-          return fetch(path).then(function (r) {
-            if (!r.ok) throw new Error(path);
-            return r.json();
-          }).then(function (p) { PROGRAMS.push(p); });
+          return fetchYaml(path).then(function (p) { PROGRAMS.push(p); });
         });
       }, Promise.resolve());
     }));
@@ -218,9 +220,11 @@
       })
       .catch(function (err) {
         console.error(err);
+        var extra = !window.jsyaml
+          ? '<p>' + esc(t("yamlError")) + "</p>"
+          : "<p><code>python3 -m http.server 8000</code> &rarr; <code>http://localhost:8000</code></p>";
         document.getElementById("main").innerHTML =
-          '<div class="load-error"><strong>Fehler / Error</strong><p>' + esc(t("loadError")) + "</p>" +
-          "<p><code>python3 -m http.server 8000</code> &rarr; <code>http://localhost:8000</code></p></div>";
+          '<div class="load-error"><strong>Fehler / Error</strong><p>' + esc(t("loadError")) + "</p>" + extra + "</div>";
       });
   }
 
