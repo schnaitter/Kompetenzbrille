@@ -1,0 +1,8 @@
+{
+  "programs": [
+    "data/programs/hu-biw-ba.json",
+    "data/programs/hu-is-ma.json",
+    "data/programs/hu-biw-ma-wb.json",
+    "data/programs/hu-wf-ma.json"
+  ]
+}
