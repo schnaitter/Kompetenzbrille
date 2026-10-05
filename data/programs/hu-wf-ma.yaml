@@ -19,7 +19,11 @@ modules:
       - Zentrale Fragestellungen, Konzepte und Paradigmen der Wissenschaftsforschung
       - Wissenschaftstheoretische und epistemologische Perspektiven auf die Entstehung, Organisation und Bewertung von Wissen
       - Ansätze und Theorien zur gesellschaftlichen Einbettung des Wissenschaftssystems
-      - Empirische Beobachtung, Analyse und Reflexion wissenschaftlicher Praxis
+      - Wissen zu zentralen Akteuren, Institutionen und Funktionslogiken des Wissenschaftssystems
+      - Entwicklungen im Verhältnis von Wissenschaft und Gesellschaft
+      - Empirische Beobachtung, Analyse und Reflexion wissenschaftlicher Praktiken und Institutionen
+      - Grundkonzepte und Strukturen der Wissenschaft wie Publikationskulturen, Bewertungsmechanismen und Förderlogiken
+      - Reflexion zu aktuellen Debatten (z. B. Open Science, Exzellenzinitiativen, Drittmittelabhängigkeit)
     mappings: []
   - code: MP2
     title: Methoden der Wissenschaftsforschung
@@ -144,7 +148,7 @@ modules:
     title: Praktikum
     credits: 10
     category: pflicht
-    goals: Das Praktikum im Masterstudiengang Wissenschaftsforschung verfolgt das Ziel, den Student*innen einen vertieften Einblick in die Praxis wissenschaftsbezogener Arbeitsfelder zu ermöglichen. Es soll Student*innen befähigen, ihr im Studium erworbenes theoretisches Wissen auf konkrete Fragestellungen, Problemlagen und Organisationszusammenhänge anzuwenden und dabei ihre methodischen, analytischen und kommunikativen Kompetenzen weiterzuentwickeln. Student*innen lernen Organisationen kennen, in denen wissenschaftsbezogene Forschung, Politikberatung, Evaluation, Wissenschaftsmanagement oder Wissenschaftskommunikation betrieben werden.
+    goals: Das Praktikum im Masterstudiengang Wissenschaftsforschung verfolgt das Ziel, den Student*innen einen vertieften Einblick in die Praxis wissenschaftsbezogener Arbeitsfelder zu ermöglichen. Es soll Student*innen befähigen, ihr im Studium erworbenes theoretisches Wissen auf konkrete Fragestellungen, Problemlagen und Organisationszusammenhänge anzuwenden und dabei ihre methodischen, analytischen und kommunikativen Kompetenzen weiterzuentwickeln. Student*innen lernen Organisationen kennen, in denen wissenschaftsbezogene Forschung, Politikberatung, Evaluation, Wissenschaftsmanagement oder Wissenschaftskommunikation betrieben werden. Im Rahmen konkreter Aufgaben oder Projekte wenden die Student*innen qualitative, quantitative oder theoretisch-konzeptionelle Ansätze an, reflektieren deren Einsatzmöglichkeiten und -grenzen in der Praxis. Die Student*innen lernen, komplexe wissenschaftsbezogene Problemlagen zu strukturieren, systematisch zu bearbeiten und in institutionelle oder gesellschaftliche Kontexte einzuordnen. Je nach Einsatzfeld erwerben die Student*innen praktische Fähigkeiten im Projektmanagement, in der Datenaufbereitung und -analyse, in der Berichtslegung oder in der Kommunikation wissenschaftlicher Inhalte. Durch das Praktikum entwickeln die Student*innen ein besseres Verständnis für mögliche Karrierewege, ihre eigenen Interessen und Kompetenzen sowie für Anforderungen und Bedingungen wissenschaftsbezogener Berufsfelder.
     topics:
       - Forschungsinstitutionen mit Bezug zur Wissenschaftsforschung
       - Institutionen der Wissenschaftsförderung und -verwaltung
@@ -155,7 +159,7 @@ modules:
     title: Masterarbeit und Verteidigung
     credits: 30
     category: pflicht
-    goals: Die Studierenden weisen die Befähigung zum selbständigen wissenschaftlichen Arbeiten durch die schriftliche Bearbeitung einer Problemstellung aus der Wissenschaftsforschung nach. Bei der Anfertigung der Masterarbeit erhalten die Studierenden Unterstützung in einem obligatorischen Begleitcolloquium, in dem sie lernen, ihre Fragestellung methodisch umzusetzen und in dem sie den Entwurf ihrer Arbeit erörtern können.
+    goals: Die Studierenden weisen die Befähigung zum selbständigen wissenschaftlichen Arbeiten durch die schriftliche Bearbeitung einer Problemstellung aus der Wissenschaftsforschung nach. Bei der Anfertigung der Masterarbeit erhalten die Studierenden Unterstützung in einem obligatorischen Begleitcolloquium, in dem sie lernen, ihre Fragestellung methodisch umzusetzen und in dem sie den Entwurf ihrer Arbeit erörtern können. Die Masterarbeit zeigt, dass die Student*innen in der Lage sind, innerhalb einer vorgegebenen Zeit eine Fragestellung aus dem Bereich der Wissenschaftsforschung eigenständig mit wissenschaftlichen Methoden zu bearbeiten.
     topics:
       - Masterarbeitsthemen aus aktuellen Forschungsschwerpunkten bzw. Problemkontexten der Wissenschaftsforschung
       - "Begleitcolloquium: methodische Umsetzung der Fragestellung"
@@ -171,7 +175,7 @@ modules:
     title: Wissenschaftsethnographie
     credits: 10
     category: wahlpflicht
-    goals: Die Student*innen erwerben die Fähigkeit, wissenschaftliche Erkenntnisprozesse in ihren technischen, sozialen und politischen Verflechtungen ethnographisch zu erforschen und zu analysieren. Im Mittelpunkt stehen dabei die Praktiken und die Situiertheit von Wissensproduktion und -aushandlung in gesellschaftlich relevanten Feldern. Das Modul vermittelt ein Verständnis von Wissenschaft als soziotechnische Praxis, in der Akteure, Artefakte, Diskurse und Technologien ko-konstituiert werden.
+    goals: Die Student*innen erwerben die Fähigkeit, wissenschaftliche Erkenntnisprozesse in ihren technischen, sozialen und politischen Verflechtungen ethnographisch zu erforschen und zu analysieren. Im Mittelpunkt stehen dabei die Praktiken und die Situiertheit von Wissensproduktion und -aushandlung in gesellschaftlich relevanten Feldern. Das Modul vermittelt ein Verständnis von Wissenschaft als soziotechnische Praxis, in der Akteure, Artefakte, Diskurse und Technologien ko-konstituiert werden. Die Student*innen erwerben vertiefte Kenntnisse zentraler sozial- und kulturwissenschaftlicher Theorien zu Wissen, Praxis und Materialität und entwickeln eine methodische Sensibilität im Umgang mit ethnographischen Methoden – insbesondere teilnehmender Beobachtung, dichter Beschreibung, kollaborativen Ansätzen und forschungspraktischer Reflexion. Dabei setzen sie sich kritisch mit Fragen von Nähe und Distanz, Teilhabe, Autor*innenschaft und Macht auseinander. Das Modul vermittelt darüber hinaus Reflexionswissen, das es ermöglicht, Wissenschaften nicht nur als Untersuchungsgegenstand, sondern auch als Kooperationspartner eines ethnographisch informierten Erkenntnisprozesses zu verstehen. Die Student*innen erkennen die epistemischen und politischen Potenziale einer Wissenschaftsethnographie, die Wissenschaft nicht von außen beschreibt, sondern als Teil gesellschaftlicher Aushandlungsprozesse und materieller Ökologien begreift. Sie haben die Gelegenheit, ethnographische Zugänge praktisch zu erproben und eigene forschende Perspektiven zu entwickeln.
     topics:
       - Sozialanthropologische Ansätze der Wissenschafts- und Technikforschung
       - Theorien und Konzepte der Technik- und Infrastrukturbindung von Wissen
@@ -210,7 +214,7 @@ modules:
     title: Hochschulforschung
     credits: 10
     category: wahlpflicht
-    goals: Die Student*innen können, aufbauend auf den erworbenen wissenschaftlichen Methodenkompetenzen, wissenschaftliche Fragestellungen eigenständig bearbeiten, die Ergebnisse auswerten und darstellen. Sie haben Kenntnisse zu ausgewählten theoretischen Konzepten und Methoden sowie der damit verbundenen Diskurse zum Zusammenspiel von Wissenschaft, Hochschule und Bildung erworben.
+    goals: Die Student*innen können, aufbauend auf den erworbenen wissenschaftlichen Methodenkompetenzen, wissenschaftliche Fragestellungen eigenständig bearbeiten, die Ergebnisse auswerten und darstellen. Sie haben Kenntnisse zu ausgewählten theoretischen Konzepten und Methoden sowie der damit verbundenen Diskurse zum Zusammenspiel von Wissenschaft, Hochschule und Bildung erworben. Die Student*innen sind in der Lage, sich relevante theoretische Ansätze systematisch zu erschließen, diese miteinander zu vergleichen und sowohl implizite als auch explizite theoretische und methodologische Voraussetzungen in Bezug auf bestimmte Gegenstandsbereiche kritisch zu differenzieren und zu beurteilen. Darüber hinaus können sie eigenständig Forschungsfragestellungen entwickeln und diese methodologisch fundiert reflektieren.
     topics:
       - Grundlegende Kenntnisse empirischer Hochschulforschung
       - Lektüre und kritische Reflexion ausgewählter theoretischer Konzepte
@@ -233,7 +237,7 @@ modules:
     title: Wissenschaftsgeschichte
     credits: 10
     category: wahlpflicht
-    goals: Im Zentrum der Ausbildung in der Wissenschaftsgeschichte steht die Herausbildung der modernen Wissenschaft. Student*innen lernen Wissenschaft als sowohl historisch kontingente als auch historisch situierte Form der Weltaneignung und kulturgeleitete Wirklichkeitsproduktion zu begreifen und als Prozess zu analysieren.
+    goals: Im Zentrum der Ausbildung in der Wissenschaftsgeschichte steht die Herausbildung der modernen Wissenschaft. Student*innen lernen Wissenschaft als sowohl historisch kontingente als auch historisch situierte Form der Weltaneignung und kulturgeleitete Wirklichkeitsproduktion zu begreifen und als Prozess zu analysieren. Sie lernen, wie Erkenntnispraktiken, Theorien und Begriffe nicht zeitlos, sondern von sozialen, politischen und kulturellen Bedingungen geprägt sind. Sie lernen, dominante Fortschritts- und Rationalitätsnarrative zu hinterfragen und alternative Perspektiven, etwa postkoloniale, feministische oder infrastrukturgeschichtliche Ansätze, systematisch in ihre Analysen einzubeziehen und dadurch, Wissenschaftsgeschichte als Geschichte gesellschaftlicher Aushandlungsprozesse zu verstehen; einschließlich der Verwobenheit wissenschaftlicher Diskurse mit Kultur, Macht, Geschlecht, Technik, Medien und Politik. Die Student*innen entwickeln methodische Sensibilität für den Umgang mit historischen Texten, Objekten, Daten und Materialien. Sie sind in der Lage, wissenschaftliche Aussagen im historischen Diskursraum kritisch einzuordnen und eigene Forschungsvorhaben zu entwickeln. Ein Verständnis für die historisch entstandenen Strukturen der Wissenschaft ermöglicht einen breiteren Zugang zu zentralen Themen der Wissenschaftsforschung.
     topics:
       - Exemplarisch vertiefendes Wissen zur Geschichte der modernen Wissenschaft
       - Selbständige Herangehensweisen an wissenschaftshistorische Quellenbestände
@@ -243,10 +247,10 @@ modules:
     title: Informationswissenschaft
     credits: 10
     category: wahlpflicht
-    goals: Die Student*innen kennen spezifische Theorien, Methoden und Strömungen der Informationswissenschaft und können diese anwenden, wobei Möglichkeiten der Nutzung, Organisation und der Repräsentation von Informationen im Vordergrund stehen. Sie kennen zentrale Prinzipien der Planung und Durchführung von Forschungsdesigns zur Bearbeitung informationswissenschaftlicher Forschungsfragen und haben einige Instrumente an Beispielen angewandt. Sie sind dadurch in der Lage, eigene informationswissenschaftliche Studien durchzuführen.
+    goals: Die Student*innen kennen spezifische Theorien, Methoden und Strömungen der Informationswissenschaft und können diese anwenden, wobei Möglichkeiten der Nutzung, Organisation und der Repräsentation von Informationen im Vordergrund stehen. Sie kennen zentrale Prinzipien der Planung und Durchführung von Forschungsdesigns zur Bearbeitung informationswissenschaftlicher Forschungsfragen und haben einige Instrumente an Beispielen angewandt. Sie sind dadurch in der Lage, eigene informationswissenschaftliche Studien durchzuführen. Die Student*innen können Zusammenhänge zwischen informationswissenschaftlichen Fragestellungen und praktischen Anwendungsfeldern herstellen. Die Teilnehmer*innen sind in der Lage, Informationsprozesse und Informationspraktiken in wissenschaftlichen und gesellschaftlichen Zusammenhängen systematisch zu analysieren, zu evaluieren und zu reflektieren.
     topics:
       - Informationswissenschaftliche Theorien und Strömungen
-      - Organisation, Analyse von und Interaktion mit Informationsinfrastrukturen (z.B. Bibliotheken, Forschungsinformationen)
+      - Organisation, Analyse von und Interaktion mit Informationsinfrastrukturen (z.B. für Kulturerbeinstitutionen wie Bibliotheken, Forschungsinformationen)
       - Open Science
       - Ethik und Governance von Information und Informationsinfrastrukturen
       - Quantitative und qualitative Forschungsmethoden der Informationswissenschaft
@@ -281,7 +285,7 @@ modules:
     title: Aktuelle Themen und Theorien der Wissenschaftsforschung
     credits: 10
     category: wahlpflicht
-    goals: Die Student*innen haben sich mit spezifischen Forschungsansätzen der Wissenschaftsforschung vertieft auseinandergesetzt. Sie sind in der Lage, den Forschungsstand im Fachgebiet einzuordnen und Forschungsergebnisse kritisch zu analysieren. Das erworbene Reflexionswissen erlaubt Student*innen unterschiedliche, z.T. auch konkurrierende, Theoriestänge differenziert einzuordnen und auf aktuelle Themen anzuwenden.
+    goals: Die Student*innen haben sich mit spezifischen Forschungsansätzen der Wissenschaftsforschung vertieft auseinandergesetzt. Sie sind in der Lage, den Forschungsstand im Fachgebiet einzuordnen und Forschungsergebnisse kritisch zu analysieren. Das erworbene Reflexionswissen erlaubt Student*innen unterschiedliche, z.T. auch konkurrierende, Theoriestränge differenziert einzuordnen und auf aktuelle Themen anzuwenden.
     topics:
       - Überblick über aktuelle theoriegeleitete Debatten der Wissenschaftsforschung
       - Theorieentwicklung in der Wissenschaftsforschung
