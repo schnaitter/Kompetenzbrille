@@ -1,6 +1,6 @@
 /* Kompetenzbrille – plain client-side app.
  * Loads the QUADRIGA data literacy framework (fixed: de + en translations)
- * and study-program representations from data/manifest.json, and provides
+ * and study-program representations from data/manifest.yaml, and provides
  * bidirectional views:
  *   program view   : study program -> framework (what is addressed where?)
  *   framework view : framework competency -> modules of one or more programs
@@ -20,7 +20,7 @@
   var FWLOCALES = {};   // lang -> framework data
   var PROGRAMS = [];    // program data objects
 
-  /* fetch + parse a YAML data file (parser: js-yaml, loaded from CDN) */
+  /* fetch + parse a YAML data file (parser: js-yaml, vendored at js/vendor/) */
   function fetchYaml(path) {
     if (!window.jsyaml) return Promise.reject(new Error("js-yaml not loaded"));
     return fetch(path).then(function (r) {
