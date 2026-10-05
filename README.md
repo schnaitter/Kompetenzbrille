@@ -36,8 +36,9 @@ translation and the bilingual mapping notes at once.
 
 ## Run locally
 
-No build step, no dependencies — but it needs to be served over HTTP
-(`fetch()` of the JSON data files does not work from `file://`):
+No build step — but it needs to be served over HTTP (`fetch()` of the YAML
+data files does not work from `file://`), and the YAML parser (`js-yaml`,
+pinned, via CDN) requires internet access:
 
 ```sh
 python3 -m http.server 8000
@@ -55,74 +56,82 @@ All asset paths are relative, so project pages (`user.github.io/<repo>/`) work.
 
 ## Data model
 
-Study programs live in `data/programs/*.json` and are registered in
-`data/manifest.json`:
+All data files are **YAML** (parsed client-side with `js-yaml` from a CDN)
+for easy hand-editing. Study programs live in `data/programs/*.yaml` and are
+registered in `data/manifest.yaml`:
 
-```json
-{
-  "programs": ["data/programs/hu-biw-ba.json", "…"]
-}
+```yaml
+programs:
+  - data/programs/hu-biw-ba.yaml
+  - …
 ```
 
-To add another study program, add a JSON file and list it in the manifest —
+To add another study program, add a YAML file and list it in the manifest —
 no code changes needed. The framework itself is fixed to the two QUADRIGA
-translations in `data/frameworks/` (`"mappings"[].framework` must reference
+translations in `data/frameworks/` (mappings' `framework` must reference
 `quadriga-dlf`).
 
-### Framework (`data/frameworks/*.json`, fixed)
+### Framework (`data/frameworks/*.yaml`, fixed)
 
-```jsonc
-{
-  "id": "quadriga-dlf",          // mappings reference this id
-  "version": "4",
-  "language": "de",              // locale of this file
-  "title": "…", "shortTitle": "…",
-  "source": "assets/….pdf",      // optional link
-  "doi": "https://doi.org/…",    // optional
-  "description": "…",
-  "orientation": {               // optional; prior knowledge outside the phases
-    "title": "Orientierungswissen",
-    "text": "…",
-    "note": "…"
-  },
-  "phases":     [{ "id": "1", "title": "Planung" }],
-  "dimensions": [{ "id": "knowledge", "label": "Wissen" }],
-  "competencies": [{
-    "code": "1.1", "phase": "1", "title": "Identifikation",
-    "knowledge": "…", "skills": "…", "examples": "…"   // keys = dimension ids
-  }]
-}
+```yaml
+id: quadriga-dlf          # mappings reference this id
+version: "4"
+language: de              # locale of this file
+title: …
+source: assets/….pdf      # optional link
+doi: https://doi.org/…    # optional
+orientation:             # optional; prior knowledge outside the phases
+  title: Orientierungswissen
+  text: …
+phases:
+  - id: "1"
+    title: Planung
+dimensions:
+  - id: knowledge
+    label: Wissen
+competencies:
+  - code: "1.1"           # keys of the dimension rows = dimension ids
+    phase: "1"
+    title: Identifikation
+    knowledge: …
+    skills: …
+    examples: …
 ```
 
 The two files (DE / EN) are the locales of the same framework; the header's
 language switcher selects between them.
 
-### Study program (`data/programs/*.json`)
+### Study program (`data/programs/*.yaml`)
 
-```jsonc
-{
-  "id": "hu-berlin-biw-ba",
-  "title": "…", "institution": "…", "language": "de",
-  "source": "assets/….pdf", "sourceLabel": "…",
-  "categories": [{ "id": "pflicht", "label": "Pflicht" }],
-  "modules": [{
-    "code": "BP1", "title": "…", "credits": 10,
-    "category": "pflicht",          // must match a category id
-    "goals": "…",                   // Lern- und Qualifikationsziele
-    "topics": ["…"],
-    "mappings": [{
-      "framework": "quadriga-dlf",  // framework id
-      "competency": "1.1",          // competency code
-      "level": 2,                   // 1 = peripheral, 2 = partial, 3 = core
-      "note": { "de": "…", "en": "…" }   // rationale (string also allowed)
-    }]
-  }]
-}
+```yaml
+id: hu-berlin-biw-ba
+title: …
+source: assets/….pdf
+sourceLabel: …
+categories:
+  - id: pflicht
+    label: Pflicht
+modules:
+  - code: BP1
+    title: …
+    credits: 10
+    category: pflicht        # must match a category id
+    goals: …                 # Lern- und Qualifikationsziele
+    topics:
+      - …
+    mappings:
+      - framework: quadriga-dlf   # framework id
+        competency: "1.1"         # competency code (quote to keep 1.1 a string!)
+        level: 2                  # 1 = peripheral, 2 = partial, 3 = core
+        note:                     # rationale (plain string also allowed)
+          de: …
+          en: …
 ```
 
 **Note:** the module ↔ competency mappings are an editorial approximation
 derived from the module descriptions; adjust `level`/`note` in the data files
-to refine them.
+to refine them. Careful with YAML types: quote codes like `"1.1"` and ids like
+`"4"` so they stay strings, not floats/ints.
 
 For study programs offered in German only, the German content is shown in both
 UI languages.
@@ -134,7 +143,7 @@ index.html               app shell
 css/style.css            styles
 js/i18n.js               UI strings (de/en)
 js/app.js                data loading, state, rendering
-data/manifest.json       registry of the study programs
+data/manifest.yaml       registry of the study programs
 data/frameworks/         QUADRIGA v4 framework (fixed: de + en)
 data/programs/           study program representations (HU Berlin: BA BIW,
                         MA Information Science, MA BIW weiterbildend,
