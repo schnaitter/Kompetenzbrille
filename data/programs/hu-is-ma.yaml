@@ -14,7 +14,7 @@ modules:
     title: Einführung in die Informationswissenschaft
     credits: 10
     category: pflicht
-    goals: Die Studierenden erhalten einen Überblick über aktuelle Fragestellungen, Ansätze und Methoden der Informationswissenschaft und können diese Kenntnisse auf eigene Forschung anwenden bzw. Forschungsprojekte darauf basierend evaluieren. Die Studierenden sind in der Lage, die Qualität von Forschung zu begutachten und wissen, wie eigene Forschungsarbeiten verfasst werden.
+    goals: Die Studierenden erhalten einen Überblick über aktuelle Fragestellungen, Ansätze und Methoden der Informationswissenschaft und können diese Kenntnisse auf eigene Forschung anwenden bzw. Forschungsprojekte darauf basierend evaluieren. Das Modul greift dabei insbesondere Themen auf, welche nicht als gesonderte Module des Masters behandelt werden. Die Studierenden sind in der Lage, die Qualität von Forschung zu begutachten und wissen, wie eigene Forschungsarbeiten verfasst werden.
     topics:
       - Themen aktueller Fachbeiträge der Informationswissenschaft
       - Methoden der Informationswissenschaft
@@ -113,7 +113,18 @@ modules:
     category: pflicht
     goals: Die Studierenden sind in der Lage, bereits erworbenes Wissen praktisch umzusetzen, indem sie sich auf ein Fachgebiet spezialisiert haben oder ein Praktikumsprojekt selbstständig übernommen haben. Das Praktikumsmodul (MP4) kann in Abstimmung mit dem Prüfungsausschuss durch die Absolvierung eines geeigneten Projektmoduls (MP3) ersetzt werden.
     topics:
-      - "Praktikumsinhalte u.a. aus: Informationsmarketing, Digitale Dienstleistungen, Anwendungen quantitativer Methoden (z.B. Bibliometrie), Informationspolitik / Digital Rights Management, Informationsvermittlung und -recherche, Dokumenten- oder Datenmanagement, Medienmanagement, Erhaltung und Erschließung historischer Medienbestände, Management von Beständen und Archiven, Benutzerforschung"
+      - Informationsmarketing
+      - Digitale Dienstleistungen
+      - Anwendungen quantitativer Methoden (z.B. Bibliometrie, Informetrie, Szientometrie)
+      - Informationspolitik, Digital Rights Management
+      - Informationsvermittlung und -recherche
+      - Betriebswirtschaftliche Methoden
+      - Informationsdidaktik / Vermittlung von Informationskompetenz
+      - Dokumenten- oder Datenmanagement
+      - Medienmanagement
+      - Erhaltung und Erschließung historischer Medienbestände, Digitalisierung historischer Medienbestände
+      - Management von Zugängen, Beständen, Sammlungen und Archiven, Lizenzen, konventionelle und digitale Archivierung
+      - Benutzerforschung in Informationseinrichtungen
     mappings: []
   - code: MP5
     title: Masterarbeit und Verteidigung
