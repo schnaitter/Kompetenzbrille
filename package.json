@@ -6,7 +6,8 @@
   "scripts": {
     "validate": "node scripts/validate-data.js",
     "jsonld": "node scripts/yaml-to-jsonld.js",
-    "favicon": "node scripts/svg-to-favicon.js"
+    "favicon": "node scripts/svg-to-favicon.js",
+    "all": "npm run jsonld && npm run favicon && npm run validate"
   },
   "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",
