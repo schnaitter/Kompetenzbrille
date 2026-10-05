@@ -1,3 +1,4 @@
+$schema: data/schemas/program-schema.json
 id: hu-berlin-biw-ma-wb
 title: MA Bibliotheks- und Informationswissenschaft (weiterbildend, Fernstudium)
 institution: Humboldt-Universität zu Berlin, Philosophische Fakultät

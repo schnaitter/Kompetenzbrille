@@ -1,3 +1,4 @@
+$schema: data/schemas/program-schema.json
 id: hu-berlin-biw-ba
 title: BA Bibliotheks- und Informationswissenschaft
 institution: Humboldt-Universität zu Berlin, Philosophische Fakultät
