@@ -108,7 +108,16 @@
         "@id": { "type": "string" },
         "@type": { "type": "string", "const": "Phase" },
         "id": { "$ref": "#/$defs/code" },
-        "title": { "type": "string", "minLength": 1 }
+        "title": { "type": "string", "minLength": 1 },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional phase description (e.g. the content of the 'Orientierungswissen' phase 0)."
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional note (e.g. that phase 0 lies outside the data flow and forms the foundation of all phases)."
+        }
       }
     },
     "dimension": {
