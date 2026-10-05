@@ -418,9 +418,8 @@
   function coverageBlock(f, p, idx) {
     var total = f.competencies.length;
     var addressed = f.competencies.filter(function (c) { return idx[c.code] && idx[c.code].length; });
-    var pct = total ? Math.round((addressed.length / total) * 100) : 0;
     var h = '<div class="coverage"><div class="coverage-head"><strong>' + esc(t("coverage")) + ": " + esc(p.title) + "</strong>" +
-      "<span>" + addressed.length + " " + esc(t("coverageOf")) + " " + total + " " + esc(t("competenciesAddressed")) + " (" + pct + "%)</span></div>" +
+      "<span>" + addressed.length + " " + esc(t("coverageOf")) + " " + total + " " + esc(t("competenciesAddressed")) + "</span></div>" +
       '<div class="coverage-bar">';
     f.phases.forEach(function (ph) {
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id; });
