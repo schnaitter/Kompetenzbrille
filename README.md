@@ -181,6 +181,9 @@ with `npm run validate`. The same steps run in the `Validate data` GitHub
 Actions workflow on every push to `main` and on pull requests, including a
 check that the generated JSON-LD files are up to date.
 
+Run everything at once — regenerate the JSON-LD serializations and the favicon,
+then validate — with `npm run all`.
+
 ## Branding
 
 The favicon is generated from the SVG logo (`assets/logo.svg`):
