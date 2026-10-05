@@ -5,7 +5,7 @@ title: QUADRIGA Datenkompetenzframework
 shortTitle: QUADRIGA v4
 source: assets/QUADRIGA-Datenkompetenzframework_v4.pdf
 doi: https://doi.org/10.5281/zenodo.19470557
-description: Das QUADRIGA Datenkompetenzframework verfolgt das Ziel, die wissenschaftliche Integrität und das Reflexionsvermögen zu fördern und eine grundlegend offene Haltung (gemäß dem Leitprinzip so offen wie möglich und so geschlossen wie nötig) für das Teilen und die Nachnutzung von Forschungsdaten zu unterstützen. Dafür werden in jedem Schritt des datenbasierten Forschungsprozesses (vgl. Datenfluss) notwendige Kompetenzen vermittelt.
+description: Das QUADRIGA Datenkompetenzframework verfolgt ebenfalls das Ziel, die wissenschaftliche Integrität und das Reflexionsvermögen zu fördern und eine grundlegend offene Haltung (gemäß dem Leitprinzip so offen wie möglich und so geschlossen wie nötig) für das Teilen und die Nachnutzung von Forschungsdaten zu unterstützen. Dafür werden in jedem Schritt des datenbasierten Forschungsprozesses (vgl. Datenfluss) notwendige Kompetenzen vermittelt.
 orientation:
   title: Orientierungswissen
   text: Hilfreich sind (Vor-)Kenntnisse in grundlegenden Konzepten von Forschungsdatenmanagement und Open X sowie Wissen um Anwendungsgebiete von Daten.
@@ -46,7 +46,7 @@ competencies:
     title: Ethik und Recht
     knowledge: Ethische und rechtliche Anforderungen
     skills: Ethische und rechtskonforme (Nach-)Nutzung von Daten
-    examples: Datenschutzgrundverordnung (DSGVO), Gute wissenschaftliche Praxis
+    examples: Datenschutz-Grundverordnung (DSGVO), Gute wissenschaftliche Praxis
   - code: "2.1"
     phase: "2"
     title: Erhebung
