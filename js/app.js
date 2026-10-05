@@ -493,7 +493,7 @@
         });
         h += "</div>";
       } else {
-        h += '<p class="muted small" style="margin:8px 0 0">' + esc(t("notAddressed")) + "</p>";
+        h += '<p class="muted small" style="margin:8px 0 0">' + esc(t("moduleNoCompetenciesFiltered")) + "</p>";
       }
       h += "</article>";
     });
@@ -659,7 +659,7 @@
       });
       body += "</div>";
     } else {
-      body += '<p class="muted">' + esc(t("notAddressed")) + "</p>";
+      body += '<p class="muted">' + esc(t("moduleNoCompetencies")) + "</p>";
     }
     if (p.source) body += '<p class="modal-src">' + esc(t("source")) + ': <a href="' + esc(p.source) + '" target="_blank" rel="noopener">' + esc(p.sourceLabel || p.title) + "</a></p>";
     openModal({ title: esc(mod.code + " – " + mod.title), body: body });
