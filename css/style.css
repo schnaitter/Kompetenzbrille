@@ -304,10 +304,10 @@ html, body {
   padding-top: 8px;
   font-size: 13px;
 }
-.mapping-row .m-comp { font-weight: 600; cursor: pointer; }
+.mapping-row .m-comp { display: block; font-weight: 600; cursor: pointer; }
 .mapping-row .m-comp:hover { text-decoration: underline; }
 .mapping-row .m-note { color: var(--ink-soft); }
-.mapping-lvl { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+.mapping-lvl { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
 .topics { margin: 8px 0 0; padding-left: 18px; font-size: 13px; }
 .topics li { margin-bottom: 1px; }
 details.mod-extra { margin-top: 6px; }
