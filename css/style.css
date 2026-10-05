@@ -127,6 +127,8 @@ html, body {
   font-size: 12.5px;
 }
 .check-tools { font-size: 12px; margin-bottom: 4px; }
+.inst-link { margin: 6px 0 0; font-size: 12px; line-height: 1.4; color: var(--ink-soft); }
+.inst-link a { color: var(--accent); }
 .check-tools button {
   border: none;
   background: none;
@@ -294,6 +296,8 @@ html, body {
 }
 .cat-badge.pflicht { background: #e2ecdf; color: #3d6b34; }
 .cat-badge.wahlpflicht { background: #e6e2f2; color: #5a4b9e; }
+.cat-badge.vertiefung { background: #dbe7f2; color: #2f5c86; }
+.cat-badge.datenkompetenz { background: #f6e6cf; color: #8a5a1e; }
 .mod-card .goals { font-size: 13.5px; margin: 8px 0 0; }
 .mod-mappings { margin-top: 10px; display: grid; gap: 8px; }
 .mapping-row {

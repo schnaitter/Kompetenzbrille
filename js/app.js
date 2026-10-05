@@ -149,6 +149,32 @@
     return c ? c.label : catId;
   }
 
+  /* display label for a program: institution abbreviation + title */
+  function programLabel(p) {
+    return (p.institutionAbbr ? p.institutionAbbr + " · " : "") + p.title;
+  }
+
+  /* anchor linking to the institution's website (falls back to plain text) */
+  function institutionAnchor(p) {
+    if (!p.institution) return p.institutionAbbr || "";
+    var text = p.institutionAbbr ? p.institutionAbbr + " – " + p.institution : p.institution;
+    if (p.institutionUrl) {
+      return '<a href="' + esc(p.institutionUrl) + '" target="_blank" rel="noopener">' + esc(text) + " ↗</a>";
+    }
+    return esc(text);
+  }
+
+  /* unique institutions among a list of program ids, in selection order */
+  function institutionsOf(ids) {
+    var out = [];
+    ids.forEach(function (id) {
+      var p = programById(id);
+      if (!p || !p.institution) return;
+      if (!out.some(function (q) { return q.institution === p.institution; })) out.push(p);
+    });
+    return out;
+  }
+
   /* ================= persistence / url hash ================= */
 
   var PERSIST_KEY = "kompetenzbrille.state.v1";
@@ -314,15 +340,20 @@
       h += '<section class="filter-section"><h3>' + esc(t("programs")) + '</h3>';
       PROGRAMS.forEach(function (p) {
         h += '<label><input type="checkbox" data-action="toggle-program" value="' + esc(p.id) + '"' +
-          (state.programIds.indexOf(p.id) >= 0 ? " checked" : "") + "> " + esc(p.title) + "</label>";
+          (state.programIds.indexOf(p.id) >= 0 ? " checked" : "") + "> " + esc(programLabel(p)) + "</label>";
       });
+      var insts = institutionsOf(state.programIds);
+      if (insts.length) h += '<p class="inst-link">' + esc(t(insts.length > 1 ? "institutions" : "institution")) + ": " + insts.map(institutionAnchor).join(" · ") + "</p>";
       h += "</section>";
     } else {
       h += '<section class="filter-section"><h3>' + esc(t("program")) + '</h3><select data-action="set-program">';
       PROGRAMS.forEach(function (p) {
-        h += '<option value="' + esc(p.id) + '"' + (state.programId === p.id ? " selected" : "") + ">" + esc(p.title) + "</option>";
+        h += '<option value="' + esc(p.id) + '"' + (state.programId === p.id ? " selected" : "") + ">" + esc(programLabel(p)) + "</option>";
       });
-      h += "</select></section>";
+      h += "</select>";
+      var curProg = programById(state.programId);
+      if (curProg && curProg.institution) h += '<p class="inst-link">' + esc(t("institution")) + ": " + institutionAnchor(curProg) + "</p>";
+      h += "</section>";
     }
 
     /* --- module categories --- */
@@ -846,6 +877,7 @@
       body += '<p class="muted">' + esc(t("moduleNoCompetencies")) + "</p>";
     }
     if (p.source) body += '<p class="modal-src">' + esc(t("source")) + ': <a href="' + esc(p.source) + '" target="_blank" rel="noopener">' + esc(p.sourceLabel || p.title) + "</a></p>";
+    if (p.institution) body += '<p class="modal-src">' + esc(t("institution")) + ': ' + institutionAnchor(p) + "</p>";
     openModal({ title: esc(mod.code + " – " + mod.title), body: body });
   }
 
