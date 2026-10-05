@@ -4,7 +4,7 @@
   "title": "Kompetenzbrille Study Program",
   "description": "Schema for study-program data files (data/programs/*.yaml). A program lists module categories, modules with credits/topics, and editorial mappings of modules to competencies of one or more frameworks. The same schema applies to JSON-LD serializations (see program-context.jsonld).",
   "type": "object",
-  "required": ["id", "title", "institution", "language", "categories", "modules"],
+  "required": ["id", "title", "institution", "institutionAbbr", "institutionUrl", "language", "categories", "modules"],
   "additionalProperties": false,
   "properties": {
     "$schema": { "type": "string" },
@@ -23,6 +23,17 @@
     },
     "title": { "type": "string", "minLength": 1 },
     "institution": { "type": "string", "minLength": 1 },
+    "institutionAbbr": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 24,
+      "description": "Short abbreviation of the institution (e.g. HU, HTWK, FHGR), shown in the program selector."
+    },
+    "institutionUrl": {
+      "type": "string",
+      "minLength": 1,
+      "description": "URL of the institution's website, linked from the UI."
+    },
     "language": { "$ref": "#/$defs/languageTag" },
     "source": { "$ref": "#/$defs/fileOrUrl", "description": "Source document (SPO / Prüfungsordnung), as a path relative to the app root or an absolute URL." },
     "sourceLabel": { "type": "string", "description": "Human-readable label for the source document (e.g. official citation of the SPO)." },
@@ -152,6 +163,8 @@
       "id": "hu-berlin-biw-ma-wb",
       "title": "MA Bibliotheks- und Informationswissenschaft (weiterbildend, Fernstudium)",
       "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
+      "institutionAbbr": "HU",
+      "institutionUrl": "https://www.hu-berlin.de/",
       "language": "de",
       "source": "assets/lesefassung-fs-master-2023.pdf",
       "sourceLabel": "Fachspezifische Studien- und Prüfungsordnung (Nichtamtliche Lesefassung)",
