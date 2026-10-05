@@ -1,0 +1,1293 @@
+$schema: data/schemas/program-schema.json
+id: htwk-biw-ba
+title: BA Bibliotheks- und Informationswissenschaft
+institution: Hochschule für Technik, Wirtschaft und Kultur Leipzig
+institutionAbbr: HTWK
+institutionUrl: https://www.htwk-leipzig.de/
+language: de
+source: assets/2026-03-31_BKB_Studienordnung_RK_Onlinefassung.pdf
+sourceLabel: Studienordnung Bachelorstudiengang Bibliotheks- und Informationswissenschaft (StudO-BKB), Fassung vom 31.03.2026
+categories:
+  - id: pflicht
+    label: Pflicht
+  - id: vertiefung
+    label: Vertiefung (Studienschwerpunkt)
+  - id: datenkompetenz
+    label: Datenkompetenz (Wahlpflicht)
+  - id: wahlpflicht
+    label: Freie Wahlpflichtmodule
+modules:
+  - code: G311
+    title: Formalerschließung spezieller Medientypen
+    credits: 5
+    category: vertiefung
+    goals: Die Studierenden kennen die Standardelementen von Nichtbuchmedien und weiteren Ressourcen (z.B. Karten) im internationalen Regelwerk Resource Description and Access (RDA); sind in dert Lage, bibliographische Datensätze von unterschiedlichen Medientypen nach RDA anzufertigen; haben vertiefte Kenntnisse der computergestützten Formalerschließung in Bibliotheksverbünden und bei der Nutzung lokaler Bibliothekssoftware und Kenntnisse zu Normdatensätzen in der GND.
+    topics:
+      - Standardelemente für die Beschreibung von Nichtbuchmedien und weiteren Ressourcen (z.B. Karten) nach RDA
+      - Bestandteile von bibliographischen Datensätzen für ausgewählte Nichtbuchmedien und weitere Ressourcen
+      - Anfertigung bibliographischer Datensätze in der Katalogisierungssoftware von Bibliotheksverbünden (z.B. im B3Kat) und unter Nutzung lokaler Bibliothekssoftware (z.B. in Libero und BIBLIOTHECAplus)
+      - Anfertigung von Normdatensätzen in der GND
+      - 'Studienschwerpunkt: Informationserschließung und -vermittlung'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Formalerschließung spezieller Medientypen nach RDA.
+          en: Descriptive cataloguing of special media types according to RDA.
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 1
+        note:
+          de: Normdaten und bibliographische Datensätze.
+          en: Authority data and bibliographic records.
+  - code: G494
+    title: Fachinformation ausgewählter Wissenschaftsdisziplinen
+    credits: 5
+    category: vertiefung
+    goals: 'Die Studierenden können: Strukturen und Einrichtungen der Fachinformation ausgewählter Wissenschaftsdisziplinen beschreiben; die Auswirkungen des Wandels des wissenschaftlichen Publikationswesens auf die Fachinformation diskutieren; zielgruppenspezifischen Informationsbedarf analysieren; in wichtigen Informationsmitteln ausgewählter Wissenschaftsdisziplinen gezielte Recherchen durchführen; professionell zielgruppenspezifisch informationsvermittelnde Dienstleistungen konzipieren und erbringen.'
+    topics:
+      - Strukturen und Einrichtungen der Fachinformation ausgewählter Wissenschaftsdisziplinen
+      - Kommunikationsstrukturen und Informationsbedarf in einzelnen Wissenschaften
+      - bibliographische und faktographische Informationsmittel für ausgewählte Wissenschaftsdisziplinen
+      - Open Access und Open Science und deren Einfluss für die wissenschaftliche Kommunikation
+      - Mittel und Verfahren der Fachinformationsvermittlung an wissenschaftliche Nutzergruppen und die allgemeine Öffentlichkeit.
+      - 'Studienschwerpunkt: Informationserschließung und -vermittlung'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 3
+        note:
+          de: Fachinformation und Recherche in Wissenschaftsdisziplinen.
+          en: Subject information and retrieval in academic disciplines.
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 2
+        note:
+          de: Open Access und wissenschaftliches Publizieren.
+          en: Open access and scholarly publishing.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Zielgruppenspezifische Informationsvermittlung.
+          en: Target-group-specific information provision.
+  - code: G560
+    title: 'Verbale und klassifikatorische Inhaltserschließung: Vertiefung'
+    credits: 5
+    category: vertiefung
+    goals: 'Die Studierenden können: verschiedene Arten von Metatexten charakterisieren und vergleichen; höhere Merkmale und Inhalte ausgewählter Klassifikationen aus dem Bereich der öffentlichen und wissenschaftlichen Bibliotheken sowie des aktuellen Regelwerks für die Schlagwortkatalogisierung beschreiben und charakterisieren; in komplexeren Fällen Verfahren zur Inhaltsanalyse und -verdichtung anwenden; in komplexeren Fällen und in weiteren ausgewählten Sachgebieten Dokumenteninhalte durch Vergabe von Notationen und Schlagwörtern wiedergeben.'
+    topics:
+      - Charakteristika verschiedener Arten von Metatexten
+      - Erstellung ausgewählter Arten von Metatexten
+      - Anwendung von Methoden der Inhaltsanalyse und -verdichtung
+      - Funktionen, Strukturelemente und Eigenschaften von Klassifikationen und kontrollierten Vokabularen
+      - Methoden der Inhaltsrepräsentation mittels ausgewählter Klassifikationen und kontrollierterter Vokabulare und ihre Anwendung
+      - 'Studienschwerpunkt: Informationserschließung und -vermittlung'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Verbale und klassifikatorische Inhaltserschließung.
+          en: Verbal and classificatory subject indexing.
+      - framework: quadriga-dlf
+        competency: '1.2'
+        level: 1
+        note:
+          de: Inhaltsanalyse und -verdichtung.
+          en: Content analysis and condensation.
+  - code: G594
+    title: Digitale Bibliotheken und Informationsportale
+    credits: 5
+    category: vertiefung
+    goals: 'Die Studierenden können: wichtige digitale Bibliotheken und Informationsportale für verschiedene Nutzerkreise beschreiben und gegenüberstellen; Anforderungen und Tätigkeiten zur Erstellung von digitalen Bibliotheken und Informationsportalen darlegen; Theorien des Informationsverhaltens grundlegend erläutern; die Gebrauchstauglichkeit von digitalen Bibliotheken und Informationsportalen bewerten.'
+    topics:
+      - Informationsportale im weiteren Sinn, wie digitale und virtuelle Bibliotheken, nationalbibliographische Online-Angebote, Mediatheken
+      - Angebote und Dienstleistungen von Informationsportalen
+      - Organisationsformen und Arbeitsweise bei der Erstellung solcher Angebote
+      - nutzerorientierte Anforderungen an Informationsportale; Modelle des Informationsverhaltens
+      - 'Studienschwerpunkt: Informationserschließung und -vermittlung'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Digitale Bibliotheken und Informationsportale.
+          en: Digital libraries and information portals.
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 2
+        note:
+          de: Publikations- und Nachnutzungsplattformen.
+          en: Publication and reuse platforms.
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 1
+        note:
+          de: Nachhaltige Verfügbarkeit digitaler Bestände.
+          en: Sustainable availability of digital collections.
+  - code: G547
+    title: Metadaten und Metadatenmanagement
+    credits: 5
+    category: datenkompetenz
+    goals: Die Studierenden kennen die für Bibliotheken relevanten Metadatenstandards, -dienste, und - schnittstellen und erlangen ein praktisches Verständnis von Aggregation, Organisation und Qualitätssicherung von Metadaten in GLAM-Einrichtungen und den Digital Humanities. Die Studierenden verstehen die Funktionsweise der Metadatenverarbeitung in bibliothekarischen Online-Katalogen und Discovery-Systemen. Sie sind in der Lage, Metadatenschemata für verschiedene Anwendungsbeispiele zu entwickeln. Die Studierenden kennen die wichtigsten Standards und Technologien zur Wissensmodellierung im Semantic Web und erlangen einen Überblick über die aktuellen Semantic-Web-Entwicklungen im informationswissenschaftlichen Bereich. Die Studierenden erarbeiten sich selbstständig vertiefte Kenntnisse einzelner Standards, Dienste oder Infrastrukturen und präsentieren diese im Seminar anschaulich und präzise.
+    topics:
+      - 'Metadaten: Definitionsversuche, Typen, Funktionen und Aufbau'
+      - 'Bibliothekarische Metadatenformate und ihre Verwendung für die bibliographische Beschreibung: ERfassungs-, Intern-, Präsentations-, Austausch- und Normdatenformate'
+      - 'Metadatenmanagement: Interoperabilität, Rechtemanagement, Qualitätsstandards'
+      - 'Bibliothekarische Metadatendienste und ihre Schnittstellen: Aufgaben, Einsatzbereiche und Funktionsweisen'
+      - 'Metadatenverwaltung: Aggregation, Migration und Datenerhaltung in bibliothekarischen Softwaresystemen'
+      - Semantic-Web-Technologien und Linked Data
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Metadaten und Metadatenmanagement.
+          en: Metadata and metadata management.
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 2
+        note:
+          de: Metadaten für Publikation und Nachnutzung.
+          en: Metadata for publication and reuse.
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 2
+        note:
+          de: Metadaten für Langzeitarchivierung.
+          en: Metadata for long-term archiving.
+  - code: G556
+    title: Informationspraktikum
+    credits: 5
+    category: pflicht
+    goals: Festigung der Kenntnisse sowie Entwicklung von Fähigkeiten und Fertigkeiten der Anwendungsfelder aus den Modulen des ersten Semesters.
+    topics: []
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 1
+        note:
+          de: Kennenlernen praktischer Arbeitsabläufe in Informationseinrichtungen.
+          en: Getting to know practical workflows in information institutions.
+  - code: G739
+    title: Praktisches Studiensemester mit Praktikumskolloquium
+    credits: 30
+    category: pflicht
+    goals: Vertiefung fachlicher Kenntnisse, Fähigkeiten und Fertigkeiten in den verschiedenen Tätigkeitsfeldern einer Bibliothek oder einer anderen informationsvermittelnden Einrichtung; Weiterentwicklung sozialer Kompetenzen im Zusammenhang mit der Eingliederung in bestehende Personal- und Organisationsstrukturen; Gewinnung von Einsichten in die Folgen des eigenen beruflichen Handelns.
+    topics:
+      - Ausführung praktischer Tätigkeiten im Bibliotheksbetrieb
+      - Planung, Realisierung und Evaluierung eines Projektes
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 3
+        note:
+          de: Praktische Tätigkeit und Projektarbeit im Berufsfeld.
+          en: Practical work and project work in the professional field.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Sozialkompetenz und Reflexion des eigenen Handelns.
+          en: Social competence and reflection on one’s own actions.
+  - code: G909
+    title: Internet- und Multimediadatenbanken
+    credits: 5
+    category: datenkompetenz
+    goals: Vertiefung relationaler Datenbank-Technologien; Kenntnis moderner nicht-relationaler Datenbanksysteme im Hinblick auf ihre Verwendbarkeit in Bibliotheken; Kritische Einschätzung von Datenbank-Technologien bzgl. ihres Kosten-Nutzen-Verhältnisses im Bereich von Bibliotheken; Erlernen von Programmierfähigkeiten im Kontext von Datenbanken.
+    topics:
+      - Zugriffssprachen (z.B. PHP)
+      - Internetzugriff auf Datenbanken
+      - (Voll-)Text-Datenbanken
+      - Multimediale Datenbanken (Bild, Audio, Video)
+      - Sicherheitsproblematik und Sicherheitskonzepte
+    mappings:
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 2
+        note:
+          de: Internet- und Multimediadatenbanken.
+          en: Internet and multimedia databases.
+      - framework: quadriga-dlf
+        competency: '4.1'
+        level: 2
+        note:
+          de: Abfrage und Auswertung von Datenbanken.
+          en: Querying and evaluating databases.
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 1
+        note:
+          de: Datenmodelle und Schnittstellen.
+          en: Data models and interfaces.
+  - code: G924
+    title: Information Retrieval
+    credits: 5
+    category: datenkompetenz
+    goals: Kenntnisse über die Grundlagen des Information Retrievel; Kenntnisse über Suchmaschinen-Technologien; Fähigkeiten zur Vorbereitung, Durchführung und Nachbereitung von Recherchen.
+    topics:
+      - formale Grundlagen des Information Retrieval
+      - Suchmaschinen-Technologien
+      - Methoden des Information Retrieval, Entwicklung von Recherchestrategien
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 3
+        note:
+          de: Information Retrieval und Suchstrategien.
+          en: Information retrieval and search strategies.
+      - framework: quadriga-dlf
+        competency: '4.1'
+        level: 1
+        note:
+          de: Suchmaschinen und Rankingverfahren.
+          en: Search engines and ranking methods.
+  - code: G807
+    title: Methoden der Bibliotheks-und Informationswissenschaft
+    credits: 5
+    category: pflicht
+    goals: Kenntnisse über Verlauf und Methoden des wissenschaftlichen Erkenntnisprozesses; Kenntnisse über die Methoden quantitativer und qualitativer Sozialforschung sowie ihre Anwendungsfälle in der Bibliotheks- und Informationswissenschaft; Kenntnisse, Fähigkeiten und Fertigkeiten zur Planung, Realisierung und Evaluierung einer quantitativen empirischen Untersuchung; sichere Anwendung der beschreibenden Statistik und der Software SPSS; Kenntnisse, Fähigkeiten und Fertigkeiten des Projektmanagements; Kenntnisse, Fähigkeiten und Fertigkeiten zur Entwicklung von Teamfähigkeit.
+    topics:
+      - Wissenschaftlicher Erkenntnisprozess und seine Phasen
+      - Methoden des wissenschaftlichen Erkenntnisprozesses
+      - Methoden der qualitativen und quantitativen Sozialforschung
+      - Quantitative empirische Sozialforschung an einem Fallbeispiel
+      - Grundbegriffe der beschreibenden Statistik, Auswertungsmethoden ein-, zwei- und mehrdimensionalen Datenmaterials
+      - Standardsoftware SPSS, Berechnungen mit Echtdaten
+      - Planung, Realisierung und Evaluierung einer quantitativen empirischen Untersuchung
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 3
+        note:
+          de: Methoden der Recherche und Informationsvermittlung.
+          en: Methods of retrieval and information provision.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Wissenschaftliches Arbeiten und Kommunikation in der Disziplin.
+          en: Academic work and communication in the discipline.
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 1
+        note:
+          de: Berufsethische Grundlagen.
+          en: Professional ethical foundations.
+  - code: C603
+    title: Grundlagen der Informatik
+    credits: 5
+    category: pflicht
+    goals: Die Studierenden kennen den Aufbau, die grundlegenden Funktionsweisen und die Interaktionsarten moderner Computer und der auf ihnen installierten Softwarearten. Sie kennen die Unterschiede zwischen iOS-/Android-Geräten und Desktops/Laptops in der grundsätzlichen Handhabung. Sie sind befähigt, in der Beschaffung bzw. Bestandsverwaltung sachkundig über die Leistungsparameter von Computern und Computerzubehör zu urteilen. Mit der Nutzung der Standardsoftware Microsoft Office unter Microsoft Windows für Arbeitsprozesse sind sie in vertieftem Maße vertraut. Sie sind für Digitalisierungsprozesse, Datensicherheit, Ergonomie, Usability, User Experience und Barrierefreiheit sensibilisiert. Die Arbeitsabläufe in IT-gestützten Bibliotheksprozessen sind ihnen technologisch vertraut. Persönlich haben sie Selbstvertrauen im Umgang mit Computern erworben, das im Umgang mit Kunden zur Konzentration auf den Geschäftsprozess befähigt.
+    topics:
+      - Informationstechnologie mit Relevanz für Bibliotheken
+      - Rechneraufbau nach dem EVA-Prinzip
+      - Hardware der Verarbeitungseinheit
+      - BIOS, Betriebssysteme, Anwendungssoftware
+      - Speichereinheiten
+      - Standardschnittstellen für Datentransfer und Multimedia
+      - Digitale Daten, Einheiten, duale und hexadezimale Zahlen, typische Dateigrößen
+      - Dateiformate für Text, Bild, Audio und Video
+      - Computerbildschirme und Drucker
+      - Tastaturen, Mäuse, Touchscreens
+      - Netzwerke, Internet
+      - 'Computersicherheit: Schutzaspekte, Hauptgefahren, Schutzmaßnahmen, Beispiele'
+      - 'Ergonomie, Usability, User Experience, Barrierefreiheit: Grundlagen, Beispiele'
+      - RFID-Technologien und Einsatz im Bibliotheksalltag
+    mappings:
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 2
+        note:
+          de: Zeichenkodierungen, Dateiformate und Zahlensysteme.
+          en: Character encodings, file formats and number systems.
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 1
+        note:
+          de: Aufbau und Arbeitsweise von Rechnern und Netzwerken.
+          en: Structure and operation of computers and networks.
+  - code: G469
+    title: Typologie und Strukturen des deutschen Bibliotheks- und Informationswesens
+    credits: 5
+    category: pflicht
+    goals: 'Die Studierenden können: gewinnen einen Überblick über die grundlegenden Voraussetzungen für die gegenwärtigen Aufgaben, Funktionen und Arbeitsweisen von Bibliotheken aller Typen sowie anderer informationsvermittelnder Einrichtungen in Deutschland und können die für das Themenfeld erforderliche Terminologie anwenden.; nutzen Basiskenntnisse zur Orientierung innerhalb der historisch gewachsenen und/oder funktional bestimmten Strukturen des deutschen Bibliotheks- und Informationswesens.; kennen und verstehen den grundlegenden rechtlichen und organisatorischen Rahmen, in dem Bibliotheken und Bibliothekssysteme, regionale und zentrale Institutionen, Organisationen, Verbände und Vereine im Bibliotheks- und Informationswesen arbeiten.; gewinnen Verständnis für das Konzept einer arbeitsteiligen überregionalen Literaturversorgung durch funktionsbezogene Kooperation.; lernen durch Themenfindung und -abgrenzung individuell zu erarbeitender Referate und deren mündliche und schriftliche Präsentation erste bibliothekstypologische Forschungsfragen zu formulieren und geeignete Methoden zu deren Beantwortung zu finden.'
+    topics:
+      - Das deutsche Bibliotheks- und Informationswesen im Kontext gesellschaftlich relevanter Strukturen und Aufgaben in Kultur, Wissenschaft und Bildung
+      - Definitionskonzepte des Begriffs bzw. der Institution "Bibliothek" und davon bestimmte Rollen, Arbeitsweisen und Wirkungsfelder
+      - Rechtsgrundlagen bibliothekarischer Dienstleistungen
+      - Träger und Förderer des deutschen Bibliothekswesens und davon abhängige Funktionen der einzelnen Bibliothekstypen
+      - Deskriptive funktionsorientierte Bibliothekstypologie und das System einer arbeitsteiligen Literatur- und Informationsversorgung durch funktionsbezogene bibliothekarische Kooperation
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 2
+        note:
+          de: Typologie und Strukturen des Bibliotheks- und Informationswesens.
+          en: Typology and structures of the library and information system.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 2
+        note:
+          de: Überblick über Informationsinfrastrukturen.
+          en: Overview of information infrastructures.
+  - code: G215
+    title: Medientheorie und Medienkunde
+    credits: 5
+    category: pflicht
+    goals: Grundlegende Kenntnis der Begriffe Kommunikation und Medien, ihrer Varietät und ihrer Bedeutungsebenen; Kenntnisse der theoretischen Grundlagen von Kommunikation; Umfassende Kenntnisse zur Typologie bibliothekarisch relevanter Medienarten und damit verknüpften Problemen hinsichtlich ihrer Erwerbung, Bewahrungund Vermittlung; Verständnis aktueller Entwicklungen des Medienmarktes und ihrer Konsequenzen für die Bibliotheken; Kenntnis der Möglichkeiten und Grenzen von Medienkonversion und Medientransfers; Grundkenntnisse zu bibliothekarisch relevanten Aspekten des Medien- und Informationsrechts.
+    topics:
+      - 'Kommunikation und Medien : Definition und Modelle'
+      - 'Überblick über die Kommunikationsmittel Sprache, Bild und Schrift: Funktion, historischer Wandel, mediale Relevanz'
+      - Grundlagenwissen zu Medienpolitik, Medienwirtschaft und Medienforschung
+      - Typologie der Medien
+      - Geschichte einzelner Medienarten und ihrer Nutzung
+      - Print- und Nonprintmedien im Bestand Öffentlicher und Wissenschaftlicher Bibliotheken
+      - Medienkonvergenz und Medientransfer aus bibliothekswissenschaftlicher Sicht
+      - Überblick über das Medien- und Informationsrecht und seine bibliothekarisch relevanten Aspekte
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Medientheorie und Medienkunde als Vermittlungsgrundlage.
+          en: Media theory and media studies as a basis for dissemination.
+  - code: G456
+    title: Grundlagen der Medienerschließung
+    credits: 5
+    category: pflicht
+    goals: Beherrschung der fachbezogenen Terminologie; Kenntnis wesentlicher Methoden der Medien- und Bestandserschließung; Grundkenntnisse über Regelwerke und Standards der Formalerschließung; Fähigkeit zur Recherche in historischen Informationsressourcen, z.B. in nach den Regeln der Preußischen Instruktionen geordneten Zettel- und Imagekatalogen; Fähigkeit zur Anwendung alphabetischer Ordnungsprinzipien und -regeln; Überblickskenntnisse zur Inhaltserschließung.
+    topics:
+      - Die Funktion von Katalogen, Bibliographien und anderen Informationsressourcen
+      - Historische und aktuelle Arten und Formen von Katalogen
+      - Regelwerke und Standards zur formalen und inhaltlichen Medien- und Bestandserschließung im Überblick
+      - das Library Reference Model der IFLA (IFLA-LRM)
+      - Grundprinzipien der bibliographischen Beschreibung
+      - Alphabetische Ordnungsprinzipien und -regeln
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Formalerschließung und Katalogisierung.
+          en: Descriptive cataloguing.
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 1
+        note:
+          de: Metadaten und bibliographische Datenformate.
+          en: Metadata and bibliographic data formats.
+  - code: G426
+    title: Benutzungsmanagement
+    credits: 5
+    category: pflicht
+    goals: Einsicht in die Ziele Benutzerorientiertheit, Verfügbarkeit und Benutzbarkeit des Benutzungsmanagements; Kenntnisse der Organisationsmodelle von Freihand-, Magazin- und Präsenzbestand, der Ausleihorganisation sowie der Zusatzdienste und Services, Fähigkeit zur Prozessleitung in der bibliothekarischen Praxis; Kenntnisse über Evaluierungmöglichkeiten von Benutzungsmanagement und ihre Konsequenzen in der bibliothekarischen Praxis; Kenntnisse, Fähigkeiten und Fertigkeiten zur Anwendung von Schulungskomponenten zur Entwicklung von Bibliothekskompetenz.
+    topics:
+      - Einordnung des Benutzungsmanagements in den Bibliotheksbetrieb
+      - Anforderungen an das Benutzungsmanagement (Benutzerorientiertheit, Verfügbarkeit, Benutzungskompetenz) und seine Evaluierung
+      - 'Leistungen des Benutzungsmanagements: Modelle der Bestandsbereitstellung und - benutzung (Freihand-, Magazin- u. Präsenzbestand, Ausleihorganisation) sowie Benutzungsdienste (Leihverkehr, Dokumentlieferdienste) und Services'
+      - 'Entwicklung von Benutzungskompetenz: das System im Überblick (Anmeldegespräch, Benutzerschulung, gedruckte und elektronische Benutzungsführer, Online-Tutorials, Leit- und Orientierungssystem)'
+      - Qualitätssicherung der Methoden Benutzerschulung und Online-Tutorials an Fallbeispielen (Entwicklungs- und Bewertungskriterien)
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Benutzungsdienstleistungen und Nutzerkommunikation.
+          en: User services and user communication.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: Orientierung an Informationsbedarfen der Nutzenden.
+          en: Orientation towards users’ information needs.
+  - code: G356
+    title: Datenbanken
+    credits: 5
+    category: pflicht
+    goals: Grundkenntnisse über Datenbankmanagementsysteme; Kenntnisse über die unterschiedlichen Datenmodelle; Fähigkeiten zur Konzeption und Strukturierung von Datenbanken (z.B. bibliographische Datenbanken); Fähigkeiten und Fertigkeiten zur Anwendung von Standarddatenbanksystemen bei Abfragen mittels SQL; Kenntnisse über unterschiedliche Datenaustauschformate (bibliographische Intern- und Externformate).
+    topics:
+      - Datenstrukturierung, Datenbankentwurf
+      - Datenmodelle und ihre Anwendung in Branchensoftware
+      - Aufbau von bibliographischen Datenbanken
+      - Datenbankabfragen mittels SQL
+      - Datenaustausch und (bibliothekarische) Datenaustauschformate
+      - Übungen in Standarddatenbanksoftware
+    mappings:
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 2
+        note:
+          de: Datenmodellierung und Datenbankentwurf.
+          en: Data modelling and database design.
+      - framework: quadriga-dlf
+        competency: '4.1'
+        level: 2
+        note:
+          de: Abfrage und Auswertung mit SQL.
+          en: Querying and evaluation with SQL.
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 1
+        note:
+          de: Datenstrukturen und Schemata.
+          en: Data structures and schemas.
+  - code: G308
+    title: Aufgaben und Organisationsformen von Informationseinrichtungen
+    credits: 5
+    category: pflicht
+    goals: Grundkenntnisse über Strukturen, Funktionen und Arbeitsweisen von einzelnen IuDEinrichtungen in Deutschland; Grundkenntnisse über das deutsche Archiv- und Museumswesen auf der Basis exemplarisch betrachteter Archive und Museen; Veranschaulichung und Vertiefung der im 1. Fachsemester erworbenen theoretischen Kenntnisse zur Bibliothekstypologie sowie zu Qualifizierung und den erforderlichen aufgabenspezifischen Kompetenzen bibliothekarischen Fachpersonals.
+    topics:
+      - 'Informationswirtschaft und -praxis in Deutschland: Spezifische Arbeitsweisen und Organisationsstrukturen einzelner Einrichtungen'
+      - 'Deutsches Archiv- und Museumswesen: Arbeitsweisen und Wirkungsfelder von Archiven und Museen als kulturbewahrenden Einrichtungen'
+      - Exemplarische Analyse von Aufbau- und Ablauforganisation ausgewählter Einrichtungen
+      - Exkursionen zu Bibliotheken und anderen Informationseinrichtungen und deren typologische Untersuchung
+      - Qualifikationsprofile, Ausbildung und Berufsbilder von Mitarbeitenden mit verschiedenen Aufgabenbereichen in Bibliotheken und anderen Informationseinrichtungen
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 2
+        note:
+          de: Organisationsformen von Informationseinrichtungen.
+          en: Organisational forms of information institutions.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Aufgaben und Dienstleistungen von Informationseinrichtungen.
+          en: Tasks and services of information institutions.
+  - code: G607
+    title: Bibliographische Information
+    credits: 5
+    category: pflicht
+    goals: 'Die Studierenden können: grundlegende allgemeinbibliographische Informationsmittel beschreiben und charakterisieren,; Funktion, Aufbau und Typen bibliographischer Informationsmittel erläutern,; die Diversifizierung bibliographischer Informationsmittel mit Bezug auf spezifische Anforderungen diskutieren,; Stand und Entwicklung der nationalbibliographischen Verzeichnung in Deutschland darstellen,; gezielt geeignete Informationsmittel auswählen und bewerten,; in konventionellen und digitalen Informationsmitteln professionell recherchieren.'
+    topics:
+      - Bibliographische Grundbegriffe
+      - Typologie, Charakterisierung und Beschreibung bibliographischer Informationsmittel
+      - Nationalbibliographische Arbeit in Deutschland
+      - Grundlegende allgemeinbibliographische Informationsmittel für deutsch- und fremdsprachige Medien
+      - Bewertung und Auswahl von Informationsmitteln
+      - Methoden und Probleme der bibliographischen Recherche
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Bibliographische Informationsmittel und Standards.
+          en: Bibliographic information resources and standards.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 2
+        note:
+          de: Recherche in bibliographischen Quellen.
+          en: Retrieval in bibliographic sources.
+  - code: G234
+    title: Formalerschließung 1
+    credits: 5
+    category: pflicht
+    goals: Die Studierenden kennen die Standardelemente für die umfassende Beschreibung von einteiligen Ressourcen im internationalen Regelwerk Resource Description and Access (RDA).; Sie sind in der Lage, bibliographische Datensätze von einteiligen Ressourcen nach RDA anzufertigen.; Sie haben Grundkenntnisse der computergestützten Formalerschließung, der RDA Standardelemente für Personen und Personendatensätze in der Gemeinsamen Normdatei (GND) und der bibliographischen Beschreibung nach den Regeln für die alphabetische Katalogisierung (RAK).
+    topics:
+      - Standardelemente für die Beschreibung einteiliger Ressourcen nach RDA
+      - Bestandteile von bibliographischen Datensätzen für einteilige Ressourcen
+      - Anfertigung bibliographischer Datensätze in der Katalogisierungssoftware von Bibliotheksverbünden (z.B. im Südwestverbund) und unter Nutzung lokaler Bibliothekssoftware (z.B. im internationalen MARC-Format in Libero)
+      - Standardelemente für Personennamen nach RDA, Nutzung der GND
+      - Grundbegriffe der bibliographischen Beschreibung nach RAK
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Formalerschließung nach Regelwerk.
+          en: Descriptive cataloguing according to rules.
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 1
+        note:
+          de: Bibliographische Datenformate.
+          en: Bibliographic data formats.
+  - code: G956
+    title: Buch- und Bibliotheksgeschichte
+    credits: 6
+    category: pflicht
+    goals: Kenntnisse über die Geschichte der Schrift und des Buches; Überblickskenntnisse zur Buchherstellung und Buchgestaltung von den Anfängen bis zur Gegenwart; Kenntnisse über die Geschichte der Bibliotheken und des Bibliothekswesens insbesondere in Europa; Verständnis für den Zusammenhang zwischen Bibliotheksgeschichte und heutiger Bibliothekslandschaft; Kenntnisse über das sich verändernde Leseverhalten und Verständnis für die Rolle der Kulturtechnik Lesen in der gesellschaftlichen Entwicklung.
+    topics:
+      - 'Buch- u. Bibliotheksgeschichte bis zum Mittelalter:'
+      - Geschichte der Schrift, der Beschreibstoffe und der Buchformen
+      - Buch- und Bibliothekswesen von den Anfängen bis zumAusgang des Mittelalters unter besonderer Berücksichtigung des Abendlandes
+      - 'Lesefähigkeit, Lesebedürfnis und Leser von den Anfängen bis zur gegenwart; Funktion, Quantität und Qualität des Lesens im Wandel Buch- u. Bibliotheksgeschichte seit der Neuzeit:'
+      - Die Erfindung des Buchdrucks mit beweglichen Lettern und ihre Auswirkungen insbesondere auf die Buch- und Bibliotheksgeschichte
+      - Buchgestaltung von der Renaissance bis zur gegenwart im Überblick
+      - Das Bibliothekswesen Europas unter besonderer Berücksichtigung Deutschlands von der Renaissance bis zur Gegenwart; Geschichte der Öffentlichen Bibliothek in Deutschland
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Historische und kulturelle Kontexte des Bibliothekswesens.
+          en: Historical and cultural contexts of librarianship.
+  - code: F521
+    title: 'Fachsprache Englisch: Bibliotheks- und Informationswissenschaft'
+    credits: 4
+    category: pflicht
+    goals: Nach erfolgreichem Abschluss des Moduls sind die Studierenden in der Lage:; komplexe studien- und berufsrelevante Hör- und Lesetexte, auch zu weniger vertrauten Themen, zu verstehen;; unter Verwendung vielfältiger, auch komplexer sprachlicher Mittel studien- und berufsrelevante Texte aus bekannten Themenbereichen zu verfassen;; unter Verwendung vielfältiger, auch komplexer sprachlicher Mittel studien- und berufsrelevante Gesprächssituationen, in denen es um komplexe Themen aus bekannten Themenbereichen geht, sicher zu bewältigen;; Sachverhalte ausführlich zu erläutern und Standpunkte zu verteidigen.
+    topics:
+      - 'Fachsprache Englisch 1:'
+      - Departments and job responsibilities at different types of libraries
+      - The organizational structure of libraries
+      - Terminology for the work at the circulation desk
+      - Registration & lending procedures and FAQs
+      - User instructions on databases, the OPAC and specific library devices
+      - Rules and regulations
+      - 'Giving presentations & preparing for a discussion on hot issues Fachsprache Englisch 2:'
+      - Print and Non-print media
+      - Reading habits, reading promotion and co-operations
+      - Evolving new library services
+      - Intercultural awareness and Intercultural competences
+      - Applying for an internship and job interview issues
+      - The information professional and upcoming new challenges
+      - Guiding someone round the library and phrases for a guided tour
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Fachsprachliche Kompetenz in Englisch.
+          en: Specialist-language competence in English.
+  - code: G851
+    title: Bibliotheksmarketing
+    credits: 5
+    category: pflicht
+    goals: Kenntnisse über den Begriff Marketing und sicherer Umgang mit Begriffen des Marketing; Kenntnisse von Grundprinzipien des Marketing sowie des Marketingzyklus; Kenntnisse der theoretischen Grundlagen von Kommunikation und der Kommunikationsgestaltung als Instrument im Marketing-Mix; Kenntnisse der Mittel der Kommunikationsgestaltung sowie Kenntnisse und grundlegende Fähigkeiten zur Beurteilung der Qualität verschiedener Mittel; Kenntnisse und grundlegende Fähigkeiten zur Anwendung der externen und internen Kommunikationsgestaltung in der Praxis.
+    topics:
+      - Modell des Austauschprozesses zur Produktkonsumtion; Bestimmung seiner Elemente und deren Konkretisierung in unterschiedlichen Marktbeziehungen eines Non-for-ProfitUnternehmens
+      - Gegenüberstellung des For-Profit-Marketing, Anwendung auf das Marketing von Kultur- und Wissenschaftseinrichtungen
+      - Verfahrensmuster der Marketingplanung, Phasen des Marketingzyklus im Überblick
+      - 'Segmentierungsverfahren: Erkennung, Bestimmung oder Konstruktion von Zielgruppen zur Marktbearbeitung'
+      - Kommunikationsgestaltung als Instrument im Marketing-Mix
+      - Leitbild, Corporate Identity, Pressearbeit, multimediale Präsentation (z.B. Internetauftritt), gedruckte Informationsmaterialen, Event / Programmarbeit, Fundraising, Friendraising, Lobbying an Fallbeispielen
+      - Strukturen sowie Art und Weise der internen Kommunikation
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Marketing für Bibliotheksdienstleistungen.
+          en: Marketing for library services.
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 1
+        note:
+          de: Vermittlung von Angeboten und Beständen.
+          en: Dissemination of services and collections.
+  - code: G931
+    title: Deutschsprachige Gegenwartsliteratur
+    credits: 5
+    category: pflicht
+    goals: Die Studierenden kennen die Akteure und Funktionsweisen des Literaturmarktes im deutschsprachigen Raum.; Sie sind in der Lage, die Spezifik literarischer Texte sowie deren Erscheinungsvielfalt zu erkennen und in die aktuelle deutschsprachige Gegenwartsliteratur einzuordnen.; Sie können literarische Texte nach bibliothekarischen Gesichtspunkten analysieren und bewerten.; Sie sind für die Bedeutung der Literaturvermittlung sensibilisiert und erproben ein Format praktisch.
+    topics:
+      - Spezifik literarischer Texte und literarischer Gattungen
+      - Buchmarkt und Verlage, Schriftsteller und ihre Verbände
+      - Literaturförderung und Literaturpreise, Funktionen der Literaturkritik
+      - Informationsquellen zur Marktsichtung deutschsprachiger Gegenwartsliteratur
+      - 'Entwicklung und Tendenzen der deutschsprachigen Gegenwartsliteratur: u.a. Schreibstile, bedeutende Gegenwartsautorinnen und -autoren, Neuerscheinungen'
+      - Interpretation exemplarischer Texte und bibliothekarische Literaturbewertung
+      - 'Einführung in die Literaturvermittlung: Planung einer Autorenlesung in der Bibliothek, Literarischer Geocache'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Literaturkenntnis und -vermittlung.
+          en: Knowledge and dissemination of literature.
+  - code: G211
+    title: Grundlagen der Inhaltserschließung
+    credits: 5
+    category: pflicht
+    goals: 'Die Studierenden können: theoretische Grundlagen der Inhaltserschließung erklären,; ausgewählte Klassifikationen aus dem Bereich der öffentlichen und wissenschaftlichen Bibliotheken sowie das aktuelle Regelwerk für die Schlagwortkatalogisierung beschreiben und charakterisieren,; in einfachen Fällen Verfahren zur Inhaltsanalyse und -verdichtung anwenden,; Dokumenteninhalte durch Vergabe von Notationen und Schlagwörtern in ausgewählten Sachgebieten wiedergeben.'
+    topics:
+      - Ziele und Funktionen der Inhaltserschließung; Repräsentation und Ordnung von Gegenständen und Begriffen, Typen von Dokumentationssprachen
+      - Funktionen, Strukturelemente und Eigenschaften von Klassifikationen und kontrollierten Vokabularen
+      - Methoden der Inhaltsanalyse und -verdichtung und ihre Anwendung
+      - Methoden der Inhaltsrepräsentation mittels ausgewählter Klassifikationen und kontrollierter Vokabulare und ihre Anwendung
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Inhaltserschließung und Klassifikation.
+          en: Subject indexing and classification.
+      - framework: quadriga-dlf
+        competency: '1.2'
+        level: 1
+        note:
+          de: Analyse und Verdichtung von Inhalten.
+          en: Analysis and condensation of content.
+  - code: G005
+    title: Auskunfts- und Informationstätigkeit in Bibliotheken
+    credits: 5
+    category: pflicht
+    goals: 'Die Studierenden können: die Auskunfts- und Informationstätigkeit in Bibliotheken unterschiedlichen Typs darstellen,; qualifiziert unter Berücksichtigung professioneller Standards und bibliotheksethischer Grundsätze Auskunfts-, Beratungs- und Informationstätigkeit in Öffentlichen und Wissenschaftlichen Bibliotheken durchführen,; eine Informationsinfrastruktur an der Bibliothek aufbauen,; wichtige Informationsressourcen gezielt auswählen und für die professionelle Recherche nutzen,; Rechercheergebnisse nutzergerecht präsentieren und vermitteln.'
+    topics:
+      - 'Die Bibliothek als Informationsdienstleister: Auskunfts- und Informationspraxis in Bibliotheken unterschiedlichen Typs'
+      - Bereiche, Formen, Methoden und Organisation des Informationsdienstes
+      - Der Informationsprozess und seine Phasen; das Auskunftsinterview
+      - Informationsinfrastruktur und Informationsressourcen
+      - Ausgewählte bibliographische und faktographische Informationsressourcen in der Bibliothekspraxis
+      - Bibliographische und Sachrecherche in Informationsressourcen unterschiedlicher Angebotsform
+      - Präsentation und Vermittlung von Medien und Informationen
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 3
+        note:
+          de: Auskunfts- und Recherchedienstleistungen.
+          en: Reference and retrieval services.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Informationsvermittlung an Nutzergruppen.
+          en: Information provision to user groups.
+  - code: G512
+    title: Formalerschließung 2
+    credits: 5
+    category: pflicht
+    goals: Die Studierenden kennen die Standardelemente für die hierarchische, umfassende und analytische Beschreibung von Ressourcen im internationalen Regelwerk Resource Description and Access (RDA),; sind in der Lage, bibliographische Datensätze von mehrteiligen und integrierenden Ressourcen sowie Teilen von Ressourcen anzufertigen,; haben Kenntnisse der computergestützten Formalerschließung in Bibliotheksverbünden und bei der Nutzung lokaler Bibliothekssoftware und haben Grundkenntnisse zu RDAStandardelementen für Körperschaften und Körperschaftsdatensätzen in der Gemeinsamen Normdatei (GND).
+    topics:
+      - Standardelemente für die hierarchische, umfassende und analytische Beschreibung von Ressourcen nach RDA
+      - Bestandteile von bibliographischen Datensätzen für die hierarchische, umfassende und analytische Beschreibung von Ressourcen nach RDA
+      - Anfertigung bibliographischer Datensätze in der Katalogisierungssoftware von Bibliotheksverbünden (z.B. im Südwestverbund) und unter Nutzung lokaler Bibliothekssoftware (z.B. in Libero und BIBLIOTHECAplus)
+      - Bibliographische Beschreibung von Teilen von Ressourcen (z.B. von Zeitschriftenaufsätzen) nach ISBD und RDA
+      - Standardelemente für Körperschaften nach RDA, Körperschaftsdatensätze in der GND
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Vertiefte Formalerschließung.
+          en: Advanced descriptive cataloguing.
+  - code: G277
+    title: IT-Systeme in Bibliotheken
+    credits: 5
+    category: pflicht
+    goals: Kenntnisse unterschiedlicher Datenbankmanagementsysteme für den Aufbau bibliographischer Datenbanken und zur Unterstützung des bibliothekarischen Geschäftsgangs; Fähigkeit zum methodischen Vorgehen bei Softwarevergleich und -wahl sowie Fähigkeiten und Fertigkeiten zur Anwendung ausgewählter Bibliotheksinformationssysteme; Kenntnisse über neue Entwicklungen von Standards mit Relevanz für Datengenerierung, - speicherung, -bereitstellung und -austausch durch und zwischen Bibliotheken; Kenntnisse über Ansätze zur Verbesserung kundenorientierter Dienstleistungen und ausgewählter Aspekte der Informationsbereitstellung in Bibliotheken.
+    topics:
+      - Bibliotheksspezifische Vertiefung auf dem Gebiet "Anwendung von Datenbanksystemen"
+      - IST- und SOLL-Analyse, Pflichtenheft und Softwarevergleich
+      - Einführung in XML und XML-Software
+      - Standards zur Datengenerierung, -übergabe und -integration in verteilten Systemen
+      - Rechtemanagement und Zugriffssicherung
+      - Konzeptionen zur kundenorientierten Informationsbereitstellung durch Bibliotheken (z. B. Suchmaschinentechnologie, Portallösungen, Catalogue Enrichment, Bibliothek 2.0, Web 3.0)
+      - Digitale Langzeitarchivierung
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 2
+        note:
+          de: Betrieb von Bibliotheks-IT-Systemen.
+          en: Operation of library IT systems.
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 2
+        note:
+          de: Metadaten und Schnittstellen in Bibliothekssystemen.
+          en: Metadata and interfaces in library systems.
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 1
+        note:
+          de: Erhaltung und Sicherung von Daten.
+          en: Preservation and backup of data.
+  - code: G119
+    title: Förderung von Lese-, Medien- und Informationskompetenz
+    credits: 5
+    category: pflicht
+    goals: 'Die Studierenden können: erkennen die Notwendigkeit der Förderung von Lese-, Medien- und Informationskompetenz.; können theoretische Grundlagen der Förderung von Lese-, Medien- und Informationskompetenz sowie mögliche Formen und Methoden erklären und in den wissenschaftlichen Kontext einordnen.; können für eine konkrete Zielgruppe unter Anwendung pädagogisch-didaktischer Grundkenntnisse ein Grobkonzept zur Kompetenzförderung in Bibliotheken entwickeln.'
+    topics:
+      - Begriffe Lese-, Medien- und Informationskompetenz
+      - Bildungs- und Wissenschaftssystem in Deutschland
+      - Theoretische Ansätze der Leseforschung und Medienpädagogik
+      - Nationale und internationale Standards und Konzepte der Informationskompetenz und aktueller Stand der Fachdiskussion
+      - Ziele und Zielgruppen der Leseförderung sowie Medien- und Informationskompetenzförderung in Wissenschaftlichen und Öffentlichen Bibliotheken
+      - Formen und Methoden der Förderung von Lese-, Medien- und Informationskompetenz
+      - Vernetzte Kompetenzförderung in Bibliotheken, Methode des Spiralcurriculums
+      - Grundlagen der Bibliothekspädagogik und -didaktik für die Konzipierung einer Veranstaltung zur Kompetenzförderung
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Vermittlung von Lese-, Medien- und Informationskompetenz.
+          en: Advancing reading, media and information literacy.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: Förderung von Recherchekompetenz.
+          en: Advancing retrieval competence.
+  - code: G373
+    title: Bestandsentwicklung und Erwerbungsmanagement
+    credits: 5
+    category: pflicht
+    goals: Umfassende Kenntnisse zu Aufbau und Optimierung von Medienbeständen in verschiedenen Typen von Wissenschaftlichen und Öffentlichen Bibliotheken; Kenntnis allgemeiner und spezieller Qualitätsmaßstäbe für Erwerbungspraxis und Bestandsentwicklung; Fähigkeit zur Entwicklung von Bestandskonzeptionen auf der Basis von informationslogistischen Rollen, statistischen Auswertungen und qualitativen Leitlinien.
+    topics:
+      - Bestandsstrukturen und -profile in verschiedenen Bibliothekstypen und Methoden zu ihrer Untersuchung (Bestandsanalyse, Bestandsrevision, Bestandsevaluierung)
+      - Zentrale Abläufe des Erwerbungs- und Bestandsmanagements am Beispiel einzelner Erwerbungsarten; Auswahl-, Erwerbungs- und Bereitstellungspraxis für körperliche und elektronische Publikationen; Präsentationsformen und Aussonderungspraktiken
+      - Bestandskalkulation, Etatverteilungsmodelle und zielgruppenorientierte Optimierung von Medienbeständen und Informationszugriffen
+      - Auswirkungen von Angebot (Medienmarkt, Informationsdienste, Kooperation mit Lieferanten, Outsourcing), Nachfragepraxis (Preisgestaltung, Etatbedarf und -entwicklung, Sondermittel, Patron Driven Acquisition) und Beteiligung an kooperativer Erwerbung auf die Entwicklung von Erwerbungsprofilen und Bestandskonzeptionen
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 2
+        note:
+          de: Bestandsentwicklung und Erwerbungsmanagement.
+          en: Collection development and acquisition management.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: Bedarfsorientierte Auswahl von Informationsquellen.
+          en: Needs-oriented selection of information sources.
+  - code: U862
+    title: Schlüsselqualifikation
+    credits: 4
+    category: pflicht
+    goals: Der Studierende erhält eine grundlegende Lernkompetenz, wird zum selbständigen Wissenserwerb befähigt und schult seine Kommunikationsfähigkeit. Er erlernt eine fachübergreifende Arbeits- und Denkweise, erlangt soziale und kulturelle Kompetenzen und erlernt ethisches Denken. Diese Fähigkeiten sind neben dem fachspezifischen Wissen Voraussetzung für den beruflichen Werdegang und die Persönlichkeitsentwicklung. Die konkreten Qualifikationsziele hängen von der gewählten Lehreinheit "Schlüsselqualifikation" aus dem jährlich vom Fakultätsrat beschlossenen Angebotskatalog der.
+    topics:
+      - Die konkreten Lehrinhalte hängen von der gewählten Lehreinheit "Schlüsselqualifikation" aus dem jährlich vom Fakultätsrat beschlossenen Angebotskatalog der Fakultät ab.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Schlüsselqualifikationen und überfachliche Kompetenzen.
+          en: Key qualifications and transferable skills.
+  - code: U006
+    title: Studium generale
+    credits: 1
+    category: pflicht
+    goals: Im Studium generale sollen der fachübergreifende Charakter von Lehre und Forschung sowie die Zusammenhänge von Theorie und Praxis vermittelt werden. Der Studierende soll dabei befähigt werden, über sein eigenes Handeln zu reflektieren, sein Wissen einzuordnen und Zusammenhänge zu erkennen. Durch die offene und kontroverse Auseinandersetzung anhand eines ausgewählten Themas soll das Urteils- und Handlungsvermögen in politischen, ökonomischen, ökologischen und interkulturellen Bereichen ausgebildet werden.
+    topics:
+      - Im Studium Generale werden gesellschaftsrelevante Themen und wissenschaftlich/technologische Fragestellungen mit fachübergreifendem Charakter behandelt. Dabei soll der Blick auf die Funktions- und Kommunikationsmechanismen in unserer Gesellschaft geschärft werden. Die Bearbeitung eines Themas erfolgt aus möglichst unterschiedlichen Perspektiven. Zur Realisierung des Lernziels werden Lehrveranstaltungen mit unterschiedlichen Lehrinhalten angeboten, aus denen je nach Platzangebot frei gewählt werden kann.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 1
+        note:
+          de: Gesellschaftsrelevante und interkulturelle Reflexion.
+          en: Societally relevant and intercultural reflection.
+  - code: G673
+    title: Projekt
+    credits: 5
+    category: pflicht
+    goals: vgl. § 9 Abs. 1 PrüfO-BKB; Fähigkeit zur Entwicklung, Durchsetzung und Präsentation von Ideen; Fähigkeit, innerhalb komplexer Aufgabenstellungen Ziele zu definieren sowie in Teamarbeit problemorientierte Lösungsvorschläge und praxisbezogene Realisierungskonzepte zu erarbeiten.
+    topics:
+      - Auswahl aus dem aktuellen Projektangebot des Studiengangs
+      - Bearbeitung von praxis- und problemorientierten Themen in studentischen Arbeitsgruppen
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 2
+        note:
+          de: Projektarbeit und Projektmanagement.
+          en: Project work and project management.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Präsentation von Projektergebnissen.
+          en: Presentation of project results.
+  - code: G748
+    title: Strukturen und Ressourcen für Kultur- und Wissenschaftseinrichtungen
+    credits: 5
+    category: pflicht
+    goals: Die Studierenden kennen die gesellschaftlichen, gesetzlichen und ökonomischen Rahmenbedingungen für Kultur- und Wissenschaftseinrichtungen. Sie besitzen die Kompetenz, ihre eigene künftige Position im Organisationsgefüge einzuschätzen, Wege der Einflussnahme zu bemerken und zu nutzen. Die Studierenden verfügen über die Kompetenz, sich mit dem betreffenden Personal- und Finanzmanagement über die Bedarfe einer Kultureinrichtung zu verständigen.
+    topics:
+      - Kultureinrichtungen zwischen der Erfüllung öffentlicher Aufgaben, gemeinnützigem und kulturwirtschaftlichem Engagement
+      - gesetzliche, politische und volkswirtschaftliche Positionen zu gesellschaftlichen Finanzierungsbeiträgen für Kultur- und Wissenschaftseinrichtungen
+      - Einordnung von Kultureinrichtungen in größere öffentlich-rechtliche Struktureinheiten (Aufbau der Landesverwaltungen; Kommunalverfassungen)
+      - Entscheidungsstrukturen und Machtverhältnisse in den für Kultureinrichtungen relevanten Rechts- und Organisationsformen
+      - Finanzierungsstrukturen der Öffentlichen Hand in Deutschland
+      - Verfahren der internen und externen Kapital- und Sachmittelbeschaffung
+      - Instrumente der Finanzplanung; Systeme des externen Rechnungswesens; Leistungsrechnung für Kultur
+      - Grundzüge der Personalwirtschaft (Bedarfsermittlung, Kostenplanung, Personalbeschaffung und -entwicklung)
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 2
+        note:
+          de: Strukturen und Ressourcen von Kultur- und Wissenschaftseinrichtungen.
+          en: Structures and resources of cultural and research institutions.
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 1
+        note:
+          de: Informationsinfrastrukturen und Ressourcen.
+          en: Information infrastructures and resources.
+  - code: G266
+    title: Zielgruppenorientierte Dienstleistungen
+    credits: 5
+    category: pflicht
+    goals: Erkennen möglicher Profile von Bibliotheken und Einsicht in ihre Notwendigkeit; Einsicht in die Notwendigkeit kurz-, mittel- und langfristiger Zielgruppen-Strategien; Kenntnisse, Fähigkeiten und Fertigkeiten zur Bestimmung von Marktsegmenten in der konkreten Praxissituation; Kenntnisse, Fähigkeiten und Fertigkeiten zur Anwendung des Marketing-Mix auf ein Marktsegment und ein Produkt.
+    topics:
+      - Konzeptuelle Überlegungen zur Ausrichtung von Bibliotheksdienstleistungen auf den Absatzmarkt; Einflussfaktoren und Rahmenbedingungen
+      - Absatzmarketing an Fallbeispielen von Bibliotheken unterschiedlichen Typs sowie einzelner Produkte (Produktmarketing)
+      - Instrumentarien Segmentation, Gemeinwesenanalyse, Konkurrenzanalyse, StärkenSchwächen-Analyse
+      - Exemplarische Anwendung der Instrumente des Marketing-Mix (Produkt-, Kommunikations-, Distributions- und Gegenleistungsgestaltung) auf ein Marktsegment an einem Fallbeispiel
+      - Entwicklung eines Produktes an Fallbeispielen
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Zielgruppenorientierte Dienstleistungen.
+          en: Target-group-oriented services.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: Ermittlung von Zielgruppenbedarfen.
+          en: Identifying target-group needs.
+  - code: F978
+    title: Latein zur Erschließung von Medien und Musealien
+    credits: 5
+    category: wahlpflicht
+    goals: Grundkenntnisse der lateinischen Grammatik; Fähigkeit, dokumentarisch wichtige lateinische Begriffe und Abkürzungen auf historischen Objekten zu erkennen und zu verstehen.
+    topics:
+      - Grundregeln der Deklination und Konjugation im Lateinischen
+      - Lesen kleiner Texte, Verständnisübungen zum Zusammenhang typischer Verbindungen und Wörter
+      - Übersetzung einfacher lateinischer Inschriften an ausgewählten Beispielen
+      - Dokumentarisch wichtige lateinische Begriffe, Wendungen und Abkürzungen (Eigentümer- und Urheberangaben, z.B. in der Druckgrafik; bibliographisch relevante Angaben auf Titelblättern und anderen formal bedeutsamen Stellen in älteren Büchern)
+      - Lateinische Ziffern und Zahlen
+      - Einführung in die kulturhistorischen Zusammenhänge der ausgewählten Textbeispiele
+      - Tradition und Transformation lateinischer Wörter in den lebenden Sprachen in Einzelbeispielen (Fremdwörter und Abkürzungen im Deutschen; transformierte lateinische Wörter im Englischen)
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 2
+        note:
+          de: Lateinische Terminologie für die Erschließung.
+          en: Latin terminology for indexing.
+  - code: G075
+    title: Kollaborative und automatisierte Inhaltserschließung
+    credits: 5
+    category: wahlpflicht
+    goals: 'Die Studierenden können: automatisierten Verfahren der Inhaltserschließung erläutern, einsetzen und evaluieren; kollaborative Verfahren für nutzergenerierte Metadaten zur Verzeichnung von Medien verschiedener Gattungen diskutieren; die Verwendungsmöglichkeiten verschiedener Verfahren der Inhaltserschließung vergleichen; Kriterien für die Indexierungsqualität erläutern und entsprechende Qualitätsmaße berechnen.'
+    topics:
+      - Funktionsweise und bibliothekarische Anwendung automatisierter Verfahren der Inhaltserschließung
+      - kollaborative Erschließungsverfahren wie social tagging, social cataloguing oder wissenschaftliche soziale Netzwerke
+      - Vergleich verschiedener Methoden und Indexierungssprachen in der Anwendung in öffentlichen und wissenschaftlichen Bibliotheken
+      - Qualitätsmaße für inhaltsbeschreibende Metadaten
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Kollaborative und automatisierte Inhaltserschließung.
+          en: Collaborative and automated subject indexing.
+      - framework: quadriga-dlf
+        competency: '4.1'
+        level: 2
+        note:
+          de: Automatisierte Verfahren der Erschließung.
+          en: Automated indexing methods.
+  - code: G127
+    title: Öffentlichkeitsarbeit
+    credits: 5
+    category: vertiefung
+    goals: Kenntnisse und grundlegende Fähigkeiten zur Planung von Öffentlichkeitsarbeit, Erkennen notwendiger Ressourcen; Kenntnisse, Fähigkeiten und Fertigkeiten der notwendigen Arbeitsschritte für die Realisierung einzelner Maßnahmen der Öffentlichkeitsarbeit; Fähigkeit zur Adaption des Einzelbeispiels auf andere Anwendungsfälle.
+    topics:
+      - Ziele, Zielgruppen und Methoden der Öffentlichkeitsarbeit von Bibliotheken und Informationseinrichtungen
+      - Öffentlichkeitsarbeit in der Organisationsstruktur von Bibliotheken und Informationseinrichtungen
+      - Planungsprozess der Öffentlichkeitsarbeit, Qualifikationsanforderungen an das Personal
+      - 'Bearbeitung eines Fallbeispiels mit den Instrumenten der Öffentlichkeitsarbeit/Werbung: Planung, Realisierung, Evaluierung, Präsentation'
+      - 'Studienschwerpunkt: Literatur- und Medienvermittlung'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Öffentlichkeitsarbeit und Zielgruppenkommunikation.
+          en: Public relations and target-group communication.
+      - framework: quadriga-dlf
+        competency: '4.2'
+        level: 1
+        note:
+          de: Gestaltung von Informations- und Werbemitteln.
+          en: Design of information and promotional materials.
+  - code: G131
+    title: Literaturbewertung und -vermittlung
+    credits: 5
+    category: vertiefung
+    goals: Die Studierenden verfügen über Kenntnisse und Fähigkeiten, Trends und Entwicklungen auf dem Literatur- und Medienmarkt zu beobachten und für die Bibliothek nutzbar zu machen; kennen bedeutsame literarische Titel und ausgewählte populäre Genres der Unterhaltungsliteratur als Voraussetzung für den Bestandsaufbau und die Benutzerberatung; können Literatur bewerten und zielgruppenspezifisch vermitteln.
+    topics:
+      - Literatur- und Medienmarkt, Informationsquellen für die Beobachtung des Marktes und für den Bestandsaufbau
+      - 'Einblicke in die internationale Literaturentwicklung: Klassiker, zeitgenössische Literatur und Neuerscheinungen im Kontext ausgewählter Nationalliteraturen und Literaturdiskussionen'
+      - Ausgewählte Genres der Unterhaltungsliteratur unter besonderer Berücksichtigung ihrer Bedeutung für Bibliotheken
+      - Lektüre, Interpretation und Diskussion exemplarischer Werke
+      - Formen und Methoden der Literaturvermittlung
+      - 'Studienschwerpunkt: Literatur- und Medienvermittlung; auch Kinder- und Jugendbibliotheksarbeit'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Literaturbewertung und -vermittlung.
+          en: Literature evaluation and dissemination.
+      - framework: quadriga-dlf
+        competency: '1.2'
+        level: 1
+        note:
+          de: Kriterien der Literaturauswahl.
+          en: Criteria for literature selection.
+  - code: G188
+    title: Historische Bestände
+    credits: 5
+    category: wahlpflicht
+    goals: Kenntnis der Grundsätze der Bestandserhaltung; Fähigkeit zum sachgerechten Umgang mit dem historischen Bestand; Fähigkeit zur Beurteilung von Schäden am Bibliotheksbestand; Kenntnis wesentlicher Maßnahmen der Bestandserhaltung zur Prävention und Behebung von Bestandsschäden; Kenntnis der Spezifik historischer Bestände und ihrer besonderen Anforderungen; Kenntnisse über Institutionen und Programme der Pflege historischer Bestände in Deutschland; Kenntnis grundlegender Informationsressourcen zum Nachweis alter Drucke und Fähigkeit zu ihrer professionellen Benutzung; Fähigkeit zur formalen Erschließung alter Drucke.
+    topics:
+      - 'Bestandserhaltung:'
+      - Grundsätze der Bestandserhaltung in Bibliotheken
+      - Präventive Maßnahmen der Bestandserhaltung
+      - Konservierung und Restaurierung
+      - 'Notfallplanung und Notfallverbünde Spezifik historischer Bestände / Katalogisierung alter Drucke:'
+      - Spezifik historischer Bestände und ihrer besonderen Anforderungen hinsichtlich Erschließung, Benutzung und Bestandspflege
+      - Institutionen und Programme der Pflege historischer Bestände in Deutschland
+      - Grundlegende Informationsressourcen zum Nachweis alter Drucke
+      - Regeln für die Katalogisierung alter Drucke
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 2
+        note:
+          de: Erschließung historischer Bestände.
+          en: Indexing of historical collections.
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 1
+        note:
+          de: Erhaltung historischer Bestände.
+          en: Preservation of historical collections.
+  - code: G278
+    title: Archivkunde
+    credits: 5
+    category: wahlpflicht
+    goals: Die Studentinnen/Studenten besitzen Kenntnisse über die verschiedenen archivalischen Quellengattungen und die Fähigkeit zu deren Identifizierung. Sie verfügen über Grundkenntnisse zur Organisationsstruktur des Archivwesens und zur Überlieferungsbildung sowie -erschließung in Archiven. Sie kennen die grundsätzlichen Anforderungen der Magazinierung, der Handhabung und des Bestandsschutzes von archivischen Beständen. Sie sind fähig, archivische von musealen Verfahrensweisen zu unterscheiden und Archive als Dienstleister wahrzunehmen sowie zu nutzen.
+    topics:
+      - Typologie und Organisation des deutschen Archivwesens
+      - Quellenkundliche Grundlagen, archivalische Quellengattungen (Urkunden, Akten, Amtsbücher, Karten und Pläne, Selbstzeugnisse u.a.)
+      - archivische Sammlungen (Zeitungen, Nachlässe, Fotografien und Filme, Plakate und Ansichtskarten, Stadtansichten u.a.), insbes. Bildmedien der Wirtschaft
+      - 'Spezifik der Überlieferungsbildung in Archiven: Übernehmen, Bewerten, Erschließen'
+      - digitale Archivinformationssysteme und Austauschformate
+      - Bestandserhaltung und -schutz in Archiven
+      - Archivtechnik, archivspezifische Verfahrensweisen der Magazinierung, Sicherungs- und Schutzverfilmung, Archivausstattung
+      - Archivpädagogik/historische Bildungsarbeit in Archiven
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 2
+        note:
+          de: Archivkunde und Archivierung.
+          en: Archival science and archiving.
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 1
+        note:
+          de: Ordnung und Erschließung archivalischer Bestände.
+          en: Arrangement and description of archival collections.
+  - code: G371
+    title: Internationales Bibliotheks- und Informationswesen
+    credits: 5
+    category: wahlpflicht
+    goals: Kenntnisse über das Bibliotheks- und Informationswesen einzelner Länder innerhalb und außerhalb Europas; Fähigkeit zur vergleichenden Analyse und Einordnung nationaler Traditionen und Besonderheiten der Organisation der Literaturversorgung in den behandelten Ländern.
+    topics:
+      - 'Das Eigene im Fremden: Comparative Librarianship vs. Alternative Konzepte zur Analyse der "Anderen"'
+      - Wissenschaftliche und Öffentliche Bibliotheken sowie die Strukturen der nationalen Informationsversorgung in Frankreich, Großbritannien, Skandinavien, Spanien, Mittel- und Osteuropa sowie den USA
+      - Die Rolle der Nationalbibliotheken sowie anderer zentraler Institutionen und Organisationen für die internationale Kooperation
+      - Internationale Arbeitsgemeinschaften und Verbünde
+      - Globalisierung der Informationsvermittlung und die internationale Zusammenarbeit von Bibliotheken
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Internationales Bibliotheks- und Informationswesen.
+          en: International librarianship.
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 1
+        note:
+          de: Internationale Rahmenbedingungen.
+          en: International frameworks.
+  - code: G498
+    title: Buchhandel/Verlagswirtschaft
+    credits: 5
+    category: vertiefung
+    goals: Kenntnisse über Struktur und Arbeitsweise des herstellenden und verbreitenden Buchhandels sowie des Verlagswesens (Presse- und Buchverlage); Printmedienunternehmen als Verhandlungspartner verstehen; Grundlagenwissen zu wirtschaftlichen Prozessen in der Buch- und Medienbranche; Fähigkeit zu einfacher berufspraktischer Tätigkeit in Printmedienunternehmen (Buchverlage, Presseverlage, Handelsunternehmen); Fähigkeit zu einfacher berufspraktischer Tätigkeit in Unternehmen der Buchbranche.
+    topics:
+      - Einführung in grundlegende Strukturen und Tendenzen des Buchmarktes
+      - Aufgaben und Bedeutung des Buch- und Pressehandels, Organisation der Branche
+      - Verlagsleistungen und Prozesse (unter besonderer Berücksichtigung bibliothekswissenschaftlicher Fachverlage), Verlagsmanagement und -marketing
+      - Leistungen und Arbeitsweise des verbreitenden Buchhandels, des Antiquariatsbuchhandels und des Online-Buchhandels
+      - 'Publizieren und Distribuieren von Inhalten: kundenbedarfsgerecht (von Printmedien bis zu elektronischen Publikationsformen)'
+      - 'Studienschwerpunkt: Literatur- und Medienvermittlung'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 2
+        note:
+          de: Buchhandel und Verlagswirtschaft.
+          en: Book trade and publishing industry.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Wertschöpfungsketten des Publizierens.
+          en: Publishing value chains.
+  - code: G511
+    title: Information - Gedächtnis - Kulturerbe
+    credits: 5
+    category: wahlpflicht
+    goals: Die Studentinnen/Studenten kennen den aktuellen Diskussionsstand zu Metastrukturen für Archive, Bibliotheken und Museen, insbesondere zu deren konkurrierenden Theorieentwürfen bezüglich der Bewahrung und Vermittlung von Kulturgütern. Sie können ein reales Fallbeispiel hinsichtlich dessen Bezugnahme auf diese Metastrukturen untersuchen und deren Auswirkung auf das jeweilige Leistungsangebot beurteilen. Die Studentinnen/Studenten erwerben so die Kompetenz, ihr künftiges berufliches Handeln mit unterschiedlichen theoretischen Grundierungen zu versehen sowie die Relevanz und Akzeptanz dieser Haltung einzuschätzen.
+    topics:
+      - Charakteristika der drei Arten von Gedächtnisinstitutionen (Archive, Bibliotheken, Museen), Typologien dieser Institutionen, Abgrenzungsmerkmale, Hybridformen, internationale Ausprägungen
+      - Dachorganisationen als Abbilder von institutionellen Metastrukturen der Gedächtnisinstitutionen (z. B. Deutscher Kulturrat, Blue Shield)
+      - Definierende/Interessengruppen, Arbeitsprozesse, Leistungen, idealtypische Abgrenzungen von Informations- und Dokumentationseinrichtungen, Forschungsinfrastruktur, KulturellesGedächtnis-Institutionen, Kultureinrichtungen/kulturelle Infrastruktur, Kulturerbe-Institutionen, Gedenkstätten/historische Orte, Erinnerungsorte, Geschichtskultur, Institutionen für Kulturelle Bildung
+      - Verhältnis der auf diese Konzepte bezogenen Theorien zu hergebrachten Vorstellungen von Archiv-, Bibliotheks- und Museumsarbeit und deren theoretischen Hintergründen
+      - Konsequenzen aus der Zuordnung zu diesen Metastrukturen für das Leistungsprofil von Archiven, Bibliotheken und Museen
+      - Überprüfung der Einwirkung der genannten Metastrukturen auf die Geschichte und die gegenwärtigen Handlungsfelder von Archiven, Bibliotheken oder Museen sowie deren gesellschaftliche Relevanz (in Fallstudien)
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Gedächtnisinstitutionen und kulturelles Erbe.
+          en: Memory institutions and cultural heritage.
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 1
+        note:
+          de: Ethik und Recht des kulturellen Erbes.
+          en: Ethics and law of cultural heritage.
+  - code: G664
+    title: Medienvermittlung
+    credits: 5
+    category: vertiefung
+    goals: Die Studierenden erkennen die vermittelnde Funktion von Informationsdienstleistungen zwischen Bibliotheksbeschäftigten und -nutzenden. Die Studierenden wissen, mittels welcher Quellen, sie sich über die Entwicklung auf dem deutschen Sachbuchmarkt und in der internationalen Film-, Musik- und Gaming-Szene informieren können. Sie können Medien dieser Genres bewerten und Formate für deren Vermittlung entwickeln. Die Studierenden kennen die Besonderheiten der zielgruppenspezifischen Medienvermittlung in unterschiedlichen Bibliothekstypen.
+    topics:
+      - 'Marktsichtung und -analyse in den Genres: wissenschaftliche Literatur, Sachliteratur, Zeitungen und Zeitschriften, digitalen und Online-Medien einschließlich Streaming-Diensten, Film-, Musikmedien und Videospiele'
+      - Bedarfsgerechte Medienauswahl und Bestandsentwicklung
+      - Schulungen und Veranstaltungsformate für die Vermittlung von Medien
+      - Medienvermittlung in wissenschaftlichen Spezialbibliotheken
+      - Besondere Formen der Medienvermittlung in speziellen Bibliothekstypen wie mobilen Bibliotheken, Krankenhaus- oder Gefängnisbibliotheken
+      - 'Studienschwerpunkt: Literatur- und Medienvermittlung'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Medienvermittlung und didaktische Aufbereitung.
+          en: Media dissemination and didactic preparation.
+  - code: G775
+    title: Kunstmarketing, Kunstverleih
+    credits: 5
+    category: wahlpflicht
+    goals: Die Studentinnen/Studenten besitzen Kenntnisse der besonderen Rahmenbedingungen bildender Gegenwartskunst sowie einschlägiger Förderinstrumente. Sie kennen die rechtlichen und organisatorischen Besonderheiten der Artotheksarbeit. Die Studentinnen/Studenten besitzen die Fähigkeit, ein Artothek-Angebot zu planen und zu organisieren.
+    topics:
+      - Grundverständnis von bildender Kunst aus den Perspektiven der Produktion und Rezeption
+      - Fachinformation (Gegenwarts-)Kunst
+      - Bildende Kunst als Qualifikationsprofil, Werk und Lebensunterhalt
+      - erwerbswirtschaftliche und gesellschaftsorientierte Formen der Kunstförderung, Kunstpräsentation und -vermittlung in Deutschland
+      - 'Produktvarianz: Zweitfassungen, Multiples, Druckgrafik, Fotoabzug, Kunstdruck, 3D-Druck'
+      - Absatzmärkte für bildende Kunst; das Kunstpublikum
+      - Entwicklungsgeschichte, Zielsetzungen und Struktur des Kunstverleihs
+      - Bestandsaufbau und -pflege, Verwaltung und Marketing öffentlich zugänglicher Artotheken
+      - Differenzen in der Bestandserschließung und -bereithaltung gegenüber Bibliotheken und Museen
+      - Rechtsfragen im Zusammenhang des Kunstverleihs
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Kunstmarketing und Kunstverleih.
+          en: Art marketing and art lending.
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 1
+        note:
+          de: Vermarktung von Kulturgütern.
+          en: Marketing of cultural goods.
+  - code: G812
+    title: Kinder- und Jugendliteratur
+    credits: 5
+    category: vertiefung
+    goals: Die Studierenden kennen die Entwicklung und die Vielfalt der Genres und Themen in der Kinder- und Jugendliteratur; sind in der Lage, den Kinder- und Jugendbuchmarkt gezielt zu sichten und nach pädagogischen Gesichtpunkten geeignete Titel zu unterschiedlichen Themen auszuwählen und zu bewerten; können Kinder- und Jugendliteratur altersspezifisch vermitteln.
+    topics:
+      - Entwicklung der Kinder- und Jugendliteratur im deutschsprachigen Raum
+      - Spezifika des Kinder- und Jugendbuchmarktes und Informationsquellen zur Marktsichtung
+      - Ausgewählte Genres und Themen der Kinder- und Jugendliteratur, Gesichtspunkte für die Bewertung
+      - Marktsichtung und Auswahl von Titeln der Kinder- und Jugendliteratur zu einem ausgewählten Thema für eine spezifische Altersgruppe
+      - Formen der altersspezifischen Vermittlung, Methoden aus der Leseförderung und Medienpädagogik
+      - 'Studienschwerpunkt: Kinder- und Jugendbibliotheksarbeit'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Kinder- und Jugendliteratur.
+          en: Literature for children and young adults.
+  - code: G873
+    title: Erschließungstechniken aus den Historischen Hilfswissenschaften
+    credits: 5
+    category: wahlpflicht
+    goals: Die Studentinnen/Studenten verfügen über Überblickskenntnisse zu museumsrelevanten Historischen Hilfswissenschaften und ihren Quellengruppen. Sie haben Fähigkeiten und Fertigkeiten erworben, um Grundsätze und Methoden von ausgewählten Historischen Hilfswissenschaften bei der Bestimmung, der Datierung und Beschreibung von Musealien anzuwenden. Die Studentinnen/Studenten besitzen Überblickskenntnisse zur Schriftentwicklung seit der ausgehenden Antike und sind in der Lage, handschriftliche Dokumente ab dem späten 18. Jahrhundert zu lesen, zu transkribieren und zeitlich einzuordnen.
+    topics:
+      - Quellenbegriff der Historischen Hilfswissenschaften und der Geschichtswissenschaften; Überblick zu Quellengattungen verschiedener textlicher, bildlicher sowie dreidimensionaler Art
+      - Gegenstand der Diplomatik und Aktenkunde
+      - Überblickskenntnisse zur Siegelkunde (Spraghistik)
+      - numismatische Grundbegriffe, wesentliche Etappen der Münzgeschichte, Abgrenzung zu Medaillen
+      - Entwicklung des Wappenwesens, Terminologie der Heraldik
+      - heraldische und genealogische Quellen
+      - Orden des Mittelalters und der Frühen Neuzeit, modernes Auszeichnungswesen
+      - Entwicklung und Gebrauch der Datierungsformen, Hilfsmittel der Historischen Chronologie
+      - Schriftentwicklung von der Antike bis zum 20. Jahrhundert, materielle Grundlagen des Schreibens (Beschreibstoffe, Schreibwerkzeuge, Schreibstoffe)
+      - Lesen und Transkribieren von handschriftlichen Dokumenten des 18. und 19. Jahrhunderts, Regeln der Transkription
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 2
+        note:
+          de: Erschließungstechniken der Historischen Hilfswissenschaften.
+          en: Indexing techniques of the auxiliary historical sciences.
+      - framework: quadriga-dlf
+        competency: '1.2'
+        level: 1
+        note:
+          de: Quellenkritik und -analyse.
+          en: Source criticism and analysis.
+  - code: G903
+    title: Musikbibliotheken
+    credits: 5
+    category: wahlpflicht
+    goals: Überblickskenntnisse in Musiktheorie und Musikgeschichte; Kenntnis der wesentlichen musikalischen Formen und Gattungen; Verständnis der Bestandsspezifik in Musikbibliotheken und Kenntnis musikbezogener Bestandsgruppen und ihrer Spezifik hinsichtlich Erwerbung, Erschließung und Vermittlung; Kenntnis der Typologie und Organisation des Musikinformationswesens; Kenntnis musikspezifischer Typen von Informationsressourcen zur bibliographischen und Faktenrecherche; Kenntnis ausgewählter grundlegender musikrelevanter Informationsressourcen und Fähigkeit zu ihrer professionellen Benutzung; Fähigkeit zur formalen Erschließung von Musikdrucken und Musikton- bzw. MusikBildtonträgern nach RDA.
+    topics:
+      - 'Einführung in die musikbibliothekarische Arbeit:'
+      - Musiktheoretische und musikhistorische Grundlagen; musikalische Formen und Gattungen
+      - 'Bestandsspezifik: Musikdrucke, Musikschriften, Musiktonträger, digitale Musikformate'
+      - Typologie und Organisation des Musikinformationswesens
+      - 'Typologie und ausgewählte Beispiele musikrelevanter Informationsressourcen Katalogisierung nach RDA: Formale Erschließung von Musikdrucken, Musiktonträgern und Musik-Bildtonträgern nach RDA'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 1
+        note:
+          de: Musikbibliothekarische Erschließung.
+          en: Music library cataloguing.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Vermittlung von Musikbeständen.
+          en: Dissemination of music collections.
+  - code: G916
+    title: Rezensionen als wertende Metatexte
+    credits: 5
+    category: wahlpflicht
+    goals: Fähigkeit zur Analyse unterschiedlicher Rezensionstypen als bibliothekarisch relevanten Metatexten; Kenntnis unterschiedlicher textsortenspezifischer Bewertungsmechanismen in Abhängigkeit von der Zielgruppe der Rezensenten; Fähigkeit zur Anwendung der Analyseergebnisse beim Verfassen eigener wertender Metatexte für unterschiedliche Zielgruppen.
+    topics:
+      - Analyse wertender Metatexte (u.a. LK-Besprechungen, Feuilletonkritiken in Zeitungen und Online-Medien, wissenschaftliche Fachrezensionen, Kundenkritiken auf OnlineBuchhandelsportalen) hinsichtlich ihrer Wirkungsmechanismen sowie ihrer referierenden bzw. einordnenden Qualitäten
+      - Rezensionen als wertende Literaturinformation und praktizierte Literaturvermittlung
+      - Auswirkungen von Publikationsort und Zielgruppen auf die Gestaltung verschiedener Rezensiontypen
+      - 'Probleme der Glaubwürdigkeit: Strategien zur plausiblen Argumentation in der Literaturbewertung'
+      - Verfassen eigener Rezensionen und deren direkte kritische Diskussion im Seminar
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Rezensionen und wertende Metatexte.
+          en: Reviews and evaluative metatexts.
+      - framework: quadriga-dlf
+        competency: '1.2'
+        level: 1
+        note:
+          de: Bewertung von Medien und Quellen.
+          en: Evaluation of media and sources.
+  - code: G945
+    title: Bibliotheksarbeit mit Kindern und Jugendlichen
+    credits: 5
+    category: vertiefung
+    goals: Die Studierenden kennen die Aufgaben und die Arbeitsfelder der Bibliotheksarbeit mit Kindern und Jugendlichen; verfügen über fundierte Kenntnisse im Umgang mit den betreffenden Zielgruppen und kennen die spezifischen, den Lebensabschnitten Kindheit und Jugend angepassten Formen und Methoden der Medien- und Literaturvermittlung; sind in der Lage, bibliothekspädagogische Angebote für Kinder und Jugendliche umzusetzen und weiterzuentwickeln.
+    topics:
+      - Entwicklung der Kinder- und Jugendbibliotheksarbeit
+      - Aufgaben und Ziele der Bibliotheksarbeit für Kinder und Jugendliche
+      - Lebensphasen Kindheit und Jugend, Freizeit- und Medienverhalten, Ansätze der Entwicklungspsychologie
+      - 'Medienauswahl, -angebot und -präsentation: Standards und Empfehlungen'
+      - Lage, Einrichtung und Gestaltung von Kinder- und Jugendbibliotheken
+      - 'Analoge und digitale bibliothekspädagogische Angebote: Formen, Methoden und Praxisbeispiele'
+      - Erprobung eines Konzepts
+      - 'Studienschwerpunkt: Kinder- und Jugendbibliotheksarbeit'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Bibliotheksarbeit mit Kindern und Jugendlichen.
+          en: Library services for children and young adults.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: Zielgruppengerechte Recherche und Vermittlung.
+          en: Target-group-appropriate retrieval and dissemination.
+  - code: I397
+    title: Medienkompetenz/Medienherstellung
+    credits: 5
+    category: vertiefung
+    goals: Die Studierenden haben Computer- und Videospiele kennengelernt und einen Überblick über verschiedene Spielertypen und Spielegenres erworben. Sie wissen, wie sich Computer- und Videospiele pädagogisch beurteilen lassen. Die Studierenden haben Medienkompetenz und die in neuen medialen Handlungsfeldern des Internets erforderlichen Rechtskenntnisse erworben. Die Studierenden haben Fähigkeiten zur Nutzung, Gestaltung und Herstellung interaktiver Medien im Hinblick auf die Durchführung von medienpädagogischen Projekten erworben.
+    topics:
+      - 'Computer- und Videospiele: Genres, Spielertypen, Bewertung und praktische Anwendung'
+      - Erstellen von Blogs, Wikis und Nutzung anderer Web 2.0 Anwendungen (z.B. Podcasts, Screencasts, Filme für Youtube)
+      - Grundkenntnisse zum Urheberrecht, Persönlichkeitsrecht einschließlich Bildnisrecht, Providerverantwortlichkeit und Jugendschutz im Internet
+      - 'Studienschwerpunkt: Kinder- und Jugendbibliotheksarbeit'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Medienkompetenz und Medienherstellung.
+          en: Media literacy and media production.
+      - framework: quadriga-dlf
+        competency: '4.2'
+        level: 1
+        note:
+          de: Produktion und Gestaltung von Medien.
+          en: Production and design of media.
+  - code: G867
+    title: Bachelormodul
+    credits: 15
+    category: pflicht
+    goals: Fähigkeit, in der Bachelorarbeit ein fachspezifisches Problem innerhalb einer vorgegebenen Frist selbstständig nach wissenschaftlichen Methoden zu bearbeiten; Fähigkeit, im begleitenden Bachelorseminar die Probleme, Ziele und Lösungsansätze der eigenen Bachelorarbeit zu reflektieren und zu präsentieren sowie in den aktuellen wissenschaftlichen Kontext einzuordnen.
+    topics:
+      - 'Bachelorseminar: Vgl. § 20 PrüfO-BKB: Das Bachelorseminar (3 Leistungspunkte) findet begleitend zur Bachelorarbeit (12 Leistungspunkte) statt und beinhaltet eine Präsentation. Bachelorarbeit: Vgl. § 20 PrüfO-BKB: Bearbeitung eines fachspezifischen Problems innerhalb einer vorgegebenen Frist selbstständig nach wissenschaftlichen Methoden'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 3
+        note:
+          de: Wissenschaftliche Abschlussarbeit und Präsentation.
+          en: Academic thesis and presentation.
+      - framework: quadriga-dlf
+        competency: '4.3'
+        level: 2
+        note:
+          de: Bearbeitung eines fachspezifischen Problems.
+          en: Working on a subject-specific problem.
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 2
+        note:
+          de: Wissenschaftliche Methoden und Redlichkeit.
+          en: Academic methods and integrity.

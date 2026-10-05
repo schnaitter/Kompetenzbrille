@@ -3,3 +3,4 @@ programs:
   - data/programs/hu-is-ma.yaml
   - data/programs/hu-biw-ma-wb.yaml
   - data/programs/hu-wf-ma.yaml
+  - data/programs/htwk-biw-ba.yaml
