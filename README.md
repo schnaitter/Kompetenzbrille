@@ -3,13 +3,23 @@
 A plain client-side HTML/CSS/JavaScript app that loads representations of
 **competency frameworks** and **study programs** and provides bidirectional
 views/filters. Currently it focuses on the **QUADRIGA data literacy framework
-v4** (the two translations DE + EN are built in) and four study programs of the
-Institut für Bibliotheks- und Informationswissenschaft (HU Berlin):
+v4** (the two translations DE + EN are built in) and six information-science
+study programs from three institutions:
+
+**Humboldt-Universität zu Berlin (HU)**
 
 - BA Bibliotheks- und Informationswissenschaft
 - MA Information Science
 - MA Bibliotheks- und Informationswissenschaft (weiterbildend, Fernstudium)
 - MA Wissenschaftsforschung
+
+**Hochschule für Technik, Wirtschaft und Kultur Leipzig (HTWK)**
+
+- BA Bibliotheks- und Informationswissenschaft
+
+**Fachhochschule Graubünden (FHGR)**
+
+- BA Information Science
 
 It provides bidirectional views/filters:
 
@@ -31,6 +41,10 @@ modules.
 
 A single **Language** switcher (Sprache) controls the UI strings, the framework
 translation and the bilingual mapping notes at once.
+
+The study-program selector labels each program with its institution
+abbreviation (HU, HTWK, FHGR) and links to the currently shown institution's
+website.
 
 > **Note:** the QUADRIGA framework is fixed (its two translations are loaded
 > from `data/frameworks/`); additional frameworks cannot be added via the
@@ -110,6 +124,10 @@ language switcher selects between them.
 ```yaml
 id: hu-berlin-biw-ba
 title: …
+institution: Humboldt-Universität zu Berlin, Philosophische Fakultät
+institutionAbbr: HU            # shown in the program selector
+institutionUrl: https://www.hu-berlin.de/   # linked in the UI
+language: de
 source: assets/….pdf
 sourceLabel: …
 categories:
@@ -205,9 +223,10 @@ js/app.js                data loading, state, rendering
 js/vendor/js-yaml.min.js  vendored YAML parser (js-yaml 4.1.0, MIT)
 data/manifest.yaml       registry of the study programs
 data/frameworks/         QUADRIGA v4 framework (fixed: de + en)
-data/programs/           study program representations (HU Berlin: BA BIW,
+data/programs/           study program representations — HU Berlin (BA BIW,
                         MA Information Science, MA BIW weiterbildend,
-                        MA Wissenschaftsforschung)
+                        MA Wissenschaftsforschung), HTWK Leipzig (BA BIW),
+                        FH Graubünden (BA Information Science)
 data/schemas/            JSON Schema + JSON-LD context for the data formats
 data/jsonld/             JSON-LD serializations (generated from the YAML)
 scripts/                 data validation + YAML→JSON-LD + favicon generation
