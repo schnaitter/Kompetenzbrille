@@ -407,6 +407,54 @@ table.matrix td.cell.empty:hover { outline: none; }
 .legend { display: flex; gap: 16px; align-items: center; font-size: 12.5px; margin: 0 0 10px; flex-wrap: wrap; }
 .legend .item { display: inline-flex; gap: 6px; align-items: center; }
 
+/* ---------- hover popover (matrix headers) ---------- */
+.popover {
+  position: fixed;
+  z-index: 60;
+  max-width: 360px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(20, 30, 50, .16);
+  padding: 12px 14px;
+  font-size: 12.5px;
+}
+.popover[hidden] { display: none; }
+.popover .pop-head { font-weight: 700; font-size: 13.5px; margin: 0 0 5px; }
+.popover .pop-code { font-weight: 800; color: var(--accent); margin-right: 5px; }
+.popover .pop-kv { margin: 0 0 8px; color: var(--ink-soft); font-size: 12px; }
+.popover .pop-goals { margin: 0 0 8px; color: var(--ink-soft); }
+.popover h3 {
+  margin: 10px 0 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--ink-soft);
+}
+.popover .pop-list { margin: 0; padding: 0; list-style: none; }
+.popover .pop-list li { display: flex; gap: 6px; align-items: center; padding: 1px 0; }
+.popover .pop-list .code { font-weight: 700; }
+.popover .pop-list .pop-comp-title { flex: 1; }
+.popover .pop-list .lvl-dots { flex: none; }
+.popover .pop-more { margin: 4px 0 0; color: var(--ink-soft); font-size: 12px; }
+.popover .pop-dim { margin: 3px 0; }
+.popover .pop-dim .dim-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: var(--ink-soft);
+  margin-right: 2px;
+}
+.popover .pop-count { margin: 10px 0 0; font-size: 12.5px; }
+.popover .pop-hint {
+  margin: 10px 0 0;
+  padding-top: 7px;
+  border-top: 1px solid var(--line);
+  font-size: 11.5px;
+  color: var(--ink-soft);
+}
+
 /* ---------- modal ---------- */
 .modal-overlay {
   position: fixed;

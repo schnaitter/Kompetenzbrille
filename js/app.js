@@ -589,7 +589,7 @@
 
     h += '<div class="matrix-wrap"><table class="matrix"><thead><tr><th></th>';
     mods.forEach(function (m) {
-      h += '<th data-action="open-module" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '" title="' + esc(m.code + " – " + m.title) + '">' + esc(m.code) + "</th>";
+      h += '<th data-action="open-module" data-pop="module" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '">' + esc(m.code) + "</th>";
     });
     h += "</tr></thead><tbody>";
 
@@ -599,7 +599,7 @@
       if (!comps.length) return;
       h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '"><td colspan="' + (mods.length + 1) + '">' + esc(ph.id + ". " + ph.title) + "</td></tr>";
       comps.forEach(function (c) {
-        h += '<tr style="--phase-color:' + phaseColorVar(c.phase) + '"><td class="row-head" data-action="open-comp" data-comp="' + esc(c.code) + '" title="' + esc(c.title) + '"><span class="code">' + esc(c.code) + "</span>" + esc(c.title) + "</td>";
+        h += '<tr style="--phase-color:' + phaseColorVar(c.phase) + '"><td class="row-head" data-action="open-comp" data-pop="comp" data-comp="' + esc(c.code) + '"><span class="code">' + esc(c.code) + "</span>" + esc(c.title) + "</td>";
         mods.forEach(function (m) {
           var entries = (idx[c.code] || []).filter(function (e) { return e.module.code === m.code; });
           if (entries.length) {
@@ -616,6 +616,139 @@
     h += "</tbody></table></div>";
     main.innerHTML = h;
   }
+
+  /* ================= hover popover (matrix headers) ================= */
+
+  var popShowTimer = null;
+  var popHideTimer = null;
+  var popAnchor = null;
+
+  function truncate(s, n) {
+    s = String(s == null ? "" : s).trim();
+    return s.length > n ? s.slice(0, n).replace(/\s+\S*$/, "") + "\u2026" : s;
+  }
+
+  function getPopover() {
+    var root = document.getElementById("popover-root");
+    if (!root.firstChild) root.innerHTML = '<div id="popover" class="popover" hidden></div>';
+    return root.firstChild;
+  }
+
+  function modulePopoverHtml(pid, code) {
+    var p = programById(pid);
+    var mod = p && moduleByCode(p, code);
+    var f = fw();
+    if (!p || !mod || !f) return "";
+    var maps = moduleMappings(mod).filter(function (m) { return compByCode(f, m.competency); });
+    maps.sort(function (a, b) { return a.competency.localeCompare(b.competency, undefined, { numeric: true }); });
+
+    var h = '<div class="pop-head"><span class="pop-code">' + esc(mod.code) + "</span>" + esc(mod.title) + "</div>";
+    h += '<p class="pop-kv">' + esc(p.title) + " \u00b7 " + esc(mod.credits + " " + t("credits")) +
+      ' \u00b7 <span class="cat-badge ' + esc(mod.category) + '">' + esc(catLabel(p, mod.category)) + "</span></p>";
+    if (mod.goals) h += '<p class="pop-goals">' + esc(truncate(mod.goals, 220)) + "</p>";
+
+    h += "<h3>" + esc(t("mappedCompetencies")) + " (" + maps.length + ')</h3><ul class="pop-list">';
+    var shown = Math.min(maps.length, 6);
+    for (var i = 0; i < shown; i++) {
+      var m = maps[i];
+      var c = compByCode(f, m.competency);
+      h += '<li><span class="code" style="color:' + phaseColorVar(c.phase) + '">' + esc(c.code) + '</span><span class="pop-comp-title">' +
+        esc(c.title) + "</span>" + levelDots(m.level) + "</li>";
+    }
+    h += "</ul>";
+    if (maps.length > shown) h += '<p class="pop-more">+ ' + (maps.length - shown) + " \u2026</p>";
+    h += '<p class="pop-hint">' + esc(t("popClickDetails")) + "</p>";
+    return h;
+  }
+
+  function compPopoverHtml(code) {
+    var f = fw();
+    var c = f && compByCode(f, code);
+    if (!f || !c) return "";
+    var ph = phaseById(f, c.phase);
+    var idx = competencyIndex([state.programId]);
+    var n = (idx[c.code] || []).length;
+
+    var h = '<div class="pop-head"><span class="pop-code" style="color:' + phaseColorVar(c.phase) + '">' + esc(c.code) + "</span>" + esc(c.title) + "</div>";
+    h += '<p class="pop-kv">' + esc(ph.id + ". " + ph.title) + "</p>";
+    f.dimensions.forEach(function (d) {
+      if (!c[d.id]) return;
+      h += '<div class="pop-dim"><span class="dim-label">' + esc(d.label) + ":</span> " + esc(truncate(c[d.id], 130)) + "</div>";
+    });
+    h += '<p class="pop-count">' + (n ? esc(t("addressedInModules").replace("{n}", n)) : esc(t("notMapped"))) + "</p>";
+    h += '<p class="pop-hint">' + esc(t("popClickDetails")) + "</p>";
+    return h;
+  }
+
+  function positionPopover(anchor, pop) {
+    var r = anchor.getBoundingClientRect();
+    var vw = window.innerWidth, vh = window.innerHeight;
+    pop.style.visibility = "hidden";
+    pop.hidden = false;
+    var w = pop.offsetWidth, h = pop.offsetHeight;
+    var x, y;
+    if (anchor.tagName === "TH") {
+      x = r.left + r.width / 2 - w / 2;   /* centered below the column header */
+      y = r.bottom + 8;
+    } else {
+      x = r.right + 10;                  /* right of the row head, flip if tight */
+      y = r.top + r.height / 2 - h / 2;
+      if (x + w > vw - 8) x = r.left - w - 10;
+    }
+    x = Math.max(8, Math.min(x, vw - w - 8));
+    y = Math.max(8, Math.min(y, vh - h - 8));
+    pop.style.left = x + "px";
+    pop.style.top = y + "px";
+    pop.style.visibility = "";
+  }
+
+  function popoverHtmlFor(el) {
+    var kind = el.getAttribute("data-pop");
+    if (kind === "module") return modulePopoverHtml(el.getAttribute("data-program"), el.getAttribute("data-module"));
+    if (kind === "comp") return compPopoverHtml(el.getAttribute("data-comp"));
+    return "";
+  }
+
+  function queueShowPopover(el) {
+    clearTimeout(popHideTimer);
+    var pop = getPopover();
+    if (popAnchor === el && !pop.hidden) return;
+    clearTimeout(popShowTimer);
+    popAnchor = el;
+    popShowTimer = setTimeout(function () {
+      if (!popAnchor) return;
+      var html = popoverHtmlFor(popAnchor);
+      if (!html) return;
+      pop.innerHTML = html;
+      positionPopover(popAnchor, pop);
+    }, 160);
+  }
+
+  function scheduleHidePopover() {
+    clearTimeout(popShowTimer);
+    popHideTimer = setTimeout(hidePopover, 220);
+  }
+
+  function hidePopover() {
+    clearTimeout(popShowTimer);
+    clearTimeout(popHideTimer);
+    popAnchor = null;
+    var pop = document.getElementById("popover");
+    if (pop) { pop.hidden = true; pop.innerHTML = ""; }
+  }
+
+  document.addEventListener("mouseover", function (e) {
+    var el = e.target.closest("[data-pop]");
+    if (el) {
+      queueShowPopover(el);
+    } else if (e.target.closest("#popover")) {
+      clearTimeout(popHideTimer);   /* keep it alive while hovering the popover */
+    } else {
+      scheduleHidePopover();
+    }
+  });
+
+  window.addEventListener("scroll", hidePopover, true);
 
   /* ================= modal ================= */
 
@@ -720,6 +853,7 @@
   function rerender() { validateState(); saveState(); renderAll(); }
 
   function renderAll() {
+    hidePopover();
     renderChrome();
     renderSidebar();
     if (state.view === "program") renderProgramView();
@@ -738,6 +872,7 @@
   document.addEventListener("click", function (e) {
     var el = e.target.closest("[data-action]");
     if (!el) return;
+    hidePopover();
     var action = el.getAttribute("data-action");
 
     switch (action) {

@@ -56,6 +56,8 @@ window.I18N = {
     legend: "Legende",
     mappedCompetencies: "Adressierte Kompetenzen",
     noModulesSelected: "Keine Module mit den aktuellen Filtern.",
+    popClickDetails: "Klick öffnet die Details",
+    addressedInModules: "Adressiert in {n} Modulen",
     catPflicht: "Pflicht",
     catWahlpflicht: "Wahlpflicht"
   },
@@ -114,6 +116,8 @@ window.I18N = {
     legend: "Legend",
     mappedCompetencies: "Addressed competencies",
     noModulesSelected: "No modules with the current filters.",
+    popClickDetails: "Click to open details",
+    addressedInModules: "Addressed in {n} modules",
     catPflicht: "Compulsory",
     catWahlpflicht: "Elective"
   }
