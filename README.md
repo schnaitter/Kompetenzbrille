@@ -145,6 +145,39 @@ its seven elective modules, and the BA is a Kombinationsstudiengang (Kernfach
 For study programs offered in German only, the German content is shown in both
 UI languages.
 
+### Schemas (`data/schemas/*.json`, `*.jsonld`)
+
+Both data formats are formally described (all data files reference their schema
+via a top-level `$schema:` key):
+
+| File | Purpose |
+|---|---|
+| `data/schemas/framework-schema.json` | JSON Schema 2020-12 for `data/frameworks/*.yaml` |
+| `data/schemas/program-schema.json` | JSON Schema 2020-12 for `data/programs/*.yaml` |
+| `data/schemas/framework-context.jsonld` | JSON-LD `@context` for framework data |
+| `data/schemas/program-context.jsonld` | JSON-LD `@context` for study-program data |
+| `data/schemas/vocabulary.jsonld` | the `kb:` vocabulary (classes/properties) both contexts draw on |
+| `data/jsonld/*.jsonld` | JSON-LD serializations of all data files (generated) |
+
+Cross-file constraints that JSON Schema cannot express (phase/category/
+framework/competency references) are listed in each schema's `$comment2`.
+Data files reference their schema via a `$schema:` key; both schemas also
+declare the JSON-LD keywords (`@context`, `@id`, `@type`) so a single JSON
+document can be valid JSON-LD *and* schema-valid data.
+
+The JSON-LD serializations are regenerated from the YAML sources with:
+
+```sh
+npm install                              # dev dependency: ajv
+npm run jsonld                           # writes data/jsonld/
+BASE=https://example.org/ npm run jsonld # custom IRI base
+```
+
+Both formats can be validated (schemas + cross-references + generated JSON-LD)
+with `npm run validate`. The same steps run in the `Validate data` GitHub
+Actions workflow on every push to `main` and on pull requests, including a
+check that the generated JSON-LD files are up to date.
+
 ## Structure
 
 ```
@@ -158,6 +191,9 @@ data/frameworks/         QUADRIGA v4 framework (fixed: de + en)
 data/programs/           study program representations (HU Berlin: BA BIW,
                         MA Information Science, MA BIW weiterbildend,
                         MA Wissenschaftsforschung)
+data/schemas/            JSON Schema + JSON-LD context for the data formats
+data/jsonld/             JSON-LD serializations (generated from the YAML)
+scripts/                 data validation + YAML→JSON-LD transformation
 assets/                  source PDFs
 .github/workflows/       GitHub Pages deployment
 ```
