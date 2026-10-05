@@ -181,6 +181,17 @@ with `npm run validate`. The same steps run in the `Validate data` GitHub
 Actions workflow on every push to `main` and on pull requests, including a
 check that the generated JSON-LD files are up to date.
 
+## Branding
+
+The favicon is generated from the SVG logo (`assets/logo.svg`):
+
+```sh
+npm run favicon   # renders assets/logo.svg → assets/favicon.ico (16/32/48 px)
+```
+
+The `Validate data` workflow regenerates it on every push/PR and fails if the
+committed `assets/favicon.ico` is out of date.
+
 ## Structure
 
 ```
@@ -196,7 +207,7 @@ data/programs/           study program representations (HU Berlin: BA BIW,
                         MA Wissenschaftsforschung)
 data/schemas/            JSON Schema + JSON-LD context for the data formats
 data/jsonld/             JSON-LD serializations (generated from the YAML)
-scripts/                 data validation + YAML→JSON-LD transformation
-assets/                  source PDFs
+scripts/                 data validation + YAML→JSON-LD + favicon generation
+assets/                  brand assets (logo.svg, generated favicon.ico) + source PDFs
 .github/workflows/       GitHub Pages deployment
 ```

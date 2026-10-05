@@ -5,9 +5,11 @@
   "description": "Competency frameworks × study programs — data validation and JSON-LD tooling",
   "scripts": {
     "validate": "node scripts/validate-data.js",
-    "jsonld": "node scripts/yaml-to-jsonld.js"
+    "jsonld": "node scripts/yaml-to-jsonld.js",
+    "favicon": "node scripts/svg-to-favicon.js"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "ajv": "^8.18.0"
   }
 }
