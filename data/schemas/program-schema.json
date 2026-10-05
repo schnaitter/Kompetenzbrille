@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schnaitter.github.io/Kompetenzbrille/data/program-schema.json",
+  "title": "Kompetenzbrille Study Program",
+  "description": "Schema for study-program data files (data/programs/*.yaml). A program lists module categories, modules with credits/topics, and editorial mappings of modules to competencies of one or more frameworks. The same schema applies to JSON-LD serializations (see program-context.jsonld).",
+  "type": "object",
+  "required": ["id", "title", "institution", "language", "categories", "modules"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "@context": {
+      "type": "string",
+      "description": "Optional JSON-LD @context. When present, the document is simultaneously valid JSON-LD (see data/schemas/program-context.jsonld)."
+    },
+    "@id": { "type": "string", "description": "Optional JSON-LD node identifier (IRI) of the study program." },
+    "@type": { "type": "string", "const": "StudyProgram" },
+    "id": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "description": "Stable identifier of the study program (e.g. hu-berlin-biw-ma-wb)."
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "institution": { "type": "string", "minLength": 1 },
+    "language": { "$ref": "#/$defs/languageTag" },
+    "source": { "$ref": "#/$defs/fileOrUrl", "description": "Source document (SPO / Prüfungsordnung), as a path relative to the app root or an absolute URL." },
+    "sourceLabel": { "type": "string", "description": "Human-readable label for the source document (e.g. official citation of the SPO)." },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "label"],
+        "additionalProperties": false,
+        "properties": {
+          "@id": { "type": "string" },
+          "@type": { "type": "string", "const": "ModuleCategory" },
+          "id": { "$ref": "#/$defs/ident", "description": "Referenced by modules[].category." },
+          "label": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/module" }
+    }
+  },
+  "$defs": {
+    "languageTag": {
+      "type": "string",
+      "description": "BCP 47 language tag; 'de' for German-only programs.",
+      "pattern": "^[a-z]{2}(-[A-Za-z0-9]+)*$"
+    },
+    "fileOrUrl": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ident": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "competencyCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16,
+      "description": "Competency code of the referenced framework (e.g. \"1.1\") — quote it in YAML so it stays a string, not a float."
+    },
+    "level": {
+      "type": "integer",
+      "enum": [1, 2, 3],
+      "description": "Mapping depth: 1 = peripheral, 2 = partial, 3 = core."
+    },
+    "localizedNote": {
+      "anyOf": [
+        { "type": "string", "minLength": 1, "description": "Single-language rationale; shown for both UI languages." },
+        {
+          "type": "object",
+          "description": "Bilingual rationale, keyed by BCP 47 language tag ('de' required for German programs).",
+          "required": ["de"],
+          "additionalProperties": false,
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Za-z0-9]+)*$": { "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "ref": {
+      "anyOf": [
+        { "$ref": "#/$defs/ident" },
+        { "type": "string", "pattern": "^https?://", "description": "IRI form, as emitted by scripts/yaml-to-jsonld.js." }
+      ],
+      "description": "Node reference: literal id (YAML form) or IRI (JSON-LD form)."
+    },
+    "codeRef": {
+      "anyOf": [
+        { "$ref": "#/$defs/competencyCode" },
+        { "type": "string", "pattern": "^https?://", "description": "IRI form, as emitted by scripts/yaml-to-jsonld.js." }
+      ],
+      "description": "Competency reference: literal code (YAML form) or IRI (JSON-LD form)."
+    },
+    "mapping": {
+      "type": "object",
+      "description": "Editorial mapping of the enclosing module to a competency of a framework.",
+      "required": ["framework", "competency", "level", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "@id": { "type": "string" },
+        "@type": { "type": "string", "const": "CompetencyMapping" },
+        "framework": { "$ref": "#/$defs/ref", "description": "Must identify a framework in data/frameworks/ (literal id or IRI)." },
+        "competency": { "$ref": "#/$defs/codeRef", "description": "Must match a competency code declared by the referenced framework file (literal code or IRI)." },
+        "level": { "$ref": "#/$defs/level" },
+        "note": { "$ref": "#/$defs/localizedNote", "description": "Rationale for the mapping: which topics/goals justify it." }
+      }
+    },
+    "module": {
+      "type": "object",
+      "description": "A study module as defined in the SPO. Note: the module list is a complete catalogue including elective alternatives, so summing credits does not necessarily yield the degree total.",
+      "required": ["code", "title", "credits", "category", "goals"],
+      "additionalProperties": false,
+      "properties": {
+        "@id": { "type": "string" },
+        "@type": { "type": "string", "const": "Module" },
+        "code": { "$ref": "#/$defs/ident" },
+        "title": { "type": "string", "minLength": 1 },
+        "credits": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 60,
+          "description": "ECTS credits (LP)."
+        },
+        "category": { "$ref": "#/$defs/ref", "description": "Must match one of the top-level categories[].id values (literal id or IRI)." },
+        "goals": { "type": "string", "minLength": 1, "description": "Lern- und Qualifikationsziele / module description." },
+        "topics": {
+          "type": "array",
+          "minItems": 0,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "mappings": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/mapping" }
+        }
+      }
+    }
+  },
+  "$comment2": "Cross-file constraints not expressible in JSON Schema alone: each modules[].category must equal some categories[].id; each mappings[].framework must identify a framework present in data/frameworks/; each mappings[].competency must be a code declared by that framework; modules registered in data/manifest.yaml.",
+  "examples": [
+    {
+      "id": "hu-berlin-biw-ma-wb",
+      "title": "MA Bibliotheks- und Informationswissenschaft (weiterbildend, Fernstudium)",
+      "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
+      "language": "de",
+      "source": "assets/lesefassung-fs-master-2023.pdf",
+      "sourceLabel": "Fachspezifische Studien- und Prüfungsordnung (Nichtamtliche Lesefassung)",
+      "categories": [
+        { "id": "pflicht", "label": "Pflicht" }
+      ],
+      "modules": [
+        {
+          "code": "M1",
+          "title": "Handlungsfelder & Dienstleistungen",
+          "credits": 20,
+          "category": "pflicht",
+          "goals": "…",
+          "topics": ["Forschungsdatenmanagement"],
+          "mappings": [
+            {
+              "framework": "quadriga-dlf",
+              "competency": "1.1",
+              "level": 2,
+              "note": {
+                "de": "Recherchemethoden und -strategien; Auskunfts- und Informationsdienst.",
+                "en": "Search methods and strategies; reference and information services."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

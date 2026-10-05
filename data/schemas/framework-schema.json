@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schnaitter.github.io/Kompetenzbrille/data/framework-schema.json",
+  "title": "Kompetenzbrille Competency Framework",
+  "description": "Schema for competency framework data files (data/frameworks/*.yaml). A framework declares phases of a data-related process, evaluation dimensions, and competencies that combine a phase with per-dimension descriptions. The same schema applies to JSON-LD serializations (see framework-context.jsonld).",
+  "type": "object",
+  "required": ["id", "version", "language", "title", "phases", "dimensions", "competencies"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "@context": {
+      "type": "string",
+      "description": "Optional JSON-LD @context. When present, the document is simultaneously valid JSON-LD (see data/schemas/framework-context.jsonld)."
+    },
+    "@id": { "type": "string", "description": "Optional JSON-LD node identifier (IRI) of the framework." },
+    "@type": { "type": "string", "const": "CompetencyFramework" },
+    "id": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$",
+      "description": "Stable identifier of the framework; referenced by study-program mappings via their 'framework' property."
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Framework version (e.g. \"4\"). Keep as a string to avoid type coercion."
+    },
+    "language": { "$ref": "#/$defs/languageTag", "description": "Locale of this file (the DE/EN files are locales of the same framework)." },
+    "title": { "type": "string", "minLength": 1 },
+    "shortTitle": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "source": { "$ref": "#/$defs/fileOrUrl", "description": "Source document, as a path relative to the app root (e.g. assets/….pdf) or an absolute URL." },
+    "doi": {
+      "type": "string",
+      "pattern": "^(https://doi\\.org/10\\..*|10\\.[^\\s/]+/\\S+)$",
+      "description": "Persistent identifier of the framework document."
+    },
+    "orientation": {
+      "type": "object",
+      "description": "Prior knowledge ('Orientierungswissen') that lies outside the data flow and forms the foundation of all phases.",
+      "required": ["title", "text"],
+      "additionalProperties": false,
+      "properties": {
+        "@type": { "type": "string", "const": "Orientation" },
+        "title": { "type": "string", "minLength": 1 },
+        "text": { "type": "string", "minLength": 1 },
+        "note": { "type": "string" }
+      }
+    },
+    "phases": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/phase" }
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/dimension" }
+    },
+    "competencies": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/competency" }
+    }
+  },
+  "$defs": {
+    "languageTag": {
+      "type": "string",
+      "description": "BCP 47 language tag (ISO 639-1 two-letter codes suffice here).",
+      "pattern": "^[a-z]{2}(-[A-Za-z0-9]+)*$"
+    },
+    "fileOrUrl": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ident": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "code": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16,
+      "description": "Short code such as \"1.1\" — quote it in YAML so it stays a string, not a float."
+    },
+    "ref": {
+      "anyOf": [
+        { "$ref": "#/$defs/ident" },
+        { "type": "string", "pattern": "^https?://", "description": "IRI form, as emitted by scripts/yaml-to-jsonld.js." }
+      ],
+      "description": "Node reference: literal id (YAML form) or IRI (JSON-LD form)."
+    },
+    "codeRef": {
+      "anyOf": [
+        { "$ref": "#/$defs/code" },
+        { "type": "string", "pattern": "^https?://", "description": "IRI form, as emitted by scripts/yaml-to-jsonld.js." }
+      ],
+      "description": "Competency reference: literal code (YAML form) or IRI (JSON-LD form)."
+    },
+    "phase": {
+      "type": "object",
+      "required": ["id", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "@id": { "type": "string" },
+        "@type": { "type": "string", "const": "Phase" },
+        "id": { "$ref": "#/$defs/code" },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "dimension": {
+      "type": "object",
+      "required": ["id", "label"],
+      "additionalProperties": false,
+      "properties": {
+        "@id": { "type": "string" },
+        "@type": { "type": "string", "const": "Dimension" },
+        "id": { "$ref": "#/$defs/ident" },
+        "label": { "type": "string", "minLength": 1 }
+      }
+    },
+    "competency": {
+      "type": "object",
+      "description": "A competency. 'code' + 'phase' + 'title' are structural; every other property is a dimension row whose key must match a declared dimension id (e.g. knowledge, skills, examples).",
+      "required": ["code", "phase", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "@id": { "type": "string" },
+        "@type": { "type": "string", "const": "Competency" },
+        "code": { "$ref": "#/$defs/code" },
+        "phase": { "$ref": "#/$defs/codeRef", "description": "Must reference one of the declared phase ids (literal id or IRI)." },
+        "title": { "type": "string", "minLength": 1 },
+        "knowledge": { "type": "string", "description": "Dimension row for dimension id 'knowledge'." },
+        "skills": { "type": "string", "description": "Dimension row for dimension id 'skills'." },
+        "examples": { "type": "string", "description": "Dimension row for dimension id 'examples'." }
+      }
+    }
+  },
+  "$comment2": "Cross-file constraints not expressible in JSON Schema alone: each competency.phase must equal some phases[].id; each competency dimension-row key must equal some dimensions[].id; all data-localized strings are in the language given by 'language'.",
+  "examples": [
+    {
+      "id": "quadriga-dlf",
+      "version": "4",
+      "language": "de",
+      "title": "QUADRIGA Datenkompetenzframework",
+      "shortTitle": "QUADRIGA v4",
+      "source": "assets/QUADRIGA-Datenkompetenzframework_v4.pdf",
+      "doi": "https://doi.org/10.5281/zenodo.19470557",
+      "orientation": {
+        "title": "Orientierungswissen",
+        "text": "…",
+        "note": "…"
+      },
+      "phases": [
+        { "id": "1", "title": "Planung" }
+      ],
+      "dimensions": [
+        { "id": "knowledge", "label": "Wissen" },
+        { "id": "skills", "label": "Fähigkeit" },
+        { "id": "examples", "label": "Beispiele" }
+      ],
+      "competencies": [
+        {
+          "code": "1.1",
+          "phase": "1",
+          "title": "Identifikation",
+          "knowledge": "Arten von Datenquellen; Recherchetechniken",
+          "skills": "Identifikation geeigneter Daten",
+          "examples": "Abfragesprachen, Datenportale, Forschungsdatenzentren, Repositorien"
+        }
+      ]
+    }
+  ]
+}

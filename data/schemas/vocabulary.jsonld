@@ -1,0 +1,58 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "kb": "https://schnaitter.github.io/Kompetenzbrille/vocab/#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/vocab/",
+      "@type": "owl:Ontology",
+      "dcterms:title": "Kompetenzbrille vocabulary",
+      "dcterms:description": "Terms for describing competency frameworks, study programs, their modules, and editorial mappings between modules and competencies. Used by framework-context.jsonld and program-context.jsonld.",
+      "dcterms:creator": "Kompetenzbrille"
+    },
+
+    { "@id": "kb:CompetencyFramework", "@type": "owl:Class", "rdfs:label": "Competency framework", "rdfs:comment": "A structured set of competencies organized in phases and described along dimensions." },
+    { "@id": "kb:Phase", "@type": "owl:Class", "rdfs:label": "Phase", "rdfs:comment": "A stage of a process (e.g. of the research data flow) that groups competencies." },
+    { "@id": "kb:Dimension", "@type": "owl:Class", "rdfs:label": "Dimension", "rdfs:comment": "An aspect (e.g. knowledge, skills, examples) along which competencies are described." },
+    { "@id": "kb:Competency", "@type": "owl:Class", "rdfs:label": "Competency", "rdfs:comment": "A learnable competency, identified by a code within a framework, belonging to a phase and described along dimensions." },
+    { "@id": "kb:Orientation", "@type": "owl:Class", "rdfs:label": "Orientierungswissen / conceptual knowledge", "rdfs:comment": "Prior knowledge outside the phase structure that underpins all phases." },
+    { "@id": "kb:StudyProgram", "@type": "owl:Class", "rdfs:label": "Study program", "rdfs:comment": "A degree program (studiengang) with modules defined by its examination regulations." },
+    { "@id": "kb:ModuleCategory", "@type": "owl:Class", "rdfs:label": "Module category", "rdfs:comment": "Category of a module, e.g. compulsory (pflicht) or elective (wahlpflicht)." },
+    { "@id": "kb:Module", "@type": "owl:Class", "rdfs:label": "Module", "rdfs:comment": "Teaching unit with credits, goals, topics; may be mapped to competencies." },
+    { "@id": "kb:CompetencyMapping", "@type": "owl:Class", "rdfs:label": "Competency mapping", "rdfs:comment": "Editorial association of a module with a competency of some framework at a given level (n-ary relationship)." },
+    { "@id": "kb:Level", "@type": "owl:Class", "rdfs:label": "Mapping level", "rdfs:comment": "Depth of a mapping: kb:peripheral (1), kb:partial (2), kb:core (3)." },
+    { "@id": "kb:peripheral", "@type": "kb:Level", "skos:prefLabel": "peripheral", "skos:definition": "The competency is touched only marginally." },
+    { "@id": "kb:partial", "@type": "kb:Level", "skos:prefLabel": "partial", "skos:comment": "The competency is partially addressed." },
+    { "@id": "kb:core", "@type": "kb:Level", "skos:prefLabel": "core", "skos:comment": "The competency is core to the module." },
+
+    { "@id": "kb:id", "@type": "rdf:Property", "rdfs:label": "id", "rdfs:comment": "Stable framework identifier used in cross-references." },
+    { "@id": "kb:code", "@type": "rdf:Property", "rdfs:label": "code", "rdfs:comment": "Short identifying code of a competency or module (string, e.g. \"1.1\")." },
+    { "@id": "kb:hasPhase", "@type": "rdf:Property", "rdfs:domain": "kb:CompetencyFramework", "rdfs:range": "kb:Phase" },
+    { "@id": "kb:hasDimension", "@type": "rdf:Property", "rdfs:domain": "kb:CompetencyFramework", "rdfs:range": "kb:Dimension" },
+    { "@id": "kb:hasCompetency", "@type": "rdf:Property", "rdfs:domain": "kb:CompetencyFramework", "rdfs:range": "kb:Competency" },
+    { "@id": "kb:inPhase", "@type": "rdf:Property", "rdfs:domain": "kb:Competency", "rdfs:range": "kb:Phase" },
+    { "@id": "kb:requiresKnowledge", "@type": "rdf:Property", "rdfs:domain": "kb:Competency", "rdfs:comment": "Dimension row: knowledge needed." },
+    { "@id": "kb:requiresSkill", "@type": "rdf:Property", "rdfs:domain": "kb:Competency", "rdfs:comment": "Dimension row: skill to acquire." },
+    { "@id": "kb:hasExample", "@type": "rdf:Property", "rdfs:domain": "kb:Competency", "rdfs:comment": "Dimension row: illustrative examples." },
+    { "@id": "kb:orientation", "@type": "rdf:Property", "rdfs:domain": "kb:CompetencyFramework", "rdfs:range": "kb:Orientation" },
+
+    { "@id": "kb:hasCategory", "@type": "rdf:Property", "rdfs:domain": "kb:StudyProgram", "rdfs:range": "kb:ModuleCategory" },
+    { "@id": "kb:hasModule", "@type": "rdf:Property", "rdfs:domain": "kb:StudyProgram", "rdfs:range": "kb:Module" },
+    { "@id": "kb:hasMapping", "@type": "rdf:Property", "rdfs:domain": "kb:Module", "rdfs:range": "kb:CompetencyMapping" },
+    { "@id": "kb:inCategory", "@type": "rdf:Property", "rdfs:domain": "kb:Module", "rdfs:range": "kb:ModuleCategory" },
+    { "@id": "kb:mapsToCompetency", "@type": "rdf:Property", "rdfs:domain": "kb:CompetencyMapping", "rdfs:range": "kb:Competency", "rdfs:comment": "Competency of a framework addressed by the module." },
+    { "@id": "kb:mappingLevel", "@type": "rdf:Property", "rdfs:domain": "kb:CompetencyMapping", "rdfs:range": "kb:Level", "rdfs:comment": "Integer 1..3 or IRI of kb:peripheral/kb:partial/kb:core." },
+    { "@id": "kb:rationale", "@type": "rdf:Property", "rdfs:domain": "kb:CompetencyMapping", "rdfs:comment": "Why the module addresses the competency (language-tagged or per-language notes)." },
+    { "@id": "kb:sourceLabel", "@type": "rdf:Property", "rdfs:label": "source label", "rdfs:comment": "Human-readable citation of the source document." },
+
+    { "@id": "kb:localizedText", "@type": "rdf:Property", "rdfs:label": "localized text" }
+  ]
+}

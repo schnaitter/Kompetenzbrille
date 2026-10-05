@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "kb": "https://schnaitter.github.io/Kompetenzbrille/vocab/#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "StudyProgram": "schema:Course",
+    "ModuleCategory": "kb:ModuleCategory",
+    "Module": "schema:Course",
+    "CompetencyMapping": "kb:CompetencyMapping",
+    "LocalizedNote": "kb:LocalizedNote",
+
+    "id": { "@id": "kb:id", "@type": "xsd:string" },
+    "type": "@type",
+
+    "institution": { "@id": "schema:provider", "@type": "@id" },
+    "language": { "@id": "dcterms:language" },
+    "title": "dcterms:title",
+    "description": "dcterms:description",
+    "source": { "@id": "dcterms:source", "@type": "@id" },
+    "sourceLabel": { "@id": "kb:sourceLabel" },
+    "doi": "schema:identifier",
+
+    "categories": { "@id": "kb:hasCategory", "@container": "@set" },
+    "modules": { "@id": "kb:hasModule", "@container": "@set" },
+    "mappings": { "@id": "kb:hasMapping", "@container": "@set" },
+
+    "category": { "@id": "kb:inCategory", "@type": "@vocab" },
+    "code": { "@id": "kb:code", "@type": "xsd:string" },
+    "credits": { "@id": "schema:numberOfCredits" },
+    "goals": "schema:description",
+    "topics": { "@id": "schema:about", "@container": "@set" },
+
+    "competency": { "@id": "kb:mapsToCompetency", "@type": "@id" },
+    "level": { "@id": "kb:mappingLevel" },
+    "note": { "@id": "kb:rationale" },
+
+    "de": { "@id": "dcterms:description", "@language": "de" },
+    "en": { "@id": "dcterms:description", "@language": "en" },
+    "label": "skos:prefLabel",
+    "required": { "@id": "schema:requiredEntity" },
+    "optional": { "@id": "schema:optionalEntity" }
+  },
+  "@graph": []
+}
