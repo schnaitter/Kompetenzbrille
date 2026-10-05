@@ -1,0 +1,87 @@
+name: Validate data
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read   # required for checkout (explicit permissions drop implicit defaults)
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate data files (JSON Schema + cross-references)
+        run: node scripts/validate-data.js
+
+      - name: Regenerate JSON-LD serializations
+        run: node scripts/yaml-to-jsonld.js
+
+      - name: Check JSON-LD serializations are up to date
+        run: |
+          if ! git diff --exit-code data/jsonld/; then
+            echo "::error::data/jsonld/ is out of date — run 'node scripts/yaml-to-jsonld.js' and commit the result."
+            exit 1
+          fi
+
+  # Validate every individual commit of a pull request (not just the tip),
+  # so the branch history stays bisectable. Commits that predate the
+  # validator are skipped with a warning instead of failing the job.
+  validate-each-commit:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies (from PR tip)
+        run: npm ci
+
+      - name: Validate every commit in this PR
+        run: |
+          base="${{ github.event.pull_request.base.sha }}"
+          head="${{ github.event.pull_request.head.sha }}"
+          git checkout --quiet --detach "$head"
+          commits=$(git rev-list --reverse "$base..$head")
+          if [ -z "$commits" ]; then
+            echo "No commits in range $base..$head — nothing to validate."
+            exit 0
+          fi
+          status=0
+          for c in $commits; do
+            git checkout --quiet --detach "$c"
+            subject=$(git log -1 --format=%s "$c")
+            if [ ! -f scripts/validate-data.js ]; then
+              echo "::warning file=scripts/validate-data.js::commit $c ($subject) predates the validator — skipped"
+              continue
+            fi
+            echo "Validating $c — $subject"
+            if ! node scripts/validate-data.js > /tmp/validate.log 2>&1; then
+              echo "::error::validation failed for commit $c ($subject)"
+              cat /tmp/validate.log
+              status=1
+            fi
+          done
+          exit $status
