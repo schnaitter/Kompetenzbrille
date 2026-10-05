@@ -47,16 +47,17 @@ html, body {
 .topbar-left { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
 .topbar-right { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .app-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-size: 20px;
   margin: 0;
   letter-spacing: .2px;
 }
-.app-title::after {
-  content: attr(data-sub);
-  display: block;
-  font-size: 11px;
-  font-weight: 400;
-  color: var(--ink-soft);
+.app-logo {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
 }
 .view-tabs { display: flex; gap: 4px; }
 .view-tab {
