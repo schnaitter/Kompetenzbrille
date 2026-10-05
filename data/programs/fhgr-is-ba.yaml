@@ -1,0 +1,885 @@
+$schema: data/schemas/program-schema.json
+id: fhgr-is-ba
+title: BA Information Science
+institution: Fachhochschule Graubünden
+institutionAbbr: FHGR
+institutionUrl: https://www.fhgr.ch/
+language: de
+source: assets/Bachelorstudium-Information_Science-Moduluebersicht.pdf
+sourceLabel: Modulübersicht Bachelorstudium Information Science (Ausgabedatum 19.03.2026)
+categories:
+  - id: pflicht
+    label: Pflicht
+  - id: wahlpflicht
+    label: Wahlpflicht
+modules:
+  - code: AF1
+    title: Innovationsmanagement und Design Thinking
+    credits: 4
+    category: pflicht
+    goals: Siehe jeweils bei den Kursbeschreibungen Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, die wichtigsten Begrifflichkeiten, Grundlagen, Aufgaben, Prozesse sowie die Erfolgsfaktoren des Innovationsmanagements wiederzugeben; Modelle und Prozesse des Innovationsmanagements in Gruppen auf konkrete Fallstudien anzuwenden; die Bedeutung von Design Thinking zu erklären; Design Thinking Methoden und Kreativitätstechniken anzuwenden.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 1
+        note:
+          de: Innovationsmanagement als Prozess- und Organisationsgestaltung.
+          en: Innovation management as process and organisational design.
+  - code: AF2
+    title: Markt- und Sozialforschung
+    credits: 4
+    category: pflicht
+    goals: Markt- und Sozialforschung verstehen und selber anwenden. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, die wesentlichen Grundlagen qualitativer und quantitativer Forschungsmethoden zu überblicken; diese auf konkrete Forschungsfragen anzuwenden, d.h. sowohl die Erstellung des Forschungsdesigns als auch die Datenerhebung, -analyse und -interpretation; in wissenschaftlichen Publikationen den Einsatz von Methoden der empirischen Sozialforschung kritisch zu analysieren und zu bewerten.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '2.1'
+        level: 2
+        note:
+          de: Design und Durchführung qualitativer und quantitativer Datenerhebung.
+          en: Design and conduct of qualitative and quantitative data collection.
+      - framework: quadriga-dlf
+        competency: '4.3'
+        level: 1
+        note:
+          de: Interpretation und kritische Bewertung empirischer Befunde.
+          en: Interpretation and critical appraisal of empirical findings.
+  - code: AF3
+    title: Statistik
+    credits: 4
+    category: pflicht
+    goals: Das Modul “Statistik” vermittelt unabdingbare Kenntnisse, um im Unternehmenskontext Daten zu erheben, aufzubereiten, zu analysieren und damit Informationen zu gewinnen, welche die Entscheidungsgrundlagen des Managements stärken. Das Modul bietet eine Einführung in die beschreibende und die schliessende Statistik. Die Studierenden kennen wichtige Methoden der quantitativen Sozialforschung und sind in der Lage, Excel oder R zur Lösung statistischer Problemstellungen effizient zu nutzen. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, statistische Methoden im Studium und Unternehmen anzuwenden; Excel oder R zur Lösung statistischer Problemstellungen effizient einzusetzen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '4.1'
+        level: 3
+        note:
+          de: Deskriptive und schließende Statistik mit Excel und R.
+          en: Descriptive and inferential statistics with Excel and R.
+      - framework: quadriga-dlf
+        competency: '4.3'
+        level: 2
+        note:
+          de: Statistische Schlussfolgerungen als Entscheidungsgrundlage.
+          en: Statistical inference as a basis for decisions.
+  - code: AF4
+    title: Wissenschaftliches Arbeiten
+    credits: 4
+    category: pflicht
+    goals: Die Studierenden erhalten eine theoretische Einführung in den wissenschaftlichen Arbeitsprozess. Sie können einzelne Schritte des wissenschaftlichen Arbeitsprozesses von der Themenfindung und Formulierung einer Forschungsfrage bis hin zur Verfassung eines Exposés nachvollziehen und erfolgreich umsetzen. Ein Schwerpunkt des Moduls liegt in der Recherche und Verarbeitung von Quellen. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, ein wissenschaftliches Thema einzugrenzen sowie eine wissenschaftliche Frage zu formulieren; erfolgreich eine wissenschaftliche Recherche und Quellenbewertung durchzuführen; die gefundenen Quellen zu verarbeiten und richtig zu verweisen/zu zitieren; Funktionsweise von Hilfsmitteln wie Literaturverwaltungsprogrammen und Suchinstrumenten zu verstehen; die Thesenbildung, den logischen Aufbau sowie den wissenschaftlichen Schreibstil zu beherrschen; sowohl inhaltlich als auch formal (orthografisch, grammatikalisch und stilistisch) einwandfrei, klar und verständlich zu formulieren und zu schreiben; ein ausführliches Exposé als Forschungsdesign mit dazugehörigen Bausteinen zu verfassen; die Bedeutung der einzelnen Arbeitsschritte sowie das eigentliche Ziel des wissenschaftlichen Arbeitsprozesses zu verstehen und im Studium zu transferieren.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 2
+        note:
+          de: Recherche und Bewertung wissenschaftlicher Quellen.
+          en: Retrieval and appraisal of scholarly sources.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Exposé, Zitation und wissenschaftliches Schreiben.
+          en: Exposé, citation and academic writing.
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 1
+        note:
+          de: Gute wissenschaftliche Praxis beim Verweisen und Zitieren.
+          en: Good research practice in referencing and citation.
+  - code: BO1
+    title: Allgemeine Betriebswirtschaftslehre
+    credits: 4
+    category: pflicht
+    goals: 'Grundlegendes (=theoretisch fundiert und praxisorientiert) Verständnis für unternehmerische In- und Umwelten. Begreifen der zentralen Wirkungszusammenhänge eines Unternehmens in einem dynamischen System. Erarbeitung einer betriebswirtschaftlichen Methodenkompetenz und konstruktiv-kritische Auseinandersetzung mit fallbasierten Problemstellungen aus verschiedenen Perspektiven in Einzel- und Gruppenarbeit. Primäre Ergebnisse: Die Studierenden sollen betriebswirtschaftliche Methodenkompetenz demonstrieren, indem sie unterschiedliche unternehmerische Problemstellungen untersuchen und mit Methodik bearbeiten, bedeutende BWL-Konzepte und -Instrumente am Praxisfall einsetzen und begreifen. Aufträge termingerecht bearbeiten, einreichen und konstruktiv zu Gruppenarbeiten beitragen, Mitverantwortung für den persönlichen Lernerfolg und jenen der Gruppe tragen. Fachlich: VERSTEHEN das St. Galler Managementmodell und seine Elemente als ganzheitlichen und systematischen Ansatz, um komplexe Problemstellungen anzupacken, verstehen wie ein Unternehmen im Wirtschaftssystem interagiert und funktioniert, kennen und verstehen die Bedeutung von Anspruchsgruppen und Werten hinsichtlich langfristigem Unternehmenserfolg, was Strategien sind und wie sie entwickelt werden, und Organisationen gebildet werden, und beschreiben die wichtigsten Leistungs-, Prozess- und Unternehmensarten, verstehen, welche Rolle die Unternehmenskultur für die Erreichung von Zielen spielt, und unterscheiden die bedeutendsten Organisations- und Kooperationsformen. ANWENDEN: wenden das St. Galler Managementmodell als Analyse- und Entwicklungsraster für die Lösung unternehmerischer Problemstellungen methodisch korrekt an. können ausgewählte betriebswirtschaftliche Methoden, Verfahren und Instrumente am konkreten Sachverhalten/Praxisfall strukturiert anwenden'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 1
+        note:
+          de: Organisation und Steuerung von Unternehmen; Prozess- und Leistungsarten.
+          en: Organisation and governance of companies; process and service types.
+  - code: BO2
+    title: Marketing
+    credits: 6
+    category: pflicht
+    goals: 'Die Studierenden erlangen grundlegende Kompetenzen in der Konzeption, Planung und Durchführung von Marketing-Konzepten für Unternehmen und Institutionen mit besonderem Fokus auf digitale Marketing-Aspekte. Nach erfolgreicher Teilnahme am Modul können die Studierenden: die grundlegenden Konzepte der Marketingplanung als Grundfunktion in Wirtschaft und Dienstleistungen erklären und anwenden Online Marketing-Konzepte anwenden und zugehörige Online Marketing-Kampagnen analysieren und evaluieren'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Kommunikation und Vermittlung von Angeboten an Zielgruppen.
+          en: Communication and outreach of offers to target groups.
+  - code: BO3
+    title: Projektmanagement
+    credits: 4
+    category: pflicht
+    goals: 'Die Arbeit in Wirtschaft und Verwaltung erfolgt immer häufiger projektorientiert. Die erfolgreiche Mitwirkung in Projekten und die Projektführung erfordern ein hohes Mass an fachlichen, methodischen und sozialen Kompetenzen. Die Studierenden: verstehen ein Projekt als grob umrissenes, risikobehaftetes Vorhaben mit einem Anfangstermin, einem (verbindlichen) Endtermin und einem (verbindlichen) Budget; können für ein Projekt das (die) geeignete(n) Vorgehensmodell(e) auswählen; können einen zum gewählten Modell passenden Projektplan ausarbeiten und passende Werkzeuge zur Unterstützung der Zusammenarbeit im Projektteam zielführend einsetzen; sind in der Lage, Kenngrössen des Fortschritts eines Projekts (z.B. Dauer, Personaleinsatz, Kosten, usw.) mit geeigneten Massnahmen zu verfolgen und zu beurteilen; können die administrativen Belange eines Projekts in eigener Verantwortung betreuen (Sitzungen vorbereiten und leiten, Projektplanung aktualisieren, Projekt dokumentieren, kommunizieren, usw.); verstehen, wie die internen und externen Anspruchsgruppen identifiziert und deren Bedürfnisse und Haltungen bezüglich des Projekts erfasst werden müssen; verstehen, wie die Beteiligten und Aussenstehenden bezüglich des eigenen Projekts und der konkreten Projektarbeit informiert und überzeugt werden können; verstehen, wie webbasierte Applikationen Aufgaben des Projektmanagements unterstützen können; können ein Projekt formal korrekt abschliessen, so dass die Projektergebnisse jederzeit auffindbar sind und nachvollzogen werden können; kennen alle PM-Kompetenzen nach IPMA und erreichen ein dementsprechendes Ausbildungsniveau, so dass sie die internationale IPMA Level-D Zertifizierung bestehen könnten; haben die Theorien in zahlreichen Übungen angewendet.'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 3
+        note:
+          de: Projektplanung, -steuerung und -dokumentation.
+          en: Project planning, steering and documentation.
+  - code: GF1
+    title: English B2 (EAFC)
+    credits: 4
+    category: wahlpflicht
+    goals: 'English for Applied Sciences B2+ Foundation Course (kurz: English B2): Die Studierenden festigen ihre in der schulischen Ausbildung erworbenen Kenntnisse der englischen Sprache, gleichen Defizite aus und wenden die englische Sprache in berufsbezogenen Kontexten an. Sie erweitern ihr Repertoire an aktiven und passiven Redemitteln für die internationale Verständigung in der Geschäftswelt, setzen sich detailliert mit Quellen aus wirtschafts-, technologiebezogenen und weiteren Themenfeldern auseinander und reagieren auf diese situativ angemessen. Sie äussern sich strukturiert und kohärent in fachbezogenen Kommunikationssituationen und verständigen sich in alltäglichen Situationen im beruflichen und persönlichen Umfeld erfolgreich. Dieses Modul bildet das Fundament für die anschliessenden Englischmodule (ESP/Applied English, C1 Advanced, Living English etc.) auf Niveaustufe C1 und bereitet die Studierenden auf den Umgang mit fachbezogenen, englischsprachigen Quellen vor, mit denen sie im und nach dem Studium konfrontiert werden. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, auf Niveaustufe B2(+) des GERS: komplexe englischsprachige Quellen (Text-, Audio- und Videoformate) für ein bestimmtes berufsrelevantes Fachgebiet selbständig zu erfassen, sie ohne fremde Hilfe zu analysieren, und die darin enthaltenen Informationen weiterzuverarbeiten sprachliche Hilfsmittel (wie professionelle Wörterbücher, Grammatikübersichten etc.) zur Korrektur und Revision ihrer eigenen zielsprachlichen Produktion einzusetzen sich mündlich und schriftlich in berufsrelevanten Kommunikationskontexten angemessen und zielgruppenadäquat auszudrücken und zu interagieren. sich so spontan und fließend zu verständigen, dass ein normales Gespräch mit Muttersprachlern ohne grössere Anstrengung auf beiden Seiten gut möglich ist. Standardausdrücke aus Fach- und Allgemeinsprache zu kennen und anzuwenden.'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Fachsprachliche Rezeption und Kommunikation wissenschaftlicher Quellen.
+          en: Specialist-language reception and communication of scholarly sources.
+  - code: GF2
+    title: Kommunikation und Psychologie
+    credits: 4
+    category: pflicht
+    goals: Ziel des Moduls ist es, relevantes psychologisches Grundwissen zu menschlichem Verhalten nutzbar zu machen und die Selbst- und Sozialkompetenzen zu fördern sowie eigenes und fremdes Verhalten in der Kommunikation zu verstehen und somit erfolgreich mit anderen Menschen zu kommunizieren. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, sich mit dem Begriff Soziale Kompetenz auseinanderzusetzen; die Grundkenntnisse der Persönlichkeits- und Entwicklungspsychologie wiederzugeben und zugehörige Modelle anzuwenden; ein erweitertes Verhaltensrepertoire im Sinne von „soft skills“ im beruflichen wie persönlichen Alltag angemessen einzusetzen; verschiedene Theorien und Modelle der Kommunikation wiederzugeben; eigenes und fremdes Verhalten in der Kommunikation zu beschreiben, zu erklären und zu reflektieren; konstruktives Feedback zu fremdem Verhalten zu geben und zu eigenem Verhalten anzunehmen; Konflikte zu erkennen und mit Hilfe unterschiedlicher Theorien und Modelle zu analysieren, anzugehen und konstruktiv zu lösen;
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Kommunikation, Feedback und Konfliktlösung.
+          en: Communication, feedback and conflict resolution.
+  - code: GF3
+    title: Nachhaltige Entwicklung und Ethik
+    credits: 4
+    category: pflicht
+    goals: 'Das Modul thematisiert zwei sehr wichtige Bereiche der heutigen Gesellschaft: Nachhaltigkeit und Ethik. Es werden die Grundlagen und wichtigsten Konzepte der nachhaltigen Entwicklung gelehrt. Im Bereich der Ethik werden die normativen Grundlagen freier und demokratischer Gesellschaften reflektiert und dabei auf die Bereiche der Informations-, Kommunikations- und Medienethik fokussiert. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, die Nachhaltige Entwicklung im ökonomisch-ökologisch-sozialen Kontext zu verstehen und die zentralen Treiber und Herausforderungen zu nennen; die Umsetzungsansätze der Nachhaltigen Entwicklung auf staatlicher Ebene und in Unternehmen zu verstehen; Problemstellungen bezüglich einfacher Kriterien der Nachhaltigen Entwicklung zu analysieren; die Funktion der Ethik als „Reflexionstheorie der Moral“ zu beschreiben und die Frage zu beantworten, wozu Ethik dient; eine Übersicht über die wichtigsten Themenbereiche und Gegenstände der Informations-, Kommunikations- und Medienethik zu liefern; die wichtigsten Institutionen zu nennen, die sich mit normativen Grundlagen im Bereich der Informations-, Kommunikations- und Medienethik befassen.'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 2
+        note:
+          de: Informations-, Kommunikations- und Medienethik als normative Grundlagen.
+          en: Information, communication and media ethics as normative foundations.
+  - code: IN1
+    title: Architektur von Informationssystemen
+    credits: 4
+    category: pflicht
+    goals: Vertiefte Kenntnisse der Funktionsweise des Internets und wichtiger Internetdienste (World Wide Web, E-Mail, Cloud Computing) bilden die Grundlage zum Verständnis der Architektur von Informationssystemen. Dabei wird ebenfalls die Kommunikation von IoT-Objekten behandelt. Darauf aufbauend werden exemplarisch Protokolle und Metadatenstandards informationswissenschaftlicher Anwendungen behandelt. Die Übungen und das Semesterprojekt werden auf einem Linux-Betriebssystem umgesetzt. Das Thema Datensicherheit spielt eine immer wichtiger werdende Rolle, und die Auseinandersetzung mit entsprechenden Konzepten rundet das Modul ab. Nach erfolgreicher Teilnahme am Modul, sind die Studierenden in der Lage, die Struktur und die Funktionsweise des Internets und wichtiger Internetdienste zu beschreiben; das Konzept einer datengetriebenen Webapplikation zu skizzieren; die Wichtigkeit von Metadatenstandards zur Beschreibung digitaler Inhalte und zugehörige Protokolle zum Austausch von Metadaten zwischen verschiedenen Informationssystemen zu erkennen; die Funktionsweise und Kommunikationsweise einer Auswahl an IoT-Objekten zu kennen; grundlegende Konzepte des Linux-Betriebssystems zu verstehen; gängige Linux-Kommandos anzuwenden und einfache Shell-Scripts zu schreiben; Bedrohungen der Sicherheit von Informationssystemen zu verstehen / zu erkennen und grundlegende Konzepte der Verschlüsselung digitaler Inhalte und der digitalen Signatur anzuwenden.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 2
+        note:
+          de: Protokolle und Metadatenstandards für den Datenaustausch.
+          en: Protocols and metadata standards for data exchange.
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 1
+        note:
+          de: Datei- und Datenformate sowie Metadaten.
+          en: File and data formats as well as metadata.
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 1
+        note:
+          de: Betrieb und Absicherung von Informationssystemen.
+          en: Operation and protection of information systems.
+  - code: IN2
+    title: Datenbankmanagementsysteme
+    credits: 4
+    category: pflicht
+    goals: (Relationale) Datenbanken sind Bestandteil nahezu aller Informationssysteme. Die Modellierung von Daten und die Erstellung der zugehörigen Schemata stehen meist zu Beginn der Systementwicklung. Das Modul Datenbanksysteme bietet eine Einführung in diese Thema und vermittelt Methoden, um Datenbanken zu modellieren, die Qualität von Datenbankmodellen zu bewerten, bestehende Datenmodelle systematisch zu verbessern und Datenbanken mittels der Structured Query Language zu erstellen und abzufragen. Nach Abschluss dieses Moduls sind die Studierenden in der Lage, die Grundkonzepte und Architektur von relationalen Datenbanksystemen darzulegen und Vorteile von Datenbanken gegenüber konventionellen Ansätzen zu nennen; die wesentliche Unterschiede zwischen relationalen und NOSQL Datenbanken darzustellen; das Entity-Relationship (ER) Modell und dessen Erweiterungen sowie das relationale Datenmodell zur Datenbankmodellierung anzuwenden; Semantische Integritätsbedingungen, funktionale Abhängigkeiten und Normalformen für die Bewertung der Qualität von Datenbankmodellen einzusetzen sowie optimale Tabellenzerlegungen vorzunehmen und diese auf Erhaltung der funktionalen Abhängigkeiten und Verbundstreue zu überprüfen; die Structured Query Language (SQL) für die Erstellung, Manipulation und Abfrage von Datenbanken anzuwenden.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 2
+        note:
+          de: Datenmodellierung, Normalformen und Schemaqualität.
+          en: Data modelling, normal forms and schema quality.
+      - framework: quadriga-dlf
+        competency: '4.1'
+        level: 2
+        note:
+          de: Abfrage und Auswertung mit SQL.
+          en: Querying and evaluation with SQL.
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 1
+        note:
+          de: Semantische Integrität und Datenmodelle.
+          en: Semantic integrity and data models.
+  - code: IN3
+    title: Grundlagen semantischer Technologien
+    credits: 4
+    category: pflicht
+    goals: Das Verständnis von semantischen Systemen bedingt die Auseinandersetzung mit diversen Technologien und den ihnen zugrundeliegenden Datenmodellen, wobei ein konzeptionelles Verständnis der Funktionsweise und konkrete Anwendung dieser Technologien erlernt werden müssen. Daher bietet diese Vorlesung eine Einführung in die Extensible Markup Language (XML), das Resource Description Framework (RDF), Linked Open Data (LOD), die SPARQL Protocol and RDF Language (SPARQL) und deren Zusammenspiel im Semantic Web. Auf dieser Grundlage soll die Vorlesung die Studierenden dazu befähigen, diese Technologien zu verstehen und sie in begrenztem Rahmen bei konkreten Problemfällen/Anwendungsfällen einsetzen zu können. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, auf Technologieebene die Funktionsweisen, Regeln, Anwendungen und Möglichkeiten von XML, RDF, Linked Open Data und SPARQL nachzuvollziehen und diese in Aufgabenstellungen anzuwenden; auf konzeptioneller Ebene die Technologien zur Darstellung von Metadaten zu verstehen und basierend auf den gegebenen Anwendungsfall eine Auswahl der zu verwendeten Technologien zu treffen; auf konzeptioneller Ebene das Zusammenspiel der oben genannten Technologien und damit die Funktionsweise des Semantic Web zu verstehen und in eigenen Worten wiederzugeben; Auf Ebene der Umsetzung die oben genannten Technologien im Rahmen eines konkreten Anwendungsfalls oder Praxisproblemen grundlegend einzusetzen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: XML, RDF, Linked Open Data und SPARQL zur Metadatenrepräsentation.
+          en: XML, RDF, Linked Open Data and SPARQL for metadata representation.
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 1
+        note:
+          de: Linked Open Data als Form der Datenpublikation.
+          en: Linked Open Data as a form of data publication.
+  - code: IN4
+    title: Programmierlogiken
+    credits: 4
+    category: pflicht
+    goals: Die Programmierung bzw. Implementierung von Informationssystemen erfordert eine tiefgreifende Auseinandersetzung mit Algorithmen, Datenstrukturen und Programmiersprachen, welche i.d.R. nur in einem Informatikstudium erbracht werden kann. Die Möglichkeiten und Grenzen der Programmierung lassen sich jedoch auch schon durch die Grundlagen und Logik der Programmierung erfahren. Dieses Modul soll eine ausbaufähige Grundlage in der Programmierung schaffen. Dies soll Studierende zum einen in die Lage versetzen kleinere Programme oder Programmanpassungen selbst realisieren zu können sowie mit Systementwicklern auf Augenhöhe zu sprechen. Zum anderen liefert das Modul leistungsstarken Studierenden die Basis für den Major Web- und Usability Engineering. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, verschiedenen Programmier-Paradigmen, die zugehörige Programmiersprachen und ihre Anwendungsschwerpunkte zuzuordnen; verschiedene Datentypen zu unterschieden und deren Anwendungsgebiete zu kennen; grundlegende Programmierkonzepte (Funktionen, Kontrollstrukturen wie z.B. Sequenzen, Verzweigungen, Wiederholungen, Auswahl) zu verstehen und bei der Entwicklung von Algorithmen einzusetzen; Methoden und Techniken zum Entwurf von Algorithmen (z.B. Struktogramm oder Programmablaufplan) anzuwenden; einfache informationsmethodische Problemstellungen (primär Text-basiert) in Algorithmen abzubilden und diese in der Programmiersprache Python zu implementieren.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '4.1'
+        level: 1
+        note:
+          de: Algorithmen und Programmierkonzepte als Werkzeug der Datenverarbeitung.
+          en: Algorithms and programming concepts as tools for data processing.
+  - code: IN5
+    title: Grundlagen Wirtschaftsinformatik
+    credits: 4
+    category: pflicht
+    goals: 'Die Grundlagen der Informatik bilden die Eingangskompetenzen für alle weiteren Module im Bereich Informations- und Kommunikationssysteme. Sie dienen der Bewältigung von Aufgaben in der Unternehmenspraxis, um potenzielle Lösungsmöglichkeiten mit digitalen Werkzeugen zu erkennen, zu beurteilen und zu bewältigen. Nach erfolgreicher Teilnahme am Modul können die Studierenden: die gängigen Rechnertypen, deren Betriebssysteme und Einsatzgebiete unterscheiden; Zahlen in verschiedenen Zahlensystemen darstellen und verschiedene Zeichenkodierungen differenzieren; den grundsätzlichen Aufbau und die Arbeitsweise eines Rechners wiedergeben; den Aufbau von Computernetzwerken und des Internets beschreiben; System- und Anwendungssoftware definieren und differenzieren; die Grundlagen der Datensicherheit und des Datenschutzes kennen und verstehen; die wichtigsten Dokument- und Dateiformate charakterisieren und zugehörige Anwendungssysteme nennen; fachspezifische Kenntnisse pro Studiengang (siehe unter Inhalte).'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 1
+        note:
+          de: Dokument- und Dateiformate sowie Zeichenkodierungen.
+          en: Document and file formats as well as character encodings.
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 1
+        note:
+          de: Grundlagen von Informations- und Kommunikationssystemen.
+          en: Fundamentals of information and communication systems.
+  - code: IM1
+    title: Information Retrieval and Research
+    credits: 6
+    category: pflicht
+    goals: Die systematische Suche nach Information und Daten in diversen Quellen (vor allem über InternetSuchmaschinen und in Fachdatenbanken) sowie die Bewertung gefundener Dokumente auf ihre Relevanz gehören zu den zentralen Kompetenzen einer/-s Informationswissenschaftlerin/-s. In diesem Modul werden sowohl die technisch-methodischen Grundlagen von Suchsystemen gelegt als auch die systematische Vorgehensweise in der praktischen Recherche vermittelt und eingeübt. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, eine Informationsbedarfsanalyse durchzuführen; die Analyse und Auswahl von Informationsquellen und zugehörigen Suchsystemen bei einem gegebenen Informationsbedarf vorzunehmen; eine Online-Recherche systematisch durchzuführen; Ergebnisse einer Online-Recherche hinsichtlich des Informationsbedarfs zu bewerten und in einem Dossier zusammenzufassen sowie zu vermitteln; die Möglichkeiten und Grenzen der professionellen Recherche bei gegebenen Informationsquellen und zugehörigen Suchsystemen (Internet, Wissensdatenbanken, OPACs u.a.) einzuschätzen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 3
+        note:
+          de: Informationsbedarfsanalyse, Quellenauswahl und systematische Recherche.
+          en: Information needs analysis, source selection and systematic searching.
+      - framework: quadriga-dlf
+        competency: '1.2'
+        level: 1
+        note:
+          de: Bewertung von Rechercheergebnissen hinsichtlich des Informationsbedarfs.
+          en: Evaluation of search results with regard to the information need.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Zusammenfassung und Vermittlung von Rechercheergebnissen.
+          en: Synthesis and communication of search results.
+  - code: IM2
+    title: Wissensorganisation und –repräsentation
+    credits: 8
+    category: pflicht
+    goals: Ziel der Vorlesung Wissensorganisation und –repräsentation 1 ist das aneignen und anwenden der theoretischen und konzeptionellen Grundlagen der formalen und inhaltlichen Wissensorganisation und -repräsentation. Neben grundlegenden Zielsetzungen, Einflussfaktoren und Rahmenbedingungen der Wissensorganisation werden konkret die herkömmlichen und bewährten Ansätze bzw. Methoden der Erschliessung behandelt sowie der dabei zum Einsatz kommenden Instrumente. Idee der Vorlesung Wissensorganisation und -repräsentation 2 ist es, die konkrete Anwendung der in WOR 1 erlernten Konzepte, Methoden und Instrumente in den verschiedenen Anwendungsfällen (Bibliothek, Archiv, Bilderschliessung und bei digitalen Daten (im Internet) zu vermitteln. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, in eigenen Worten wiedergeben zu können, was Ursachen, Zielsetzung und Relevanz der Wissensorganisation und -repräsentation ausmachen; wesentliche Einflussfaktoren auf die Erschliessung zu erläutern; die gängigen Methoden sowie deren Zielsetzungen zur inhaltlichen Erschliessung fehlerfrei und ihren inhärenten Regeln entsprechend zu erläutern und in begrenztem Rahmen exemplarisch einzusetzen; wesentliche Merkmale und Regeln sowie Wirkungsumfang der Instrumente der inhaltlichen Erschliessung wiedergeben zu können.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Methoden, Regeln und Instrumente der inhaltlichen Erschließung.
+          en: Methods, rules and instruments of subject indexing.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 2
+        note:
+          de: Erschließung als Zugang zu Informationsquellen.
+          en: Indexing as access to information sources.
+  - code: IW1
+    title: Bachelor Thesis
+    credits: 12
+    category: pflicht
+    goals: Studierende beweisen mit der Erstellung einer eigenständig, systematisch und nach wissenschaftlichen Kriterien erstellten Abschlussarbeit die Reife für den akademischen Titel "Bachelor of Science". Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, ein Exposé für eine wissenschaftliche Themenstellung auszuarbeiten; eine wissenschaftliche Abschlussarbeit selbstständig unter Anwendung angemessener Forschungsmethoden zu bearbeiten und schriftlich zu verfassen; nach Fertigstellung der Abschlussarbeit diese anhand eines Thesengesprächs zu verteidigen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 3
+        note:
+          de: Selbstständige wissenschaftliche Bearbeitung und Verteidigung.
+          en: Independent academic work and defence.
+      - framework: quadriga-dlf
+        competency: '4.3'
+        level: 2
+        note:
+          de: Ableitung und Reflexion eigener Forschungsergebnisse.
+          en: Derivation and reflection of own research results.
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 1
+        note:
+          de: Wissenschaftliche Redlichkeit in der Abschlussarbeit.
+          en: Academic integrity in the thesis.
+  - code: IW2
+    title: Fachpraktikum
+    credits: 6
+    category: pflicht
+    goals: Im Fachpraktikum sollen die Studierenden anhand konkreten Aufgabenstellungen oder Projekten in einer einschlägigen Organisation berufspraktische Erfahrungen sammeln und die im Studium erworbenen Kompetenzen anwenden. Die erworbenen Kenntnisse und Erfahrungen aus der Praxis sollen die Motivation für den letzten Studienabschnitt fördern und es den Studierenden erleichtern, ihr Studium fachlich zu fokussieren. Das Praktikum dient auch dazu, den einschlägigen Arbeitsmarkt im In- oder Ausland kennen zu lernen. Nach Abschluss dieses Moduls sind die Studierenden in der Lage, eine praktische Aufgabenstellung systematisch und mit den bis dahin im Studium erworbenen Kompetenzen anzugehen; einen Projektbericht über ein im Fachpraktikum bearbeitetes Themengebiet zu verfassen; spezifische Arbeitsmethoden und -mittel anzuwenden; Arbeitsorganisation und Organisation der Institution wieder zu geben; ein Problembewusstsein für Arbeitsabläufe und -organisation zu entwickeln; Prinzipien von Kooperation und Koordination zu erkennen und anzuwenden; die gemeinschaftliche Arbeit in Arbeitsgruppen zu praktizieren; an der Lösung spezieller Arbeitsaufgaben in der Praxis teilzunehmen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 2
+        note:
+          de: Berufspraktische Arbeitsorganisation und Projektbericht.
+          en: Professional work organisation and project report.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Kommunikation und Kooperation im Praxisumfeld.
+          en: Communication and cooperation in the practical environment.
+  - code: IW3
+    title: Grundlagen der Informationswissenschaft
+    credits: 10
+    category: pflicht
+    goals: Die Studierenden erhalten eine umfassende Einführung in die Informationswissenschaft und in die Themenschwerpunkte des SII als Grundlage für das weitere Studium. Die Studierenden machen Exkursionen zu verschiedenen Unternehmen und Institutionen, die passende Berufsbilder aus den Themenschwerpunkten des SII anbieten. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, informationswissenschaftliche Fachbegriffe und deren Konzepte zu kennen und diese richtig anzuwenden; die Grundstrukturen und Inhalte der Informationswissenschaft zu kennen, auf aktuelle Probleme einzugehen, sie aus informationswissenschaftlicher Sichtweise zu analysieren, zu diskutieren und zu bewerten; die Geschichte der Informationswissenschaft zu kennen sowie die gesellschaftliche und ethische Rolle der Informationswissenschaft zu verstehen; die Themenschwerpunkte des SII zu überblicken und somit eine Entscheidung für die persönliche thematische Auslegung im späteren Vertiefungsstudium treffen zu können (Auswahl und Kombination der Wahlpflichtmodule); zu verstehen, wie umfangreich die informationswissenschaftliche Tätigkeit im Arbeitsmarkt ist; zu erkennen welche Kompetenzen und welches Fachwissen in den unterschiedlichen informationswissenschaftlichen Berufsbildern benötigt wird; zu beurteilen, wo und wie in Institutionen und Unternehmen Informationswissenschaftlerinnen und Informationswissenschaftler eingesetzt werden können
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 2
+        note:
+          de: Gesellschaftliche und ethische Rolle der Informationswissenschaft.
+          en: Societal and ethical role of information science.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: Überblick über informationswissenschaftliche Berufs- und Informationsfelder.
+          en: Overview of information-science professions and information fields.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Informationswissenschaftliche Fachbegriffe und Diskurse.
+          en: Information-science terminology and discourses.
+  - code: IW4
+    title: Grundlagen Kommunikations- und Medienwissenschaft / Informationsrecht
+    credits: 4
+    category: pflicht
+    goals: Studierende verfügen über Grundkenntnisse in der Kommunikations- und Medienwissenschaft sowie im Informationsrecht, welche für ihren beruflichen Alltag relevant sind. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, zwischen unterschiedlichen Funktionsweisen von Kommunikation zu differenzieren; die Bedeutung von Medien (Massenmedien, Soziale Medien etc.) für die Kommunikation einzuschätzen; ein anspruchsvolles Thema der Kommunikations- und Medienwissenschaft in einem Blogbeitrag und Kurzreferat vorzustellen; diejenigen Rechtsvorschriften zu benennen, welche spezifisch für die Informationsverarbeitung und -vermittlung relevant sind und unter dem Begriff „Informations- und Kommunikationsrecht“ zu überblicken; Rechtsvorschriften bei der Planung und Umsetzung von Dienstleistungen im Bereich der Informationsverarbeitung und -vermittlung zu berücksichtigen und gegebenfalls von kompetenter Stelle vertieft abklären zu lassen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 3
+        note:
+          de: Informations- und Kommunikationsrecht für Informationsverarbeitung und -vermittlung.
+          en: Information and communication law for data processing and dissemination.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Medien und Kommunikation als Gegenstand der Vermittlung.
+          en: Media and communication as an object of dissemination.
+  - code: IW5
+    title: Projektkurs
+    credits: 6
+    category: wahlpflicht
+    goals: Projektkurse verknüpfen im Rahmen von konkreten Praxisprojekten die bis dahin im Studium zumeist isoliert vermittelten Wissensbereiche in methodisch und didaktisch sinnvoller Weise. Die Themen des Projektkurses wechseln kontinuierlich und entstammen den im Studium angebotenen Schwerpunkten. Ziel ist es, die selbständige und teambezogene Forschung und/oder Entwicklung einzuüben. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage als Individuum im Team an einem praktischen Projekt zu arbeiten; die im Studium angeeigneten theoretisch-methodischen Kenntnisse in der Praxis anzuwenden; (Teil-)Ergebnisse zeitgerecht und nach qualitativen Vorgaben/Kriterien zu erstellen; ein Projekt zu planen, zu managen und durchzuführen; Projektrisiken abzuschätzen und mit diesen umzugehen; die Kommunikation und Koordination mit internen und/oder Stakeholdern (v.a. Auftraggeber) zu führen; ggf. das Thema des Projektkurses in einer späteren Bachelorthesis zu vertiefen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 2
+        note:
+          de: Projektplanung, -management und Risikoumgang.
+          en: Project planning, management and risk handling.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Kommunikation mit Auftraggebern und Stakeholdern.
+          en: Communication with clients and stakeholders.
+  - code: IW6
+    title: Seminar
+    credits: 4
+    category: wahlpflicht
+    goals: In Seminaren werden aktuelle Themen aus dem informationswissenschaftlichen Bereich systematisch bearbeitet (Exposé, Fragestellungen, Hypothesen, Gliederung etc.). Die Ergebnisse werden in einer schriftlichen Seminararbeit nach wissenschaftlichen Schema verfasst. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, selbständig und systematisch an einem Thema zu forschen; wissenschaftliche Fragestellungen zu formulieren; den State-of-the-Art von aktuellen Forschungsfragen zu erstellen; den wissenschaftlichen Diskurs aktiv zu führen; Forschungsergebnisse zu präsentieren und zu publizieren.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Wissenschaftlicher Diskurs, Präsentation und Publikation.
+          en: Scholarly discourse, presentation and publication.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: State-of-the-Art-Recherche zu aktuellen Forschungsfragen.
+          en: State-of-the-art research on current questions.
+  - code: IW7
+    title: Wissens- und Informationsmanagement
+    credits: 4
+    category: pflicht
+    goals: Das Modul WIMAN vermittelt den Studierenden, welches Potenzial sich aus einem systematischen und zielorientierten Wissens- und Informationsmanagement ergibt, um den organisationalen Wissens- und Informationstransfer zu verbessern und damit Lernen und Innovation zu fördern. Die Kurse WIM und IMAN vermitteln den Studierenden dieses Potenzial an Hand ausgewählter Methoden und Fallbeispiele und sensibilisiert sie für mögliche Probleme bei der Umsetzung von WIM- und IMAN-Massnahmen. Nach erfolgreicher Teilnahme am Modul, sind die Studierenden in der Lage, die Informationsverarbeitung (Beschaffung, Aufbereitung, Vermittlung und Speicherung von Wissen bzw. Informationsangeboten) von Organisationen aus den Perspektiven des Informations- und Wissensmanagement gezielt zu optimieren
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 3
+        note:
+          de: Optimierung organisationaler Informationsverarbeitung.
+          en: Optimisation of organisational information processing.
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 1
+        note:
+          de: Aufbereitung und Bereitstellung von Informationsangeboten.
+          en: Preparation and provision of information services.
+  - code: SA1
+    title: Bibliotheks- und Archivinformatik
+    credits: 4
+    category: pflicht
+    goals: Im Modul Bibliotheks- und Archivinformatik lernen die Studierenden die in Bibliotheken und Archiven eingesetzten Softwares und Technologien kennen. Funktionsweisen von Bibliothekssystemen (bis hin zu Cloud-Konzepten), Archivinformationssystemen, Publikationsplattformen, Suchportale etc. werden erläutert. Verschiedene quelloffene Software-Lösungen werden evaluiert und im Einsatz über unterschiedliche Datenbestände angewandt. Es wird gezeigt, wie Metadatenstandards und Austauschprotokolle eingesetzt und genutzt werden. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, die Funktionsweise spezifischer Bibliotheks- und Archivsoftware zu verstehen; die richtige Software für eine spezifische Aufgabe zu evaluieren; Daten in ein Suchportal zu integrieren; Bibliothekarische und archivarische Metadaten (z.B. MARC, MARCXML, Dublin Core, EAD, BIBFRAME) zu modellieren und diese mit entsprechenden Protokollen / Anwendungen zu übertragen; Crosswalks zwischen unterschiedlichen Metadatenformaten zu konzipieren und anzuwenden.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 3
+        note:
+          de: Bibliothekarische und archivarische Metadatenstandards und Crosswalks.
+          en: Library and archival metadata standards and crosswalks.
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 1
+        note:
+          de: Datenintegration und Austauschprotokolle.
+          en: Data integration and exchange protocols.
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 1
+        note:
+          de: Betrieb und Bewertung von Bibliotheks- und Archivsystemen.
+          en: Operation and evaluation of library and archive systems.
+  - code: SA2
+    title: Digitales Publizieren und Multimediasysteme
+    credits: 4
+    category: pflicht
+    goals: Digital produzierte Medien (Fotografien, Musik, Videos, Webseiten, E-Books, usw.) gewinnen weiter an Bedeutung. Die Verteilung der digitalen Medien erfolgt immer häufiger über das Internet und immer weniger über Datenträger wie CD-ROM oder DVD. Zur Publikation digitaler Inhalte dient sehr oft das Web, und die Nutzung der Inhalte erfolgt vermehrt auf mobilen Endgeräten wie Smartphones und Tablets. Digitale Medien erleichtern die Integration unterschiedlicher Medien in interaktiven Anwendungen (Multimedia). Beispiele dafür sind Videos auf Webseiten der Online-Ausgaben von Zeitungen oder Lieder und Quizzes in Enhanced E-Books. Im Modul Digitales Publizieren und Multimediasysteme erarbeiten die Studierenden projektorientiert das Verständnis für die inhaltlichen, technischen und organisatorischen Aspekte der Produktion, Publikation und Nutzung multimedialer Arrangements. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, die Verfahren und die wesentlichsten Kenngrössen zur Digitalisierung einzelner Medien (Bild, Grafik, Audio, Video) zu erklären; die Hauptkomponenten von gängigen Mediendateiformaten (Metadaten, Formatangaben, usw.) zu beschreiben und ihre Bedeutung für die Nutzung und die digitale Langzeitarchivierung zu erläutern; digitale Bilder und Audioaufnahmen sachgerecht zu bearbeiten; mit vorliegenden Inhalten (Texten, Bildern, Grafiken, Tonaufnahmen, Videos, interaktiven Elementen wie z.B. Quizzes, usw.) ein multimediales Arrangement in einem Projektteam zu konzipieren, zu produzieren und sowohl im Web als auch in Form eines Enhanced E-Books zu publizieren; die Gemeinsamkeiten und Unterschiede von gängigen E-Book-Formaten (PDF, EPUB 2, EPUB 3) zu erläutern; Aspekte der Nutzung von Webseiten und E-Books auf unterschiedlichen mobilen Geräten zu beschreiben und vergleichend zu beurteilen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 2
+        note:
+          de: Produktion und Publikation digitaler Medien und E-Books.
+          en: Production and publication of digital media and e-books.
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 2
+        note:
+          de: Mediendateiformate, Metadaten und Digitalisierung.
+          en: Media file formats, metadata and digitisation.
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 2
+        note:
+          de: Langzeitarchivierung digitaler Medien.
+          en: Long-term preservation of digital media.
+  - code: SA3
+    title: Daten- und Informationsvisualisierung
+    credits: 4
+    category: pflicht
+    goals: Studierende werden in die Lage versetzt, Daten aufzubereiten, einfache Visualisierungen selbst zu programmieren und komplexe, interaktive Visualisierungen mittels Visualisierungswerkzeugen aufzusetzen. Nach Abschluss dieses Moduls sind die Studierenden in der Lage, Daten explorativ zu analysieren; Statistische Masse auf Daten anzuwenden; einfache Visualisierungen selbst zu programmieren; nach Anwendungszweck passende Visualisierungen auszuwählen; Visualisierungen zu bewerten; Visualisierungen für komplexe Sachverhalte aus unterschiedlichen Daten-quellen aufzubereiten; Interaktive Visualisierungen zu erstellen (bspw. Dashboards); Wissenschaftliche Visualisierungen zu überblicken.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '4.2'
+        level: 3
+        note:
+          de: Auswahl, Erstellung und Bewertung von Visualisierungen.
+          en: Selection, creation and evaluation of visualisations.
+      - framework: quadriga-dlf
+        competency: '4.1'
+        level: 2
+        note:
+          de: Explorative Datenanalyse und statistische Maße.
+          en: Exploratory data analysis and statistical measures.
+      - framework: quadriga-dlf
+        competency: '4.3'
+        level: 1
+        note:
+          de: Vermittlung komplexer Sachverhalte durch Visualisierung.
+          en: Communicating complex issues through visualisation.
+  - code: SA4
+    title: Information Consulting
+    credits: 4
+    category: pflicht
+    goals: Bei der Ausbildung im Arbeitsfeld der Informationsberatung geht es um den Erwerb praxisnaher Beratungskompetenzen, die eine wichtige Bedeutung im Arbeitsalltag von Informationsspezialistinnen und - spezialisten spielen können. Das Modul befähigt zur fachlichen Beratung in den Arbeitsfeldern Informations- und Medienmarketing und Informationsprozessmanagement. Die Studierenden eignen sich geeignete Theorien, Modelle und Instrumente an, damit sie sich als methodisch geschulte und kritische MitarbeiterInnen im Bereich der Informationsberatung (Information Consulting) bewähren können. Nach Abschluss des Moduls sind die Studierenden in der Lage, die Grundlagen der Beratung wiederzugeben; verschiedene Beratungsmodelle zu überblicken; Beratungssituationen als KundInnen, BeraterInnen und BeobachterInnen zu unterscheiden; die ausgewählte Beratungsmodelle und Techniken anzuwenden; Beratungsgespräche gezielt zu planen, durchzuführen und zu reflektieren; ein auf den Kundenbedarf ausgerichtetes Angebot zu erstellen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Beratungsgespräche planen, durchführen und reflektieren.
+          en: Planning, conducting and reflecting consulting interviews.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: Ermittlung des Kunden- und Informationsbedarfs.
+          en: Identifying client and information needs.
+  - code: SA5
+    title: Lebenszyklusmanagement 1
+    credits: 4
+    category: pflicht
+    goals: Die Verwaltung betrieblicher Information über den gesamten Lebenszyklus ist für jede Organisation ein kritischer Erfolgsfaktor. Die Studierenden lernen den Lebenszyklus von Informationsobjekten von der Entstehung bis hin zu deren Langzeitarchivierung kennen. Dabei setzen sie sich mit den Gründen, warum bestimmte Informationsobjekte in welchen Phasen des Lebenszyklus besondere Beachtung verdienen auseinander und lernen die Methoden der Bewertung kennen. Sodann lernen die Studierenden unterschiedliche Methoden der Organisation der Objekte situationsgerecht einzusetzen. Nach Abschluss des Moduls sind die Studierenden in der Lage, Lebenszyklusmodelle zu beschreiben; rechtliche Anforderungen an das Informationsmanagement in Organisationen darzulegen; den Informationsbedarf in einer Organisation zu ermitteln; Methoden zur Bewertung von Informationsobjekten in den unterschiedlichen Phasen des Lebenszyklus anzuwenden; Methoden der Organisation von Informationsobjekten situationsgerecht auszuwählen und anzuwenden; notwendige Massnahmen bei den Phasenübergängen bezeichnen; Institutionen, die sich einzelnen Aspekten des Lebenszyklusmanagements widmen zu identifizieren; Im Rahmen einer Fallstudie einen konkreten Lebenszyklus zu konzipieren ausgewählte Aspekte des Lebenszyklusmanagements zu entwerfen und anzuwenden.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 2
+        note:
+          de: Organisation von Informationsobjekten über ihren Lebenszyklus.
+          en: Organisation of information objects across their lifecycle.
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 2
+        note:
+          de: Bewertung und Lebenszyklus von Informationsobjekten.
+          en: Appraisal and lifecycle of information objects.
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 1
+        note:
+          de: Rechtliche Anforderungen an das Informationsmanagement.
+          en: Legal requirements for information management.
+  - code: SA6
+    title: Requirements Engineering
+    credits: 4
+    category: pflicht
+    goals: Das Requirements Engineering (RE) ist essentiell für die erfolgreiche, den Kunden zufriedenstellende Entwicklung von Systemen. Eine Hauptaufgabe des Requirements Engineering ist es, aus Vorstellungen und Ideen des (potentiellen) Kunden eine möglichst vollständige, korrekte und widerspruchsfreie Anforderungsspezifikation zu erarbeiten. Dies soll durch eine systematische, qualitätsgesteuerte Erhebung, Formulierung und Dokumentation der Anforderungen erreicht werden. Eine Teildisziplin des RE, das Requirements Management, konzentriert sich auf die Konsolidierung, Priorisierung, Versionierung und Archivierung der ermittelten Anforderungen über den gesamten Life Cycle des Systems hinweg. Dies ist auch in agilen Projektsettings nach wie vor valide. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, potentielle Anforderungsquellen zu identifizieren; eine Anforderungserhebung anhand verschiedener Erhebungstechniken durchzuführen; eine Anforderungsspezifikation zu erarbeiten und deren Einzelelemente bedarfsgerecht zu dokumentieren; zu skizzieren, wie man Anforderungen mit Vertragspartnern abstimmt und priorisiert; zu erläutern, wie man Anforderungen konsistent verwaltet und archiviert.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 2
+        note:
+          de: Erhebung, Spezifikation und Verwaltung von Anforderungen.
+          en: Elicitation, specification and management of requirements.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: Identifikation von Anforderungsquellen.
+          en: Identification of requirement sources.
+  - code: SAR1
+    title: Digitalisieren
+    credits: 4
+    category: wahlpflicht
+    goals: 'Institutionen müssen - wenn sie erfolgreich sein wollen - im Netz präsent sein. Im Vordergrund vergangener Digitalisierungsbestrebungen stand die Erstellung digitaler Findmittel, online zugängliche Datenbanken, deren Inhalt aus Metadaten bestehen. Dies genügt längst nicht mehr. Heute werden Inhalte digitalisiert und vermittelt. Dieser Wandel stellt die Institutionen vor neue Herausforderungen, denen die Studierenden gewachsen sein sollen, indem sie: die grundlegenden Digitalsierungsprozesse von Bild- und Schriftgut kennen und in der Lage sind, deren Qualität zu beurteilen. Nach der erfolgreichen Teilnahme am Modul sind die Studierenden in der Lage, die Grundlagen digitaler Aufnahmetechnologien (Zeilen- und Matrixsensoren) wiederzugeben und diese zielorientiert einzusetzen; die technischen Spezifikationen, um fotografische Papierabzüge zu überblicken und Schriftgut anforderungsgerecht zu digitalisieren; die Qualität der produzierenden Daten zu überprüfen; ein fotografisches Negativ in ein Positiv umzuwandeln; mit Informationsverlusten umzugehen, deren Bedeutung/Folgen abzuschätzen.'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '2.1'
+        level: 3
+        note:
+          de: Digitale Aufnahmetechnologien und Digitalisierung von Schriftgut.
+          en: Digital capture technologies and digitisation of records.
+      - framework: quadriga-dlf
+        competency: '1.2'
+        level: 2
+        note:
+          de: Überprüfung der Qualität der produzierten Daten.
+          en: Checking the quality of the produced data.
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 1
+        note:
+          de: Umgang mit Informationsverlusten und Bestandserhalt.
+          en: Handling information loss and preservation.
+  - code: SAR2
+    title: Lebenszyklusmanagement 2
+    credits: 4
+    category: wahlpflicht
+    goals: Die langfristige Archivierung und Nutzbarhaltung digitaler Objekte stellt eine grosse gesellschaftliche Herausforderung dar. Aufbauend auf dem Modul LEZY1, das sich konzeptionellen Aspekten des Lebenszyklusmanagements von Informationsobjekten widmet, wendet sich LEZY2 den praktischen Herausforderungen zu. Die Studierenden lernen, Daten und Metadaten zu analysieren und die für die Archivierung notwendigen Massnahmen zu planen und in Praxisbeispielen durchzuführen. Sie wenden die erworbenen Kenntnisse in einer digitalen Laborumgebung an und führen die Arbeitsschritte in den Bereichen Datenakquisition, Archivierung und Nutzbarmachung an verschiedenen Beispielen durch. Zudem erarbeiten die Studierenden über das Semester hinweg eine Fallstudie mit einem eigenen Datenbestand, um das Gelernte Schritt für Schritt eigenständig anzuwenden. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, Grundkonzepte von Records Management und digitaler Archivierung zu verstehen; Daten aus dem Web und von Datenträgern zu übernehmen; Dateien zu identifizieren und zu charakterisieren; Methoden für das Erschliessen digitaler Ablieferungen anzuwenden; Speichersysteme im Hinblick auf die Archivtauglichkeit zu beurteilen; Die Erhaltungsstrategien Migration und Emulation zu kennen, beurteilen und an Beispielen anwenden zu können; Die Nutzer-Anforderungen insbesondere der Digital Humanities zu kennen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 3
+        note:
+          de: Records Management, digitale Archivierung und Erhaltungsstrategien.
+          en: Records management, digital archiving and preservation strategies.
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 2
+        note:
+          de: Datenakquisition, Archivierung und Nutzbarmachung.
+          en: Data acquisition, archiving and reuse.
+      - framework: quadriga-dlf
+        competency: '2.2'
+        level: 1
+        note:
+          de: Identifikation und Charakterisierung von Dateien.
+          en: Identification and characterisation of files.
+  - code: SAR3
+    title: Medienkonservierung
+    credits: 4
+    category: wahlpflicht
+    goals: Die Studierenden lernen analoge Medien, deren Materialeigenschaften und Alterungszustände kennen, um präventive Konservierungsmassnahmen frühzeitig einzuleiten. Sie sind in der Lage zu erkennen, wann aktive konservatorische und oder restauratorische Massnahmen notwendig sind. Nach erfolgreicher Teilnahme am Modul kennen die Studierende sowohl die zentralen klimatische Einflussfaktoren als auch deren Wechselwirkung im Allgemeinen und deren Einfluss auf die langfristige Erhaltung im Besonderen. Die Studierenden in der Lage, den Zustand von Papier und papierbasierten Medien (z.B. Bücher) zu analysieren; sie kennen die Veränderungsprozesse von Papier und vorbeugende konservatorische Massnahmen der Medienkonservierung. analoge audiovisuelle Kulturgüter wie Fotografie, Tonaufnahmen, Film, und Video zu identifizieren und zu verstehen um schliesslich einzu­schätzen, welche Bestandserhaltungs­massnahmen einzuleiten sind. wichtige digitale Medienformate zu identifizieren und dabei einzuschätzen, welches adäquate Erhaltungsstrategien sind. Die Studierenden lernen im Verlauf des Kurses nationale Akteure zur Erhaltung des schweizerischen audiovisuellen Kulturerbes und konservatorisch ausgebildete Fachkräfte kennen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 3
+        note:
+          de: Erhaltungsstrategien für analoge und digitale Medien.
+          en: Preservation strategies for analogue and digital media.
+      - framework: quadriga-dlf
+        competency: '1.2'
+        level: 1
+        note:
+          de: Analyse des Zustands und der Alterung von Medien.
+          en: Analysis of the condition and ageing of media.
+  - code: SBM1
+    title: Bestand und Vermittlung
+    credits: 4
+    category: wahlpflicht
+    goals: Im Modul Bestand und Vermittlung lernen die Teilnehmenden, Bestand und Dienstleistungen der Bibliothek entsprechend den Bedürfnissen der intendierten Zielgruppe zu planen und stetig weiterzuentwickeln. Darauf aufbauend erhalten sie einen Überblick über das wissenschaftliche Kommunikationswesen. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, die Entwicklung des Bestandes und des Dienstleistungsangebots einer Bibliothek strategisch zu planen, zu dokumentieren, zu evaluieren und fortzuentwickeln und dabei den Bedarf der intendierten Benutzenden sowohl an Informationsquellen wie auch an auf diese Informationsquellen bezogenen Dienstleistungen fortlaufend zu ermitteln; relevante Entwicklungen des Umfelds der Bibliothek (Medienmarkt, Bildungssystem) einzuschätzen; die Entwicklungen auf dem Medienmarkt, inklusive der Strategien der medienproduzierenden Firmen, nachzuvollziehen und einzuordnen; die Prozesse der wissenschaftlichen Kommunikation zu kennen, ihre Veränderung zu beobachten, und die Rolle der Bibliotheken darin zu verstehen und weiterzuentwickeln; die Bedeutung von Open Access, Open Data und Open Source für die Bibliotheken und dessen Angebot nachzuvollziehen; die rechtlichen Rahmenbedingungen zu kennen; Kooperationen mit anderen Bibliotheken oder relevanten Einrichtungen zu planen; bibliothekarische Hilfsmittel für das Bestandsmanagement einzusetzen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 2
+        note:
+          de: Bestandsplanung und Vermittlung von Informationsangeboten.
+          en: Collection planning and dissemination of information services.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Wissenschaftliche Kommunikation und Open Access.
+          en: Scholarly communication and open access.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: Ermittlung des Bedarfs der Benutzenden.
+          en: Identifying user needs.
+  - code: SBM2
+    title: Bibliotheksmanagement
+    credits: 4
+    category: wahlpflicht
+    goals: Im Modul Bibliotheksmanagement erhalten die Studierenden einen Überblick über die in Bibliotheken anfallenden Managementaufgaben und erlernen Methoden, um diesen Aufgaben gerecht zu werden. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, die Leitidee, die Vision, die Strategie für eine Bibliothek, eine Abteilung einer Bibliothek, oder ein bestimmtes Dienstleistungsangebot zu erstellen, regelmässig zu evaluieren und nötigenfalls weiterzuentwickeln; im Arbeitsalltag die sinnvollen Managementinstrumente auszuwählen und anzuwenden; Methoden zur Wertermittlung von Bibliotheken zu diskutieren und geeignete Methoden anzuwenden; unterschiedliche Finanzierungsmodelle für Bibliotheken zu erkennen, den Ressourcenbedarf zu analysieren, und die im jeweiligen Kontext adäquaten Ressourcen einzufordern; ein Budget transparent und verantwortlich zu verwalten; die Mitarbeitenden zu grösstmöglichem Nutzen für die Institution sowie den einzelnen Mitarbeitenden einzusetzen und weiterzuentwickeln; alle Elemente des Bibliotheksangebotes ständig mit Rücksicht auf die Bedürfnisse der intendierten Nutzenden einerseits, und die allgemeine Entwicklung des Bibliotheks- und Bildungswesens insgesamt zu evaluieren und gegebenenfalls weiterzuentwickeln; Risiken für die Bibliothek frühzeitig zu erkennen sowie entsprechende Lösungsstrategien zu entwickeln und anzuwenden.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 3
+        note:
+          de: Strategie, Budget, Personal und Risikomanagement.
+          en: Strategy, budget, staff and risk management.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Weiterentwicklung des Dienstleistungsangebots.
+          en: Further development of the service portfolio.
+  - code: SBM3
+    title: Evidence Based Library and Information Practice
+    credits: 4
+    category: wahlpflicht
+    goals: 'Die Studierenden lernen ihre professionelle Praxis nach den Prinzipien des evidenzbasierten Arbeitens auszurichten und zu dieser Evidenzbasis beizutragen. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, ihre professionelle Praxis zu hinterfragen: Zielsetzung Wahl der geeignetsten Arbeitsmethode Evaluation des Informationsbedarfs Recherche und Evidenzsynthese Kritische Reflexion; Evidenz zu sammeln oder zu schaffen (durch Forschung und Evaluation); Information oder Evidenz klug einzusetzen: um Entscheidungen über die eigene Praxis zu fällen um die eigene Praxis durch Ausprobieren neuer Ideen zu verbessern um Entscheidungen über die Dienstleistungen ihrer Bibliothek zu treffen um anderen zu helfen, Entscheidungen über die von der Bibliothek angebotenen Dienstleistungen zu treffen, indem sie Effektivität, Nutzen, Auswirkung und Wert der Bibliothek demonstrieren um ihre professionellen Fähigkeiten und Kenntnisse zum Nutzen anderer einzusetzen. Fortschreibung von relevanten Standards nachzuvollziehen und sich selber an ihnen zu beteiligen; Nutzer:innenforschung zu betreiben, um frühzeitig für die Bibliothek relevante soziodemographische Trends identifizieren zu können.'
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 2
+        note:
+          de: Recherche und Evidenzsynthese für die Praxis.
+          en: Retrieval and evidence synthesis for practice.
+      - framework: quadriga-dlf
+        competency: '1.2'
+        level: 2
+        note:
+          de: Evaluation des Informationsbedarfs und kritische Reflexion.
+          en: Evaluation of information needs and critical reflection.
+      - framework: quadriga-dlf
+        competency: '4.3'
+        level: 2
+        note:
+          de: Nutzung von Evidenz für Entscheidungen in der Praxis.
+          en: Using evidence for decisions in practice.
+  - code: SDM1
+    title: Datenanalyse
+    credits: 4
+    category: wahlpflicht
+    goals: Datenanalyse für grosse Datenmengen wird für Entscheidungsprozesse immer wichtiger. Das Modul vermittelt Grundlagen zur Datenanalyse im Bereich Data Science. Nach Abschluss des Moduls sind die Studierenden in der Lage, die Methoden der statistischen Analyse zu verstehen und zu beschreiben; Daten für Analysezwecke erfolgreich aufzubereiten; Konzepte des Maschinellen Lernens auf strukturierte/unstrukturierte Daten anzuwenden und die Qualität der Ergebnisse zu beurteilen; Konzepte des Machine Learning aufzuzeigen und in der Praxis umzusetzen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '4.1'
+        level: 3
+        note:
+          de: Methoden der statistischen Analyse und des maschinellen Lernens.
+          en: Methods of statistical analysis and machine learning.
+      - framework: quadriga-dlf
+        competency: '2.2'
+        level: 2
+        note:
+          de: Beurteilung der Qualität von Analyseergebnissen.
+          en: Assessing the quality of analysis results.
+      - framework: quadriga-dlf
+        competency: '4.3'
+        level: 1
+        note:
+          de: Interpretation datenbasierter Ergebnisse.
+          en: Interpretation of data-based results.
+  - code: SDM2
+    title: Datenmanagement
+    credits: 4
+    category: wahlpflicht
+    goals: Die Studierenden lernen die einzelnen Schritte des wissenschaftlichen Datenmanagements. Zugrunde gelegt werden dabei Modelle des Data-Life-Cycle sowie die FAIR Principles nach denen Daten findable, accessible, interoperable und reusable sein sollen. Beide Ansätze bekommen im Datenmanagement in der wissenschaftlichen und privatwirtschaftlichen Forschung eine immer stärkere Bedeutung. Ergänzt wird euch Datenmanagementansätze im betrieblichen und gesellschaftlichen Kontext. Neben der Vermittlung von Konzepten werden auch Übungen durchgeführt. Nach der erfolgreichen Teilnahme am Modul sind die Studierenden in der Lage, einen Datenmanagementplan zu erstellen; verschiedene Metadatenmodelle zu verstehen und anzuwenden; Konzepte zur mehrfachen Nutzung von Records umzusetzen; Herausforderungen und Lösungen für Langzeitarchivierung zu kennen; Best Practice zur Mehrwertschöpfung von Daten umzusetzen; Datenmanagement im betrieblichen Sinn einordnen und die Herausforderungen von Dateninfrastrukturen beschreiben zu können.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 3
+        note:
+          de: Datenmanagementplan und Data-Life-Cycle.
+          en: Data management plan and data lifecycle.
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 3
+        note:
+          de: Langzeitarchivierung und Erhaltung von Daten.
+          en: Long-term archiving and preservation of data.
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 2
+        note:
+          de: Metadatenmodelle und mehrfache Nutzung von Records.
+          en: Metadata models and reuse of records.
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 2
+        note:
+          de: FAIR-Prinzipien und Mehrwertschöpfung aus Daten.
+          en: FAIR principles and value creation from data.
+  - code: SDM3
+    title: Information Security
+    credits: 4
+    category: wahlpflicht
+    goals: Das Modul vermittelt IT-Security aus verschiedenen Perspektiven. Dabei wird sowohl die Sicht des Angreifers als auch des Systemverantwortlichen vermittelt, um einen tieferen technischen und operativen Einblick zu erhalten. Nach der erfolgreichen Teilnahme am Modul sind die Studierenden in der Lage, die Stärken und Schwächen zentraler technischer Verfahren und Protokolle in Informationssystemen aus sicherheitstechnischer Sicht zu bewerten; die im E-Business auftretenden Sicherheitsprobleme und Datenschutzaspekte aus rechtlicher Sicht zu beleuchten und einzuordnen; unter der Vielzahl prinzipiell geeigneter Sicherheitstechnologien eine geeignete Auswahl zu treffen; die Nutzung und Bereitstellung von alltäglichen Informationsangeboten im Web in Hinsicht auf aktuelle Sicherheits-Aspekte zu beurteilen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.3'
+        level: 2
+        note:
+          de: Datenschutz- und rechtliche Aspekte der Informationssicherheit.
+          en: Data protection and legal aspects of information security.
+      - framework: quadriga-dlf
+        competency: '5.1'
+        level: 2
+        note:
+          de: Sicherheitstechnologien und sichere Bereitstellung von Informationen.
+          en: Security technologies and secure provision of information.
+  - code: SIM1
+    title: Informationsprozessmanagement
+    credits: 4
+    category: wahlpflicht
+    goals: Organisationen benötigen die erforderlichen Informationsangebote zur richtigen Zeit im richtigen Format an der richtigen Stelle. Das Informations- und Medienmanagement kann diese Anforderungen nur umsetzen, wenn es die Informationsverarbeitung als Prozess („Informationsflüsse“) verstehen und analysieren kann. Deshalb zählen die Prozessanalyse und Prozessmodellierung zu den Basismethoden für die Optimierung komplexer Informationsverarbeitungsprozesse. Die Studierenden eignen sich mit der Prozessanalyse und der Prozessmodellierung zwei für das Informations- und Medienmanagement unverzichtbare methodische Kernkompetenzen an. Die Studierenden sind nach erfolgreichem Abschluss des Moduls in der Lage, Prozessanalysen und Prozessmodellierungen selbständig durchzuführen; die „üblichen“ Kernprozesse von Organisationen wiederzugeben und zu wissen, dass dazu zahlreiche Referenzmodelle vorliegen; Referenzmodelle beschaffen und als Grundlage für eigene Modellierungen verwenden; die für das Informations- und Medienmanagement wichtigsten Anwendungsfelder der Prozessanalyse und Prozessmodellierung zu überblicken; die geläufigsten Standards der Prozessmodellierung anzuwenden; konkrete Wertschöpfungs- und Informationsverarbeitungsprozesse zu beobachten, zu analysieren und zu modellieren; zu wissen, wie die Prozessanalyse als Methode der Informationsbedarfsanalyse eingesetzt werden kann.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 3
+        note:
+          de: Prozessanalyse und -modellierung der Informationsverarbeitung.
+          en: Process analysis and modelling of information processing.
+      - framework: quadriga-dlf
+        competency: '1.1'
+        level: 1
+        note:
+          de: Prozessanalyse als Methode der Informationsbedarfsanalyse.
+          en: Process analysis as a method of information needs analysis.
+  - code: SIM2
+    title: Strategisches Informations- & Medienmarketing
+    credits: 4
+    category: wahlpflicht
+    goals: Die Studierenden lernen die Grundlagen des strategischen Informations- und Medienmarketings. Sie wissen, welche Aufgaben dem Informations- und Medienmanagement bei der Planung und Umsetzung eines integrierten Marketings für informationsintensive Produkte und Dienstleistungen zukommen. Sie können entsprechende Massnahmen zwecks Optimierung der Wertschöpfung konzipieren. Nach der erfolgreichen Teilnahme am Modul sind die Studierenden in der Lage, wichtige Marketing-Instrumente wiederzugeben, mit denen sich die (1) Produkt- und Dienstleistungspolitik, (2) Kontrahierungspolitik, (3) Distributionspolitik, (4) Personalpolitik und (5) Kommunikationspolitik ausgestalten lässt das Konzept des integralen Marketings zu beschreiben und zu wissen, welche spezifischen Aufgaben und Funktionen dem Informations- und Medienmanagement dabei zukommen zwischen nach innen (internen) und aussen (externen) gerichteten Aufgaben und Funktionen des Informations- und Medienmarketings zu unterscheiden die Verknüpfung der Erzeugung von (1) Dienstleistungen, (2) Hybriden Produkten und (3) Medien- und Informationsangeboten mit einer besonders intensiven Informationsverarbeitung herzustellen und mit dem Informations- und Medienmanagement einen zentralen Beitrag zur Optimierung der damit verbundenen Wertschöpfung zu leisten das Channel-Management gerade für den Vertrieb informationsintensiver Produkte und Dienstleistungen als wichtigen faktor einzuschätzen die wesentlichen Businessmodelle von Social Media und anderen informationsintensiven Dienstleistungen wiederzugeben die Methode der Marktsegmentierung in Fallstudien anzuwenden die Informations- und Medienmarketingmassnahmen auf spezifische Marktstrategien und den damit verbundenen Informationsbedarf auszurichten.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 2
+        note:
+          de: Marketinginstrumente und Marktsegmentierung.
+          en: Marketing instruments and market segmentation.
+      - framework: quadriga-dlf
+        competency: '5.2'
+        level: 1
+        note:
+          de: Vermarktung informationsintensiver Produkte und Dienstleistungen.
+          en: Marketing of information-intensive products and services.
+  - code: SIM3
+    title: Strategisches Informationsmanagement
+    credits: 4
+    category: wahlpflicht
+    goals: Die Studierenden werden darauf vorbereitet, dass sie sich bei der Planung, Ausführung und Kontrolle strategischer Projekte im Bereich der organisationalen Informationsverarbeitung und Kommunikation als konzeptionell geschulte und kritische Mitarbeiterinnen und Mitarbeiter bewähren können. Die Basis bilden ihr Grundverständnis vom strategischen Informationsmanagement und ihre Fähigkeit, in betrieblichen und marktwirtschaftlichen Gesamtzusammenhängen zu denken. Im Bestreben, die organisationale Wertschöpfung zu verbessern, entwickeln sie eigene Ideen für die Optimierung von Informationsverarbeitungsprozessen und Informationssystemen und konzipieren ein eigenes strategisches Projekt. Nach der erfolgreichen Teilnahme am Modul sind die Studierenden in der Lage, einschätzen zu können, welchen Beitrag das strategische Informationsmanagement zur innovativen und ganzheitlichen Organisationsentwicklung leisten kann; das aktuelle Rollenverständnis eines CIO (u.a. das Aufgabenfeld der Information Governance) wiederzugeben und kritisch zu diskutieren; den idealtypischen Ablauf eines Strategiebildungsprozesses wiederzugeben und zu wissen, welche Beiträge das Informations- und Medienmanagement im Allgemeinen und das Informationsprozessmanagement im Besonderen für die verschiedenen Schritte der Strategiebildung und -umsetzung leisten können; analysebezogene und umsetzungsbezogene Strategieinstrumente bei der Entwicklung und Realisierung strategischer Informationsmanagementprojekte gewinnbringend einzusetzen; bei der Planung von Informationssystemen auch in betrieblichen und marktwirtschaftlichen Gesamtzusammenhängen zu denken; ein eigenes strategisches Informationsmanagementprojekt zu entwickeln.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '3.1'
+        level: 3
+        note:
+          de: Strategiebildung und -umsetzung im Informationsmanagement.
+          en: Strategy formation and implementation in information management.
+      - framework: quadriga-dlf
+        competency: '3.2'
+        level: 1
+        note:
+          de: Planung von Informationssystemen im Gesamtzusammenhang.
+          en: Planning of information systems in context.
+  - code: SWE1
+    title: Frontend Development
+    credits: 4
+    category: wahlpflicht
+    goals: Zukünftige Webauftritte sind keine reinen Webseiten mehr, sondern interaktive und multimediale Webapplikationen. Die Studierenden lernen, wie sie die Konzeption und Erstellung solcher Anwendungen mit verschiedenen Technologien (wie Programmierung mit JavaScript, AJAX, XML und JSON) verbessern können. Diese Kenntnisse sind notwendig, um benutzerfreundliche, interaktive und moderne Webapplikationen zu bauen. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, JavaScript als Clientseitige Programmiersprache anwenden zu können; aktuelle JavaScript Framework kennen und interaktive Web-Anwendungen mit AJAX zu realisieren; RESTful als Web-Service für die Maschine-zu-Maschine Kommunikation anzuwenden; den Aufwand für die Realisierung von Webportalen und Webanwendungen einschätzen; eine Softwareentwicklungsmethode anzuwenden; verstehen, wie Webprojekte ablaufen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '4.1'
+        level: 1
+        note:
+          de: Programmierung interaktiver Webanwendungen.
+          en: Programming of interactive web applications.
+      - framework: quadriga-dlf
+        competency: '2.3'
+        level: 1
+        note:
+          de: Formate und Schnittstellen (XML, JSON, REST).
+          en: Formats and interfaces (XML, JSON, REST).
+  - code: SWE2
+    title: Human Computer Interaction
+    credits: 4
+    category: wahlpflicht
+    goals: Für erfolgreiche interaktive Systeme (z.B. Website, Software, Consumer Electronics) ist es essentiell, dass diese nicht nur technischen Ansprüchen genügen, sondern auch auf die Bedürfnisse von Anwendern zugeschnitten sind. Hierfür muss während der Entwicklung das gesamte Anforderungsspektrum berücksichtigt werden. Der Nutzungskontext spielt dabei ebenso eine Rolle wie kulturelle Faktoren. Für die nutzerzentrierte Entwicklung sind daher interdisziplinäre Fähigkeiten (z.B. Informatik, Design, Psychologie) erforderlich. Der Kurs behandelt die Grundlagen des User-Centered-Designs (UCD) sowie dem Usability Engineering, wobei der Fokus auf Evaluationen liegt. Neben einer Einführung in die Entstehung dieser Fachgebiete werden Grundlagen der Kognitionspsychologie sowie von Lerntheorien behandelt. Daneben werden die Elemente einer Nutzungskontextanalyse (Aufgaben, Nutzereigenschaften, Umgebung) behandelt sowie entsprechend geeignete Erhebungsformen. Darauf aufbauend werden ausgewählte Usability-Evaluationsmethoden vorgestellt und deren Stärken und Schwächen aufgezeigt. In Ergänzung hierzu wird das Thema „Accessibility“ behandelt. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, Anforderungen hinsichtlich der (Weiter-) Entwicklung von interaktiven Systemen systematisch zu erheben und zu dokumentieren (z.B. Personas, Szenarien); für ein spezifisches Produkt/Projekt geeignete Evaluationsmethoden auszuwählen und diese praktisch anzuwenden; interaktive Systeme hinsichtlich ihrer Gebrauchstauglichkeit zu bewerten; basierend auf Evalutionsresultaten grundlegende Optimierungsvorschläge für festgestellte Fehler und Mängel zu erarbeiten; die Barrierefreiheit von Software/Websites grundlegend zu beurteilen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '1.2'
+        level: 1
+        note:
+          de: Evaluation von Nutzungskontext und Gebrauchstauglichkeit.
+          en: Evaluation of context of use and usability.
+      - framework: quadriga-dlf
+        competency: '4.2'
+        level: 1
+        note:
+          de: Bewertung interaktiver Systeme und Visualisierungen.
+          en: Evaluation of interactive systems and visualisations.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Nutzergerechte Aufbereitung von Informationen.
+          en: User-appropriate presentation of information.
+  - code: SWE3
+    title: Konzeption und Prototyping
+    credits: 4
+    category: wahlpflicht
+    goals: Eine Stärke des nutzerzentrierten Design Prozess ist die zeitlich frühe Visualisierung von Ideen und Lösungsansätzen, um sie mit Nutzern zu testen und mit Stakeholdern zu diskutieren oder als Teil des Designprozesses. In diesem Modul werden die Arbeitsschritte von der Idee bis zur Erstellung von präsentierbaren, testbaren Prototypen erlernt. Es werden verschiedene Arten von Prototyping für verschiedene Zwecken behandelt. Gestartet wird mit Papierprototyping. Darauf folgen Mischformen, die teilweise mit Prototyping Tools erstellt werden. Schlussendlich wird eine Projektidee mit dem Front-End Framework Bootstrap umgesetzt. Nach erfolgreicher Teilnahme am Modul sind die Studierenden in der Lage, die Grundlagen des Webdesigns anzuwenden; die in der Praxis gängigen Formen de Prototypings anzuwenden; die richtige Art von Prototyping zur Erfüllung der Projektzwecke anzuwenden; ihre Prototyping-Werkzeuge sorgfältig auszuwählen, die Tool-Wahl systematisch durchzuführen, und ihre Entscheidung zu begründen; Prototypen auf Nutzbarkeit und Usability zu testen und Feedback einzuarbeiten; Kundengespräche über Prototypen zu führen, Prototypen zu präsentieren und Feedback zu verarbeiten; die grundlegenden Funktionen von Bootstrap anzuwenden; mit Bootstrap einfache Websites zu prototypen und umzusetzen.
+    mappings:
+      - framework: quadriga-dlf
+        competency: '4.2'
+        level: 1
+        note:
+          de: Visualisierung von Ideen durch Prototypen.
+          en: Visualisation of ideas through prototypes.
+      - framework: quadriga-dlf
+        competency: '5.3'
+        level: 1
+        note:
+          de: Präsentation und Nutzertests von Prototypen.
+          en: Presentation and user testing of prototypes.
