@@ -5,8 +5,10 @@
   "id": "hu-berlin-wf-ma",
   "title": "MA Wissenschaftsforschung",
   "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
+  "institutionAbbr": "HU",
   "language": "de",
   "sourceLabel": "Fachspezifische Studien- und Prüfungsordnung (Amtliches Mitteilungsblatt Nr. 40/2026)",
+  "institutionUrl": "https://www.hu-berlin.de/",
   "source": "https://schnaitter.github.io/Kompetenzbrille/assets/AMB-40_2026_SPO_MA_Wissenschaftsforschung.pdf",
   "categories": [
     {

@@ -5,8 +5,10 @@
   "id": "hu-berlin-biw-ma-wb",
   "title": "MA Bibliotheks- und Informationswissenschaft (weiterbildend, Fernstudium)",
   "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
+  "institutionAbbr": "HU",
   "language": "de",
   "sourceLabel": "Fachspezifische Studien- und Prüfungsordnung für den weiterbildenden Masterstudiengang (Nichtamtliche Lesefassung, Verkündungsstand 27.02.2023)",
+  "institutionUrl": "https://www.hu-berlin.de/",
   "source": "https://schnaitter.github.io/Kompetenzbrille/assets/lesefassung-fs-master-2023.pdf",
   "categories": [
     {
