@@ -1,0 +1,200 @@
+{
+  "id": "hu-berlin-biw-ma-wb",
+  "title": "MA Bibliotheks- und Informationswissenschaft (weiterbildend, Fernstudium)",
+  "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
+  "language": "de",
+  "source": "assets/lesefassung-fs-master-2023.pdf",
+  "sourceLabel": "Fachspezifische Studien- und Prüfungsordnung für den weiterbildenden Masterstudiengang (Nichtamtliche Lesefassung, Verkündungsstand 27.02.2023)",
+  "categories": [
+    { "id": "pflicht", "label": "Pflicht" }
+  ],
+  "modules": [
+    {
+      "code": "M1",
+      "title": "Handlungsfelder & Dienstleistungen",
+      "credits": 20,
+      "category": "pflicht",
+      "goals": "Das Modul behandelt nach grundlegenden Themen wie „Typologie der Bibliotheks- und Informationseinrichtungen“ und „Elektronisches Publizieren und Open Access“ insbesondere Fragen der Beschaffung und Beschreibung von konventionellen und digitalen Informationsressourcen mit dem Schwerpunkt der Anwendung in Bibliotheken. Nach Abschluss des Moduls verfügen die Studierenden über Grundlagenkenntnisse des Bibliothekswesens. Die Studierenden haben praxisorientierte Kenntnisse über bibliothekarische Arbeitsabläufe mit herkömmlichen und digitalen Medien.",
+      "topics": [
+        "Typologie der Bibliotheks- und Informationseinrichtungen",
+        "Elektronisches Publizieren und Open Access",
+        "Aspekte der Bibliothekspraxis im Ausland",
+        "Multimedia in der Bibliothekspraxis",
+        "Bestandsaufbau und -erhaltung",
+        "Bestandssicherung und -archivierung",
+        "Digitale Archivierung",
+        "Geschäftsgang und Lizenzierung von Online-Medien",
+        "Informationsaufbereitung, Bestandserschließung",
+        "Forschungsdatenmanagement",
+        "Semantic Web und Ontologien",
+        "Bestandsvermittlung, Bibliotheksbenutzung",
+        "Benutzer- und Marktforschung",
+        "Informationsproduktion und -vermittlung",
+        "Recherchemethoden und -strategien",
+        "Auskunfts- und Informationsdienst",
+        "Bibliothekarische Verbünde und ihre Perspektiven"
+      ],
+      "mappings": [
+        {
+          "framework": "quadriga-dlf", "competency": "1.1", "level": 2,
+          "note": {
+            "de": "Recherchemethoden und -strategien; Auskunfts- und Informationsdienst.",
+            "en": "Search methods and strategies; reference and information services."
+          }
+        },
+        {
+          "framework": "quadriga-dlf", "competency": "3.1", "level": 2,
+          "note": {
+            "de": "Forschungsdatenmanagement als explizites Thema; Bestandsmanagement.",
+            "en": "Research data management as an explicit topic; collection management."
+          }
+        },
+        {
+          "framework": "quadriga-dlf", "competency": "3.2", "level": 2,
+          "note": {
+            "de": "Informationsaufbereitung und Bestandserschließung; Semantic Web und Ontologien.",
+            "en": "Information processing and collection indexing; semantic web and ontologies."
+          }
+        },
+        {
+          "framework": "quadriga-dlf", "competency": "5.1", "level": 2,
+          "note": {
+            "de": "Bestandssicherung und -archivierung; digitale Archivierung.",
+            "en": "Collection safeguarding and archiving; digital archiving."
+          }
+        },
+        {
+          "framework": "quadriga-dlf", "competency": "5.2", "level": 2,
+          "note": {
+            "de": "Elektronisches Publizieren und Open Access.",
+            "en": "Electronic publishing and open access."
+          }
+        },
+        {
+          "framework": "quadriga-dlf", "competency": "2.1", "level": 1,
+          "note": {
+            "de": "Benutzer- und Marktforschung als Erhebungsmethoden.",
+            "en": "User and market research as data collection methods."
+          }
+        }
+      ]
+    },
+    {
+      "code": "M2",
+      "title": "Management & Technik",
+      "credits": 20,
+      "category": "pflicht",
+      "goals": "Das Modul behandelt insbesondere Fragen der betriebswirtschaftlichen und technischen Leitung von Institutionen der Bibliotheks- und Informationspraxis und der hier zur Anwendung kommenden Theorien. Nach Abschluss dieses Moduls haben die Studierenden Kenntnisse über die Leitung von Einrichtungen der Bibliotheks- und Informationspraxis erworben und sich grundlegende Rechtskenntnisse, die für die Informationspraxis wichtig sind, angeeignet. Die Studierenden können Aussagen zu Fragen des Bibliotheksbaues und des Managements von BID-Einrichtungen machen.",
+      "topics": [
+        "Management und Marketing von Institutionen der Bibliotheks- und Informationspraxis",
+        "Haushalts- und Personalrecht",
+        "Wissensmanagement-Systeme & Data-Mining",
+        "Infometrie, Bibliometrie & Scientometrie",
+        "Informationswirtschaft",
+        "Bibliotheksbau und -technik"
+      ],
+      "mappings": [
+        {
+          "framework": "quadriga-dlf", "competency": "3.1", "level": 1,
+          "note": {
+            "de": "Management von Institutionen der Bibliotheks- und Informationspraxis; Wissensmanagement-Systeme.",
+            "en": "Management of library and information institutions; knowledge management systems."
+          }
+        },
+        {
+          "framework": "quadriga-dlf", "competency": "4.1", "level": 1,
+          "note": {
+            "de": "Data-Mining sowie Infometrie, Bibliometrie & Scientometrie als Analyseverfahren.",
+            "en": "Data mining as well as informetrics, bibliometrics and scientometrics as analysis methods."
+          }
+        }
+      ]
+    },
+    {
+      "code": "M3",
+      "title": "Kontext & Vernetzung",
+      "credits": 20,
+      "category": "pflicht",
+      "goals": "Das Modul beschreibt die historischen Grundlagen und die Bibliotheks- und Informationspraxis und ihre Institutionen in Gesellschaft und Politik. Nach Abschluss dieses Moduls haben die Studierenden Kenntnisse über Funktionen und Strukturen des Bibliothekswesens erworben und sich Fragestellungen und Methoden der Bibliotheks- und Informationswissenschaft angeeignet. Sie können historische und gegenwärtige bibliothekspolitische Probleme korrekt einordnen und haben anwendungsorientierte Kenntnisse in bibliotheksbezogener Informationstechnik.",
+      "topics": [
+        "Förderpolitik & Drittmittelakquise",
+        "Grundlagen der IT-Technik",
+        "Geschichte der Bibliotheks- und Informationspraxis; Buch- und Medienkunde; Handschriften und Altes Buch",
+        "Bibliotheks- und Informationspolitik",
+        "Bibliotheksrecht",
+        "Leseförderung"
+      ],
+      "mappings": [
+        {
+          "framework": "quadriga-dlf", "competency": "1.3", "level": 1,
+          "note": {
+            "de": "Bibliotheks- und Informationspolitik; Bibliotheksrecht.",
+            "en": "Library and information policy; library law."
+          }
+        }
+      ]
+    },
+    {
+      "code": "M4",
+      "title": "Berufspraktische Tätigkeit",
+      "credits": 25,
+      "category": "pflicht",
+      "goals": "Nach Abschluss des berufspraktischen Moduls haben die Studierenden ein Verständnis für wissenschaftliche, politische, kulturelle, soziale, rechtliche und wirtschaftliche Fragen in BID-Einrichtungen. Sie sind zu aktiver und passiver Kritik fähig und haben ein trainiertes Führungs- und Durchsetzungsvermögen. Sie sind innovativ und verfügen ein für BID-Einrichtungen nötiges Problembewusstsein.",
+      "topics": [
+        "Tätigkeit in einem dem Studiengang affinen Bereich (z.B. Bibliothek, Informationspraxis, Archiv, Museum, Buchhandel)",
+        "Bevorzugte Arbeitsinhalte u.a.: Informationsmanagement, Informationsvermittlung, Informationszugang, Medienmanagement, Bestandsvermittlung, Bestandsaufbau/Erwerbung, Informationsaufbereitung/Wissensrepräsentation, Informationslogistik, Elektronisches Publizieren, (Langzeit-)Archivierung digitaler und analoger Medien, Bestandserhaltung, Datenbankproduktion, Vermittlung von Informations-, Medien-, Lesekompetenz, Management von Informationseinrichtungen"
+      ],
+      "mappings": []
+    },
+    {
+      "code": "M5",
+      "title": "Vertiefungsbereich",
+      "credits": 5,
+      "category": "pflicht",
+      "goals": "Das Modul „Vertiefungsbereich“ behandelt vertieft Fragen um den Aufbau digitaler Bibliotheken und Fragen um das „Alte Buch“ und betont dabei Praxisaspekte. Nach Abschluss dieses Moduls haben die Studierenden vertiefte und praxisorientierte Kenntnisse in dem gewählten Bereich erworben. Die Studierenden haben einen Überblick über die wesentlichen Komponenten, Aufgaben und Entwicklungsstrategien im ausgewählten Vertiefungsbereich. Die Studierenden können das Thema eigenständig und kritisch reflektieren, haben praktische Anwendungskenntnisse und nehmen an aktueller Forschung teil.",
+      "topics": [
+        "Semantic Web & Linked Open Data",
+        "Digitale Langzeitarchivierung",
+        "Handschriften und Alte Drucke",
+        "Personalführung",
+        "Archivische Bestände in Bibliotheken"
+      ],
+      "mappings": [
+        {
+          "framework": "quadriga-dlf", "competency": "3.2", "level": 1,
+          "note": {
+            "de": "Semantic Web & Linked Open Data (wahlweise Vertiefung).",
+            "en": "Semantic web & linked open data (optional specialisation)."
+          }
+        },
+        {
+          "framework": "quadriga-dlf", "competency": "5.1", "level": 1,
+          "note": {
+            "de": "Digitale Langzeitarchivierung (wahlweise Vertiefung).",
+            "en": "Digital long-term preservation (optional specialisation)."
+          }
+        }
+      ]
+    },
+    {
+      "code": "M6",
+      "title": "Masterarbeit und Verteidigung",
+      "credits": 30,
+      "category": "pflicht",
+      "goals": "Die Studierenden weisen mit der Masterarbeit die im Studiengang erworbenen Kenntnisse und Fähigkeiten des selbstständigen und wissenschaftlichen Arbeitens nach. In der anschließenden Verteidigung wird festgestellt, ob die Studierenden die erforderlichen fachlichen Kenntnisse und Fähigkeiten für die wissenschaftliche Arbeit in Bibliotheken und Informationseinrichtungen besitzen.",
+      "topics": [
+        "Masterarbeit (17 Wochen, ca. 50 Seiten)",
+        "Verteidigung unter Einbezug des gesamten Studienkontexts einschließlich des berufspraktischen Moduls"
+      ],
+      "mappings": [
+        {
+          "framework": "quadriga-dlf", "competency": "5.3", "level": 2,
+          "note": {
+            "de": "Masterarbeit und Verteidigung als zielgruppenspezifische Kommunikation von Forschungsergebnissen; Datenbezug hängt vom Thema ab.",
+            "en": "Master's thesis and defense as audience-specific communication of research findings; the data aspect depends on the topic."
+          }
+        }
+      ]
+    }
+  ]
+}
