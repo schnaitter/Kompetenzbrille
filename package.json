@@ -1,0 +1,13 @@
+{
+  "name": "kompetenzbrille",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Competency frameworks × study programs — data validation and JSON-LD tooling",
+  "scripts": {
+    "validate": "node scripts/validate-data.js",
+    "jsonld": "node scripts/yaml-to-jsonld.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.18.0"
+  }
+}

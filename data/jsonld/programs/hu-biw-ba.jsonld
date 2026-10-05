@@ -1,0 +1,622 @@
+{
+  "@context": "https://schnaitter.github.io/Kompetenzbrille/data/schemas/program-context.jsonld",
+  "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba",
+  "@type": "StudyProgram",
+  "id": "hu-berlin-biw-ba",
+  "title": "BA Bibliotheks- und Informationswissenschaft",
+  "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
+  "language": "de",
+  "sourceLabel": "Fachspezifische Studien- und Prüfungsordnung (Nichtamtliche Lesefassung, Verkündungsstand 29.09.2025)",
+  "source": "https://schnaitter.github.io/Kompetenzbrille/assets/lesefassung_spo_ba.pdf",
+  "categories": [
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "@type": "ModuleCategory",
+      "id": "pflicht",
+      "label": "Pflicht"
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "@type": "ModuleCategory",
+      "id": "wahlpflicht",
+      "label": "Wahlpflicht"
+    }
+  ],
+  "modules": [
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP1",
+      "@type": "Module",
+      "code": "BP1",
+      "title": "Einführung in die Bibliotheks- und Informationswissenschaft",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "goals": "Die Studierenden haben einen Überblick über die Geschichte, Fragestellungen, Ansätze und Methoden der Bibliotheks- und Informationswissenschaft. Sie können grundlegende wissenschaftliche Arbeitsweisen einsetzen. Sie besitzen ein Orientierungswissen über die wesentlichen Institutionen der Informationsinfrastruktur und können die Bedeutung von Informationspolitik und -strategie beurteilen. Sie kennen die Vielfalt, Ziele sowie die Funktionalitäten der zum Einsatz kommenden Informationssysteme. Sie verstehen, dass Informationsinfrastrukturen und Informationssysteme nicht nur von technischen Anforderungen abhängen, sondern auch vom sozialen Umfeld und den Bedarfsstrukturen der Nutzer.",
+      "topics": [
+        "Geschichte und Fragestellungen der Bibliotheks- und Informationswissenschaft",
+        "Ansätze und Methoden der Bibliotheks- und Informationswissenschaft",
+        "Wissenschaftliches Arbeiten in der Disziplin",
+        "Öffentliche und kommerzielle Informationsinfrastrukturen",
+        "Informationspolitik",
+        "Typen von Informationssystemen und deren Dienstleistungen",
+        "Architektur und Funktionalität von Informationssystemen",
+        "Entwicklung und Benutzung von Informationssystemen",
+        "Bewertung von Informationssystemen"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP1/mapping/quadriga-dlf-1_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
+          "level": 2,
+          "note": {
+            "de": "Orientierungswissen über Informationsinfrastrukturen, Typen von Informationssystemen und deren Dienstleistungen; Recherche-Grundlagen im Überblick.",
+            "en": "Orientation knowledge of information infrastructures, types of information systems and their services; overview of retrieval fundamentals."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP1/mapping/quadriga-dlf-1_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
+          "level": 1,
+          "note": {
+            "de": "Bedeutung von Informationspolitik und -strategie wird beurteilt; rechtliche Fragen nur am Rand.",
+            "en": "Covers judging the role of information policy and strategy; legal aspects only touched upon."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP1/mapping/quadriga-dlf-5_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
+          "level": 1,
+          "note": {
+            "de": "Wissenschaftliches Arbeiten in der Disziplin als Grundlage wissenschaftlicher Kommunikation.",
+            "en": "Academic working methods in the discipline as a basis for scholarly communication."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP2",
+      "@type": "Module",
+      "code": "BP2",
+      "title": "Informations- und Kommunikationstechnologie",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "goals": "Die Studierenden verstehen grundlegende Prinzipien und Verfahren der Informations- und Kommunikationstechnologie und deren Begriffswelt. Sie haben ein Verständnis für Computing sowie den Aufbau und die Funktionsweise von Computern entwickelt. Die Studierenden kennen die Grundlagen einer modernen Programmiersprache und sind in der Lage, kleine Programme selbstständig zu schreiben. Im Modul werden Fähigkeiten wie Modellierung, Abstraktion sowie formales bzw. algorithmisches Denken entwickelt.",
+      "topics": [
+        "Aufbau und Arbeitsweise von Computern",
+        "Computing",
+        "Mathematische und logische Grundlagen",
+        "Algorithmen und Datenstrukturen",
+        "Programmierparadigmen",
+        "Informationstheorie und -repräsentation",
+        "Dateisysteme und -formate",
+        "Kommunikation und Datenübertragung",
+        "Netzwerke",
+        "Internet-Protokolle und -Dienste"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP2/mapping/quadriga-dlf-2_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
+          "level": 1,
+          "note": {
+            "de": "Technische Grundlagen: Dateisysteme und -formate, Datenstrukturen, Informationsrepräsentation.",
+            "en": "Technical foundations: file systems and formats, data structures, information representation."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3",
+      "@type": "Module",
+      "code": "BP3",
+      "title": "Informationsproduktion und -management",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "goals": "Die Studierenden können Konzepte, Techniken, Technologien und Standards im Bereich der Informationsproduktion- und des Informationsmanagements erklären. Sie kennen aktuelle Medien- und Publikationsformen. Sie haben praktische Fähigkeiten im Umgang mit Auszeichnungssprachen und Softwareanwendungen in diesem Gebiet. Die Studierenden verstehen sowohl den Prozess der Entstehung von digitalen Informationen bzw. Publikationen als auch das Management aus der Sicht von Verlagen, wissenschaftlichen Bibliotheken und anderen Informationseinrichtungen.",
+      "topics": [
+        "Internetbasierte Medien-, Kommunikations- und Publikationsformen",
+        "Grundlegende Standards der Informationsproduktion und des -managements",
+        "Technische Grundlagen des Publizierens einschließlich Dokumenttypen und Datenformate",
+        "Management und Umgang mit wissenschaftlichen Publikationen und anderen Informationen (z.B. Forschungsdaten)",
+        "Dokumentenmanagement",
+        "Technische Grundlagen der Produktion und des Managements von Multimediainhalten einschließlich Dokumenttypen und Datenformate",
+        "Umgang mit Medieninhalten (Grafik-, Audio-, Video-Files)",
+        "Organisations- und Geschäftsmodelle der Informationsproduktion und des Informationsmanagements",
+        "Plagiate und Möglichkeiten der Erkennung",
+        "Urheberrecht und lizenzrechtliche Fragen",
+        "Digitale Repositorien und das DINI-Zertifikat",
+        "Das Open-Access-Prinzip und sein Stellenwert für die Wissenschaft",
+        "Digitale Langzeitarchivierung und -verfügbarkeit"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3/mapping/quadriga-dlf-5_2",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.2",
+          "level": 3,
+          "note": {
+            "de": "Technische Grundlagen des Publizierens, Publikationsformen, Open Access, digitale Repositorien (DINI-Zertifikat), Umgang mit wissenschaftlichen Publikationen und Forschungsdaten.",
+            "en": "Technical foundations of publishing, publication formats, open access, digital repositories (DINI certificate), management of scholarly publications and research data."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3/mapping/quadriga-dlf-5_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.1",
+          "level": 2,
+          "note": {
+            "de": "Digitale Langzeitarchivierung und -verfügbarkeit.",
+            "en": "Digital long-term preservation and availability."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3/mapping/quadriga-dlf-1_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
+          "level": 2,
+          "note": {
+            "de": "Urheberrecht und lizenzrechtliche Fragen; Plagiate und deren Erkennung (gute wissenschaftliche Praxis).",
+            "en": "Copyright and licensing; plagiarism and its detection (good research practice)."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3/mapping/quadriga-dlf-3_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
+          "level": 1,
+          "note": {
+            "de": "Dokumentenmanagement; Management von Publikationen und Forschungsdaten aus Sicht von Bibliotheken und Verlagen.",
+            "en": "Document management; management of publications and research data from the perspective of libraries and publishers."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3/mapping/quadriga-dlf-2_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
+          "level": 1,
+          "note": {
+            "de": "Dokumenttypen und Datenformate; Produktion und Management von Multimediainhalten.",
+            "en": "Document types and data formats; production and management of multimedia content."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP4",
+      "@type": "Module",
+      "code": "BP4",
+      "title": "Informationsaufbereitung und -organisation",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "goals": "Die Studierenden kennen klassische und IT-gestützte Methoden der Informationsaufbereitung und -organisation. Dazu gehören die Ansätze und Standards der Metadatenproduktion und -aufbereitung sowie der Informationsarchitektur (einschließlich der formalen und inhaltlichen Erschließung) in webbasierten Informationsumgebungen. Sie können Methoden und Verfahren dieses Fachgebietes anwenden.",
+      "topics": [
+        "Beschreibung, Strukturierung und Organisation von Informationsressourcen oder anderen Objekten",
+        "Prinzipien, Ziele und Standards von Metadaten",
+        "Erstellung, Benutzung, Qualität und Interoperabilität von Metadaten",
+        "Geschichte, Ziele, Standards und Methoden der formalen und inhaltlichen Erschließung der Bibliotheks- und Informationspraxis",
+        "Prinzipien, Ziele und Methoden der Informationsarchitektur in webbasierten Informationsumgebungen",
+        "Prinzipien und Ziele von Datenstrukturen und Datenmodellen",
+        "Prinzipien und Methoden der intellektuellen und automatischen Wissensorganisation und -repräsentation",
+        "Automatische und IT-gestützte Methoden der Informationserfassung und -aufbereitung"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP4/mapping/quadriga-dlf-3_2",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
+          "level": 3,
+          "note": {
+            "de": "Standards der Metadatenproduktion und -aufbereitung; Erstellung, Benutzung, Qualität und Interoperabilität von Metadaten; formale und inhaltliche Erschließung.",
+            "en": "Standards for metadata production and processing; creation, use, quality and interoperability of metadata; formal and subject indexing."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP4/mapping/quadriga-dlf-3_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
+          "level": 2,
+          "note": {
+            "de": "Beschreibung, Strukturierung und Organisation von Informationsressourcen; Datenstrukturen und Datenmodelle; Wissensorganisation.",
+            "en": "Description, structuring and organisation of information resources; data structures and data models; knowledge organisation."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP4/mapping/quadriga-dlf-1_2",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.2",
+          "level": 1,
+          "note": {
+            "de": "Qualität und Interoperabilität von Metadaten als Qualitätsaspekt beschriebener Daten.",
+            "en": "Quality and interoperability of metadata as a quality aspect of described data."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP5",
+      "@type": "Module",
+      "code": "BP5",
+      "title": "Human Information Behavior",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "goals": "Die Studierenden können menschliche Verhaltensweisen des Information Seeking und Non-Seeking erklären, beschreiben und in Daten sichtbar machen. Sie sind in der Lage, eigene empirische Nutzerstudien durchzuführen und können Verfahren der Datenbeschreibung und -auswertung anwenden.",
+      "topics": [
+        "Information Need",
+        "Information Seeking",
+        "Verhaltensweisen wie Browsing, Encountering, Serendipity",
+        "Everyday-life-information behavior",
+        "Modelle der Informationsverhaltensforschung",
+        "Planung und Durchführung einer empirischen Nutzerstudie",
+        "Deskriptive Statistik",
+        "Präsentation von empirischen Daten"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP5/mapping/quadriga-dlf-2_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
+          "level": 3,
+          "note": {
+            "de": "Planung und Durchführung einer eigenen empirischen Nutzerstudie (Datenerhebung).",
+            "en": "Planning and conducting an own empirical user study (data collection)."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP5/mapping/quadriga-dlf-4_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
+          "level": 2,
+          "note": {
+            "de": "Verfahren der Datenbeschreibung und -auswertung; deskriptive Statistik.",
+            "en": "Methods of data description and analysis; descriptive statistics."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP5/mapping/quadriga-dlf-4_2",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.2",
+          "level": 1,
+          "note": {
+            "de": "Präsentation von empirischen Daten.",
+            "en": "Presentation of empirical data."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP5/mapping/quadriga-dlf-4_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.3",
+          "level": 1,
+          "note": {
+            "de": "Verhaltensweisen in Daten sichtbar machen und auswerten.",
+            "en": "Making behavioural patterns visible in data and evaluating them."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP6",
+      "@type": "Module",
+      "code": "BP6",
+      "title": "Projektmodul",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "goals": "Die Studierenden sind in der Lage, eine größere Aufgabenstellung der realen Berufspraxis in Abstimmung mit den beteiligten Mitstudierenden und unter Anleitung der Lehrenden zu bearbeiten. Neben fachlichen haben sie sich während der Projektarbeit auch überfachliche Qualifikationen (z.B. Entwicklung von Teamfähigkeit, Kommunikationsfähigkeit, Zeitmanagement) angeeignet.",
+      "topics": [
+        "Projektthemen aus aktuellen Forschungsschwerpunkten bzw. Problemkontexten der Informationswissenschaft",
+        "Projektorganisation im Team",
+        "Projektdokumentation"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP6/mapping/quadriga-dlf-3_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
+          "level": 1,
+          "note": {
+            "de": "Projektorganisation und -management in der Praxis; Datenbezug hängt vom jeweiligen Projektthema ab.",
+            "en": "Project organisation and management in practice; the data aspect depends on the chosen project topic."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP7",
+      "@type": "Module",
+      "code": "BP7",
+      "title": "Praktikum",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "goals": "Die Studierenden besitzen praktische Kenntnisse über Aufgaben, Arbeitsabläufe und Methoden im BI-Bereich sowie sozialer Verhaltensnormen der Berufswelt. Sie kennen Institutionen des BI-Bereichs aus innerbetrieblicher Sicht, typische Tätigkeitsbereiche, spezifische Arbeitsmethoden und -mittel und haben ein Problembewusstsein für Arbeitsabläufe und -organisation. Sie kennen Prinzipien von Kooperation und Koordinierung und wenden diese an, arbeiten in Arbeitsgruppen und tragen zur Lösung spezieller Arbeitsaufgaben der Praktikumseinrichtung praktisch bei.",
+      "topics": [
+        "Aufgaben, Struktur und Arbeitsweise von Informationsinstitutionen",
+        "Arbeitsabläufe durch Erklärung und Einbeziehung in die Tätigkeiten",
+        "Eigenständige Bearbeitung eines Sachverhalts bzw. Arbeit in einem konkreten Tätigkeitsfeld"
+      ],
+      "mappings": []
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP8",
+      "@type": "Module",
+      "code": "BP8",
+      "title": "Abschlussmodul",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "goals": "Die Studierenden weisen die Befähigung zum selbstständigen wissenschaftlichen Arbeiten durch die schriftliche Bearbeitung einer Problemstellung aus der Informationswissenschaft nach. Bei der Anfertigung der Bachelorarbeit erhalten die Studierenden Unterstützung in einem obligatorischen Begleitcolloquium, in dem sie lernen, ihre Fragestellung methodisch umzusetzen und in dem sie den Entwurf ihrer Arbeit erörtern können.",
+      "topics": [
+        "Bachelorthemen aus aktuellen Forschungsschwerpunkten bzw. Problemkontexten der Informationswissenschaft",
+        "Methodische Umsetzung der Fragestellung im Begleitcolloquium",
+        "Bachelorarbeit (Deutsch oder Englisch)"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP8/mapping/quadriga-dlf-5_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
+          "level": 1,
+          "note": {
+            "de": "Schriftliche Bearbeitung und Diskussion einer wissenschaftlichen Problemstellung (wissenschaftliche Kommunikation); Datenbezug hängt vom Thema ab.",
+            "en": "Written treatment and discussion of a scholarly problem (scholarly communication); the data aspect depends on the topic."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP1",
+      "@type": "Module",
+      "code": "BWP1",
+      "title": "Informationsdidaktik",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "goals": "Die Studierenden kennen und verstehen didaktische Konzepte und Modelle für die Vermittlung informationswissenschaftlicher Inhalte und Kompetenzen. Sie besitzen Fertigkeiten für die Planung und Durchführung von Veranstaltungen, Tutorials und weiteren Informationsdienstleistungen im Kontext von Informations- und Wissensvermittlungsprozessen.",
+      "topics": [
+        "Didaktische Vermittlungsmethoden",
+        "Lern- und Lehrmethoden",
+        "Analyse von Zielgruppen und Wissenskulturen",
+        "Konzepte der Lernerfolgskontrolle und Evaluation von Informationsdienstleistungen",
+        "Informationskompetenz",
+        "Datenkompetenz",
+        "Medienkompetenz"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP1/mapping/quadriga-dlf-5_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
+          "level": 2,
+          "note": {
+            "de": "Zielgruppenspezifische Vermittlung von Informations- und Datenkompetenz (explizit Thema); Planung und Durchführung von Veranstaltungen und Tutorials.",
+            "en": "Audience-specific teaching of information and data literacy (an explicit topic); planning and running events and tutorials."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2",
+      "@type": "Module",
+      "code": "BWP2",
+      "title": "Information Processing and Storage",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "goals": "Die Studierenden haben einen Überblick über grundlegende Prinzipien und Funktionsweisen von Datenbanksystemen. Sie sind in der Lage, Datenbanken für spezielle Anwendungen zu konzipieren und aufzubauen sowie deren effektive Nutzung zu ermöglichen. Sie sind vertraut im Umgang mit Methoden zur Bewertung und zum Vergleich von Datenbanksystemen.",
+      "topics": [
+        "Datenbankmodelle",
+        "Grundlagen relationaler Datenbanksysteme: Architektur, Datenbankentwurf, Anfragesprachen, Administration",
+        "Datenerhebung, Datenerfassung, Datenstrukturierung",
+        "Data Warehouses, Data Mining",
+        "Bewertung und Vergleich von Datenbanken",
+        "Nichtrelationale Datenbanken",
+        "Web-basierte Datenbanksysteme"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2/mapping/quadriga-dlf-3_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
+          "level": 3,
+          "note": {
+            "de": "Datenbankmodelle, relationale und nichtrelationale Datenbanksysteme, Architektur, Datenbankentwurf, Administration; Data Warehouses.",
+            "en": "Database models, relational and non-relational database systems, architecture, database design, administration; data warehouses."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2/mapping/quadriga-dlf-1_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
+          "level": 2,
+          "note": {
+            "de": "Anfragesprachen für Datenbanksysteme (im Framework ein Beispiel von 1.1).",
+            "en": "Query languages for database systems (an example of 1.1 in the framework)."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2/mapping/quadriga-dlf-2_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
+          "level": 2,
+          "note": {
+            "de": "Datenerhebung, Datenerfassung, Datenstrukturierung.",
+            "en": "Data collection, data capture, data structuring."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2/mapping/quadriga-dlf-4_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
+          "level": 1,
+          "note": {
+            "de": "Data Mining und Data Warehouses als Analyseverfahren.",
+            "en": "Data mining and data warehouses as analysis methods."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2/mapping/quadriga-dlf-2_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
+          "level": 1,
+          "note": {
+            "de": "Datenstrukturierung als Grundlage der (Vor-)Verarbeitung.",
+            "en": "Data structuring as a basis for (pre-)processing."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP3",
+      "@type": "Module",
+      "code": "BWP3",
+      "title": "Information und Gesellschaft",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "goals": "Die Studierenden verstehen die Zusammenhänge gesellschaftlicher Rahmenbedingungen und (technischer) Entwicklungen von Informationsdienstleistungen. Insbesondere der Umgang mit und die Interpretation von quantitativen Nutzer- und Nutzungsdaten werden in diesem Zusammenhang erarbeitet. Sie können darüber hinaus die Bedeutung von Informationspolitik, -recht und -ethik beurteilen.",
+      "topics": [
+        "Informationsethik",
+        "Informationspolitik",
+        "Webanalytics",
+        "Nutzer- und Nutzungsdaten",
+        "Datenschutz",
+        "Social Media"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP3/mapping/quadriga-dlf-1_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
+          "level": 3,
+          "note": {
+            "de": "Informationsethik, Informationspolitik, Datenschutz; Beurteilung von Informationsrecht und -ethik.",
+            "en": "Information ethics, information policy, data protection; judging information law and ethics."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP3/mapping/quadriga-dlf-4_3",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.3",
+          "level": 2,
+          "note": {
+            "de": "Umgang mit und Interpretation von quantitativen Nutzer- und Nutzungsdaten.",
+            "en": "Working with and interpreting quantitative user and usage data."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP3/mapping/quadriga-dlf-4_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
+          "level": 1,
+          "note": {
+            "de": "Webanalytics als Analyseverfahren für Nutzungsdaten.",
+            "en": "Web analytics as an analysis method for usage data."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP4",
+      "@type": "Module",
+      "code": "BWP4",
+      "title": "Human-Computer-Interaction",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "goals": "Studierende kennen die Grundlagen der menschlichen Informationsverarbeitung, Paradigmen und grundlegende Modelle sowie Evaluationsmethoden der Mensch-Maschine-Interaktion. Sie sind in der Lage, Produkte nach Aspekten des User Experience Design zu konzipieren und zu evaluieren.",
+      "topics": [
+        "Mensch-Maschine-Interaktion",
+        "Interaktionsdesign",
+        "Mentale Modelle",
+        "Informationsdesign",
+        "User Experience und Usability",
+        "Barrierefreiheit und Universal Design",
+        "Methoden des User Experience Design wie Thinking-Aloud, Card-Sorting, Persona"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP4/mapping/quadriga-dlf-4_2",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.2",
+          "level": 1,
+          "note": {
+            "de": "Informationsdesign und Interaktionsdesign als Gestaltung der visuellen Vermittlung von Information.",
+            "en": "Information design and interaction design as shaping the visual communication of information."
+          }
+        },
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP4/mapping/quadriga-dlf-2_1",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
+          "level": 1,
+          "note": {
+            "de": "Evaluations- und UX-Methoden (Thinking-Aloud, Card-Sorting, Persona) als Erhebung von Nutzerdaten.",
+            "en": "Evaluation and UX methods (thinking aloud, card sorting, persona) as collection of user data."
+          }
+        }
+      ]
+    },
+    {
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP5",
+      "@type": "Module",
+      "code": "BWP5",
+      "title": "Wirtschaftliche Grundlagen des Informationssektors",
+      "credits": 10,
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "goals": "Die Studierenden verstehen die wirtschaftliche Bedeutung von Information als Wirtschaftsgut und den Einsatz betriebswirtschaftlicher Instrumente in Informationseinrichtungen. Sie erlangen Wissen über die ökonomischen Besonderheiten von Informationsgütern, über Software- und Contentmärkte sowie Netzwerkökonomie. Sie können die Stellung digitaler Information in der Informations- und Wissensgesellschaft diskutieren und beurteilen. Sie kennen die wesentlichen Methoden und Verfahren der Prozessorganisation, der Finanzplanung, des Personalmanagements und des Marketings von Informationsinstitutionen und -leistungen.",
+      "topics": [
+        "Geschichte des Informationsmarktes",
+        "Makroökonomische Aspekte des Informationsbereichs",
+        "Arten digitaler Informationsgüter",
+        "Ökonomische Besonderheiten von Informationsgütern und -märkten",
+        "Wettbewerbsstrategien von Informationsanbietern",
+        "Soziologische, rechtliche und ethische Aspekte des Informationssektors",
+        "Organisationsformen und -leistungen virtueller Informationseinrichtungen",
+        "Prozessorganisation, Verwaltung, Haushalt und Finanzen von Informationseinrichtungen",
+        "Evaluierung von Organisationsabläufen, Leistungsmessung und Controlling",
+        "Personal- und Finanzmanagement",
+        "Qualitätsmanagement",
+        "Marketing von Informationsprodukten und -dienstleistungen",
+        "Bibliotheksbau und -einrichtung"
+      ],
+      "mappings": [
+        {
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP5/mapping/quadriga-dlf-2_2",
+          "@type": "CompetencyMapping",
+          "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
+          "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.2",
+          "level": 1,
+          "note": {
+            "de": "Qualitätsmanagement, Leistungsmessung und Controlling – bezogen auf Prozesse und Dienstleistungen, nicht auf Datenqualität.",
+            "en": "Quality management, performance measurement and controlling – related to processes and services, not to data quality."
+          }
+        }
+      ]
+    }
+  ]
+}
