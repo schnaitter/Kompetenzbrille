@@ -247,7 +247,6 @@
   /* ================= chrome (header/tabs/selects) ================= */
 
   function renderChrome() {
-    document.querySelector(".app-title").setAttribute("data-sub", t("appSubtitle"));
     document.getElementById("lbl-language").textContent = t("language");
 
     var tabs = document.getElementById("view-tabs");

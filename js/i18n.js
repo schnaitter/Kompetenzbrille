@@ -2,7 +2,6 @@
  * resp. the program's own language; these strings only drive the UI chrome. */
 window.I18N = {
   de: {
-    appSubtitle: "Frameworks × Studiengänge",
     language: "Sprache",
     viewProgram: "Programm-Sicht",
     viewFramework: "Framework-Sicht",
@@ -61,7 +60,6 @@ window.I18N = {
     catWahlpflicht: "Wahlpflicht"
   },
   en: {
-    appSubtitle: "Frameworks × Study Programs",
     language: "Language",
     viewProgram: "Program view",
     viewFramework: "Framework view",
