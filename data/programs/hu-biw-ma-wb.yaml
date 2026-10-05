@@ -7,6 +7,8 @@ sourceLabel: Fachspezifische Studien- und Prüfungsordnung für den weiterbilden
 categories:
   - id: pflicht
     label: Pflicht
+  - id: wahlpflicht
+    label: Wahlpflicht
 modules:
   - code: M1
     title: Handlungsfelder & Dienstleistungen
@@ -124,7 +126,7 @@ modules:
   - code: M5
     title: Vertiefungsbereich
     credits: 5
-    category: pflicht
+    category: wahlpflicht
     goals: Das Modul „Vertiefungsbereich“ behandelt vertieft Fragen um den Aufbau digitaler Bibliotheken und Fragen um das „Alte Buch“ und betont dabei Praxisaspekte. Nach Abschluss dieses Moduls haben die Studierenden vertiefte und praxisorientierte Kenntnisse in dem gewählten Bereich erworben. Die Studierenden haben einen Überblick über die wesentlichen Komponenten, Aufgaben und Entwicklungsstrategien im ausgewählten Vertiefungsbereich. Die Studierenden können das Thema eigenständig und kritisch reflektieren, haben praktische Anwendungskenntnisse und nehmen an aktueller Forschung teil.
     topics:
       - Semantic Web & Linked Open Data
