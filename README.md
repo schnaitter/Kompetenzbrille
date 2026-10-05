@@ -36,9 +36,10 @@ translation and the bilingual mapping notes at once.
 
 ## Run locally
 
-No build step — but it needs to be served over HTTP (`fetch()` of the YAML
-data files does not work from `file://`), and the YAML parser (`js-yaml`,
-pinned, via CDN) requires internet access:
+No build step, no external dependencies (the YAML parser `js-yaml` 4.1.0,
+MIT, is vendored at `js/vendor/js-yaml.min.js`) — but the app needs to be
+served over HTTP, since `fetch()` of the data files does not work from
+`file://`:
 
 ```sh
 python3 -m http.server 8000
@@ -56,7 +57,7 @@ All asset paths are relative, so project pages (`user.github.io/<repo>/`) work.
 
 ## Data model
 
-All data files are **YAML** (parsed client-side with `js-yaml` from a CDN)
+All data files are **YAML** (parsed client-side with the vendored `js-yaml`)
 for easy hand-editing. Study programs live in `data/programs/*.yaml` and are
 registered in `data/manifest.yaml`:
 
@@ -143,6 +144,7 @@ index.html               app shell
 css/style.css            styles
 js/i18n.js               UI strings (de/en)
 js/app.js                data loading, state, rendering
+js/vendor/js-yaml.min.js  vendored YAML parser (js-yaml 4.1.0, MIT)
 data/manifest.yaml       registry of the study programs
 data/frameworks/         QUADRIGA v4 framework (fixed: de + en)
 data/programs/           study program representations (HU Berlin: BA BIW,
