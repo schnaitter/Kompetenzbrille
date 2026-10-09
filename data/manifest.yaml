@@ -5,3 +5,10 @@ programs:
   - data/programs/hu-wf-ma.yaml
   - data/programs/htwk-biw-ba.yaml
   - data/programs/fhgr-is-ba.yaml
+
+# Framework data files, grouped by their `id`. Consumed by editor.html to build
+# the framework/competency dropdowns; the viewer still loads its matrix from
+# these files directly. Add new locales here and they are picked up automatically.
+frameworks:
+  - data/frameworks/quadriga-dlf.de.yaml
+  - data/frameworks/quadriga-dlf.en.yaml
