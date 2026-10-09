@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kompetenzbrille – Editor</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1 class="app-title"><img class="app-logo" src="assets/logo.svg" alt="" width="30" height="30">Kompetenzbrille <span class="editor-badge">Editor</span></h1>
+      <nav class="view-tabs" aria-label="Views">
+        <a class="view-tab" href="index.html" id="nav-view">Anzeige</a>
+        <a class="view-tab active" href="editor.html" id="nav-editor">Editor</a>
+      </nav>
+    </div>
+    <div class="topbar-right">
+      <label class="select-wrap">
+        <span id="lbl-language">Sprache</span>
+        <select id="sel-lang"></select>
+      </label>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="editor-sidebar" class="sidebar"></aside>
+    <main id="editor-main" class="main" tabindex="-1"></main>
+  </div>
+
+  <div id="modal-root"></div>
+
+  <!-- YAML parser for the data files (js-yaml 4.1.0, MIT, vendored) -->
+  <script src="js/vendor/js-yaml.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/editor-i18n.js"></script>
+  <script src="js/editor.js"></script>
+</body>
+</html>
