@@ -644,9 +644,9 @@ table.matrix td.cell.empty:hover { outline: none; }
 .ed-item-footer .ed-deleted-note { display: none; margin-left: auto; font-size: 11.5px; color: #a33; }
 .ed-item.marked-deleted .ed-deleted-note { display: inline; }
 .ed-item-footer .btn-remove { display: none; }
-.ed-item.is-new-empty .btn-remove { display: inline-block; }
-.ed-item.is-new-empty .btn-mark { display: none; }
-.ed-item.is-new-empty .ed-deleted-note { display: none; }
+.ed-item.is-empty .btn-remove { display: inline-block; }
+.ed-item.is-empty .btn-mark { display: none; }
+.ed-item.is-empty .ed-deleted-note { display: none; }
 
 .ed-topic { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: start; padding: 6px 8px; }
 .ed-topic input { width: 100%; }
