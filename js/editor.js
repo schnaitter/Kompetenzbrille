@@ -11,8 +11,12 @@
 (function () {
   "use strict";
 
-  var DRAFT_KEY = "kb-editor-draft";
+  var DRAFT_KEY = "kb-editor-draft";          /* legacy single-draft slot (migrated) */
+  var DRAFTS_KEY = "kb-editor-drafts";        /* array of drafts */
+  var PANEL_KEY = "kompetenzbrille.editor.frameworkPanel";
+  var DRAFTS_OPEN_KEY = "kompetenzbrille.editor.draftsOpen";
   var LANG_KEY = "kompetenzbrille.editor.lang";
+  var MAX_DRAFTS = 20;
   var PROGRAM_SCHEMA = "data/schemas/program-schema.json";
 
   /* ================= i18n ================= */
@@ -37,6 +41,7 @@
   function isEmptyStr(v) { return v == null || String(v).trim() === ""; }
   function isDeleted(o) { return !!(o && o._deleted); }
   function toInt(v) { var n = parseInt(v, 10); return isNaN(n) ? v : n; }
+  function fileBaseName(name) { return String(name || "").replace(/^.*\//, "").replace(/\.ya?ml$/i, ""); }
 
   /* ================= state ================= */
 
@@ -47,13 +52,23 @@
     lang: "de",
     source: null,            // repo | upload | new
     sourcePath: null,        // manifest path when source === "repo"
+    fileName: null,          // basename of the loaded/uploaded YAML file
     program: null,           // normalized, editable model
     frameworks: {},          // id -> { de: data, en: data }
     frameworkOrder: [],
     manifest: [],            // program paths
     repoPrograms: [],        // { path, id, title, abbr, language }
-    draft: null,
-    draftBanner: false,
+    drafts: [],              // saved drafts, newest first
+    draftsOpen: false,       // sidebar draft list expanded?
+    draftId: null,           // id of the draft currently being edited
+    panelMode: "framework",  // framework | original
+    frameworkPanelId: null,  // framework shown in the panel
+    frameworkFilter: "",     // competency filter text
+    originalModel: null,     // pristine server copy for comparison
+    originalForId: null,     // id the original belongs to
+    originalLoading: false,
+    originalError: false,
+    activeModuleUid: null,   // last focused module (target for panel mappings)
     savedAt: null,
     dirty: false,
     openModules: {},         // uid -> bool
@@ -126,7 +141,8 @@
       }
       return Promise.all(work);
     }).then(function () {
-      loadDraft();
+      loadPanelPrefs();
+      loadDrafts();
       render();
       state.ready = true;
     }).catch(function (err) {
@@ -135,17 +151,93 @@
     });
   }
 
-  function loadDraft() {
+  /* ---------- panel preferences ---------- */
+
+  function loadPanelPrefs() {
     try {
-      var raw = localStorage.getItem(DRAFT_KEY);
+      state.draftsOpen = localStorage.getItem(DRAFTS_OPEN_KEY) === "1";
+    } catch (e) { /* ignore */ }
+    try {
+      var raw = localStorage.getItem(PANEL_KEY);
       if (!raw) return;
-      var d = JSON.parse(raw);
-      if (!d || !d.model) return;
-      if (d.lang) state.lang = d.lang;
-      state.draft = d;
-      state.draftBanner = true;
-    } catch (e) { /* ignore a corrupt draft */ }
+      var p = JSON.parse(raw);
+      state.frameworkPanelId = p.id || null;
+      if (p.mode === "original" || p.mode === "framework") state.panelMode = p.mode;
+    } catch (e) { /* ignore */ }
   }
+
+  function savePanelPrefs() {
+    try {
+      localStorage.setItem(PANEL_KEY, JSON.stringify({
+        id: state.frameworkPanelId, mode: state.panelMode
+      }));
+    } catch (e) { /* ignore */ }
+  }
+
+  /* ---------- drafts ---------- */
+
+  function loadDrafts() {
+    var list = [];
+    try {
+      var raw = localStorage.getItem(DRAFTS_KEY);
+      if (raw) {
+        var arr = JSON.parse(raw);
+        if (Array.isArray(arr)) list = arr.filter(function (d) { return d && d.model; });
+      }
+    } catch (e) { /* ignore a corrupt store */ }
+
+    /* migrate the legacy single-draft slot into the list */
+    try {
+      var legacy = localStorage.getItem(DRAFT_KEY);
+      if (legacy) {
+        var d = JSON.parse(legacy);
+        if (d && d.model) {
+          d.id = d.id || d.programId || d.sourcePath || ("neu-" + (d.savedAt || Date.now()));
+          if (!list.some(function (x) { return x.id === d.id; })) list.push(d);
+        }
+        localStorage.removeItem(DRAFT_KEY);
+      }
+    } catch (e) { /* ignore */ }
+
+    state.drafts = sortDrafts(list);
+    writeDrafts();
+  }
+
+  function sortDrafts(list) {
+    return list.slice().sort(function (a, b) { return (b.savedAt || 0) - (a.savedAt || 0); });
+  }
+
+  function pruneDrafts() {
+    state.drafts = sortDrafts(state.drafts).slice(0, MAX_DRAFTS);
+  }
+
+  function writeDrafts() {
+    pruneDrafts();
+    while (true) {
+      try {
+        localStorage.setItem(DRAFTS_KEY, JSON.stringify(state.drafts));
+        return;
+      } catch (e) {
+        /* storage full: drop the oldest draft and retry */
+        if (state.drafts.length > 1) { state.drafts.pop(); continue; }
+        setNotice("error", "localStorage: " + (e && e.message ? e.message : e));
+        return;
+      }
+    }
+  }
+
+  function draftById(id) {
+    for (var i = 0; i < state.drafts.length; i++) if (state.drafts[i].id === id) return state.drafts[i];
+    return null;
+  }
+
+  function draftIdFor() {
+    if (state.program.id) return state.program.id;
+    if (state.sourcePath) return state.sourcePath;
+    return "neu-" + Date.now();
+  }
+
+  function draftLabel(d) { return d.title || d.programId || d.id || "—"; }
 
   /* ================= normalization ================= */
 
@@ -412,6 +504,7 @@
     renderLangSelect();
     renderSidebar();
     renderMain();
+    renderFrameworkPanel();
   }
 
   function renderSidebar() {
@@ -454,6 +547,9 @@
     }
     h += "</div>";
 
+    /* drafts */
+    h += renderDraftsSection();
+
     /* validation */
     h += '<div class="filter-section"><h3>' + esc(t("editorValidation")) + "</h3>";
     if (!state.program) {
@@ -473,6 +569,35 @@
     h += "</div>";
 
     sb.innerHTML = h;
+  }
+
+  function renderDraftsSection() {
+    var h = '<div class="filter-section"><details class="ed-drafts-details"' + (state.draftsOpen ? " open" : "") + ">";
+    h += '<summary>' + esc(t("editorDrafts")) +
+      ' <span class="ed-count">' + state.drafts.length + "</span></summary>";
+    if (!state.drafts.length) {
+      h += '<p class="small muted">' + esc(t("editorDraftsEmpty")) + "</p>";
+    } else {
+      h += '<ul class="ed-drafts">';
+      state.drafts.forEach(function (d) {
+        var current = d.id === state.draftId;
+        h += '<li class="ed-draft-item' + (current ? " is-current" : "") + '">';
+        h += '<div class="ed-draft-meta">';
+        h += '<span class="ed-draft-title">' + esc(draftLabel(d)) +
+          (current ? ' <span class="ed-draft-current">' + esc(t("editorDraftCurrent")) + "</span>" : "") + "</span>";
+        h += '<span class="ed-draft-time">' + esc(formatTime(d.savedAt)) + "</span>";
+        h += "</div>";
+        h += '<div class="ed-draft-buttons">';
+        h += '<button type="button" class="ed-btn" data-action="resume-draft" data-draft-id="' + esc(d.id) + '">' +
+          esc(t("editorDraftResume")) + "</button>";
+        h += '<button type="button" class="ed-btn ed-btn-danger" data-action="delete-draft-one" data-draft-id="' + esc(d.id) + '">' +
+          esc(t("editorDraftDelete")) + "</button>";
+        h += "</div></li>";
+      });
+      h += "</ul>";
+    }
+    h += "</details></div>";
+    return h;
   }
 
   function savedStatusText() {
@@ -510,11 +635,10 @@
     if (state.notice) {
       h += '<div class="ed-notice ed-notice-' + esc(state.notice.type) + '">' + esc(state.notice.text) + "</div>";
     }
-    if (state.draftBanner && state.draft) {
-      h += draftBannerHtml();
-    }
     if (!state.program) {
-      if (!state.draftBanner) h += '<div class="hint-box">' + esc(t("editorNoProgram")) + "</div>";
+      h += state.drafts.length
+        ? renderDraftsOverview()
+        : '<div class="hint-box">' + esc(t("editorNoProgram")) + "</div>";
       main.innerHTML = h;
       return;
     }
@@ -524,17 +648,439 @@
     main.innerHTML = h;
   }
 
-  function draftBannerHtml() {
-    var d = state.draft;
-    var title = d.title || d.programId || "—";
-    return '<div class="ed-draft-banner">' +
-      '<div class="ed-draft-text"><strong>' + esc(t("editorDraftTitle")) + "</strong> – " +
-      esc(t("editorDraftFor")) + ": " + esc(title) + " · " + esc(formatTime(d.savedAt)) + "</div>" +
-      '<div class="ed-draft-actions">' +
-      '<button type="button" class="ed-btn ed-btn-primary" data-action="resume">' + esc(t("editorResume")) + "</button>" +
-      '<button type="button" class="ed-btn" data-action="discard">' + esc(t("editorDiscard")) + "</button>" +
-      "</div></div>";
+  /* welcome screen: all saved drafts, newest edit first */
+  function renderDraftsOverview() {
+    var h = '<div class="ed-drafts-overview">';
+    h += '<div class="ed-drafts-overview-head"><h2>' + esc(t("editorDrafts")) +
+      ' <span class="ed-count">' + state.drafts.length + "</span></h2>";
+    h += '<p class="small muted">' + esc(t("editorDraftsIntro")) + "</p></div>";
+    h += '<ul class="ed-draft-cards">';
+    state.drafts.forEach(function (d) {
+      h += '<li class="ed-draft-card">';
+      h += '<div class="ed-draft-card-main">';
+      h += '<span class="ed-draft-card-title">' + esc(draftLabel(d)) + "</span>";
+      h += '<span class="ed-draft-card-meta">' + esc(draftMeta(d)) + "</span>";
+      h += "</div>";
+      h += '<div class="ed-draft-card-actions">';
+      h += '<button type="button" class="ed-btn ed-btn-primary" data-action="resume-draft" data-draft-id="' + esc(d.id) + '">' +
+        esc(t("editorDraftResume")) + "</button>";
+      h += '<button type="button" class="ed-btn ed-btn-danger" data-action="delete-draft-one" data-draft-id="' + esc(d.id) + '">' +
+        esc(t("editorDraftDelete")) + "</button>";
+      h += "</div></li>";
+    });
+    h += "</ul></div>";
+    return h;
   }
+
+  function draftMeta(d) {
+    var parts = [];
+    if (d.programId && d.programId !== draftLabel(d)) parts.push(d.programId);
+    if (d.source === "repo" && d.sourcePath) parts.push(d.sourcePath.split("/").pop());
+    else if (d.source === "upload") parts.push(t("editorUpload"));
+    else if (d.source === "new") parts.push(t("editorNew"));
+    parts.push(formatTime(d.savedAt));
+    return parts.join(" · ");
+  }
+
+  /* ---------- framework reference panel ---------- */
+
+  function panelFrameworkId() {
+    if (state.frameworkPanelId && state.frameworks[state.frameworkPanelId]) return state.frameworkPanelId;
+    return state.frameworkOrder[0] || "";
+  }
+
+  function renderFrameworkPanel() {
+    var aside = byId("framework-sidebar");
+    if (!aside) return;
+
+    var h = renderPanelTabs();
+    if (state.panelMode === "original") {
+      h += renderOriginalPanel();
+      aside.innerHTML = h;
+      return;
+    }
+
+    var fid = panelFrameworkId();
+    var fwd = frameworkData(fid);
+    h += '<div class="ed-fw-head">';
+    h += '<select data-action="pick-framework">' + frameworkOptionsPanel(fid) + "</select>";
+    h += '<input type="text" class="ed-fw-filter" data-action="framework-filter" placeholder="' +
+      esc(t("editorFrameworkFilter")) + '" value="' + esc(state.frameworkFilter) + '">';
+    h += "</div>";
+    h += fwd ? renderFrameworkCompetencies(fwd, fid)
+      : '<p class="small muted">' + esc(t("editorFrameworkEmpty")) + "</p>";
+    aside.innerHTML = h;
+    refreshFrameworkFilter();
+  }
+
+  function renderPanelTabs() {
+    function tab(value, label) {
+      return '<button type="button" class="ed-panel-tab' + (state.panelMode === value ? " active" : "") +
+        '" data-action="panel-mode" data-value="' + value + '">' + esc(label) + "</button>";
+    }
+    return '<div class="ed-panel-tabs">' + tab("framework", t("editorPanelFramework")) +
+      tab("original", t("editorPanelOriginal")) + "</div>";
+  }
+
+  function frameworkOptionsPanel(selected) {
+    return state.frameworkOrder.map(function (id) {
+      return '<option value="' + esc(id) + '"' + (id === selected ? " selected" : "") + ">" + esc(frameworkLabel(id)) + "</option>";
+    }).join("");
+  }
+
+  function renderFrameworkCompetencies(fwd, fid) {
+    var phases = fwd.phases || [];
+    var comps = fwd.competencies || [];
+    var byPhase = {};
+    comps.forEach(function (c) {
+      var key = String(c.phase);
+      (byPhase[key] = byPhase[key] || []).push(c);
+    });
+    var h = "";
+    var known = {};
+    phases.forEach(function (ph) {
+      known[String(ph.id)] = true;
+      var list = byPhase[String(ph.id)];
+      if (!list || !list.length) return;
+      h += '<div class="ed-fw-phase" style="--phase-color:' + phaseColorVar(ph.id) + '">';
+      h += '<div class="ed-fw-phase-title">';
+      if (String(ph.id) !== "0") h += '<span class="ed-fw-phase-no">' + esc(ph.id) + "</span>";
+      h += "<span>" + esc(ph.title) + "</span>";
+      h += '<span class="ed-fw-phase-count">' + list.length + "</span>";
+      h += "</div>";
+      list.forEach(function (c) { h += renderFwComp(c, fwd, fid); });
+      h += "</div>";
+    });
+    comps.forEach(function (c) {
+      if (known[String(c.phase)]) return;
+      if (!known["__orphans"]) {
+        known["__orphans"] = true;
+        h += '<div class="ed-fw-phase" style="--phase-color:' + phaseColorVar("0") + '">';
+      }
+      h += renderFwComp(c, fwd, fid);
+    });
+    if (known["__orphans"]) h += "</div>";
+    return h;
+  }
+
+  /* phase ids map to the palette variables used across the app */
+  function phaseColorVar(id) {
+    var n = parseInt(id, 10);
+    if (isNaN(n) || n < 0 || n > 5) n = 0;
+    return "var(--phase-" + n + ")";
+  }
+
+  function renderFwComp(c, fwd, fid) {
+    var dims = fwd.dimensions || [];
+    var search = (c.code + " " + c.title + " " + dims.map(function (d) { return c[d.id] || ""; }).join(" ")).toLowerCase();
+    var h = '<div class="ed-fw-comp" data-search="' + esc(search) + '">';
+    h += '<div class="ed-fw-comp-head">';
+    h += '<span class="ed-fw-code">' + esc(c.code) + '</span><span class="ed-fw-title">' + esc(c.title) + "</span>";
+    h += '<button type="button" class="ed-btn ed-fw-add" title="' + esc(t("editorAddMappingHere")) +
+      '" data-action="panel-add-mapping" data-framework="' + esc(fid) + '" data-competency="' + esc(c.code) + '">＋</button>';
+    h += "</div>";
+    var rows = dims.map(function (d) {
+      var v = c[d.id];
+      return v ? '<div class="ed-fw-dim"><span class="ed-fw-dim-label">' + esc(d.label) + "</span><span>" + esc(v) + "</span></div>" : "";
+    }).join("");
+    if (rows) h += '<div class="ed-fw-dims">' + rows + "</div>";
+    h += "</div>";
+    return h;
+  }
+
+  function refreshFrameworkFilter() {
+    var aside = byId("framework-sidebar");
+    if (!aside) return;
+    var q = (state.frameworkFilter || "").trim().toLowerCase();
+    Array.prototype.forEach.call(aside.querySelectorAll(".ed-fw-comp"), function (el) {
+      var s = el.getAttribute("data-search") || "";
+      el.hidden = !!q && s.indexOf(q) < 0;
+    });
+    Array.prototype.forEach.call(aside.querySelectorAll(".ed-fw-phase"), function (ph) {
+      var any = false;
+      Array.prototype.forEach.call(ph.querySelectorAll(".ed-fw-comp"), function (c) { if (!c.hidden) any = true; });
+      ph.hidden = !any;
+    });
+  }
+
+  /* ---------- read-only original / comparison ---------- */
+
+  function repoPathForId(id) {
+    if (!id) return null;
+    for (var i = 0; i < state.repoPrograms.length; i++) {
+      var rp = state.repoPrograms[i];
+      if (rp.id === id || fileBaseName(rp.path) === id) return rp.path;
+    }
+    return null;
+  }
+
+  function ensureOriginal() {
+    if (!state.program) return;
+    var id = state.program.id;
+    var path = repoPathForId(id);
+    if (!path) { state.originalModel = null; state.originalForId = id; state.originalError = false; return; }
+    if (state.originalForId === id && (state.originalModel || state.originalLoading)) return;
+    state.originalForId = id;
+    state.originalModel = null;
+    state.originalError = false;
+    state.originalLoading = true;
+    fetchYaml(path).then(function (raw) {
+      if (!state.program || state.program.id !== id) return;
+      state.originalModel = normalizeProgram(raw);
+      state.originalLoading = false;
+      renderFrameworkPanel();
+    }).catch(function () {
+      state.originalLoading = false;
+      state.originalError = true;
+      renderFrameworkPanel();
+    });
+  }
+
+  function renderOriginalPanel() {
+    if (!state.program) return '<p class="small muted">' + esc(t("editorOriginalNoProgram")) + "</p>";
+    var path = repoPathForId(state.program.id);
+    if (!path || state.originalError) return '<p class="small muted">' + esc(t("editorOriginalMissing")) + "</p>";
+    if (state.originalLoading || state.originalForId !== state.program.id || !state.originalModel) {
+      ensureOriginal();
+      return '<p class="small muted">' + esc(t("editorOriginalLoading")) + "</p>";
+    }
+    var diff = computeDiff(state.originalModel, state.program);
+    var h = '<div class="ed-ro-head"><span class="ed-ro-title">' + esc(t("editorOriginalTitle")) + "</span>";
+    h += '<span class="ed-ro-summary">' + esc(diff.total ? t("editorDiffSummary").replace("{n}", diff.total) : t("editorDiffNone")) + "</span></div>";
+    h += '<div class="ed-ro">';
+    h += renderReadOnlyProgram(state.originalModel, diff);
+    if (diff.added.length) {
+      h += '<div class="ed-ro-added-label">' + esc(t("editorDiffAdded")) + " (" + diff.added.length + ")</div>";
+      diff.added.forEach(function (entry) { h += renderReadOnlyModule(entry); });
+    }
+    h += "</div>";
+    return h;
+  }
+
+  function moduleKey(m) { return !isEmptyStr(m.code) ? "c:" + m.code : "t:" + (m.title || "?"); }
+  function mappingKey(mp) { return String(mp.framework) + "\u0001" + String(mp.competency); }
+  function sameModule(a, b) { return JSON.stringify(exportModule(false)(a)) === JSON.stringify(exportModule(false)(b)); }
+  function sameMapping(a, b) { return JSON.stringify(exportMapping(a)) === JSON.stringify(exportMapping(b)); }
+
+  function computeDiff(orig, draft) {
+    var res = { total: 0, base: [], categories: [], modules: [], added: [] };
+
+    ["id", "title", "institution", "institutionAbbr", "institutionUrl", "language", "source", "sourceLabel"]
+      .forEach(function (f) {
+        var oldV = orig[f] == null ? "" : String(orig[f]);
+        var newV = draft[f] == null ? "" : String(draft[f]);
+        var changed = oldV !== newV;
+        if (changed) res.total++;
+        res.base.push({ field: f, labelKey: labelForField(f), old: oldV, new: newV, changed: changed });
+      });
+
+    var origCats = {}, draftCats = {};
+    (orig.categories || []).forEach(function (c) { origCats[c.id] = c; });
+    (draft.categories || []).forEach(function (c) { draftCats[c.id] = c; });
+    Object.keys(origCats).forEach(function (id) {
+      var dc = draftCats[id] || null;
+      var status = !dc ? "removed" : (String(origCats[id].label) !== String(dc.label) ? "changed" : "same");
+      if (status !== "same") res.total++;
+      res.categories.push({ id: id, orig: origCats[id], draft: dc, status: status });
+    });
+    Object.keys(draftCats).forEach(function (id) {
+      if (!origCats[id]) { res.categories.push({ id: id, orig: null, draft: draftCats[id], status: "added" }); res.total++; }
+    });
+
+    var draftByKey = {};
+    (draft.modules || []).forEach(function (m) { draftByKey[moduleKey(m)] = m; });
+    var origKeys = {};
+    (orig.modules || []).forEach(function (m) {
+      var key = moduleKey(m);
+      origKeys[key] = true;
+      var dm = draftByKey[key] || null;
+      var status = !dm ? "removed" : (sameModule(m, dm) ? "same" : "changed");
+      if (status !== "same") res.total++;
+      res.modules.push(buildModuleDiff(m, dm, status));
+    });
+    (draft.modules || []).forEach(function (m) {
+      if (!origKeys[moduleKey(m)]) { res.added.push(buildModuleDiff(null, m, "added")); res.total++; }
+    });
+    return res;
+  }
+
+  function buildModuleDiff(orig, draft, status) {
+    var fields = ["code", "title", "credits", "category", "goals"].map(function (f) {
+      var oldV = orig ? (orig[f] == null ? "" : String(orig[f])) : "";
+      var newV = draft ? (draft[f] == null ? "" : String(draft[f])) : "";
+      return { field: f, labelKey: labelForField(f), old: oldV, new: newV, changed: status === "changed" && oldV !== newV };
+    });
+
+    var origTopics = orig ? (orig.topics || []).map(topicText).filter(function (s) { return !isEmptyStr(s); }) : [];
+    var draftTopics = draft ? (draft.topics || []).map(topicText).filter(function (s) { return !isEmptyStr(s); }) : [];
+    var topics = [];
+    origTopics.forEach(function (t) { topics.push({ text: t, status: draftTopics.indexOf(t) < 0 ? "removed" : "same" }); });
+    draftTopics.forEach(function (t) { if (origTopics.indexOf(t) < 0) topics.push({ text: t, status: "added" }); });
+
+    var origMaps = orig ? (orig.mappings || []) : [];
+    var draftMaps = draft ? (draft.mappings || []) : [];
+    var draftByMk = {};
+    draftMaps.forEach(function (x) { draftByMk[mappingKey(x)] = x; });
+    var mappings = [];
+    var origMk = {};
+    origMaps.forEach(function (x) {
+      var mk = mappingKey(x);
+      origMk[mk] = true;
+      var d = draftByMk[mk] || null;
+      mappings.push({ key: mk, orig: x, draft: d, status: !d ? "removed" : (sameMapping(x, d) ? "same" : "changed") });
+    });
+    draftMaps.forEach(function (x) {
+      var mk = mappingKey(x);
+      if (!origMk[mk]) mappings.push({ key: mk, orig: null, draft: x, status: "added" });
+    });
+
+    return { orig: orig, draft: draft, status: status, fields: fields, topics: topics, mappings: mappings };
+  }
+
+  function topicText(tp) { return (tp && typeof tp === "object") ? tp.text : tp; }
+  function fieldDiff(entry, f) {
+    for (var i = 0; i < entry.fields.length; i++) if (entry.fields[i].field === f) return entry.fields[i];
+    return null;
+  }
+  function cmpText(oldV, newV) {
+    return '<span class="ed-diff-old">' + esc(oldV) + '</span><span class="ed-diff-arrow">→</span>' +
+      '<span class="ed-diff-new">' + esc(newV) + "</span>";
+  }
+  function diffField(entry, f) {
+    var fd = fieldDiff(entry, f);
+    if (!fd) return "";
+    if (entry.status === "added") return '<span class="ed-diff-new">' + esc(fd.new) + "</span>";
+    if (entry.status === "removed") return '<span class="ed-diff-old">' + esc(fd.old) + "</span>";
+    if (fd.changed) return cmpText(fd.old, fd.new);
+    return esc(fd.old !== "" ? fd.old : fd.new);
+  }
+
+  function renderReadOnlyProgram(p, diff) {
+    var h = '<div class="ed-ro-base">';
+    diff.base.forEach(function (b) {
+      if (!b.changed && isEmptyStr(b.old)) return;
+      h += '<div class="ed-ro-kv' + (b.changed ? " is-changed" : "") + '"><span class="ed-ro-k">' +
+        esc(t(b.labelKey)) + '</span><span class="ed-ro-v">' +
+        (b.changed ? cmpText(b.old, b.new) : esc(b.old)) + "</span></div>";
+    });
+    h += "</div>";
+
+    if (diff.categories.length) {
+      h += '<div class="ed-ro-cats">';
+      diff.categories.forEach(function (c) {
+        var label = (c.orig && c.orig.label) || (c.draft && c.draft.label) || c.id;
+        var cls = c.status === "added" ? "ed-diff-new" : (c.status === "removed" ? "ed-diff-old" : "");
+        h += '<span class="cat-badge ' + cls + '">' + esc(label) + "</span>";
+      });
+      h += "</div>";
+    }
+    diff.modules.forEach(function (entry) { h += renderReadOnlyModule(entry); });
+    return h;
+  }
+
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  function renderReadOnlyModule(entry) {
+    var status = entry.status;
+    var m = entry.orig || entry.draft;
+    var h = '<div class="mod-card ed-ro-mod' + (status !== "same" ? " is-" + status : "") + '">';
+    h += '<div class="mod-card-head"><span class="mod-code">' + diffField(entry, "code") + '</span>';
+    h += '<span class="mod-title">' + diffField(entry, "title");
+    if (status !== "same") h += '<span class="ed-ro-badge is-' + status + '">' + esc(t("editorDiff" + cap(status))) + "</span>";
+    h += '</span><span class="mod-meta">' + diffField(entry, "credits") + " " + esc(t("editorLpShort")) + "</span></div>";
+    if (!isEmptyStr(m.category)) h += '<span class="cat-badge">' + diffField(entry, "category") + "</span>";
+    var fdGoals = fieldDiff(entry, "goals");
+    if (fdGoals && (!isEmptyStr(fdGoals.old) || !isEmptyStr(fdGoals.new))) {
+      h += '<p class="goals">' + diffField(entry, "goals") + "</p>";
+    }
+    if (entry.topics.length) {
+      h += '<ul class="topics">';
+      entry.topics.forEach(function (tp) {
+        var cls = tp.status === "added" ? "ed-diff-new" : (tp.status === "removed" ? "ed-diff-old" : "");
+        h += '<li class="' + cls + '">' + esc(tp.text) + "</li>";
+      });
+      h += "</ul>";
+    }
+    if (entry.mappings.length) {
+      h += '<div class="mod-mappings">';
+      entry.mappings.forEach(function (md) { h += renderReadOnlyMapping(md); });
+      h += "</div>";
+    }
+    h += "</div>";
+    return h;
+  }
+
+  function competencyLabel(mp) {
+    var fwd = frameworkData(mp.framework);
+    if (fwd && fwd.competencies) {
+      for (var i = 0; i < fwd.competencies.length; i++) {
+        if (String(fwd.competencies[i].code) === String(mp.competency)) {
+          return (mp.competency || "—") + " " + fwd.competencies[i].title;
+        }
+      }
+    }
+    return mp.competency || "—";
+  }
+  function noteParts(mp) {
+    if (mp && mp.note && typeof mp.note === "object") return { de: mp.note.de || "", en: mp.note.en || "" };
+    return { de: (mp && typeof mp.note === "string") ? mp.note : "", en: "" };
+  }
+  /* show both language variants: program content is German, notes are bilingual */
+  function noteHtml(md) {
+    var o = noteParts(md.orig);
+    var d = noteParts(md.draft);
+    var langLabels = { de: "DE", en: "EN" };
+    var h = "";
+    ["de", "en"].forEach(function (l) {
+      var ov = o[l] || "", dv = d[l] || "";
+      if (!ov && !dv) return;
+      var inner;
+      if (md.status === "added") inner = '<span class="ed-diff-new">' + esc(dv) + "</span>";
+      else if (md.status === "removed") inner = '<span class="ed-diff-old">' + esc(ov) + "</span>";
+      else if (md.status === "changed" && ov !== dv) inner = cmpText(ov, dv);
+      else inner = esc(ov || dv);
+      h += '<div class="ed-note-line"><span class="ed-note-lang">' + langLabels[l] + "</span>" + inner + "</div>";
+    });
+    return h;
+  }
+  function competencyPhase(mp) {
+    var fwd = frameworkData(mp.framework);
+    if (fwd && fwd.competencies) {
+      for (var i = 0; i < fwd.competencies.length; i++) {
+        if (String(fwd.competencies[i].code) === String(mp.competency)) return fwd.competencies[i].phase;
+      }
+    }
+    return "0";
+  }
+
+  function renderReadOnlyMapping(md) {
+    var mp = md.orig || md.draft;
+    var changedLevel = md.status === "changed" && toInt(md.orig.level) !== toInt(md.draft.level);
+    var changedComp = md.orig && md.draft && String(md.orig.competency) !== String(md.draft.competency);
+    var h = '<div class="mapping-row ed-ro-mapping' + (md.status !== "same" ? " is-" + md.status : "") +
+      '" style="--phase-color:' + phaseColorVar(competencyPhase(mp)) + '">';
+    h += '<div><span class="m-comp">';
+    if (md.status === "added") h += '<span class="ed-diff-new">' + esc(competencyLabel(md.draft)) + "</span>";
+    else if (md.status === "removed") h += '<span class="ed-diff-old">' + esc(competencyLabel(md.orig)) + "</span>";
+    else if (changedComp) h += cmpText(competencyLabel(md.orig), competencyLabel(md.draft));
+    else h += esc(competencyLabel(mp));
+    h += "</span>";
+    if (md.status !== "same") h += '<span class="ed-ro-badge is-' + md.status + '">' + esc(t("editorDiff" + cap(md.status))) + "</span>";
+    h += '<div class="mapping-lvl">';
+    if (changedLevel) h += levelDots(md.orig.level) + " → " + levelDots(md.draft.level) + " " + esc(levelLabel(md.draft.level));
+    else h += levelDots(mp.level) + " " + esc(levelLabel(mp.level));
+    h += "</div></div>";
+    h += '<div class="m-note">' + noteHtml(md) + "</div></div>";
+    return h;
+  }
+
+  function levelDots(level) {
+    var l = toInt(level);
+    var out = '<span class="lvl-dots">';
+    for (var i = 1; i <= 3; i++) out += "<i class=\"" + (i <= l ? "on-" + l : "") + "\"></i>";
+    return out + "</span>";
+  }
+  function levelLabel(level) { return t("editorLevel" + toInt(level)); }
 
   /* ---------- base info ---------- */
 
@@ -885,42 +1431,43 @@
   function saveDraft() {
     if (!state.program) return;
     var p = state.program;
+    if (!state.draftId) state.draftId = draftIdFor();
     var draft = {
+      id: state.draftId,
       v: 1,
       programId: p.id || "",
       title: p.title || "",
       source: state.source,
       sourcePath: state.sourcePath,
+      fileName: state.fileName,
       lang: state.lang,
       savedAt: Date.now(),
       yaml: safeDump(exportProgram(false)),
       model: p
     };
-    try {
-      localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
-      state.savedAt = draft.savedAt;
-      state.dirty = false;
-      refreshStatusOnly();
-    } catch (e) {
-      setNotice("error", "localStorage: " + (e && e.message ? e.message : e));
+    var replaced = false;
+    for (var i = 0; i < state.drafts.length; i++) {
+      if (state.drafts[i].id === draft.id) { state.drafts[i] = draft; replaced = true; break; }
     }
+    if (!replaced) state.drafts.unshift(draft);
+    writeDrafts();
+    state.savedAt = draft.savedAt;
+    state.dirty = false;
+    renderSidebar();
   }
 
   function safeDump(obj) {
     try { return dumpYaml(obj); } catch (e) { return ""; }
   }
 
-  function refreshStatusOnly() {
-    var sb = byId("editor-sidebar");
-    if (!sb) return;
-    var status = sb.querySelector(".ed-status");
-    if (status) status.textContent = savedStatusText();
-  }
-
-  function clearDraft() {
-    try { localStorage.removeItem(DRAFT_KEY); } catch (e) { /* ignore */ }
-    state.savedAt = null;
-    state.dirty = false;
+  function deleteDraftById(id) {
+    state.drafts = state.drafts.filter(function (d) { return d.id !== id; });
+    writeDrafts();
+    if (state.draftId === id) {
+      state.draftId = null;
+      state.savedAt = null;
+      state.dirty = false;
+    }
   }
 
   /* ================= program sources ================= */
@@ -1158,11 +1705,18 @@
   }
 
   function onInput(e) {
+    if (e.target.getAttribute && e.target.getAttribute("data-action") === "framework-filter") {
+      state.frameworkFilter = e.target.value;
+      refreshFrameworkFilter();
+      return;
+    }
     var el = e.target.closest("[data-field]");
     if (!el) return;
     setFieldValue(el);
-    if (el.getAttribute("data-kind") === "module") refreshModuleSummary(el.closest(".ed-item"));
-    refreshItem(el.closest(".ed-item"));
+    var item = el.closest(".ed-item");
+    if (el.getAttribute("data-kind") === "module" && item) refreshModuleSummary(item);
+    if (item) refreshItem(item);
+    if (state.panelMode === "original") renderFrameworkPanel();
   }
 
   function refreshModuleSummary(moduleEl) {
@@ -1180,6 +1734,12 @@
   }
 
   function onChange(e) {
+    if (e.target.getAttribute && e.target.getAttribute("data-action") === "pick-framework") {
+      state.frameworkPanelId = e.target.value;
+      savePanelPrefs();
+      renderFrameworkPanel();
+      return;
+    }
     var el = e.target.closest("[data-field]");
     if (!el) return;
     var field = el.getAttribute("data-field");
@@ -1197,7 +1757,10 @@
       }
     }
     if (kind === "module") refreshModuleSummary(el.closest(".ed-item"));
+    var item = el.closest(".ed-item");
+    if (item) refreshItem(item);
     renderSidebar();
+    if (state.panelMode === "original") renderFrameworkPanel();
   }
 
   function onClick(e) {
@@ -1207,26 +1770,52 @@
     switch (action) {
       case "new-program": createNewProgram(); break;
       case "save-draft":
-        if (state.program) { saveDraft(); setNotice("ok", t("editorSaveBrowser")); renderMain(); }
+        if (state.program) { saveDraft(); setNotice("ok", t("editorDraftSaved")); renderMain(); }
         break;
       case "delete-draft":
+        if (!state.draftId) { setNotice("info", t("editorDraftsEmpty")); renderMain(); break; }
         if (!window.confirm(t("editorConfirmDeleteDraft"))) return;
-        clearDraft();
-        state.draftBanner = false;
-        state.draft = null;
-        setNotice("info", t("editorDeleteDraft"));
+        deleteDraftById(state.draftId);
+        setNotice("info", t("editorDraftDeleted"));
         render();
+        break;
+      case "delete-draft-one": {
+        var did = el.getAttribute("data-draft-id");
+        if (!window.confirm(t("editorConfirmDeleteOne"))) return;
+        deleteDraftById(did);
+        setNotice("info", t("editorDraftDeleted"));
+        render();
+        break;
+      }
+      case "resume-draft":
+        resumeDraftById(el.getAttribute("data-draft-id"));
+        break;
+      case "panel-mode":
+        state.panelMode = el.getAttribute("data-value") === "original" ? "original" : "framework";
+        savePanelPrefs();
+        renderFrameworkPanel();
+        break;
+      case "panel-add-mapping":
+        addMappingFromPanel(el.getAttribute("data-framework"), el.getAttribute("data-competency"));
+        break;
+      case "sync-id-from-file":
+        if (state.fileName) {
+          state.program.id = fileBaseName(state.fileName);
+          markDirty();
+          setNotice("ok", t("editorUseFileName"));
+          render();
+        }
+        break;
+      case "sync-file-from-id":
+        if (state.program && !isEmptyStr(state.program.id)) {
+          state.fileName = state.program.id + ".yaml";
+          markDirty();
+          setNotice("ok", t("editorUseId"));
+          render();
+        }
         break;
       case "export": handleExport(); break;
       case "show-removals": showRemovalPreview(); break;
-      case "resume": resumeDraft(); break;
-      case "discard":
-        if (!window.confirm(t("editorConfirmDiscard"))) return;
-        clearDraft();
-        state.draftBanner = false;
-        state.draft = null;
-        render();
-        break;
       case "add-category":
         state.program.categories.push({ id: "", label: "", _uid: nextUid(), _isNew: true });
         markDirty(); renderMain(); renderSidebar();
@@ -1266,6 +1855,7 @@
     };
     state.program.modules.push(m);
     state.openModules[m._uid] = true;
+    state.activeModuleUid = m._uid;
     markDirty(); renderMain(); renderSidebar();
   }
 
@@ -1295,7 +1885,7 @@
     var el = document.querySelector('.ed-item-module[data-mi="' + miOfUid(err.mi) + '"]');
     if (el) {
       el.open = true;
-      el.scrollIntoView({ block: "center", behavior: "smooth" });
+      if (el.scrollIntoView) el.scrollIntoView({ block: "center", behavior: "smooth" });
       el.classList.add("ed-flash");
       setTimeout(function () { el.classList.remove("ed-flash"); }, 1200);
     }
@@ -1307,19 +1897,60 @@
     return -1;
   }
 
-  function resumeDraft() {
-    var d = state.draft;
+  function activeModule() {
+    var mods = (state.program && state.program.modules) || [];
+    for (var i = 0; i < mods.length; i++) {
+      if (mods[i]._uid === state.activeModuleUid && !mods[i]._deleted) return mods[i];
+    }
+    for (var j = mods.length - 1; j >= 0; j--) if (!mods[j]._deleted) return mods[j];
+    return null;
+  }
+
+  function addMappingFromPanel(frameworkId, competency) {
+    if (!state.program) { setNotice("error", t("editorNoProgram")); renderMain(); return; }
+    var m = activeModule();
+    if (!m) { setNotice("error", t("editorNoActiveModule")); renderMain(); return; }
+    m.mappings = m.mappings || [];
+    m.mappings.push({
+      framework: frameworkId, competency: competency, level: 1,
+      note: { de: "", en: "" },
+      _uid: nextUid(), _isNew: true
+    });
+    state.openModules[m._uid] = true;
+    state.activeModuleUid = m._uid;
+    markDirty();
+    setNotice("ok", t("editorAddedMapping"));
+    renderMain();
+    renderSidebar();
+    var idx = (state.program.modules || []).indexOf(m);
+    setTimeout(function () {
+      var el = document.querySelector('.ed-item-module[data-mi="' + idx + '"]');
+      if (el) {
+        el.open = true;
+        el.classList.add("ed-flash");
+        if (el.scrollIntoView) el.scrollIntoView({ block: "center", behavior: "smooth" });
+        setTimeout(function () { el.classList.remove("ed-flash"); }, 1200);
+      }
+    }, 0);
+  }
+
+  function resumeDraftById(id) {
+    var d = draftById(id);
     if (!d || !d.model) return;
+    if (!confirmReplace()) return;
     if (d.lang) { state.lang = d.lang; localStorage.setItem(LANG_KEY, state.lang); }
     state.program = normalizeProgram(d.model);
     state.source = d.source || null;
     state.sourcePath = d.sourcePath || null;
+    state.fileName = d.fileName || null;
+    state.draftId = d.id;
     state.savedAt = d.savedAt || null;
     state.dirty = false;
-    state.draftBanner = false;
     state.openModules = {};
+    state.activeModuleUid = null;
     render();
     setNotice("ok", t("editorResume"));
+    renderMain();
   }
 
   /* ---------- wiring ---------- */
@@ -1344,12 +1975,29 @@
     onChange(e);
   });
   document.addEventListener("click", onClick);
+  document.addEventListener("focusin", function (e) {
+    if (!e.target || !e.target.closest) return;
+    var mod = e.target.closest(".ed-item-module");
+    if (!mod || !state.program) return;
+    var mi = parseInt(mod.getAttribute("data-mi"), 10);
+    var m = state.program.modules[mi];
+    if (m) state.activeModuleUid = m._uid;
+  });
   document.addEventListener("toggle", function (e) {
     var d = e.target;
-    if (d && d.tagName === "DETAILS" && d.classList.contains("ed-module")) {
+    if (!d) return;
+    if (d.tagName === "DETAILS" && d.classList.contains("ed-drafts-details")) {
+      state.draftsOpen = d.open;
+      try { localStorage.setItem(DRAFTS_OPEN_KEY, state.draftsOpen ? "1" : "0"); } catch (err) { /* ignore */ }
+      return;
+    }
+    if (d.tagName === "DETAILS" && d.classList.contains("ed-module")) {
       var mi = parseInt(d.getAttribute("data-mi"), 10);
       var m = state.program && state.program.modules[mi];
-      if (m) state.openModules[m._uid] = d.open;
+      if (m) {
+        state.openModules[m._uid] = d.open;
+        if (d.open) state.activeModuleUid = m._uid;
+      }
     }
   }, true);
 

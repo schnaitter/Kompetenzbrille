@@ -20,7 +20,7 @@ window.EDITOR_I18N = {
     /* sidebar: actions */
     editorActions: "Aktionen",
     editorSaveBrowser: "In Browser speichern",
-    editorDeleteDraft: "Entwurf löschen",
+    editorDeleteDraft: "Aktuellen Entwurf löschen",
     editorExport: "YAML herunterladen",
     editorLastSaved: "Zuletzt gespeichert",
     editorNeverSaved: "Noch nicht im Browser gespeichert",
@@ -94,14 +94,46 @@ window.EDITOR_I18N = {
     /* delete semantics */
     editorMarkDelete: "Löschung vormerken",
     editorUnmarkDelete: "Löschvermerk aufheben",
-    editorRemove: "Entfernen",
+    editorRemove: "Löschen",
     editorDeletedNote: "Beim Export entfernt",
     editorDeletedCount: "{n} zum Löschen markiert",
     editorRemovalsTitle: "Beim Export entfernte Einträge",
     editorRemovalsEmpty: "Keine Einträge zum Löschen markiert.",
 
+    /* framework reference panel */
+    editorFrameworkPanel: "Framework-Referenz",
+    editorFrameworkFilter: "Kompetenz filtern …",
+    editorFrameworkEmpty: "Keine Kompetenzen gefunden.",
+    editorAddMappingHere: "Zuordnung zum ausgewählten Modul hinzufügen",
+    editorNoActiveModule: "Bitte zuerst ein Modul anlegen oder auswählen.",
+    editorAddedMapping: "Zuordnung hinzugefügt.",
+
+    /* read-only original / comparison */
+    editorPanelFramework: "Framework",
+    editorPanelOriginal: "Original",
+    editorOriginalTitle: "Original vom Server (nur Lesen)",
+    editorOriginalLoading: "Lade Original …",
+    editorOriginalMissing: "Für diese ID gibt es kein Original im Repository.",
+    editorOriginalNoProgram: "Kein Programm geladen.",
+    editorDiffAdded: "neu",
+    editorDiffChanged: "geändert",
+    editorDiffRemoved: "entfernt",
+    editorDiffNone: "Keine Unterschiede zum Original.",
+    editorDiffSummary: "{n} Änderung(en) gegenüber dem Original",
+
+    /* drafts */
+    editorDrafts: "Entwürfe",
+    editorDraftsEmpty: "Keine Entwürfe gespeichert.",
+    editorDraftsIntro: "Gespeicherte Entwürfe – neueste Bearbeitung zuerst.",
+    editorDraftCurrent: "aktuell",
+    editorDraftResume: "Fortsetzen",
+    editorDraftDelete: "Löschen",
+    editorConfirmDeleteOne: "Diesen Entwurf löschen?",
+    editorDraftSaved: "Entwurf gespeichert.",
+    editorDraftDeleted: "Entwurf gelöscht.",
+
     /* confirmations */
-    editorConfirmDeleteDraft: "Den im Browser gespeicherten Entwurf wirklich löschen?",
+    editorConfirmDeleteDraft: "Den aktuellen Entwurf wirklich aus dem Browser löschen?",
     editorConfirmDiscard: "Diesen Entwurf verwerfen und den aktuellen Entwurf im Browser löschen?",
     editorConfirmReplace: "Es gibt ungespeicherte Änderungen. Beim Fortfahren gehen sie verloren. Fortfahren?",
     editorConfirmNew: "Ein neues Programm anlegen? Ungespeicherte Änderungen gehen verloren.",
@@ -152,7 +184,7 @@ window.EDITOR_I18N = {
 
     editorActions: "Actions",
     editorSaveBrowser: "Save in browser",
-    editorDeleteDraft: "Delete draft",
+    editorDeleteDraft: "Delete current draft",
     editorExport: "Download YAML",
     editorLastSaved: "Last saved",
     editorNeverSaved: "Not yet saved in the browser",
@@ -219,13 +251,45 @@ window.EDITOR_I18N = {
 
     editorMarkDelete: "Mark for deletion",
     editorUnmarkDelete: "Unmark",
-    editorRemove: "Remove",
+    editorRemove: "Delete",
     editorDeletedNote: "Removed on export",
     editorDeletedCount: "{n} marked for deletion",
     editorRemovalsTitle: "Entries removed on export",
     editorRemovalsEmpty: "No entries marked for deletion.",
 
-    editorConfirmDeleteDraft: "Really delete the draft stored in the browser?",
+    /* framework reference panel */
+    editorFrameworkPanel: "Framework reference",
+    editorFrameworkFilter: "Filter competencies …",
+    editorFrameworkEmpty: "No competencies found.",
+    editorAddMappingHere: "Add mapping to the selected module",
+    editorNoActiveModule: "Create or select a module first.",
+    editorAddedMapping: "Mapping added.",
+
+    /* read-only original / comparison */
+    editorPanelFramework: "Framework",
+    editorPanelOriginal: "Original",
+    editorOriginalTitle: "Original from the server (read only)",
+    editorOriginalLoading: "Loading original …",
+    editorOriginalMissing: "There is no original in the repository for this id.",
+    editorOriginalNoProgram: "No program loaded.",
+    editorDiffAdded: "new",
+    editorDiffChanged: "changed",
+    editorDiffRemoved: "removed",
+    editorDiffNone: "No differences from the original.",
+    editorDiffSummary: "{n} change(s) compared with the original",
+
+    /* drafts */
+    editorDrafts: "Drafts",
+    editorDraftsEmpty: "No drafts saved.",
+    editorDraftsIntro: "Saved drafts – newest edit first.",
+    editorDraftCurrent: "current",
+    editorDraftResume: "Resume",
+    editorDraftDelete: "Delete",
+    editorConfirmDeleteOne: "Delete this draft?",
+    editorDraftSaved: "Draft saved.",
+    editorDraftDeleted: "Draft deleted.",
+
+    editorConfirmDeleteDraft: "Really delete the current draft from the browser?",
     editorConfirmDiscard: "Discard this draft and delete the current browser draft?",
     editorConfirmReplace: "There are unsaved changes. Continuing will lose them. Continue?",
     editorConfirmNew: "Create a new program? Unsaved changes will be lost.",
