@@ -64,6 +64,46 @@ python3 -m http.server 8000
 
 Any static file server works (`npx serve`, nginx, …).
 
+The **editor** lives at `editor.html` (linked from the header of the viewer):
+
+```sh
+# viewer
+open http://localhost:8000/index.html
+# editor
+open http://localhost:8000/editor.html
+```
+
+## Editor (`editor.html`)
+
+A fully client-side editor for the study-program YAML files — no build step, no
+server, no git required. It shares the viewer's stack (`css/style.css`,
+`js/vendor/js-yaml.min.js`) and adds `js/editor.js` + `js/editor-i18n.js`.
+
+What it can do:
+
+- **Load** a program from `data/manifest.yaml`, **upload** a local `.yaml` file,
+  or **create** a new program from a template.
+- Edit the base information, module categories, modules (code, title, credits,
+  category, goals, topics) and per-module **mappings** (framework, competency,
+  depth 1–3, bilingual rationale). Framework and competency dropdowns are
+  data-driven from the `frameworks:` list in `data/manifest.yaml` (currently
+  only `quadriga-dlf`); add new framework files here and they appear
+  automatically.
+- **Mark for deletion** modules, mappings, topics and categories (strikethrough,
+  dimmed); they are stripped on export. Newly added empty rows get a direct
+  **Remove** button instead.
+- **Autosave** a draft to `localStorage` (`kb-editor-draft`, debounced 500 ms)
+  with a resume banner, plus manual *Save in browser* / *Delete draft* buttons.
+- **Validate** against `data/schemas/program-schema.json` (required fields, id
+  pattern, credits 1–60, level ∈ {1,2,3}, category/framework/competency
+  references, bilingual note rules). Errors link to the offending module.
+- **Download** the cleaned `<id>.yaml` (`js-yaml.dump` → Blob). The only export
+  path is the file download; nothing is pushed or committed.
+
+Round-trips are semantic: the editor drops empty optional keys
+(`source`, `topics: []`, `mappings: []`) and re-quotes codes such as `"1.1"`,
+but `load → edit → dump → load` yields the same data for all existing files.
+
 ## Deploy to GitHub Pages
 
 The repo includes `.github/workflows/pages.yml` (plus `.nojekyll`).
@@ -217,11 +257,14 @@ committed `assets/favicon.ico` is out of date.
 
 ```
 index.html               app shell
-css/style.css            styles
-js/i18n.js               UI strings (de/en)
+editor.html              client-side YAML editor shell
+css/style.css            styles (viewer + editor)
+js/i18n.js               viewer UI strings (de/en)
+js/editor-i18n.js        editor UI strings (de/en)
 js/app.js                data loading, state, rendering
+js/editor.js             editor: model, I/O, validation, autosave, export
 js/vendor/js-yaml.min.js  vendored YAML parser (js-yaml 4.1.0, MIT)
-data/manifest.yaml       registry of the study programs
+data/manifest.yaml       registry of study programs + framework files
 data/frameworks/         QUADRIGA v4 framework (fixed: de + en)
 data/programs/           study program representations — HU Berlin (BA BIW,
                         MA Information Science, MA BIW weiterbildend,
