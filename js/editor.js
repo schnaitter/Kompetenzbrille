@@ -420,6 +420,9 @@
     if (!isEmptyStr(p.language) && !/^[a-z]{2}(-[A-Za-z0-9]+)*$/.test(p.language)) {
       push(T("valLanguage").replace("{value}", p.language), null);
     }
+    if (state.fileName && p.id !== fileBaseName(state.fileName)) {
+      push(T("valIdFileName").replace("{value}", p.id || "—").replace("{file}", state.fileName), null);
+    }
 
     var cats = (p.categories || []).filter(function (c) { return !isDeleted(c); });
     if (!cats.length) push(T("valCategoriesMin"), null);
@@ -1124,6 +1127,7 @@
     var h = '<details class="ed-panel" open><summary>' + esc(t("editorBaseInfo")) + "</summary>";
     h += '<div class="ed-grid ed-grid-2">';
     h += inputField(t("editorFId"), { kind: "program", field: "id", value: p.id, placeholder: t("editorIdPatternHint") });
+    h += fileNameField(p);
     h += inputField(t("editorFTitle"), { kind: "program", field: "title", value: p.title });
     h += inputField(t("editorFInstitution"), { kind: "program", field: "institution", value: p.institution });
     h += inputField(t("editorFInstitutionAbbr"), { kind: "program", field: "institutionAbbr", value: p.institutionAbbr });
@@ -1135,8 +1139,24 @@
     return h;
   }
 
-  /* ---------- categories ---------- */
+  /* the id must equal the file name; show it and offer a one-click sync */
+  function fileNameField(p) {
+    var derived = state.fileName || (p.id ? p.id + ".yaml" : "—");
+    var mismatch = state.fileName && p.id !== fileBaseName(state.fileName);
+    var h = '<label class="ed-field ed-field-wide"><span class="ed-field-label">' + esc(t("editorFFileName")) + "</span>";
+    h += '<div class="ed-file-row">';
+    h += '<input type="text" value="' + esc(derived) + '" readonly tabindex="-1" title="' + esc(derived) + '">';
+    if (mismatch) {
+      h += '<button type="button" class="ed-btn" data-action="sync-id-from-file">' + esc(t("editorUseFileName")) + "</button>";
+      if (!isEmptyStr(p.id)) {
+        h += '<button type="button" class="ed-btn" data-action="sync-file-from-id">' + esc(t("editorUseId")) + "</button>";
+      }
+    }
+    h += "</div></label>";
+    return h;
+  }
 
+  /* ---------- categories ---------- */
   function renderCategories() {
     var p = state.program;
     var h = '<details class="ed-panel" open><summary>' + esc(t("editorCategories")) +
@@ -1310,7 +1330,7 @@
   function itemClasses(kind, item, empty) {
     var cls = "ed-item ed-item-" + kind;
     if (isDeleted(item)) cls += " marked-deleted";
-    if (item._isNew && empty) cls += " is-new-empty";
+    if (empty) cls += " is-empty";
     return cls;
   }
 
@@ -1326,15 +1346,43 @@
     return h;
   }
 
+  function defaultCategoryId() {
+    var cats = (state.program && state.program.categories || []).filter(function (c) { return !isDeleted(c); });
+    return cats.length ? cats[0].id : "";
+  }
+  function defaultFrameworkId() {
+    return state.frameworkOrder.length ? state.frameworkOrder[0] : "";
+  }
+
+  /* an item is "empty" when it holds no content beyond the default values, so it
+   * can be deleted immediately instead of being marked for deletion */
   function moduleEmpty(m) {
-    return isEmptyStr(m.code) && isEmptyStr(m.title) && isEmptyStr(m.goals) &&
-      (!m.mappings || !m.mappings.length);
+    if (!isEmptyStr(m.code) || !isEmptyStr(m.title) || !isEmptyStr(m.goals) || !isEmptyStr(m.credits)) return false;
+    if (!isEmptyStr(m.category) && m.category !== defaultCategoryId()) return false;
+    var topics = (m.topics || []).filter(function (tp) { return !isDeleted(tp); });
+    if (topics.some(function (tp) { return !isEmptyStr(tp.text); })) return false;
+    var maps = (m.mappings || []).filter(function (mp) { return !isDeleted(mp); });
+    if (maps.some(function (mp) { return !mappingEmpty(mp); })) return false;
+    return true;
   }
   function mappingEmpty(mp) {
-    return isEmptyStr(mp.competency) && isEmptyStr(mp.note && mp.note.de) && isEmptyStr(mp.note && mp.note.en);
+    var noNote = isEmptyStr(mp.note && mp.note.de) && isEmptyStr(mp.note && mp.note.en);
+    /* Single exception to the "empty" rule: a mapping inserted from the framework
+     * panel already carries a competency but no rationale yet, so it can still be
+     * deleted right away. */
+    if (mp._isNew && noNote) return true;
+    var fwDefault = isEmptyStr(mp.framework) || mp.framework === defaultFrameworkId();
+    return isEmptyStr(mp.competency) && noNote && fwDefault && toInt(mp.level) === 1;
   }
   function topicEmpty(tp) { return isEmptyStr(tp.text); }
   function categoryEmpty(c) { return isEmptyStr(c.id) && isEmptyStr(c.label); }
+
+  function itemIsEmpty(kind, item) {
+    if (kind === "module") return moduleEmpty(item);
+    if (kind === "mapping") return mappingEmpty(item);
+    if (kind === "topic") return topicEmpty(item);
+    return categoryEmpty(item);
+  }
 
   /* ================= model access ================= */
 
@@ -1397,16 +1445,14 @@
   }
 
   function refreshItem(el) {
+    if (!el) return;
     var target = modelTarget(el);
     if (!target || !target.obj) return;
     var item = target.obj;
     var kind = el.getAttribute("data-kind");
-    var empty = (kind === "module") ? moduleEmpty(item)
-      : (kind === "mapping") ? mappingEmpty(item)
-        : (kind === "topic") ? topicEmpty(item)
-          : categoryEmpty(item);
+    var empty = itemIsEmpty(kind, item);
     el.classList.toggle("marked-deleted", isDeleted(item));
-    el.classList.toggle("is-new-empty", !!item._isNew && empty);
+    el.classList.toggle("is-empty", empty);
     var markBtn = ownButton(el, "mark");
     if (markBtn) markBtn.textContent = isDeleted(item) ? t("editorUnmarkDelete") : t("editorMarkDelete");
   }
@@ -1483,7 +1529,7 @@
     setNotice("info", t("loading"));
     renderMain();
     fetchYaml(path).then(function (raw) {
-      applyProgram(raw, "repo", path);
+      applyProgram(raw, "repo", path, path.replace(/^.*\//, ""));
       setNotice("ok", t("editorOkLoaded") + ": " + path.split("/").pop());
       renderMain();
     }).catch(function (err) {
@@ -1493,7 +1539,7 @@
     });
   }
 
-  function applyProgram(raw, source, sourcePath) {
+  function applyProgram(raw, source, sourcePath, fileName) {
     if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
       setNotice("error", t("editorErrNoFile"));
       renderMain();
@@ -1501,14 +1547,17 @@
       return;
     }
     state.program = normalizeProgram(raw);
+    /* the id must equal the file name: fill it in when the file has none */
+    if (fileName && isEmptyStr(state.program.id)) state.program.id = fileBaseName(fileName);
     state.source = source;
     state.sourcePath = sourcePath || null;
-    state.draftBanner = false;
+    state.fileName = fileName || null;
     state.openModules = {};
+    state.activeModuleUid = null;
+    state.draftId = (state.program.id || sourcePath || ("neu-" + Date.now()));
+    var existing = draftById(state.draftId);
+    state.savedAt = existing ? existing.savedAt : null;
     state.dirty = false;
-    state.savedAt = null;
-    /* the single draft slot now refers to the freshly chosen source */
-    clearDraft();
     render();
   }
 
@@ -1526,7 +1575,7 @@
       modules: []
     };
     setNotice("info", t("editorNew"));
-    applyProgram(template, "new", null);
+    applyProgram(template, "new", null, null);
   }
 
   function handleUpload(file) {
@@ -1541,7 +1590,7 @@
           renderMain();
           return;
         }
-        applyProgram(raw, "upload", null);
+        applyProgram(raw, "upload", null, file.name);
         setNotice("ok", t("editorOkLoaded") + ": " + file.name);
         renderMain();
       } catch (err) {
@@ -1676,6 +1725,8 @@
   function toggleDeleted(el) {
     var target = modelTarget(el);
     if (!target || !target.obj) return;
+    /* empty/default items are removed right away instead of being marked */
+    if (itemIsEmpty(el.getAttribute("data-kind"), target.obj)) { removeItem(el); return; }
     target.obj._deleted = !target.obj._deleted;
     markDirty();
     refreshItem(el);
