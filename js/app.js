@@ -321,8 +321,7 @@
     Object.keys(FWLOCALES).forEach(function (lang) {
       var o = document.createElement("option");
       o.value = lang;
-      o.textContent = (lang === "de" ? "Deutsch" : lang === "en" ? "English" : lang.toUpperCase()) +
-        " – " + FWLOCALES[lang].shortTitle;
+      o.textContent = lang === "de" ? "Deutsch" : lang === "en" ? "English" : lang.toUpperCase();
       selLang.appendChild(o);
     });
     selLang.value = state.lang;
