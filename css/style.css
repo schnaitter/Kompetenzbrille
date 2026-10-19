@@ -367,7 +367,24 @@ table.matrix thead th {
   white-space: nowrap;
 }
 table.matrix thead th:hover { background: var(--accent-soft); }
-table.matrix .row-head { text-align: left; white-space: nowrap; cursor: pointer; background: #fbfcfd; }
+/* keep the competency column visible while the module columns scroll */
+table.matrix thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: #fbfcfd;
+  box-shadow: 1px 0 0 var(--line);
+}
+table.matrix .row-head {
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fbfcfd;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  box-shadow: 1px 0 0 var(--line);
+}
 table.matrix .row-head:hover { background: var(--accent-soft); }
 table.matrix .row-head .code { font-weight: 800; color: var(--phase-color); margin-right: 6px; }
 table.matrix tr.phase-row td {
@@ -392,6 +409,9 @@ table.matrix td.cell.empty:hover { outline: none; }
 .cell-block.l3 { background: var(--lvl-3); }
 .legend { display: flex; gap: 16px; align-items: center; font-size: 12.5px; margin: 0 0 10px; flex-wrap: wrap; }
 .legend .item { display: inline-flex; gap: 6px; align-items: center; }
+@media (max-width: 640px) {
+  table.matrix .row-head { white-space: normal; max-width: 55vw; min-width: 120px; }
+}
 
 /* ---------- hover popover (matrix headers) ---------- */
 .popover {
