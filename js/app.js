@@ -718,7 +718,7 @@
       var ents = (idx[code] || []).filter(function (e) { return e.program.id === pid; }).sort(function (a, b) {
         return b.mapping.level - a.mapping.level || a.module.code.localeCompare(b.module.code);
       });
-      var best = ents.reduce(function (a, b) { return a.mapping.level >= b.mapping.level ? a : b; });
+      var best = ents.length ? ents.reduce(function (a, b) { return a.mapping.level >= b.mapping.level ? a : b; }) : null;
       h += '<section class="cmp-prog"><div class="cmp-prog-head">' +
         '<span class="pdot ' + programColorClass(pid) + '"></span>' +
         "<strong>" + esc(programLabel(p)) + "</strong>";
