@@ -55,7 +55,7 @@
     onlyAddressed: false,
     cats: null,                 // Set of category ids (null = all)
     selectedComp: null,         // framework view
-    compareFilter: "all"        // all | unique | shared (framework view, active with 2+ programs)
+    compareFilter: "all"        // all | diff | shared (framework view, active with 2+ programs)
   };
 
   /* ================= helpers ================= */
@@ -235,8 +235,9 @@
   /* does a competency show up under the current comparison mode? */
   function compPassesCompareFilter(idx, code) {
     var n = addressedProgramIds(idx, code).length;
-    if (state.compareFilter === "unique") return n === 1;
-    if (state.compareFilter === "shared") return n >= 2;
+    var total = state.programIds.length;
+    if (state.compareFilter === "diff") return n >= 1 && n < total;
+    if (state.compareFilter === "shared") return n === total;
     return true;
   }
 
@@ -365,7 +366,7 @@
     if (!state.programIds.length && PROGRAMS.length) state.programIds = [PROGRAMS[0].id];
     var f = fw();
     if (state.selectedComp && f && !compByCode(f, state.selectedComp)) state.selectedComp = null;
-    if (["all", "unique", "shared"].indexOf(state.compareFilter) < 0) state.compareFilter = "all";
+    if (["all", "diff", "shared"].indexOf(state.compareFilter) < 0) state.compareFilter = "all";
   }
 
   /* ================= chrome (header/tabs/selects) ================= */
@@ -442,7 +443,7 @@
       h += '<section class="filter-section"><h3>' + esc(t("compare")) + '</h3>';
       if (compareActive()) {
         h += '<div class="seg">';
-        [["all", t("compareFilterAll")], ["unique", t("compareFilterUnique")], ["shared", t("compareFilterShared")]].forEach(function (o) {
+        [["all", t("compareFilterAll")], ["diff", t("compareFilterDiff")], ["shared", t("compareFilterShared")]].forEach(function (o) {
           h += '<button type="button" data-action="set-compare-filter" data-value="' + o[0] + '" class="' +
             (state.compareFilter === o[0] ? "active" : "") + '">' + esc(o[1]) + "</button>";
         });
@@ -670,7 +671,7 @@
 
   /* ================= framework view ================= */
 
-  /* compact overview of the comparison: per-program coverage + shared/unique counts */
+  /* compact overview of the comparison: per-program coverage + shared/difference counts */
   function compareSummary(f, idx) {
     var h = '<div class="cmp-summary"><div class="cmp-summary-head"><strong>' + esc(t("compare")) + "</strong>";
     if (state.programIds.length < 2) {
@@ -678,12 +679,13 @@
       return h;
     }
     var perProgram = {};
-    var unique = 0, shared = 0;
+    var diff = 0, shared = 0;
+    var total = state.programIds.length;
     f.competencies.forEach(function (c) {
       var ids = addressedProgramIds(idx, c.code);
       ids.forEach(function (pid) { perProgram[pid] = (perProgram[pid] || 0) + 1; });
-      if (ids.length === 1) unique++;
-      else if (ids.length >= 2) shared++;
+      if (ids.length === total) shared++;
+      else if (ids.length >= 1) diff++;
     });
     h += "</div>";
     h += '<div class="cmp-legend">';
@@ -696,7 +698,7 @@
     });
     h += "</div>";
     h += '<div class="cmp-stats"><span>' + esc(t("compareSharedShort")) + ": <strong>" + shared + "</strong></span>" +
-      '<span>' + esc(t("compareUniqueShort")) + ": <strong>" + unique + "</strong></span></div>";
+      '<span>' + esc(t("compareDiffShort")) + ": <strong>" + diff + "</strong></span></div>";
     return h + "</div>";
   }
 
@@ -772,10 +774,11 @@
       comps.forEach(function (c) {
         var n = (idx[c.code] || []).length;
         var addrs = cmp ? addressedProgramIds(idx, c.code) : null;
+        var total = state.programIds.length;
         var cls = "picker-btn" + (state.selectedComp === c.code ? " active" : "");
         if (cmp) {
-          if (addrs.length === 1) cls += " unique";
-          else if (addrs.length >= 2) cls += " shared";
+          if (addrs.length >= 1 && addrs.length < total) cls += " diff";
+          else if (addrs.length === total) cls += " shared";
         }
         h += '<button class="' + cls + '" data-action="select-comp" data-comp="' + esc(c.code) + '">' +
           '<span class="code">' + esc(c.code) + "</span>" +
