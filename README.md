@@ -28,9 +28,11 @@ It provides bidirectional views/filters:
   module chips, or arranged by module. Filter by phases, individual
   competencies, framework dimensions (knowledge / skills / examples), module
   type, and mapping depth.
-- **Framework view** (Framework-Sicht): pick a competency and see which modules
-  of one or more study programs address it, including the rationale for each
-  mapping.
+- **Framework view** (Framework-Sicht): choose one or more study programs via
+  dropdowns and pick a competency to see which modules address it, including the
+  rationale for each mapping. With two or more programs, competencies unique to
+  one program and those shared across programs are highlighted, and the modules
+  are grouped per program (with the highest mapping depth).
 - **Matrix view**: heatmap of competencies × modules for a program.
 
 The QUADRIGA **Orientierungswissen** (English: “conceptual knowledge”) is

@@ -55,8 +55,7 @@
     onlyAddressed: false,
     cats: null,                 // Set of category ids (null = all)
     selectedComp: null,         // framework view
-    compare: false,             // framework view: shared/unique highlighting
-    compareFilter: "all"        // all | unique | shared
+    compareFilter: "all"        // all | unique | shared (framework view, active with 2+ programs)
   };
 
   /* ================= helpers ================= */
@@ -156,6 +155,15 @@
     return (p.institutionAbbr ? p.institutionAbbr + " · " : "") + p.title;
   }
 
+  /* <option> list for a program picker; already chosen programs stay disabled */
+  function programOptions(selectedId, disabledIds) {
+    return PROGRAMS.map(function (p) {
+      var disabled = disabledIds.indexOf(p.id) >= 0 && p.id !== selectedId;
+      return '<option value="' + esc(p.id) + '"' + (p.id === selectedId ? " selected" : "") +
+        (disabled ? " disabled" : "") + ">" + esc(programLabel(p)) + "</option>";
+    }).join("");
+  }
+
   /* anchor linking to the institution's website (falls back to plain text) */
   function institutionAnchor(p) {
     if (!p.institution) return p.institutionAbbr || "";
@@ -179,9 +187,9 @@
 
   /* ---------- comparison helpers (framework view) ---------- */
 
-  /* compare mode needs at least two programs */
+  /* comparison is available as soon as two programs are selected */
   function compareActive() {
-    return state.compare && state.programIds.length >= 2;
+    return state.programIds.length >= 2;
   }
 
   /* stable color slot for the n-th selected program */
@@ -244,7 +252,7 @@
       if (!raw) return;
       var s = JSON.parse(raw);
       if (s.lang) state.lang = s.lang;
-      ["view", "programId", "arrange", "minLevel", "onlyAddressed", "selectedComp", "compare", "compareFilter"].forEach(function (k) {
+      ["view", "programId", "arrange", "minLevel", "onlyAddressed", "selectedComp", "compareFilter"].forEach(function (k) {
         if (s[k] !== undefined && s[k] !== null) state[k] = s[k];
       });
       if (Array.isArray(s.programIds)) state.programIds = s.programIds;
@@ -260,10 +268,7 @@
     if (state.view === "framework") {
       if (state.programIds.length) parts.push("programs=" + state.programIds.join(","));
       if (state.selectedComp) parts.push("comp=" + encodeURIComponent(state.selectedComp));
-      if (state.compare) {
-        parts.push("cmp=1");
-        if (state.compareFilter !== "all") parts.push("cf=" + state.compareFilter);
-      }
+      if (state.compareFilter !== "all") parts.push("cf=" + state.compareFilter);
     } else if (state.programId) {
       parts.push("program=" + encodeURIComponent(state.programId));
     }
@@ -282,7 +287,6 @@
     if (params.program) state.programId = params.program;
     if (params.programs) state.programIds = params.programs.split(",").filter(Boolean);
     if (params.comp) state.selectedComp = params.comp;
-    if (params.cmp) state.compare = params.cmp === "1";
     if (params.cf) state.compareFilter = params.cf;
   }
 
@@ -392,11 +396,22 @@
 
     /* --- program selectors --- */
     if (state.view === "framework") {
-      h += '<section class="filter-section"><h3>' + esc(t("programs")) + '</h3>';
-      PROGRAMS.forEach(function (p) {
-        h += '<label><input type="checkbox" data-action="toggle-program" value="' + esc(p.id) + '"' +
-          (state.programIds.indexOf(p.id) >= 0 ? " checked" : "") + "> " + esc(programLabel(p)) + "</label>";
+      h += '<section class="filter-section"><h3>' + esc(t("programs")) + '</h3><div class="prog-list">';
+      state.programIds.forEach(function (pid, i) {
+        var others = state.programIds.filter(function (_, j) { return j !== i; });
+        h += '<div class="prog-row"><select data-action="set-framework-program" data-index="' + i + '">' +
+          programOptions(pid, others) + "</select>";
+        if (state.programIds.length > 1) {
+          h += '<button type="button" class="prog-remove" data-action="remove-framework-program" data-index="' + i + '" title="' +
+            esc(t("removeProgram")) + '" aria-label="' + esc(t("removeProgram")) + '">\u2715</button>';
+        }
+        h += "</div>";
       });
+      h += "</div>";
+      var remaining = PROGRAMS.filter(function (p) { return state.programIds.indexOf(p.id) < 0; });
+      if (remaining.length) {
+        h += '<button type="button" class="prog-add" data-action="add-framework-program">+ ' + esc(t("addProgram")) + "</button>";
+      }
       var insts = institutionsOf(state.programIds);
       if (insts.length) h += '<p class="inst-link">' + esc(t(insts.length > 1 ? "institutions" : "institution")) + ": " + insts.map(institutionAnchor).join(" · ") + "</p>";
       h += "</section>";
@@ -411,17 +426,18 @@
       h += "</section>";
     }
 
-    /* --- comparison (framework view) --- */
+    /* --- comparison mode (framework view; available with two or more programs) --- */
     if (state.view === "framework") {
-      h += '<section class="filter-section"><h3>' + esc(t("compare")) + '</h3>' +
-        '<label><input type="checkbox" data-action="toggle-compare"' + (state.compare ? " checked" : "") + "> " + esc(t("compareMode")) + "</label>";
-      if (state.compare) {
-        h += '<select data-action="set-compare-filter" style="margin-top:8px">';
+      h += '<section class="filter-section"><h3>' + esc(t("compare")) + '</h3>';
+      if (compareActive()) {
+        h += '<div class="seg">';
         [["all", t("compareFilterAll")], ["unique", t("compareFilterUnique")], ["shared", t("compareFilterShared")]].forEach(function (o) {
-          h += '<option value="' + o[0] + '"' + (state.compareFilter === o[0] ? " selected" : "") + ">" + esc(o[1]) + "</option>";
+          h += '<button type="button" data-action="set-compare-filter" data-value="' + o[0] + '" class="' +
+            (state.compareFilter === o[0] ? "active" : "") + '">' + esc(o[1]) + "</button>";
         });
-        h += "</select>";
-        if (state.programIds.length < 2) h += '<p class="muted small" style="margin:8px 0 0">' + esc(t("compareNeedsTwo")) + "</p>";
+        h += "</div>";
+      } else {
+        h += '<p class="muted small" style="margin:0">' + esc(t("compareNeedsTwo")) + "</p>";
       }
       h += "</section>";
     }
@@ -722,7 +738,7 @@
     var h = "";
 
     /* comparison summary */
-    if (state.compare) h += compareSummary(f, idx);
+    if (compareActive()) h += compareSummary(f, idx);
 
     /* picker grouped by phase */
     f.phases.forEach(function (ph) {
@@ -1138,6 +1154,17 @@
       case "open-module": openModuleModal(el.getAttribute("data-program"), el.getAttribute("data-module")); break;
       case "open-comp": openCompModal(el.getAttribute("data-comp")); break;
       case "open-cell": openCellModal(el.getAttribute("data-program"), el.getAttribute("data-module"), el.getAttribute("data-comp")); break;
+      case "add-framework-program": {
+        var next = PROGRAMS.filter(function (p) { return state.programIds.indexOf(p.id) < 0; })[0];
+        if (next) state.programIds.push(next.id);
+        rerender(); break;
+      }
+      case "remove-framework-program": {
+        var ri = parseInt(el.getAttribute("data-index"), 10);
+        if (state.programIds.length > 1 && ri >= 0 && ri < state.programIds.length) state.programIds.splice(ri, 1);
+        rerender(); break;
+      }
+      case "set-compare-filter": state.compareFilter = el.getAttribute("data-value"); rerender(); break;
       case "close-modal": if (e.target === el || el.classList.contains("modal-close")) closeModal(); break;
     }
   });
@@ -1148,11 +1175,9 @@
     var action = el.getAttribute("data-action");
     switch (action) {
       case "set-program": state.programId = el.value; rerender(); break;
-      case "toggle-program": {
-        var id = el.value;
-        var i = state.programIds.indexOf(id);
-        if (el.checked && i < 0) state.programIds.push(id);
-        if (!el.checked && i >= 0) state.programIds.splice(i, 1);
+      case "set-framework-program": {
+        var fi = parseInt(el.getAttribute("data-index"), 10);
+        if (fi >= 0 && fi < state.programIds.length) state.programIds[fi] = el.value;
         rerender(); break;
       }
       case "toggle-cat": state.cats = collectSet("toggle-cat"); rerender(); break;
@@ -1161,8 +1186,6 @@
       case "toggle-dim": state.dims[el.value] = el.checked; rerender(); break;
       case "set-minlevel": state.minLevel = parseInt(el.value, 10) || 1; rerender(); break;
       case "toggle-only-addressed": state.onlyAddressed = el.checked; rerender(); break;
-      case "toggle-compare": state.compare = el.checked; rerender(); break;
-      case "set-compare-filter": state.compareFilter = el.value; rerender(); break;
     }
   });
 

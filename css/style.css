@@ -151,6 +151,34 @@ html, body {
   font-size: 13.5px;
   background: #fff;
 }
+.prog-list { display: grid; gap: 6px; }
+.prog-row { display: flex; gap: 6px; align-items: center; }
+.prog-row select { flex: 1; width: auto; min-width: 0; }
+.prog-remove {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+.prog-remove:hover { border-color: var(--accent); color: var(--accent); }
+.prog-add {
+  margin-top: 8px;
+  width: 100%;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--accent);
+  padding: 6px 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.prog-add:hover { border-color: var(--accent); background: var(--accent-soft); }
 .seg { display: flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
 .seg button {
   flex: 1;
