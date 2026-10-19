@@ -673,12 +673,16 @@
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id && compsPass(c.code); });
       if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
         /* phase without competencies (Orientierungswissen) — a lone phase row, description as tooltip */
-        h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '"><td colspan="' + (mods.length + 1) + '" title="' +
-          esc(ph.note || ph.text || "") + '">' + esc(phaseTitle(ph)) + "</td></tr>";
+        h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+          '<td class="phase-head" title="' + esc(ph.note || ph.text || "") + '">' + esc(phaseTitle(ph)) + "</td>" +
+          '<td class="phase-fill" colspan="' + mods.length + '"></td></tr>';
         return;
       }
       if (!comps.length) return;
-      h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '"><td colspan="' + (mods.length + 1) + '">' + esc(phaseTitle(ph)) + "</td></tr>";
+      /* the phase label sits in the fixed first column; the fill scrolls with the module columns */
+      h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+        '<td class="phase-head">' + esc(phaseTitle(ph)) + "</td>" +
+        '<td class="phase-fill" colspan="' + mods.length + '"></td></tr>';
       comps.forEach(function (c) {
         h += '<tr style="--phase-color:' + phaseColorVar(c.phase) + '"><td class="row-head" data-action="open-comp" data-pop="comp" data-comp="' + esc(c.code) + '"><span class="code">' + esc(c.code) + "</span>" + esc(c.title) + "</td>";
         mods.forEach(function (m) {
