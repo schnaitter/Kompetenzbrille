@@ -63,7 +63,18 @@ window.I18N = {
     popClickDetails: "Klick öffnet die Details",
     addressedInModules: "Adressiert in {n} Modulen",
     catPflicht: "Pflicht",
-    catWahlpflicht: "Wahlpflicht"
+    catWahlpflicht: "Wahlpflicht",
+    compare: "Vergleich",
+    compareMode: "Studiengänge vergleichen",
+    compareFilterAll: "alle Kompetenzen",
+    compareFilterUnique: "nur Unterschiede",
+    compareFilterShared: "nur Gemeinsamkeiten",
+    compareNeedsTwo: "Mindestens zwei Studiengänge auswählen, um zu vergleichen.",
+    compareSharedShort: "gemeinsam",
+    compareUniqueShort: "nur in einem",
+    addressedShort: "adressiert",
+    notAddressedShort: "nicht adressiert",
+    bestLevel: "höchste Tiefe"
   },
   en: {
     language: "Language",
@@ -127,6 +138,17 @@ window.I18N = {
     popClickDetails: "Click to open details",
     addressedInModules: "Addressed in {n} modules",
     catPflicht: "Compulsory",
-    catWahlpflicht: "Elective"
+    catWahlpflicht: "Elective",
+    compare: "Comparison",
+    compareMode: "Compare study programs",
+    compareFilterAll: "all competencies",
+    compareFilterUnique: "differences only",
+    compareFilterShared: "overlaps only",
+    compareNeedsTwo: "Select at least two study programs to compare.",
+    compareSharedShort: "shared",
+    compareUniqueShort: "unique",
+    addressedShort: "addressed",
+    notAddressedShort: "not addressed",
+    bestLevel: "highest depth"
   }
 };

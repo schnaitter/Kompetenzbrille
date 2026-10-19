@@ -16,6 +16,12 @@
   --lvl-1: #c9d4e6;
   --lvl-2: #6f97cf;
   --lvl-3: #2f5fb3;
+  --prog-0: #2f5fb3;
+  --prog-1: #d17b1f;
+  --prog-2: #2e8b6f;
+  --prog-3: #8b5cc7;
+  --prog-4: #c0455f;
+  --prog-5: #3f8fa8;
   --radius: 10px;
   --shadow: 0 1px 3px rgba(20, 30, 50, .08), 0 4px 14px rgba(20, 30, 50, .06);
 }
@@ -350,6 +356,58 @@ details.mod-extra summary { cursor: pointer; font-size: 12.5px; color: var(--acc
   font-weight: 700;
 }
 .picker-btn .count.zero { background: #b9c0cb; }
+
+/* ---------- framework comparison ---------- */
+.pdot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--pc, var(--prog-0));
+  vertical-align: middle;
+}
+.pdot.p0 { --pc: var(--prog-0); }
+.pdot.p1 { --pc: var(--prog-1); }
+.pdot.p2 { --pc: var(--prog-2); }
+.pdot.p3 { --pc: var(--prog-3); }
+.pdot.p4 { --pc: var(--prog-4); }
+.pdot.p5 { --pc: var(--prog-5); }
+.pdot.off { background: #fff; box-shadow: inset 0 0 0 1.5px var(--pc, var(--prog-0)); }
+
+.picker-btn.unique { background: #fff8ec; }
+.picker-btn.shared { background: #f1f8f3; }
+.picker-btn.unique:hover, .picker-btn.shared:hover { border-color: var(--phase-color); }
+.pick-progs { display: flex; gap: 3px; margin-top: 6px; position: relative; }
+
+.cmp-summary {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  margin-bottom: 20px;
+}
+.cmp-summary-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.cmp-summary-head strong { font-size: 14px; }
+.cmp-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; }
+.cmp-legend-item { display: inline-flex; gap: 6px; align-items: center; font-size: 12.5px; }
+.cmp-stats { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 10px; font-size: 12.5px; color: var(--ink-soft); }
+.cmp-stats strong { color: var(--ink); }
+
+.cmp-prog { margin-top: 12px; }
+.cmp-prog-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 5px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 13px;
+}
+.cmp-prog-head .cmp-prog-level { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink-soft); }
+.cmp-prog-head .cmp-prog-count { margin-left: auto; font-size: 12px; color: var(--ink-soft); }
+.cmp-prog .mod-card { margin-top: 8px; }
 
 /* ---------- matrix ---------- */
 .matrix-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 26px; }
