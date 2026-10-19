@@ -110,7 +110,8 @@ html, body {
   position: sticky;
   top: 74px;
   max-height: calc(100vh - 90px);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   font-size: 13.5px;
 }
 .main { min-width: 0; outline: none; }
@@ -151,9 +152,16 @@ html, body {
   font-size: 13.5px;
   background: #fff;
 }
-.prog-list { display: grid; gap: 6px; }
-.prog-row { display: flex; gap: 6px; align-items: center; }
-.prog-row select { flex: 1; width: auto; min-width: 0; }
+.prog-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; }
+.prog-row { display: flex; gap: 6px; align-items: center; min-width: 0; }
+.prog-row select {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .prog-remove {
   flex: none;
   width: 28px;

@@ -399,12 +399,15 @@
       h += '<section class="filter-section"><h3>' + esc(t("programs")) + '</h3><div class="prog-list">';
       state.programIds.forEach(function (pid, i) {
         var others = state.programIds.filter(function (_, j) { return j !== i; });
-        h += '<div class="prog-row"><select data-action="set-framework-program" data-index="' + i + '">' +
-          programOptions(pid, others) + "</select>";
-        if (state.programIds.length > 1) {
+        var p = programById(pid);
+        h += '<div class="prog-row">';
+        /* added programs (not the primary one) get a small remove button in front of the picker */
+        if (i > 0) {
           h += '<button type="button" class="prog-remove" data-action="remove-framework-program" data-index="' + i + '" title="' +
             esc(t("removeProgram")) + '" aria-label="' + esc(t("removeProgram")) + '">\u2715</button>';
         }
+        h += '<select data-action="set-framework-program" data-index="' + i + '" title="' +
+          esc(p ? programLabel(p) : "") + '">' + programOptions(pid, others) + "</select>";
         h += "</div>";
       });
       h += "</div>";
