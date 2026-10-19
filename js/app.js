@@ -454,6 +454,14 @@
       h += "</section>";
     }
 
+    /* --- arrangement (program view only) --- */
+    if (state.view === "program") {
+      h += '<section class="filter-section"><h3>' + esc(t("arrangement")) + '</h3><div class="seg">' +
+        '<button data-action="set-arrange" data-value="byCompetency" class="' + (state.arrange === "byCompetency" ? "active" : "") + '">' + esc(t("arrangeByCompetency")) + "</button>" +
+        '<button data-action="set-arrange" data-value="byModule" class="' + (state.arrange === "byModule" ? "active" : "") + '">' + esc(t("arrangeByModule")) + "</button>" +
+        "</div></section>";
+    }
+
     /* --- module categories --- */
     var cats = {};
     PROGRAMS.forEach(function (p) { (p.categories || []).forEach(function (c) { cats[c.id] = c.label; }); });
@@ -465,14 +473,6 @@
           (!state.cats || state.cats.has(cid) ? " checked" : "") + "> " + esc(cats[cid]) + "</label>";
       });
       h += "</section>";
-    }
-
-    /* --- arrangement (program view only) --- */
-    if (state.view === "program") {
-      h += '<section class="filter-section"><h3>' + esc(t("arrangement")) + '</h3><div class="seg">' +
-        '<button data-action="set-arrange" data-value="byCompetency" class="' + (state.arrange === "byCompetency" ? "active" : "") + '">' + esc(t("arrangeByCompetency")) + "</button>" +
-        '<button data-action="set-arrange" data-value="byModule" class="' + (state.arrange === "byModule" ? "active" : "") + '">' + esc(t("arrangeByModule")) + "</button>" +
-        "</div></section>";
     }
 
     /* --- min level --- */
