@@ -755,15 +755,17 @@
         });
       }
       if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
-        h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
-          '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2></div>" +
+        /* phase without competencies (Orientierungswissen) — compact blurb row */
+        h += '<section class="fw-phase" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+          '<div class="fw-phase-head"><span class="phase-dot"></span><h3>' + esc(phaseTitle(ph)) + "</h3></div>" +
           phaseBlurb(ph) + "</section>";
         return;
       }
       if (!comps.length) return;
-      h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
-        '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2></div>" +
-        '<div class="picker-grid">';
+      /* one compact row per phase: phase label on the left, competency chips on the right */
+      h += '<section class="fw-phase" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+        '<div class="fw-phase-head"><span class="phase-dot"></span><h3>' + esc(phaseTitle(ph)) + "</h3></div>" +
+        '<div class="fw-chips">';
       comps.forEach(function (c) {
         var n = (idx[c.code] || []).length;
         var addrs = cmp ? addressedProgramIds(idx, c.code) : null;
@@ -773,7 +775,8 @@
           else if (addrs.length >= 2) cls += " shared";
         }
         h += '<button class="' + cls + '" data-action="select-comp" data-comp="' + esc(c.code) + '">' +
-          '<span class="code">' + esc(c.code) + "</span>" + esc(c.title) +
+          '<span class="code">' + esc(c.code) + "</span>" +
+          '<span class="picker-title">' + esc(c.title) + "</span>" +
           '<span class="count' + (n ? "" : " zero") + '">' + n + "</span>";
         if (cmp) {
           h += '<span class="pick-progs">';

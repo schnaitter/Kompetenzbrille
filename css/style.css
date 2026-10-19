@@ -360,31 +360,56 @@ details.mod-extra { margin-top: 6px; }
 details.mod-extra summary { cursor: pointer; font-size: 12.5px; color: var(--accent); }
 
 /* ---------- competency picker (framework view) ---------- */
-.picker-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+.fw-phase {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  gap: 6px 14px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+.fw-phase:first-child { border-top: none; padding-top: 0; }
+.fw-phase-head { display: flex; align-items: center; gap: 7px; min-width: 0; }
+.fw-phase-head h3 { margin: 0; font-size: 13.5px; line-height: 1.3; }
+.fw-phase .phase-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--phase-color);
+}
+.fw-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.fw-phase .phase-blurb { margin: 0; }
+.fw-phase .phase-blurb-note { margin: 2px 0 0; }
 .picker-btn {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
   border: 1px solid var(--line);
-  border-left: 4px solid var(--phase-color);
+  border-left: 3px solid var(--phase-color);
   background: #fff;
-  border-radius: 8px;
-  padding: 6px 10px;
+  border-radius: 7px;
+  padding: 3px 9px;
   cursor: pointer;
   text-align: left;
-  font-size: 13px;
-  min-width: 150px;
-  position: relative;
+  font-size: 12.5px;
+  line-height: 1.4;
+  max-width: 100%;
 }
 .picker-btn:hover { border-color: var(--phase-color); }
 .picker-btn.active { background: var(--accent-soft); border-color: var(--accent); box-shadow: var(--shadow); }
-.picker-btn .code { font-weight: 800; color: var(--phase-color); margin-right: 5px; }
+.picker-btn .code { font-weight: 800; color: var(--phase-color); }
+.picker-btn .picker-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .picker-btn .count {
-  position: absolute;
-  top: -7px; right: -6px;
+  flex: none;
   background: var(--accent);
   color: #fff;
   border-radius: 999px;
   font-size: 10.5px;
-  min-width: 18px;
-  height: 18px;
+  min-width: 17px;
+  height: 17px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -392,6 +417,9 @@ details.mod-extra summary { cursor: pointer; font-size: 12.5px; color: var(--acc
   font-weight: 700;
 }
 .picker-btn .count.zero { background: #b9c0cb; }
+@media (max-width: 820px) {
+  .fw-phase { grid-template-columns: 1fr; gap: 4px; }
+}
 
 /* ---------- framework comparison ---------- */
 .pdot {
@@ -414,7 +442,7 @@ details.mod-extra summary { cursor: pointer; font-size: 12.5px; color: var(--acc
 .picker-btn.unique { background: #fff8ec; }
 .picker-btn.shared { background: #f1f8f3; }
 .picker-btn.unique:hover, .picker-btn.shared:hover { border-color: var(--phase-color); }
-.pick-progs { display: flex; gap: 3px; margin-top: 6px; position: relative; }
+.pick-progs { display: flex; flex-basis: 100%; gap: 3px; margin-top: 3px; }
 
 .cmp-summary {
   background: var(--panel);
