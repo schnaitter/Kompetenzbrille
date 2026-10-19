@@ -54,7 +54,9 @@
     minLevel: 1,
     onlyAddressed: false,
     cats: null,                 // Set of category ids (null = all)
-    selectedComp: null          // framework view
+    selectedComp: null,         // framework view
+    compare: false,             // framework view: shared/unique highlighting
+    compareFilter: "all"        // all | unique | shared
   };
 
   /* ================= helpers ================= */
@@ -175,6 +177,53 @@
     return out;
   }
 
+  /* ---------- comparison helpers (framework view) ---------- */
+
+  /* compare mode needs at least two programs */
+  function compareActive() {
+    return state.compare && state.programIds.length >= 2;
+  }
+
+  /* stable color slot for the n-th selected program */
+  function programColorClass(pid) {
+    var i = state.programIds.indexOf(pid);
+    return "p" + ((i < 0 ? 0 : i) % 6);
+  }
+
+  /* compact label for legend and tooltips: degree + discipline initials */
+  function programShortLabel(p) {
+    var title = String(p.title || p.id || "").trim();
+    var degree = "";
+    var m = title.match(/^(BA|MA|B\.A\.|M\.A\.)\s+/i);
+    if (m) {
+      degree = m[1].replace(/\./g, "").toUpperCase();
+      title = title.slice(m[0].length);
+    }
+    var extra = "";
+    var pm = title.match(/\(([^)]*)\)/);
+    if (pm) {
+      extra = pm[1].split(/[^\wÄÖÜäöüß]+/).filter(Boolean).slice(0, 2)
+        .map(function (w) { return w.charAt(0).toUpperCase(); }).join("");
+      title = title.replace(/\([^)]*\)/g, " ");
+    }
+    var stop = { und: 1, and: 1, der: 1, die: 1, das: 1, the: 1, of: 1, "in": 1, "für": 1, for: 1 };
+    var words = title.split(/[^\wÄÖÜäöüß]+/).filter(function (w) {
+      return w && !stop[w.toLowerCase()];
+    });
+    var initials = words.map(function (w) { return w.charAt(0).toUpperCase(); }).join("");
+    if (initials.length < 2 && words.length === 1) initials = words[0].slice(0, 3).toUpperCase();
+    var out = [degree, initials].filter(Boolean).join(" ");
+    if (extra) out += " " + extra;
+    return out || p.id;
+  }
+
+  /* distinct program ids that address a competency, in selection order */
+  function addressedProgramIds(idx, code) {
+    var seen = {};
+    (idx[code] || []).forEach(function (e) { seen[e.program.id] = true; });
+    return state.programIds.filter(function (pid) { return seen[pid]; });
+  }
+
   /* ================= persistence / url hash ================= */
 
   var PERSIST_KEY = "kompetenzbrille.state.v1";
@@ -195,7 +244,7 @@
       if (!raw) return;
       var s = JSON.parse(raw);
       if (s.lang) state.lang = s.lang;
-      ["view", "programId", "arrange", "minLevel", "onlyAddressed", "selectedComp"].forEach(function (k) {
+      ["view", "programId", "arrange", "minLevel", "onlyAddressed", "selectedComp", "compare", "compareFilter"].forEach(function (k) {
         if (s[k] !== undefined && s[k] !== null) state[k] = s[k];
       });
       if (Array.isArray(s.programIds)) state.programIds = s.programIds;
@@ -211,6 +260,10 @@
     if (state.view === "framework") {
       if (state.programIds.length) parts.push("programs=" + state.programIds.join(","));
       if (state.selectedComp) parts.push("comp=" + encodeURIComponent(state.selectedComp));
+      if (state.compare) {
+        parts.push("cmp=1");
+        if (state.compareFilter !== "all") parts.push("cf=" + state.compareFilter);
+      }
     } else if (state.programId) {
       parts.push("program=" + encodeURIComponent(state.programId));
     }
@@ -229,6 +282,8 @@
     if (params.program) state.programId = params.program;
     if (params.programs) state.programIds = params.programs.split(",").filter(Boolean);
     if (params.comp) state.selectedComp = params.comp;
+    if (params.cmp) state.compare = params.cmp === "1";
+    if (params.cf) state.compareFilter = params.cf;
   }
 
   /* ================= boot ================= */
@@ -298,6 +353,7 @@
     if (!state.programIds.length && PROGRAMS.length) state.programIds = [PROGRAMS[0].id];
     var f = fw();
     if (state.selectedComp && f && !compByCode(f, state.selectedComp)) state.selectedComp = null;
+    if (["all", "unique", "shared"].indexOf(state.compareFilter) < 0) state.compareFilter = "all";
   }
 
   /* ================= chrome (header/tabs/selects) ================= */
@@ -352,6 +408,21 @@
       h += "</select>";
       var curProg = programById(state.programId);
       if (curProg && curProg.institution) h += '<p class="inst-link">' + esc(t("institution")) + ": " + institutionAnchor(curProg) + "</p>";
+      h += "</section>";
+    }
+
+    /* --- comparison (framework view) --- */
+    if (state.view === "framework") {
+      h += '<section class="filter-section"><h3>' + esc(t("compare")) + '</h3>' +
+        '<label><input type="checkbox" data-action="toggle-compare"' + (state.compare ? " checked" : "") + "> " + esc(t("compareMode")) + "</label>";
+      if (state.compare) {
+        h += '<select data-action="set-compare-filter" style="margin-top:8px">';
+        [["all", t("compareFilterAll")], ["unique", t("compareFilterUnique")], ["shared", t("compareFilterShared")]].forEach(function (o) {
+          h += '<option value="' + o[0] + '"' + (state.compareFilter === o[0] ? " selected" : "") + ">" + esc(o[1]) + "</option>";
+        });
+        h += "</select>";
+        if (state.programIds.length < 2) h += '<p class="muted small" style="margin:8px 0 0">' + esc(t("compareNeedsTwo")) + "</p>";
+      }
       h += "</section>";
     }
 
@@ -572,32 +643,132 @@
 
   /* ================= framework view ================= */
 
+  /* compact overview of the comparison: per-program coverage + shared/unique counts */
+  function compareSummary(f, idx) {
+    var h = '<div class="cmp-summary"><div class="cmp-summary-head"><strong>' + esc(t("compare")) + "</strong>";
+    if (state.programIds.length < 2) {
+      h += '<span class="muted small">' + esc(t("compareNeedsTwo")) + "</span></div></div>";
+      return h;
+    }
+    var perProgram = {};
+    var unique = 0, shared = 0;
+    f.competencies.forEach(function (c) {
+      var ids = addressedProgramIds(idx, c.code);
+      ids.forEach(function (pid) { perProgram[pid] = (perProgram[pid] || 0) + 1; });
+      if (ids.length === 1) unique++;
+      else if (ids.length >= 2) shared++;
+    });
+    h += "</div>";
+    h += '<div class="cmp-legend">';
+    state.programIds.forEach(function (pid) {
+      var p = programById(pid);
+      if (!p) return;
+      h += '<span class="cmp-legend-item" title="' + esc(programLabel(p)) + '"><span class="pdot ' + programColorClass(pid) + '"></span>' +
+        esc((p.institutionAbbr ? p.institutionAbbr + " · " : "") + programShortLabel(p)) +
+        ' <span class="muted small">' + (perProgram[pid] || 0) + "/" + f.competencies.length + "</span></span>";
+    });
+    h += "</div>";
+    h += '<div class="cmp-stats"><span>' + esc(t("compareSharedShort")) + ": <strong>" + shared + "</strong></span>" +
+      '<span>' + esc(t("compareUniqueShort")) + ": <strong>" + unique + "</strong></span></div>";
+    return h + "</div>";
+  }
+
+  /* one module card as used in the framework detail list */
+  function frameworkModuleCard(e, showProgram) {
+    return '<article class="mod-card"><div class="mod-card-head">' +
+      '<span class="mod-code" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' + esc(e.module.code) + "</span>" +
+      '<span class="mod-title">' + esc(e.module.title) + "</span>" +
+      '<span class="cat-badge ' + esc(e.module.category) + '">' + esc(catLabel(e.program, e.module.category)) + "</span>" +
+      '<span class="mod-meta">' + esc((showProgram ? e.program.title + " · " : "") + e.module.credits + " " + t("credits")) + "</span></div>" +
+      '<div class="mapping-lvl" style="margin-top:6px">' + levelDots(e.mapping.level) + " " + esc(levelLabel(e.mapping.level)) + "</div>" +
+      '<p class="m-note" style="margin:6px 0 0">' + esc(noteText(e.mapping)) + "</p>" +
+      '<details class="mod-extra"><summary>' + esc(t("showDetails")) + "</summary>" +
+      '<h3>' + esc(t("goals")) + '</h3><p class="goals">' + esc(e.module.goals) + "</p>" +
+      (e.module.topics && e.module.topics.length ?
+        '<h3>' + esc(t("topics")) + '</h3><ul class="topics">' +
+        e.module.topics.map(function (tp) { return "<li>" + esc(tp) + "</li>"; }).join("") + "</ul>" : "") +
+      "</details></article>";
+  }
+
+  /* detail list grouped by study program (comparison mode) */
+  function frameworkCompareDetail(code, idx) {
+    var h = "";
+    state.programIds.forEach(function (pid) {
+      var p = programById(pid);
+      if (!p) return;
+      var ents = (idx[code] || []).filter(function (e) { return e.program.id === pid; }).sort(function (a, b) {
+        return b.mapping.level - a.mapping.level || a.module.code.localeCompare(b.module.code);
+      });
+      var best = ents.reduce(function (a, b) { return a.mapping.level >= b.mapping.level ? a : b; });
+      h += '<section class="cmp-prog"><div class="cmp-prog-head">' +
+        '<span class="pdot ' + programColorClass(pid) + '"></span>' +
+        "<strong>" + esc(programLabel(p)) + "</strong>";
+      if (ents.length) h += '<span class="cmp-prog-level">' + esc(t("bestLevel")) + ": " + levelDots(best.mapping.level) + " " + esc(levelLabel(best.mapping.level)) + "</span>";
+      h += '<span class="cmp-prog-count">' + (ents.length ? ents.length + " " + esc(t("modules")) : esc(t("notAddressedShort"))) + "</span></div>";
+      if (ents.length) ents.forEach(function (e) { h += frameworkModuleCard(e, false); });
+      else h += '<p class="muted small" style="margin:6px 0 0">' + esc(t("notAddressed")) + "</p>";
+      h += "</section>";
+    });
+    return h;
+  }
+
   function renderFrameworkView() {
     var f = fw();
     var main = document.getElementById("main");
     if (!f) { main.innerHTML = '<div class="hint-box"></div>'; return; }
     var idx = competencyIndex(state.programIds);
+    var cmp = compareActive();
 
     var h = "";
+
+    /* comparison summary */
+    if (state.compare) h += compareSummary(f, idx);
 
     /* picker grouped by phase */
     f.phases.forEach(function (ph) {
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id; });
-      h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
-        '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2></div>";
-      if (comps.length) {
-        h += '<div class="picker-grid">';
-        comps.forEach(function (c) {
-          var n = (idx[c.code] || []).length;
-          h += '<button class="picker-btn' + (state.selectedComp === c.code ? " active" : "") + '" data-action="select-comp" data-comp="' + esc(c.code) + '">' +
-            '<span class="code">' + esc(c.code) + "</span>" + esc(c.title) +
-            '<span class="count' + (n ? "" : " zero") + '">' + n + "</span></button>";
+      if (cmp) {
+        comps = comps.filter(function (c) {
+          var n = addressedProgramIds(idx, c.code).length;
+          if (state.compareFilter === "unique") return n === 1;
+          if (state.compareFilter === "shared") return n >= 2;
+          return true;
         });
-        h += "</div>";
-      } else {
-        h += phaseBlurb(ph);
       }
-      h += "</section>";
+      if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
+        h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+          '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2></div>" +
+          phaseBlurb(ph) + "</section>";
+        return;
+      }
+      if (!comps.length) return;
+      h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+        '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2></div>" +
+        '<div class="picker-grid">';
+      comps.forEach(function (c) {
+        var n = (idx[c.code] || []).length;
+        var addrs = cmp ? addressedProgramIds(idx, c.code) : null;
+        var cls = "picker-btn" + (state.selectedComp === c.code ? " active" : "");
+        if (cmp) {
+          if (addrs.length === 1) cls += " unique";
+          else if (addrs.length >= 2) cls += " shared";
+        }
+        h += '<button class="' + cls + '" data-action="select-comp" data-comp="' + esc(c.code) + '">' +
+          '<span class="code">' + esc(c.code) + "</span>" + esc(c.title) +
+          '<span class="count' + (n ? "" : " zero") + '">' + n + "</span>";
+        if (cmp) {
+          h += '<span class="pick-progs">';
+          state.programIds.forEach(function (pid) {
+            var on = addrs.indexOf(pid) >= 0;
+            var pp = programById(pid);
+            h += '<span class="pdot ' + programColorClass(pid) + (on ? "" : " off") + '" title="' +
+              esc(programLabel(pp) + " \u2013 " + (on ? t("addressedShort") : t("notAddressedShort"))) + '"></span>';
+          });
+          h += "</span>";
+        }
+        h += "</button>";
+      });
+      h += "</div></section>";
     });
 
     /* detail of selected competency */
@@ -613,24 +784,12 @@
           '<div class="comp-card" style="margin-bottom:14px">' + dimRows(f, c) + "</div>";
 
         h += '<h3 style="margin:0 0 10px">' + esc(t("addressedIn")) + " (" + entries.length + ")</h3>";
-        if (!entries.length) {
+        if (cmp) {
+          h += frameworkCompareDetail(c.code, idx);
+        } else if (!entries.length) {
           h += '<div class="hint-box">' + esc(t("notAddressed")) + "</div>";
         } else {
-          entries.forEach(function (e) {
-            h += '<article class="mod-card"><div class="mod-card-head">' +
-              '<span class="mod-code" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' + esc(e.module.code) + "</span>" +
-              '<span class="mod-title">' + esc(e.module.title) + "</span>" +
-              '<span class="cat-badge ' + esc(e.module.category) + '">' + esc(catLabel(e.program, e.module.category)) + "</span>" +
-              '<span class="mod-meta">' + esc(e.program.title) + " · " + esc(e.module.credits + " " + t("credits")) + "</span></div>" +
-              '<div class="mapping-lvl" style="margin-top:6px">' + levelDots(e.mapping.level) + " " + esc(levelLabel(e.mapping.level)) + "</div>" +
-              '<p class="m-note" style="margin:6px 0 0">' + esc(noteText(e.mapping)) + "</p>" +
-              '<details class="mod-extra"><summary>' + esc(t("showDetails")) + "</summary>" +
-              '<h3>' + esc(t("goals")) + '</h3><p class="goals">' + esc(e.module.goals) + "</p>" +
-              (e.module.topics && e.module.topics.length ?
-                '<h3>' + esc(t("topics")) + '</h3><ul class="topics">' +
-                e.module.topics.map(function (tp) { return "<li>" + esc(tp) + "</li>"; }).join("") + "</ul>" : "") +
-              "</details></article>";
-          });
+          entries.forEach(function (e) { h += frameworkModuleCard(e, true); });
         }
         h += "</section>";
       }
@@ -1002,6 +1161,8 @@
       case "toggle-dim": state.dims[el.value] = el.checked; rerender(); break;
       case "set-minlevel": state.minLevel = parseInt(el.value, 10) || 1; rerender(); break;
       case "toggle-only-addressed": state.onlyAddressed = el.checked; rerender(); break;
+      case "toggle-compare": state.compare = el.checked; rerender(); break;
+      case "set-compare-filter": state.compareFilter = el.value; rerender(); break;
     }
   });
 
