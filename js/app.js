@@ -232,6 +232,14 @@
     return state.programIds.filter(function (pid) { return seen[pid]; });
   }
 
+  /* does a competency show up under the current comparison mode? */
+  function compPassesCompareFilter(idx, code) {
+    var n = addressedProgramIds(idx, code).length;
+    if (state.compareFilter === "unique") return n === 1;
+    if (state.compareFilter === "shared") return n >= 2;
+    return true;
+  }
+
   /* ================= persistence / url hash ================= */
 
   var PERSIST_KEY = "kompetenzbrille.state.v1";
@@ -747,12 +755,7 @@
     f.phases.forEach(function (ph) {
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id; });
       if (cmp) {
-        comps = comps.filter(function (c) {
-          var n = addressedProgramIds(idx, c.code).length;
-          if (state.compareFilter === "unique") return n === 1;
-          if (state.compareFilter === "shared") return n >= 2;
-          return true;
-        });
+        comps = comps.filter(function (c) { return compPassesCompareFilter(idx, c.code); });
       }
       if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
         /* phase without competencies (Orientierungswissen) — compact blurb row */
@@ -1172,8 +1175,13 @@
       }
       case "set-compare-filter": {
         var cf = el.getAttribute("data-value");
-        /* a new comparison mode invalidates the previously selected competency */
-        if (cf !== state.compareFilter) { state.compareFilter = cf; state.selectedComp = null; }
+        if (cf !== state.compareFilter) {
+          state.compareFilter = cf;
+          /* keep the selection if it still shows up in the new mode, otherwise drop it */
+          if (state.selectedComp && !compPassesCompareFilter(competencyIndex(state.programIds), state.selectedComp)) {
+            state.selectedComp = null;
+          }
+        }
         rerender(); break;
       }
       case "close-modal": if (e.target === el || el.classList.contains("modal-close")) closeModal(); break;
