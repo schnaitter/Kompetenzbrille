@@ -1170,7 +1170,12 @@
         if (state.programIds.length > 1 && ri >= 0 && ri < state.programIds.length) state.programIds.splice(ri, 1);
         rerender(); break;
       }
-      case "set-compare-filter": state.compareFilter = el.getAttribute("data-value"); rerender(); break;
+      case "set-compare-filter": {
+        var cf = el.getAttribute("data-value");
+        /* a new comparison mode invalidates the previously selected competency */
+        if (cf !== state.compareFilter) { state.compareFilter = cf; state.selectedComp = null; }
+        rerender(); break;
+      }
       case "close-modal": if (e.target === el || el.classList.contains("modal-close")) closeModal(); break;
     }
   });
