@@ -771,7 +771,9 @@
   function renderByModule(f, p, idx) {
     var mods = p.modules.filter(catsPass);
     if (!mods.length) return '<div class="hint-box">' + esc(t("noModulesSelected")) + "</div>";
-    var h = compsPass(ORIENTATION_CODE) ? orientationSection(f, idx) : "";
+    /* the Orientierungswissen is not a module, so it is not part of the
+     * module-arranged program view */
+    var h = "";
     mods.forEach(function (mod) {
       var maps = moduleMappings(mod).filter(function (m) {
         var c = compForMapping(f, m.competency);
