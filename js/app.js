@@ -56,7 +56,7 @@
     onlyAddressed: false,
     cats: null,                 // Set of category ids (null = all)
     selectedComp: null,         // framework view
-    compareFilter: "all"        // all | diff | shared (framework view, active with 2+ programs)
+    compareFilter: "all"        // all | gap | anchor | shared (framework view; legacy: diff)
   };
 
   /* ================= helpers ================= */
@@ -296,10 +296,28 @@
     return addressedProgramIds(idx, code).length === state.programIds.length;
   }
 
+  /* not addressed by every program: a real coverage gap */
+  function isCompareGap(idx, code) {
+    var n = addressedProgramIds(idx, code).length;
+    return n >= 1 && n < state.programIds.length;
+  }
+
+  /* every program addresses it, but the module categories differ */
+  function isCompareAnchor(idx, code) {
+    return isCompareShared(idx, code) && isCompareDifference(idx, code);
+  }
+
+  /* every program addresses it with the same category coverage */
+  function isCompareCommon(idx, code) {
+    return isCompareShared(idx, code) && !isCompareDifference(idx, code);
+  }
+
   /* does a competency show up under the current comparison mode? */
   function compPassesCompareFilter(idx, code) {
-    if (state.compareFilter === "diff") return isCompareDifference(idx, code);
-    if (state.compareFilter === "shared") return isCompareShared(idx, code);
+    if (state.compareFilter === "gap") return isCompareGap(idx, code);
+    if (state.compareFilter === "anchor") return isCompareAnchor(idx, code);
+    if (state.compareFilter === "shared") return isCompareCommon(idx, code);
+    if (state.compareFilter === "diff") return isCompareGap(idx, code) || isCompareAnchor(idx, code);
     return true;
   }
 
@@ -432,7 +450,7 @@
     } else if (state.selectedComp && f && !compByCode(f, state.selectedComp)) {
       state.selectedComp = null;
     }
-    if (["all", "diff", "shared"].indexOf(state.compareFilter) < 0) state.compareFilter = "all";
+    if (["all", "gap", "anchor", "shared", "diff"].indexOf(state.compareFilter) < 0) state.compareFilter = "all";
   }
 
   /* ================= chrome (header/tabs/selects) ================= */
@@ -518,8 +536,8 @@
     if (state.view === "framework") {
       h += '<section class="filter-section"><h3>' + esc(t("compare")) + '</h3>';
       if (compareActive()) {
-        h += '<div class="seg">';
-        [["all", t("compareFilterAll")], ["diff", t("compareFilterDiff")], ["shared", t("compareFilterShared")]].forEach(function (o) {
+        h += '<div class="seg seg-4">';
+        [["all", t("compareFilterAll")], ["gap", t("compareFilterGap")], ["anchor", t("compareFilterAnchor")], ["shared", t("compareFilterShared")]].forEach(function (o) {
           h += '<button type="button" data-action="set-compare-filter" data-value="' + o[0] + '" class="' +
             (state.compareFilter === o[0] ? "active" : "") + '">' + esc(o[1]) + "</button>";
         });
@@ -795,12 +813,13 @@
       return h;
     }
     var perProgram = {};
-    var diff = 0, shared = 0;
+    var gaps = 0, anchor = 0, shared = 0;
     f.competencies.forEach(function (c) {
       var ids = addressedProgramIds(idx, c.code);
       ids.forEach(function (pid) { perProgram[pid] = (perProgram[pid] || 0) + 1; });
-      if (isCompareDifference(idx, c.code)) diff++;
-      if (isCompareShared(idx, c.code)) shared++;
+      if (isCompareGap(idx, c.code)) gaps++;
+      else if (isCompareAnchor(idx, c.code)) anchor++;
+      else if (isCompareCommon(idx, c.code)) shared++;
     });
     h += "</div>";
     h += '<div class="cmp-legend">';
@@ -812,8 +831,9 @@
         ' <span class="muted small">' + (perProgram[pid] || 0) + "/" + f.competencies.length + "</span></span>";
     });
     h += "</div>";
-    h += '<div class="cmp-stats"><span>' + esc(t("compareSharedShort")) + ": <strong>" + shared + "</strong></span>" +
-      '<span>' + esc(t("compareDiffShort")) + ": <strong>" + diff + "</strong></span></div>";
+    h += '<div class="cmp-stats"><span>' + esc(t("compareGapShort")) + ": <strong>" + gaps + "</strong></span>" +
+      '<span>' + esc(t("compareAnchorShort")) + ": <strong>" + anchor + "</strong></span>" +
+      '<span>' + esc(t("compareSharedShort")) + ": <strong>" + shared + "</strong></span></div>";
     return h + "</div>";
   }
 
@@ -861,8 +881,9 @@
     var addrs = cmp ? addressedProgramIds(idx, c.code) : null;
     var cls = "picker-btn" + (extraClass ? " " + extraClass : "") + (state.selectedComp === c.code ? " active" : "");
     if (cmp) {
-      if (isCompareDifference(idx, c.code)) cls += " diff";
-      else if (isCompareShared(idx, c.code)) cls += " shared";
+      if (isCompareGap(idx, c.code)) cls += " gap";
+      else if (isCompareAnchor(idx, c.code)) cls += " anchor";
+      else if (isCompareCommon(idx, c.code)) cls += " shared";
     }
     var h = '<button class="' + cls + '" data-action="select-comp" data-comp="' + esc(c.code) + '">';
     if (!isOrientationComp(c.code)) h += '<span class="code">' + esc(c.code) + "</span>";

@@ -221,6 +221,8 @@ html, body {
 }
 .prog-add:hover { border-color: var(--accent); background: var(--accent-soft); }
 .seg { display: flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+.seg.seg-4 { flex-wrap: wrap; gap: 1px; background: var(--line); }
+.seg.seg-4 button { flex: 1 1 45%; }
 .seg button {
   flex: 1;
   border: none;
@@ -483,9 +485,10 @@ details.mod-extra summary { cursor: pointer; font-size: 12.5px; color: var(--acc
 .pdot.p5 { --pc: var(--prog-5); }
 .pdot.off { background: #fff; box-shadow: inset 0 0 0 1.5px var(--pc, var(--prog-0)); }
 
-.picker-btn.diff { background: #fff8ec; }
+.picker-btn.gap { background: #fff8ec; }
+.picker-btn.anchor { background: #eef4fb; }
 .picker-btn.shared { background: #f1f8f3; }
-.picker-btn.diff:hover, .picker-btn.shared:hover { border-color: var(--phase-color); }
+.picker-btn.gap:hover, .picker-btn.anchor:hover, .picker-btn.shared:hover { border-color: var(--phase-color); }
 .pick-progs { display: flex; flex-basis: 100%; gap: 3px; margin-top: 3px; }
 
 .cmp-summary {
