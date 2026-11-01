@@ -499,8 +499,10 @@ details.mod-extra summary { cursor: pointer; font-size: 12.5px; color: var(--acc
   padding: 12px 14px;
   margin-bottom: 20px;
 }
-.cmp-summary-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.cmp-summary-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .cmp-summary-head strong { font-size: 14px; }
+.cmp-mode { font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 2px 9px; }
+.cmp-mode-desc { margin: 8px 0 0; font-size: 12.5px; color: var(--ink-soft); }
 .cmp-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; }
 .cmp-legend-item { display: inline-flex; gap: 6px; align-items: center; font-size: 12.5px; }
 .cmp-stats { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 10px; font-size: 12.5px; color: var(--ink-soft); }

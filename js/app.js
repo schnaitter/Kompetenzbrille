@@ -805,13 +805,33 @@
 
   /* ================= framework view ================= */
 
+  /* label and one-line explanation for the active comparison mode */
+  function compareModeInfo() {
+    if (state.compareFilter === "gap") {
+      return { label: t("compareFilterGap"), desc: t("compareModeGapDesc") };
+    }
+    if (state.compareFilter === "anchor") {
+      return { label: t("compareFilterAnchor"), desc: t("compareModeAnchorDesc") };
+    }
+    if (state.compareFilter === "shared") {
+      return { label: t("compareFilterShared"), desc: t("compareModeSharedDesc") };
+    }
+    if (state.compareFilter === "diff") {
+      return { label: t("compareFilterDiff"), desc: t("compareModeDiffDesc") };
+    }
+    return { label: t("compareFilterAll"), desc: t("compareModeAllDesc") };
+  }
+
   /* compact overview of the comparison: per-program coverage + shared/difference counts */
   function compareSummary(f, idx) {
-    var h = '<div class="cmp-summary"><div class="cmp-summary-head"><strong>' + esc(t("compare")) + "</strong>";
+    var mode = compareModeInfo();
+    var h = '<div class="cmp-summary"><div class="cmp-summary-head"><strong>' + esc(t("compare")) + "</strong>" +
+      '<span class="cmp-mode">' + esc(mode.label) + "</span>";
     if (state.programIds.length < 2) {
       h += '<span class="muted small">' + esc(t("compareNeedsTwo")) + "</span></div></div>";
       return h;
     }
+    h += '</div><p class="cmp-mode-desc">' + esc(mode.desc) + "</p>";
     var perProgram = {};
     var gaps = 0, anchor = 0, shared = 0;
     f.competencies.forEach(function (c) {
@@ -821,7 +841,6 @@
       else if (isCompareAnchor(idx, c.code)) anchor++;
       else if (isCompareCommon(idx, c.code)) shared++;
     });
-    h += "</div>";
     h += '<div class="cmp-legend">';
     state.programIds.forEach(function (pid) {
       var p = programById(pid);
