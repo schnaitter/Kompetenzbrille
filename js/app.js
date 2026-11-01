@@ -265,12 +265,42 @@
     return state.programIds.filter(function (pid) { return seen[pid]; });
   }
 
+  /* distinct program ids that address a competency, grouped by module category */
+  function addressedProgramIdsByCategory(idx, code) {
+    var byCat = {};
+    (idx[code] || []).forEach(function (e) {
+      var cat = e.module.category;
+      byCat[cat] = byCat[cat] || {};
+      byCat[cat][e.program.id] = true;
+    });
+    var out = {};
+    Object.keys(byCat).forEach(function (cat) {
+      out[cat] = state.programIds.filter(function (pid) { return byCat[cat][pid]; });
+    });
+    return out;
+  }
+
+  /* comparison status for a competency: categories are additive, so a competency
+     is a difference as long as one active category is not addressed by every
+     program. Enabling another category therefore never hides an existing
+     difference (see issue #37). */
+  function compareStatus(idx, code) {
+    var total = state.programIds.length;
+    var byCat = addressedProgramIdsByCategory(idx, code);
+    var hasDifference = Object.keys(byCat).some(function (cat) {
+      var n = byCat[cat].length;
+      return n >= 1 && n < total;
+    });
+    if (hasDifference) return "diff";
+    if (addressedProgramIds(idx, code).length === total) return "shared";
+    return "";
+  }
+
   /* does a competency show up under the current comparison mode? */
   function compPassesCompareFilter(idx, code) {
-    var n = addressedProgramIds(idx, code).length;
-    var total = state.programIds.length;
-    if (state.compareFilter === "diff") return n >= 1 && n < total;
-    if (state.compareFilter === "shared") return n === total;
+    var status = compareStatus(idx, code);
+    if (state.compareFilter === "diff") return status === "diff";
+    if (state.compareFilter === "shared") return status === "shared";
     return true;
   }
 
@@ -771,8 +801,9 @@
     f.competencies.forEach(function (c) {
       var ids = addressedProgramIds(idx, c.code);
       ids.forEach(function (pid) { perProgram[pid] = (perProgram[pid] || 0) + 1; });
-      if (ids.length === total) shared++;
-      else if (ids.length >= 1) diff++;
+      var status = compareStatus(idx, c.code);
+      if (status === "shared") shared++;
+      else if (status === "diff") diff++;
     });
     h += "</div>";
     h += '<div class="cmp-legend">';
@@ -831,11 +862,11 @@
   function pickerButton(c, idx, cmp, extraClass) {
     var n = (idx[c.code] || []).length;
     var addrs = cmp ? addressedProgramIds(idx, c.code) : null;
-    var total = state.programIds.length;
     var cls = "picker-btn" + (extraClass ? " " + extraClass : "") + (state.selectedComp === c.code ? " active" : "");
     if (cmp) {
-      if (addrs.length >= 1 && addrs.length < total) cls += " diff";
-      else if (addrs.length === total) cls += " shared";
+      var status = compareStatus(idx, c.code);
+      if (status === "diff") cls += " diff";
+      else if (status === "shared") cls += " shared";
     }
     var h = '<button class="' + cls + '" data-action="select-comp" data-comp="' + esc(c.code) + '">';
     if (!isOrientationComp(c.code)) h += '<span class="code">' + esc(c.code) + "</span>";
