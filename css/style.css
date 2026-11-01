@@ -103,6 +103,27 @@ html, body {
 }
 .github-link:hover, .github-link:focus-visible { color: var(--ink); background: var(--accent-soft); }
 .github-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.help-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  flex: none;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: color .15s, background .15s, border-color .15s;
+}
+.help-link:hover, .help-link:focus-visible { color: var(--ink); background: var(--accent-soft); border-color: var(--accent); }
+.help-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 /* ---------- layout ---------- */
 .layout {
@@ -651,6 +672,21 @@ table.matrix td.cell.empty:hover { outline: none; }
 .modal p { margin: 6px 0; }
 .modal-src { margin-top: 16px; font-size: 12px; color: var(--ink-soft); }
 .modal-src a { color: var(--accent); }
+
+/* ---------- help dialog ---------- */
+.help-doc { font-size: 14px; }
+.help-doc .help-intro { margin: 4px 0 0; font-size: 14.5px; }
+.help-doc h3 { margin: 20px 0 6px; }
+.help-doc ul, .help-doc ol { margin: 4px 0 8px; padding-left: 22px; }
+.help-doc li { margin: 3px 0; }
+.help-doc .help-steps li { margin: 6px 0; }
+.help-doc code {
+  background: #eceff3;
+  border-radius: 4px;
+  padding: 0 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+}
 
 /* ---------- misc ---------- */
 .hint-box {
