@@ -13,6 +13,10 @@ const ROOT = path.join(__dirname, '..');
 // Change into the repo root so relative data paths work from any cwd.
 process.chdir(ROOT);
 
+// Reserved mapping target for the Orientierungswissen (phase 0). It is not a
+// regular competency code; mappings point at the phase instead.
+const ORIENTATION_CODE = '__orientation';
+
 const Ajv2020 = require('ajv/dist/2020').default ?? require('ajv/dist/2020');
 const yaml = require(path.join(ROOT, 'js', 'vendor', 'js-yaml.min.js'));
 
@@ -47,8 +51,10 @@ for (const [pid,p] of Object.entries(programs)) {
     for (const mp of m.mappings||[]) {
       const fw = frameworks[mp.framework];
       if (!fw) { fail++; console.log('FAIL', pid, m.code, 'unknown framework', mp.framework); continue; }
-      if (!fw.competencies.some(c=>c.code===mp.competency)) { fail++; console.log('FAIL', pid, m.code, 'unknown competency', mp.framework, mp.competency); }
-      const comp = fw.competencies.find(c=>c.code===mp.competency);
+      const isOrientation = String(mp.competency) === ORIENTATION_CODE &&
+        (fw.phases || []).some(ph => String(ph.id) === '0');
+      if (!isOrientation && !fw.competencies.some(c=>c.code===mp.competency)) { fail++; console.log('FAIL', pid, m.code, 'unknown competency', mp.framework, mp.competency); }
+      const comp = isOrientation ? null : fw.competencies.find(c=>c.code===mp.competency);
       if (comp && !fw.phases.some(ph=>ph.id===comp.phase)) { fail++; console.log('FAIL framework', fw.id, 'competency', comp.code, 'bad phase'); }
     }
   }

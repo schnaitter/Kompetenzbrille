@@ -24,6 +24,9 @@ const OUT_DIR = path.join(ROOT, 'data', 'jsonld');
 const FW_CONTEXT = BASE + 'data/schemas/framework-context.jsonld';
 const PR_CONTEXT = BASE + 'data/schemas/program-context.jsonld';
 
+// Reserved mapping target for the Orientierungswissen (framework phase 0).
+const ORIENTATION_CODE = '__orientation';
+
 const readYaml = (rel) => yaml.load(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
 const writeJson = (rel, doc) => {
   const file = path.join(OUT_DIR, rel);
@@ -72,7 +75,7 @@ function frameworkToJsonLd(fw) {
 
 // ------------------------------------------------------------------ programs
 
-function programToJsonLd(pr, frameworkVersions) {
+function programToJsonLd(pr, frameworkMeta) {
   const docIri = BASE + 'programs/' + pr.id;
   const catIri = (id) => docIri + '/category/' + id;
   const moduleIri = (code) => docIri + '/module/' + code;
@@ -98,13 +101,22 @@ function programToJsonLd(pr, frameworkVersions) {
     };
     if (m.topics !== undefined) node.topics = m.topics;
     node.mappings = (m.mappings || []).map((mp) => {
-      const version = frameworkVersions[mp.framework];
-      if (!version) throw new Error('mapping references unknown framework: ' + mp.framework);
+      const meta = frameworkMeta[mp.framework];
+      if (!meta) throw new Error('mapping references unknown framework: ' + mp.framework);
+      const isOrientation = String(mp.competency) === ORIENTATION_CODE;
+      const orientationPhase = isOrientation &&
+        (meta.phases || []).find((ph) => String(ph.id) === '0');
+      if (isOrientation && !orientationPhase) {
+        throw new Error('mapping references orientation but framework has no phase 0: ' + mp.framework);
+      }
+      const competencyIri = isOrientation
+        ? BASE + 'frameworks/' + mp.framework + '/' + meta.version + '/phase/' + orientationPhase.id
+        : BASE + 'frameworks/' + mp.framework + '/' + meta.version + '/competency/' + mp.competency;
       return {
         '@id': moduleIri(m.code) + '/mapping/' + mp.framework + '-' + String(mp.competency).replace(/\./g, '_'),
         '@type': 'CompetencyMapping',
-        framework: BASE + 'frameworks/' + mp.framework + '/' + version,
-        competency: BASE + 'frameworks/' + mp.framework + '/' + version + '/competency/' + mp.competency,
+        framework: BASE + 'frameworks/' + mp.framework + '/' + meta.version,
+        competency: competencyIri,
         level: mp.level,
         note: mp.note,
       };
@@ -117,7 +129,7 @@ function programToJsonLd(pr, frameworkVersions) {
 // ---------------------------------------------------------------------- main
 
 function main() {
-  const frameworkVersions = {};
+  const frameworkMeta = {};
   const frameworkFiles = fs.readdirSync(path.join(ROOT, 'data', 'frameworks'))
     .filter((f) => f.endsWith('.yaml')).sort();
   const programFiles = fs.readdirSync(path.join(ROOT, 'data', 'programs'))
@@ -125,7 +137,7 @@ function main() {
 
   for (const f of frameworkFiles) {
     const fw = readYaml('data/frameworks/' + f);
-    frameworkVersions[fw.id] = fw.version;
+    frameworkMeta[fw.id] = { version: fw.version, phases: fw.phases || [] };
   }
 
   let n = 0;
@@ -137,7 +149,7 @@ function main() {
   }
   for (const f of programFiles) {
     const pr = readYaml('data/programs/' + f);
-    const out = writeJson('programs/' + f.replace(/\.yaml$/, '.jsonld'), programToJsonLd(pr, frameworkVersions));
+    const out = writeJson('programs/' + f.replace(/\.yaml$/, '.jsonld'), programToJsonLd(pr, frameworkMeta));
     console.log('wrote', path.relative(ROOT, out));
     n++;
   }

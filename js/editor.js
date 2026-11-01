@@ -18,6 +18,8 @@
   var LANG_KEY = "kompetenzbrille.editor.lang";
   var MAX_DRAFTS = 20;
   var PROGRAM_SCHEMA = "data/schemas/program-schema.json";
+  /* Reserved mapping target for the Orientierungswissen (framework phase 0). */
+  var ORIENTATION_CODE = "__orientation";
 
   /* ================= i18n ================= */
 
@@ -461,7 +463,10 @@
           push(T("valFramework").replace("{code}", code).replace("{n}", n + 1).replace("{value}", mp.framework || "—"), m._uid);
         } else {
           var fwd = frameworkData(mp.framework);
-          var known = fwd && fwd.competencies && fwd.competencies.some(function (c) { return String(c.code) === String(mp.competency); });
+          var known = fwd && (
+            (fwd.competencies && fwd.competencies.some(function (c) { return String(c.code) === String(mp.competency); })) ||
+            isOrientationTarget(mp, fwd)
+          );
           if (isEmptyStr(mp.competency) || !known) {
             push(T("valCompetency").replace("{code}", code).replace("{value}", mp.competency || "—").replace("{framework}", mp.framework), m._uid);
           }
@@ -499,6 +504,18 @@
     var d = frameworkData(id);
     if (!d) return id;
     return (d.shortTitle || d.title || id) + (d.version ? " v" + d.version : "");
+  }
+
+  function orientationPhaseOf(fwd) {
+    var phases = (fwd && fwd.phases) || [];
+    for (var i = 0; i < phases.length; i++) {
+      if (String(phases[i].id) === "0") return phases[i];
+    }
+    return null;
+  }
+
+  function isOrientationTarget(mp, fwd) {
+    return !!mp && String(mp.competency) === ORIENTATION_CODE && !!orientationPhaseOf(fwd);
   }
 
   /* ================= rendering ================= */
@@ -741,6 +758,8 @@
     });
     var h = "";
     var known = {};
+    var oph = orientationPhaseOf(fwd);
+    if (oph) h += renderFwOrientation(oph, fid);
     phases.forEach(function (ph) {
       known[String(ph.id)] = true;
       var list = byPhase[String(ph.id)];
@@ -771,6 +790,22 @@
     var n = parseInt(id, 10);
     if (isNaN(n) || n < 0 || n > 5) n = 0;
     return "var(--phase-" + n + ")";
+  }
+
+  function renderFwOrientation(ph, fid) {
+    var search = (ph.title + " " + (ph.text || "") + " " + (ph.note || "")).toLowerCase();
+    var h = '<div class="ed-fw-comp ed-fw-orientation" data-search="' + esc(search) + '">';
+    h += '<div class="ed-fw-comp-head">';
+    h += '<span class="ed-fw-title">' + esc(ph.title) + "</span>";
+    h += '<button type="button" class="ed-btn ed-fw-add" title="' + esc(t("editorAddMappingHere")) +
+      '" data-action="panel-add-mapping" data-framework="' + esc(fid) + '" data-competency="' + esc(ORIENTATION_CODE) + '">＋</button>';
+    h += "</div>";
+    var rows = "";
+    if (ph.text) rows += '<div class="ed-fw-dim"><span class="ed-fw-dim-label">' + esc(t("orientationDescription")) + "</span><span>" + esc(ph.text) + "</span></div>";
+    if (ph.note) rows += '<div class="ed-fw-dim"><span class="ed-fw-dim-label">' + esc(t("orientationNote")) + "</span><span>" + esc(ph.note) + "</span></div>";
+    if (rows) h += '<div class="ed-fw-dims">' + rows + "</div>";
+    h += "</div>";
+    return h;
   }
 
   function renderFwComp(c, fwd, fid) {
@@ -1015,6 +1050,8 @@
 
   function competencyLabel(mp) {
     var fwd = frameworkData(mp.framework);
+    var oph = orientationPhaseOf(fwd);
+    if (oph && String(mp.competency) === ORIENTATION_CODE) return oph.title;
     if (fwd && fwd.competencies) {
       for (var i = 0; i < fwd.competencies.length; i++) {
         if (String(fwd.competencies[i].code) === String(mp.competency)) {
@@ -1048,6 +1085,7 @@
   }
   function competencyPhase(mp) {
     var fwd = frameworkData(mp.framework);
+    if (String(mp.competency) === ORIENTATION_CODE && orientationPhaseOf(fwd)) return "0";
     if (fwd && fwd.competencies) {
       for (var i = 0; i < fwd.competencies.length; i++) {
         if (String(fwd.competencies[i].code) === String(mp.competency)) return fwd.competencies[i].phase;
@@ -1301,6 +1339,12 @@
     var h = '<option value="">' + esc(t("editorSelectCompetency")) + "</option>";
     var fwd = frameworkData(frameworkId);
     var found = false;
+    var oph = orientationPhaseOf(fwd);
+    if (oph) {
+      if (String(selected) === ORIENTATION_CODE) found = true;
+      h += '<option value="' + esc(ORIENTATION_CODE) + '"' + (String(selected) === ORIENTATION_CODE ? " selected" : "") + ">" +
+        esc(oph.title) + "</option>";
+    }
     if (fwd && fwd.competencies) {
       fwd.competencies.forEach(function (c) {
         if (String(c.code) === String(selected)) found = true;
