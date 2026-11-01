@@ -1726,6 +1726,13 @@
     if (root) root.innerHTML = "";
   }
 
+  /* the editor has its own help document (see js/help.js) */
+  function openHelpDialog() {
+    if (!window.KB_HELP) return;
+    var doc = window.KB_HELP.get("editor", state.lang);
+    openModal(doc.title, doc.body);
+  }
+
   function setNotice(type, text) {
     state.notice = { type: type, text: text };
   }
@@ -1795,6 +1802,11 @@
     if (ghLink) {
       ghLink.setAttribute("aria-label", t("githubRepo"));
       ghLink.setAttribute("title", t("githubRepo"));
+    }
+    var helpBtn = document.querySelector(".help-link");
+    if (helpBtn) {
+      helpBtn.setAttribute("aria-label", t("help"));
+      helpBtn.setAttribute("title", t("help"));
     }
     var nv = byId("nav-view");
     if (nv) nv.textContent = t("editorNavView");
@@ -1941,6 +1953,7 @@
       case "close-modal":
         if (e.target === el || el.classList.contains("modal-close")) closeModal();
         break;
+      case "open-help": openHelpDialog(); break;
       default: break;
     }
   }
@@ -2075,6 +2088,9 @@
     onChange(e);
   });
   document.addEventListener("click", onClick);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeModal();
+  });
   document.addEventListener("focusin", function (e) {
     if (!e.target || !e.target.closest) return;
     var mod = e.target.closest(".ed-item-module");

@@ -415,6 +415,11 @@
       ghLink.setAttribute("aria-label", t("githubRepo"));
       ghLink.setAttribute("title", t("githubRepo"));
     }
+    var helpBtn = document.querySelector(".help-link");
+    if (helpBtn) {
+      helpBtn.setAttribute("aria-label", t("help"));
+      helpBtn.setAttribute("title", t("help"));
+    }
 
     var tabs = document.getElementById("view-tabs");
     tabs.innerHTML = "";
@@ -1174,6 +1179,12 @@
     document.removeEventListener("keydown", escClose);
   }
 
+  /* the read-only views share one help document (see js/help.js) */
+  function openHelp() {
+    if (!window.KB_HELP) return;
+    openModal(window.KB_HELP.get("viewer", state.lang));
+  }
+
   function openModuleModal(pid, code) {
     var p = programById(pid);
     var mod = p && moduleByCode(p, code);
@@ -1331,6 +1342,7 @@
       case "open-orientation": openOrientationModal(); break;
       case "open-comp": openCompModal(el.getAttribute("data-comp")); break;
       case "open-cell": openCellModal(el.getAttribute("data-program"), el.getAttribute("data-module"), el.getAttribute("data-comp")); break;
+      case "open-help": openHelp(); break;
       case "add-framework-program": {
         var next = PROGRAMS.filter(function (p) { return state.programIds.indexOf(p.id) < 0; })[0];
         if (next) state.programIds.push(next.id);
