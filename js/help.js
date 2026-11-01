@@ -38,7 +38,7 @@
           "<ul>",
           "<li>Über <strong>+ Studiengang hinzufügen</strong> lassen sich mehrere Programme vergleichen; das ✕ vor einem Eintrag entfernt es wieder.</li>",
           "<li>Ein Klick auf eine Kompetenz zeigt unten alle Module, die sie adressieren – gruppiert nach Programm, mit Tiefe und Begründung. Die Zahl am Chip ist die Anzahl der Module.</li>",
-          "<li>Ab zwei Programmen ist der <strong>Vergleich</strong> aktiv: farbige Punkte markieren, welches Programm eine Kompetenz adressiert. Orange hinterlegte Chips sind <strong>Lücken</strong> (mindestens ein Programm adressiert die Kompetenz nicht), blaue sind <strong>Verortungsunterschiede</strong> (alle Programme adressieren sie, aber in unterschiedlichen Modulkategorien), grüne sind <strong>Gemeinsamkeiten</strong> (alle Programme, gleiche Kategorien). Der Filter <strong>alle / nur Lücken / nur Verortung / nur Gemeinsamkeiten</strong> blendet entsprechend aus.</li>",
+          "<li>Ab zwei Programmen ist der <strong>Vergleich</strong> aktiv: farbige Punkte markieren, welches Programm eine Kompetenz adressiert. Orange hinterlegte Chips sind <strong>Lücken</strong> (die Kompetenz wird von mindestens einem Programm nicht adressiert), blaue sind <strong>Verortungsunterschiede</strong> (sie wird von allen Programmen adressiert, aber in unterschiedlichen Modulkategorien), grüne sind <strong>Gemeinsamkeiten</strong> (von allen Programmen in denselben Kategorien). Der Filter <strong>alle / nur Lücken / nur Verortung / nur Gemeinsamkeiten</strong> blendet entsprechend aus.</li>",
           "<li>Die Detailansicht nennt pro Programm die höchste erreichte Tiefe und listet alle zugeordneten Module.</li>",
           "</ul>",
 
@@ -179,7 +179,7 @@
           "<ul>",
           "<li><strong>+ Add study program</strong> lets you compare several programs; the ✕ in front of an entry removes it again.</li>",
           "<li>Clicking a competency lists all modules that address it below – grouped by program, with depth and rationale. The number on the chip is the number of modules.</li>",
-          "<li>With two or more programs the <strong>comparison</strong> is active: coloured dots mark which program addresses a competency. Orange chips are <strong>gaps</strong> (at least one program does not address the competency), blue chips are <strong>anchoring differences</strong> (all programs address it, but in different module categories), green chips are <strong>common ground</strong> (all programs, same categories). The filter <strong>all / gaps only / anchoring only / common ground only</strong> hides the rest.</li>",
+          "<li>With two or more programs the <strong>comparison</strong> is active: coloured dots mark which program addresses a competency. Orange chips are <strong>gaps</strong> (the competency is not addressed by at least one program), blue chips are <strong>anchoring differences</strong> (it is addressed by all programs, but in different module categories), green chips are <strong>common ground</strong> (addressed by all programs in the same categories). The filter <strong>all / gaps only / anchoring only / common ground only</strong> hides the rest.</li>",
           "<li>The detail view names the highest depth reached per program and lists all mapped modules.</li>",
           "</ul>",
 
