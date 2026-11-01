@@ -13,6 +13,7 @@
   /* ================= data registry ================= */
 
   var FRAMEWORK_ID = "quadriga-dlf";
+  var ORIENTATION_CODE = "__orientation";   /* synthetic, unnumbered competency without a phase */
   var FRAMEWORK_FILES = {
     de: "data/frameworks/quadriga-dlf.de.yaml",
     en: "data/frameworks/quadriga-dlf.en.yaml"
@@ -97,6 +98,16 @@
   function phaseNumbered(ph) { return ph.id !== "0"; }
   function phaseTitle(ph) { return phaseNumbered(ph) ? ph.id + ". " + ph.title : ph.title; }
   function phaseNoBadge(ph) { return phaseNumbered(ph) ? '<span class="phase-no">' + esc(ph.id) + "</span>" : ""; }
+
+  /* Orientierungswissen is data-wise phase 0, but presented as an unnumbered
+   * competency without a phase (before all competencies). */
+  function isOrientationPhase(ph) { return !!ph && String(ph.id) === "0"; }
+  function orientationPhase(f) {
+    if (!f) return null;
+    for (var i = 0; i < f.phases.length; i++) if (isOrientationPhase(f.phases[i])) return f.phases[i];
+    return null;
+  }
+  function isOrientationComp(code) { return code === ORIENTATION_CODE; }
 
   /* mappings for a module, restricted to the QUADRIGA framework */
   function moduleMappings(mod) {
@@ -365,7 +376,11 @@
     state.programIds = state.programIds.filter(function (id) { return programById(id); });
     if (!state.programIds.length && PROGRAMS.length) state.programIds = [PROGRAMS[0].id];
     var f = fw();
-    if (state.selectedComp && f && !compByCode(f, state.selectedComp)) state.selectedComp = null;
+    if (state.selectedComp && isOrientationComp(state.selectedComp)) {
+      if (!orientationPhase(f)) state.selectedComp = null;
+    } else if (state.selectedComp && f && !compByCode(f, state.selectedComp)) {
+      state.selectedComp = null;
+    }
     if (["all", "diff", "shared"].indexOf(state.compareFilter) < 0) state.compareFilter = "all";
   }
 
@@ -492,6 +507,7 @@
       h += '<section class="filter-section"><h3>' + esc(t("phases")) + '</h3>' +
         '<div class="check-tools"><button data-action="phases-all">' + esc(t("all")) + '</button><button data-action="phases-none">' + esc(t("none")) + "</button></div>";
       f.phases.forEach(function (ph) {
+        if (isOrientationPhase(ph)) return;   /* not a phase — shown as an unnumbered competency */
         h += '<label title="' + esc(ph.note || ph.text || "") + '"><input type="checkbox" data-action="toggle-phase" value="' + esc(ph.id) + '"' +
           (!state.phases || state.phases.has(ph.id) ? " checked" : "") + '><span><span class="phase-dot" style="background:' +
           phaseColorVar(ph.id) + '"></span>' + esc(phaseTitle(ph)) + "</span></label>";
@@ -500,9 +516,15 @@
 
       h += '<section class="filter-section"><h3>' + esc(t("competencies")) + '</h3>' +
         '<div class="check-tools"><button data-action="comps-all">' + esc(t("all")) + '</button><button data-action="comps-none">' + esc(t("none")) + "</button></div>";
+      var oph = orientationPhase(f);
+      if (oph) {
+        h += '<label><input type="checkbox" data-action="toggle-comp" value="' + ORIENTATION_CODE + '"' +
+          (!state.comps || state.comps.has(ORIENTATION_CODE) ? " checked" : "") + "> " + esc(oph.title) + "</label>";
+      }
       f.phases.forEach(function (ph) {
+        if (isOrientationPhase(ph)) return;
         var comps = f.competencies.filter(function (c) { return c.phase === ph.id; });
-        if (!comps.length) return;   /* e.g. Orientierungswissen (phase 0) defines no competencies yet */
+        if (!comps.length) return;
         h += '<span class="filter-group-label"><span class="phase-dot" style="background:' + phaseColorVar(ph.id) + '"></span>' + esc(ph.title) + "</span>";
         comps.forEach(function (c) {
           h += '<label><input type="checkbox" data-action="toggle-comp" value="' + esc(c.code) + '"' +
@@ -529,7 +551,28 @@
 
   /* ================= shared fragments ================= */
 
-  /* description fragment for phases that define no competencies (e.g. Orientierungswissen, phase 0) */
+  /* details of the synthetic Orientierungswissen competency, in the same
+   * dimension-row layout used by regular competency cards */
+  function orientationDims(ph) {
+    var h = '<div class="comp-dims orientation-dims">';
+    if (ph.text) h += '<div class="dim"><span class="dim-label">' + esc(t("orientationDescription")) + '</span><span>' + esc(ph.text) + "</span></div>";
+    if (ph.note) h += '<div class="dim"><span class="dim-label">' + esc(t("orientationNote")) + '</span><span>' + esc(ph.note) + "</span></div>";
+    return h + "</div>";
+  }
+
+  function orientationCard(f) {
+    var ph = orientationPhase(f);
+    if (!ph) return "";
+    return '<article class="comp-card orientation-card" style="--phase-color:' + phaseColorVar(ph.id) + '" data-action="open-orientation">' +
+      '<div class="comp-card-head"><span class="comp-title">' + esc(ph.title) + "</span></div>" +
+      orientationDims(ph) + "</article>";
+  }
+
+  function orientationSection(f) {
+    return '<section class="orientation-section"><div class="comp-grid">' + orientationCard(f) + "</div></section>";
+  }
+
+  /* description fragment for phases that define no competencies */
   function phaseBlurb(ph) {
     var h = '<p class="phase-blurb">' + esc(ph.text || t("phaseNoComps")) + "</p>";
     if (ph.note) h += '<p class="phase-blurb-note">' + esc(ph.note) + "</p>";
@@ -599,12 +642,14 @@
 
   function renderByCompetency(f, p, idx) {
     var h = "";
+    if (compsPass(ORIENTATION_CODE)) h += orientationSection(f);
     f.phases.forEach(function (ph) {
+      if (isOrientationPhase(ph)) return;
       if (!phasesPass(ph.id)) return;
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id && compsPass(c.code); });
       if (state.onlyAddressed) comps = comps.filter(function (c) { return idx[c.code] && idx[c.code].length; });
       if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
-        /* phase without competencies (Orientierungswissen) — show its description */
+        /* phase without competencies — show its description */
         h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
           '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2></div>" +
           phaseBlurb(ph) + "</section>";
@@ -643,7 +688,7 @@
   function renderByModule(f, p, idx) {
     var mods = p.modules.filter(catsPass);
     if (!mods.length) return '<div class="hint-box">' + esc(t("noModulesSelected")) + "</div>";
-    var h = "";
+    var h = compsPass(ORIENTATION_CODE) ? orientationSection(f) : "";
     mods.forEach(function (mod) {
       var maps = moduleMappings(mod).filter(function (m) {
         return m.level >= state.minLevel && compByCode(f, m.competency) &&
@@ -758,14 +803,24 @@
     /* comparison summary */
     if (compareActive()) h += compareSummary(f, idx);
 
+    /* Orientierungswissen: an unnumbered competency without a phase, before all competencies */
+    var oph = orientationPhase(f);
+    if (oph) {
+      h += '<div class="fw-orientation" style="--phase-color:' + phaseColorVar(oph.id) + '">' +
+        '<button class="picker-btn orientation-picker' + (state.selectedComp === ORIENTATION_CODE ? " active" : "") +
+        '" data-action="select-comp" data-comp="' + ORIENTATION_CODE + '">' +
+        '<span class="picker-title">' + esc(oph.title) + "</span></button></div>";
+    }
+
     /* picker grouped by phase */
     f.phases.forEach(function (ph) {
+      if (isOrientationPhase(ph)) return;
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id; });
       if (cmp) {
         comps = comps.filter(function (c) { return compPassesCompareFilter(idx, c.code); });
       }
       if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
-        /* phase without competencies (Orientierungswissen) — compact blurb row */
+        /* phase without competencies — compact blurb row */
         h += '<section class="fw-phase" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
           '<div class="fw-phase-head"><span class="phase-dot"></span><h3>' + esc(phaseTitle(ph)) + "</h3></div>" +
           phaseBlurb(ph) + "</section>";
@@ -806,25 +861,33 @@
 
     /* detail of selected competency */
     if (state.selectedComp) {
-      var c = compByCode(f, state.selectedComp);
-      if (c) {
-        var entries = (idx[c.code] || []).slice().sort(function (a, b) {
-          return b.mapping.level - a.mapping.level || a.program.title.localeCompare(b.program.title) || a.module.code.localeCompare(b.module.code);
-        });
-        h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(c.phase) + '">' +
-          '<div class="phase-header"><span class="phase-no">' + esc(c.code) + "</span><h2>" + esc(c.title) + "</h2>" +
-          '<span class="coverage-mini">' + esc(phaseById(f, c.phase).title) + '</span></div>' +
-          '<div class="comp-card" style="margin-bottom:14px">' + dimRows(f, c) + "</div>";
-
-        h += '<h3 style="margin:0 0 10px">' + esc(t("addressedIn")) + " (" + entries.length + ")</h3>";
-        if (cmp) {
-          h += frameworkCompareDetail(c.code, idx);
-        } else if (!entries.length) {
-          h += '<div class="hint-box">' + esc(t("notAddressed")) + "</div>";
-        } else {
-          entries.forEach(function (e) { h += frameworkModuleCard(e, true); });
+      if (isOrientationComp(state.selectedComp)) {
+        if (oph) {
+          h += '<section class="phase-section orientation-detail" style="--phase-color:' + phaseColorVar(oph.id) + '">' +
+            '<div class="phase-header"><h2>' + esc(oph.title) + "</h2></div>" +
+            '<div class="comp-card" style="margin-bottom:14px">' + orientationDims(oph) + "</div></section>";
         }
-        h += "</section>";
+      } else {
+        var c = compByCode(f, state.selectedComp);
+        if (c) {
+          var entries = (idx[c.code] || []).slice().sort(function (a, b) {
+            return b.mapping.level - a.mapping.level || a.program.title.localeCompare(b.program.title) || a.module.code.localeCompare(b.module.code);
+          });
+          h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(c.phase) + '">' +
+            '<div class="phase-header"><span class="phase-no">' + esc(c.code) + "</span><h2>" + esc(c.title) + "</h2>" +
+            '<span class="coverage-mini">' + esc(phaseById(f, c.phase).title) + '</span></div>' +
+            '<div class="comp-card" style="margin-bottom:14px">' + dimRows(f, c) + "</div>";
+
+          h += '<h3 style="margin:0 0 10px">' + esc(t("addressedIn")) + " (" + entries.length + ")</h3>";
+          if (cmp) {
+            h += frameworkCompareDetail(c.code, idx);
+          } else if (!entries.length) {
+            h += '<div class="hint-box">' + esc(t("notAddressed")) + "</div>";
+          } else {
+            entries.forEach(function (e) { h += frameworkModuleCard(e, true); });
+          }
+          h += "</section>";
+        }
       }
     } else {
       h += '<div class="hint-box">' + esc(t("selectCompetencyHint")) + "</div>";
@@ -860,11 +923,24 @@
     });
     h += "</tr></thead><tbody>";
 
+    /* Orientierungswissen: unnumbered competency without a phase, before all competencies */
+    var oph = orientationPhase(f);
+    if (oph && compsPass(ORIENTATION_CODE)) {
+      h += '<tr class="orientation-row" style="--phase-color:' + phaseColorVar(oph.id) + '">' +
+        '<td class="row-head orientation-head" data-action="open-orientation" title="' + esc(oph.text || oph.note || "") + '">' +
+        '<span class="comp-title">' + esc(oph.title) + "</span></td>";
+      mods.forEach(function () {
+        h += '<td class="cell empty" title="' + esc(t("notMapped")) + '">' + esc(t("emptyMatrixCell")) + "</td>";
+      });
+      h += "</tr>";
+    }
+
     f.phases.forEach(function (ph) {
+      if (isOrientationPhase(ph)) return;
       if (!phasesPass(ph.id)) return;
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id && compsPass(c.code); });
       if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
-        /* phase without competencies (Orientierungswissen) — a lone phase row, description as tooltip */
+        /* phase without competencies — a lone phase row, description as tooltip */
         h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
           '<td class="phase-head" title="' + esc(ph.note || ph.text || "") + '">' + esc(phaseTitle(ph)) + "</td>" +
           '<td class="phase-fill" colspan="' + mods.length + '"></td></tr>';
@@ -1076,7 +1152,17 @@
     openModal({ title: esc(mod.code + " – " + mod.title), body: body });
   }
 
+  function openOrientationModal() {
+    var f = fw();
+    var ph = orientationPhase(f);
+    if (!ph) return;
+    var body = '<div class="comp-card" style="margin-bottom:14px">' + orientationDims(ph) + "</div>";
+    body += frameworkSourceLine(f);
+    openModal({ title: esc(ph.title), body: body });
+  }
+
   function openCompModal(code) {
+    if (isOrientationComp(code)) { openOrientationModal(); return; }
     var f = fw();
     var c = f && compByCode(f, code);
     if (!c) return;
@@ -1169,6 +1255,7 @@
         break;
       }
       case "open-module": openModuleModal(el.getAttribute("data-program"), el.getAttribute("data-module")); break;
+      case "open-orientation": openOrientationModal(); break;
       case "open-comp": openCompModal(el.getAttribute("data-comp")); break;
       case "open-cell": openCellModal(el.getAttribute("data-program"), el.getAttribute("data-module"), el.getAttribute("data-comp")); break;
       case "add-framework-program": {
@@ -1186,7 +1273,7 @@
         if (cf !== state.compareFilter) {
           state.compareFilter = cf;
           /* keep the selection if it still shows up in the new mode, otherwise drop it */
-          if (state.selectedComp && !compPassesCompareFilter(competencyIndex(state.programIds), state.selectedComp)) {
+          if (state.selectedComp && !isOrientationComp(state.selectedComp) && !compPassesCompareFilter(competencyIndex(state.programIds), state.selectedComp)) {
             state.selectedComp = null;
           }
         }

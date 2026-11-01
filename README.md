@@ -36,10 +36,11 @@ It provides bidirectional views/filters:
 - **Matrix view**: heatmap of competencies × modules for a program.
 
 The QUADRIGA **Orientierungswissen** (English: “conceptual knowledge”) is
-represented as **phase 0**: it lies outside the data-flow phases and forms
-the foundation of all of them. It currently defines no competencies, so it
-shows up in the views as an empty phase and is not mapped to individual
-modules.
+stored as **phase 0** in the data, but presented as an unnumbered,
+phase-less competency before all other competencies, with its description
+shown in the same detail layout as competency cards. It lies outside the
+data-flow phases, forms the foundation of all of them, and is currently not
+mapped to individual modules.
 
 A single **Language** switcher (Sprache) controls the UI strings, the framework
 translation and the bilingual mapping notes at once.
