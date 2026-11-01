@@ -121,9 +121,14 @@ registered in `data/manifest.yaml`:
 
 ```yaml
 programs:
-  - data/programs/hu-biw-ba.yaml
+  - data/programs/hu-berlin-ba-biw.yaml
   - …
 ```
+
+Program IDs and file names follow the pattern
+`<institution abbreviation>-<location>-<degree abbreviation>-<short name>`,
+e.g. `hu-berlin-ba-biw` or `fhgr-graubuenden-ba-is`. The `id` field inside the
+YAML must equal the file name without `.yaml`.
 
 To add another study program, add a YAML file and list it in the manifest —
 no code changes needed. The framework itself is fixed to the two QUADRIGA
@@ -164,7 +169,7 @@ language switcher selects between them.
 ### Study program (`data/programs/*.yaml`)
 
 ```yaml
-id: hu-berlin-biw-ba
+id: hu-berlin-ba-biw
 title: …
 institution: Humboldt-Universität zu Berlin, Philosophische Fakultät
 institutionAbbr: HU            # shown in the program selector

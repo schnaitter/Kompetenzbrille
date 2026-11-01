@@ -1,8 +1,8 @@
 {
   "@context": "https://schnaitter.github.io/Kompetenzbrille/data/schemas/program-context.jsonld",
-  "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba",
+  "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw",
   "@type": "StudyProgram",
-  "id": "hu-berlin-biw-ba",
+  "id": "hu-berlin-ba-biw",
   "title": "BA Bibliotheks- und Informationswissenschaft",
   "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
   "institutionAbbr": "HU",
@@ -12,13 +12,13 @@
   "source": "https://schnaitter.github.io/Kompetenzbrille/assets/lesefassung_spo_ba.pdf",
   "categories": [
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/pflicht",
       "@type": "ModuleCategory",
       "id": "pflicht",
       "label": "Pflicht"
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/wahlpflicht",
       "@type": "ModuleCategory",
       "id": "wahlpflicht",
       "label": "Wahlpflicht"
@@ -26,12 +26,12 @@
   ],
   "modules": [
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP1",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP1",
       "@type": "Module",
       "code": "BP1",
       "title": "Einführung in die Bibliotheks- und Informationswissenschaft",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/pflicht",
       "goals": "Die Studierenden haben einen Überblick über die Geschichte, Fragestellungen, Ansätze und Methoden der Bibliotheks- und Informationswissenschaft. Sie können grundlegende wissenschaftliche Arbeitsweisen einsetzen. Sie besitzen ein Orientierungswissen über die wesentlichen Institutionen der Informationsinfrastruktur und können die Bedeutung von Informationspolitik und -strategie beurteilen. Sie kennen die Vielfalt, Ziele sowie die Funktionalitäten der zum Einsatz kommenden Informationssysteme. Sie verstehen, dass Informationsinfrastrukturen und Informationssysteme nicht nur von technischen Anforderungen abhängen, sondern auch vom sozialen Umfeld und den Bedarfsstrukturen der Nutzer.",
       "topics": [
         "Geschichte und Fragestellungen der Bibliotheks- und Informationswissenschaft",
@@ -46,7 +46,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP1/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP1/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -57,7 +57,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP1/mapping/quadriga-dlf-1_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP1/mapping/quadriga-dlf-1_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
@@ -68,7 +68,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP1/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP1/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -81,12 +81,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP2",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP2",
       "@type": "Module",
       "code": "BP2",
       "title": "Informations- und Kommunikationstechnologie",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/pflicht",
       "goals": "Die Studierenden verstehen grundlegende Prinzipien und Verfahren der Informations- und Kommunikationstechnologie und deren Begriffswelt. Sie haben ein Verständnis für Computing sowie den Aufbau und die Funktionsweise von Computern entwickelt. Die Studierenden kennen die Grundlagen einer modernen Programmiersprache und sind in der Lage, kleine Programme selbstständig zu schreiben. Im Modul werden Fähigkeiten wie Modellierung, Abstraktion sowie formales bzw. algorithmisches Denken entwickelt.",
       "topics": [
         "Aufbau und Arbeitsweise von Computern",
@@ -102,7 +102,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP2/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP2/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -115,12 +115,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP3",
       "@type": "Module",
       "code": "BP3",
       "title": "Informationsproduktion und -management",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/pflicht",
       "goals": "Die Studierenden können Konzepte, Techniken, Technologien und Standards im Bereich der Informationsproduktion- und des Informationsmanagements erklären. Sie kennen aktuelle Medien- und Publikationsformen. Sie haben praktische Fähigkeiten im Umgang mit Auszeichnungssprachen und Softwareanwendungen in diesem Gebiet. Die Studierenden verstehen sowohl den Prozess der Entstehung von digitalen Informationen bzw. Publikationen als auch das Management aus der Sicht von Verlagen, wissenschaftlichen Bibliotheken und anderen Informationseinrichtungen.",
       "topics": [
         "Internetbasierte Medien-, Kommunikations- und Publikationsformen",
@@ -139,7 +139,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3/mapping/quadriga-dlf-5_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP3/mapping/quadriga-dlf-5_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.2",
@@ -150,7 +150,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3/mapping/quadriga-dlf-5_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP3/mapping/quadriga-dlf-5_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.1",
@@ -161,7 +161,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3/mapping/quadriga-dlf-1_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP3/mapping/quadriga-dlf-1_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
@@ -172,7 +172,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP3/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -183,7 +183,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP3/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP3/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -196,12 +196,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP4",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP4",
       "@type": "Module",
       "code": "BP4",
       "title": "Informationsaufbereitung und -organisation",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/pflicht",
       "goals": "Die Studierenden kennen klassische und IT-gestützte Methoden der Informationsaufbereitung und -organisation. Dazu gehören die Ansätze und Standards der Metadatenproduktion und -aufbereitung sowie der Informationsarchitektur (einschließlich der formalen und inhaltlichen Erschließung) in webbasierten Informationsumgebungen. Sie können Methoden und Verfahren dieses Fachgebietes anwenden.",
       "topics": [
         "Beschreibung, Strukturierung und Organisation von Informationsressourcen oder anderen Objekten",
@@ -215,7 +215,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP4/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP4/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -226,7 +226,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP4/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP4/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -237,7 +237,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP4/mapping/quadriga-dlf-1_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP4/mapping/quadriga-dlf-1_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.2",
@@ -250,12 +250,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP5",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP5",
       "@type": "Module",
       "code": "BP5",
       "title": "Human Information Behavior",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/pflicht",
       "goals": "Die Studierenden können menschliche Verhaltensweisen des Information Seeking und Non-Seeking erklären, beschreiben und in Daten sichtbar machen. Sie sind in der Lage, eigene empirische Nutzerstudien durchzuführen und können Verfahren der Datenbeschreibung und -auswertung anwenden.",
       "topics": [
         "Information Need",
@@ -269,7 +269,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP5/mapping/quadriga-dlf-2_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP5/mapping/quadriga-dlf-2_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
@@ -280,7 +280,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP5/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP5/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -291,7 +291,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP5/mapping/quadriga-dlf-4_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP5/mapping/quadriga-dlf-4_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.2",
@@ -302,7 +302,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP5/mapping/quadriga-dlf-4_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP5/mapping/quadriga-dlf-4_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.3",
@@ -315,12 +315,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP6",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP6",
       "@type": "Module",
       "code": "BP6",
       "title": "Projektmodul",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/pflicht",
       "goals": "Die Studierenden sind in der Lage, eine größere Aufgabenstellung der realen Berufspraxis in Abstimmung mit den beteiligten Mitstudierenden und unter Anleitung der Lehrenden zu bearbeiten. Neben fachlichen haben sie sich während der Projektarbeit auch überfachliche Qualifikationen (z.B. Entwicklung von Teamfähigkeit, Kommunikationsfähigkeit, Zeitmanagement) angeeignet.",
       "topics": [
         "Projektthemen aus aktuellen Forschungsschwerpunkten bzw. Problemkontexten der Informationswissenschaft",
@@ -329,7 +329,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP6/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP6/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -342,12 +342,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP7",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP7",
       "@type": "Module",
       "code": "BP7",
       "title": "Praktikum",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/pflicht",
       "goals": "Die Studierenden besitzen praktische Kenntnisse über Aufgaben, Arbeitsabläufe und Methoden im BI-Bereich sowie sozialer Verhaltensnormen der Berufswelt. Sie kennen Institutionen des BI-Bereichs aus innerbetrieblicher Sicht, typische Tätigkeitsbereiche, spezifische Arbeitsmethoden und -mittel und haben ein Problembewusstsein für Arbeitsabläufe und -organisation. Sie kennen Prinzipien von Kooperation und Koordinierung und wenden diese an, arbeiten in Arbeitsgruppen und tragen zur Lösung spezieller Arbeitsaufgaben der Praktikumseinrichtung praktisch bei.",
       "topics": [
         "Aufgaben, Struktur und Arbeitsweise von Informationsinstitutionen",
@@ -357,12 +357,12 @@
       "mappings": []
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP8",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP8",
       "@type": "Module",
       "code": "BP8",
       "title": "Abschlussmodul",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/pflicht",
       "goals": "Die Studierenden weisen die Befähigung zum selbstständigen wissenschaftlichen Arbeiten durch die schriftliche Bearbeitung einer Problemstellung aus der Informationswissenschaft nach. Bei der Anfertigung der Bachelorarbeit erhalten die Studierenden Unterstützung in einem obligatorischen Begleitcolloquium, in dem sie lernen, ihre Fragestellung methodisch umzusetzen und in dem sie den Entwurf ihrer Arbeit erörtern können.",
       "topics": [
         "Bachelorthemen aus aktuellen Forschungsschwerpunkten bzw. Problemkontexten der Informationswissenschaft",
@@ -371,7 +371,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BP8/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BP8/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -384,12 +384,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP1",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP1",
       "@type": "Module",
       "code": "BWP1",
       "title": "Informationsdidaktik",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/wahlpflicht",
       "goals": "Die Studierenden kennen und verstehen didaktische Konzepte und Modelle für die Vermittlung informationswissenschaftlicher Inhalte und Kompetenzen. Sie besitzen Fertigkeiten für die Planung und Durchführung von Veranstaltungen, Tutorials und weiteren Informationsdienstleistungen im Kontext von Informations- und Wissensvermittlungsprozessen.",
       "topics": [
         "Didaktische Vermittlungsmethoden",
@@ -402,7 +402,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP1/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP1/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -415,12 +415,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP2",
       "@type": "Module",
       "code": "BWP2",
       "title": "Information Processing and Storage",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/wahlpflicht",
       "goals": "Die Studierenden haben einen Überblick über grundlegende Prinzipien und Funktionsweisen von Datenbanksystemen. Sie sind in der Lage, Datenbanken für spezielle Anwendungen zu konzipieren und aufzubauen sowie deren effektive Nutzung zu ermöglichen. Sie sind vertraut im Umgang mit Methoden zur Bewertung und zum Vergleich von Datenbanksystemen.",
       "topics": [
         "Datenbankmodelle",
@@ -433,7 +433,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP2/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -444,7 +444,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP2/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -455,7 +455,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2/mapping/quadriga-dlf-2_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP2/mapping/quadriga-dlf-2_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
@@ -466,7 +466,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP2/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -477,7 +477,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP2/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP2/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -490,12 +490,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP3",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP3",
       "@type": "Module",
       "code": "BWP3",
       "title": "Information und Gesellschaft",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/wahlpflicht",
       "goals": "Die Studierenden verstehen die Zusammenhänge gesellschaftlicher Rahmenbedingungen und (technischer) Entwicklungen von Informationsdienstleistungen. Insbesondere der Umgang mit und die Interpretation von quantitativen Nutzer- und Nutzungsdaten werden in diesem Zusammenhang erarbeitet. Sie können darüber hinaus die Bedeutung von Informationspolitik, -recht und -ethik beurteilen.",
       "topics": [
         "Informationsethik",
@@ -507,7 +507,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP3/mapping/quadriga-dlf-1_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP3/mapping/quadriga-dlf-1_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
@@ -518,7 +518,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP3/mapping/quadriga-dlf-4_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP3/mapping/quadriga-dlf-4_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.3",
@@ -529,7 +529,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP3/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP3/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -542,12 +542,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP4",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP4",
       "@type": "Module",
       "code": "BWP4",
       "title": "Human-Computer-Interaction",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/wahlpflicht",
       "goals": "Studierende kennen die Grundlagen der menschlichen Informationsverarbeitung, Paradigmen und grundlegende Modelle sowie Evaluationsmethoden der Mensch-Maschine-Interaktion. Sie sind in der Lage, Produkte nach Aspekten des User Experience Design zu konzipieren und zu evaluieren.",
       "topics": [
         "Mensch-Maschine-Interaktion",
@@ -560,7 +560,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP4/mapping/quadriga-dlf-4_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP4/mapping/quadriga-dlf-4_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.2",
@@ -571,7 +571,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP4/mapping/quadriga-dlf-2_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP4/mapping/quadriga-dlf-2_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
@@ -584,12 +584,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP5",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP5",
       "@type": "Module",
       "code": "BWP5",
       "title": "Wirtschaftliche Grundlagen des Informationssektors",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/category/wahlpflicht",
       "goals": "Die Studierenden verstehen die wirtschaftliche Bedeutung von Information als Wirtschaftsgut und den Einsatz betriebswirtschaftlicher Instrumente in Informationseinrichtungen. Sie erlangen Wissen über die ökonomischen Besonderheiten von Informationsgütern, über Software- und Contentmärkte sowie Netzwerkökonomie. Sie können die Stellung digitaler Information in der Informations- und Wissensgesellschaft diskutieren und beurteilen. Sie kennen die wesentlichen Methoden und Verfahren der Prozessorganisation, der Finanzplanung, des Personalmanagements und des Marketings von Informationsinstitutionen und -leistungen.",
       "topics": [
         "Geschichte des Informationsmarktes",
@@ -608,7 +608,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ba/module/BWP5/mapping/quadriga-dlf-2_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ba-biw/module/BWP5/mapping/quadriga-dlf-2_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.2",

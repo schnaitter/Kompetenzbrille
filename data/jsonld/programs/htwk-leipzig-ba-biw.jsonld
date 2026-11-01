@@ -1,8 +1,8 @@
 {
   "@context": "https://schnaitter.github.io/Kompetenzbrille/data/schemas/program-context.jsonld",
-  "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba",
+  "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw",
   "@type": "StudyProgram",
-  "id": "htwk-biw-ba",
+  "id": "htwk-leipzig-ba-biw",
   "title": "BA Bibliotheks- und Informationswissenschaft",
   "institution": "Hochschule für Technik, Wirtschaft und Kultur Leipzig",
   "institutionAbbr": "HTWK",
@@ -12,25 +12,25 @@
   "source": "https://schnaitter.github.io/Kompetenzbrille/assets/2026-03-31_BKB_Studienordnung_RK_Onlinefassung.pdf",
   "categories": [
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "@type": "ModuleCategory",
       "id": "pflicht",
       "label": "Pflicht"
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "@type": "ModuleCategory",
       "id": "vertiefung",
       "label": "Vertiefung (Studienschwerpunkt)"
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/datenkompetenz",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/datenkompetenz",
       "@type": "ModuleCategory",
       "id": "datenkompetenz",
       "label": "Datenkompetenz (Wahlpflicht)"
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "@type": "ModuleCategory",
       "id": "wahlpflicht",
       "label": "Freie Wahlpflichtmodule"
@@ -38,12 +38,12 @@
   ],
   "modules": [
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G311",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G311",
       "@type": "Module",
       "code": "G311",
       "title": "Formalerschließung spezieller Medientypen",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Die Studierenden kennen die Standardelementen von Nichtbuchmedien und weiteren Ressourcen (z.B. Karten) im internationalen Regelwerk Resource Description and Access (RDA); sind in dert Lage, bibliographische Datensätze von unterschiedlichen Medientypen nach RDA anzufertigen; haben vertiefte Kenntnisse der computergestützten Formalerschließung in Bibliotheksverbünden und bei der Nutzung lokaler Bibliothekssoftware und Kenntnisse zu Normdatensätzen in der GND.",
       "topics": [
         "Standardelemente für die Beschreibung von Nichtbuchmedien und weiteren Ressourcen (z.B. Karten) nach RDA",
@@ -54,7 +54,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G311/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G311/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -65,7 +65,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G311/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G311/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -78,12 +78,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G494",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G494",
       "@type": "Module",
       "code": "G494",
       "title": "Fachinformation ausgewählter Wissenschaftsdisziplinen",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Die Studierenden können: Strukturen und Einrichtungen der Fachinformation ausgewählter Wissenschaftsdisziplinen beschreiben; die Auswirkungen des Wandels des wissenschaftlichen Publikationswesens auf die Fachinformation diskutieren; zielgruppenspezifischen Informationsbedarf analysieren; in wichtigen Informationsmitteln ausgewählter Wissenschaftsdisziplinen gezielte Recherchen durchführen; professionell zielgruppenspezifisch informationsvermittelnde Dienstleistungen konzipieren und erbringen.",
       "topics": [
         "Strukturen und Einrichtungen der Fachinformation ausgewählter Wissenschaftsdisziplinen",
@@ -95,7 +95,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G494/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G494/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -106,7 +106,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G494/mapping/quadriga-dlf-5_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G494/mapping/quadriga-dlf-5_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.2",
@@ -117,7 +117,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G494/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G494/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -130,12 +130,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G560",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G560",
       "@type": "Module",
       "code": "G560",
       "title": "Verbale und klassifikatorische Inhaltserschließung: Vertiefung",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Die Studierenden können: verschiedene Arten von Metatexten charakterisieren und vergleichen; höhere Merkmale und Inhalte ausgewählter Klassifikationen aus dem Bereich der öffentlichen und wissenschaftlichen Bibliotheken sowie des aktuellen Regelwerks für die Schlagwortkatalogisierung beschreiben und charakterisieren; in komplexeren Fällen Verfahren zur Inhaltsanalyse und -verdichtung anwenden; in komplexeren Fällen und in weiteren ausgewählten Sachgebieten Dokumenteninhalte durch Vergabe von Notationen und Schlagwörtern wiedergeben.",
       "topics": [
         "Charakteristika verschiedener Arten von Metatexten",
@@ -147,7 +147,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G560/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G560/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -158,7 +158,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G560/mapping/quadriga-dlf-1_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G560/mapping/quadriga-dlf-1_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.2",
@@ -171,12 +171,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G594",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G594",
       "@type": "Module",
       "code": "G594",
       "title": "Digitale Bibliotheken und Informationsportale",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Die Studierenden können: wichtige digitale Bibliotheken und Informationsportale für verschiedene Nutzerkreise beschreiben und gegenüberstellen; Anforderungen und Tätigkeiten zur Erstellung von digitalen Bibliotheken und Informationsportalen darlegen; Theorien des Informationsverhaltens grundlegend erläutern; die Gebrauchstauglichkeit von digitalen Bibliotheken und Informationsportalen bewerten.",
       "topics": [
         "Informationsportale im weiteren Sinn, wie digitale und virtuelle Bibliotheken, nationalbibliographische Online-Angebote, Mediatheken",
@@ -187,7 +187,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G594/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G594/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -198,7 +198,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G594/mapping/quadriga-dlf-5_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G594/mapping/quadriga-dlf-5_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.2",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G594/mapping/quadriga-dlf-5_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G594/mapping/quadriga-dlf-5_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.1",
@@ -222,12 +222,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G547",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G547",
       "@type": "Module",
       "code": "G547",
       "title": "Metadaten und Metadatenmanagement",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/datenkompetenz",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/datenkompetenz",
       "goals": "Die Studierenden kennen die für Bibliotheken relevanten Metadatenstandards, -dienste, und - schnittstellen und erlangen ein praktisches Verständnis von Aggregation, Organisation und Qualitätssicherung von Metadaten in GLAM-Einrichtungen und den Digital Humanities. Die Studierenden verstehen die Funktionsweise der Metadatenverarbeitung in bibliothekarischen Online-Katalogen und Discovery-Systemen. Sie sind in der Lage, Metadatenschemata für verschiedene Anwendungsbeispiele zu entwickeln. Die Studierenden kennen die wichtigsten Standards und Technologien zur Wissensmodellierung im Semantic Web und erlangen einen Überblick über die aktuellen Semantic-Web-Entwicklungen im informationswissenschaftlichen Bereich. Die Studierenden erarbeiten sich selbstständig vertiefte Kenntnisse einzelner Standards, Dienste oder Infrastrukturen und präsentieren diese im Seminar anschaulich und präzise.",
       "topics": [
         "Metadaten: Definitionsversuche, Typen, Funktionen und Aufbau",
@@ -239,7 +239,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G547/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G547/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G547/mapping/quadriga-dlf-5_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G547/mapping/quadriga-dlf-5_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.2",
@@ -261,7 +261,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G547/mapping/quadriga-dlf-5_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G547/mapping/quadriga-dlf-5_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.1",
@@ -274,17 +274,17 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G556",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G556",
       "@type": "Module",
       "code": "G556",
       "title": "Informationspraktikum",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Festigung der Kenntnisse sowie Entwicklung von Fähigkeiten und Fertigkeiten der Anwendungsfelder aus den Modulen des ersten Semesters.",
       "topics": [],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G556/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G556/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -297,12 +297,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G739",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G739",
       "@type": "Module",
       "code": "G739",
       "title": "Praktisches Studiensemester mit Praktikumskolloquium",
       "credits": 30,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Vertiefung fachlicher Kenntnisse, Fähigkeiten und Fertigkeiten in den verschiedenen Tätigkeitsfeldern einer Bibliothek oder einer anderen informationsvermittelnden Einrichtung; Weiterentwicklung sozialer Kompetenzen im Zusammenhang mit der Eingliederung in bestehende Personal- und Organisationsstrukturen; Gewinnung von Einsichten in die Folgen des eigenen beruflichen Handelns.",
       "topics": [
         "Ausführung praktischer Tätigkeiten im Bibliotheksbetrieb",
@@ -310,7 +310,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G739/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G739/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -321,7 +321,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G739/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G739/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -334,12 +334,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G909",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G909",
       "@type": "Module",
       "code": "G909",
       "title": "Internet- und Multimediadatenbanken",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/datenkompetenz",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/datenkompetenz",
       "goals": "Vertiefung relationaler Datenbank-Technologien; Kenntnis moderner nicht-relationaler Datenbanksysteme im Hinblick auf ihre Verwendbarkeit in Bibliotheken; Kritische Einschätzung von Datenbank-Technologien bzgl. ihres Kosten-Nutzen-Verhältnisses im Bereich von Bibliotheken; Erlernen von Programmierfähigkeiten im Kontext von Datenbanken.",
       "topics": [
         "Zugriffssprachen (z.B. PHP)",
@@ -350,7 +350,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G909/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G909/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -361,7 +361,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G909/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G909/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -372,7 +372,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G909/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G909/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -385,12 +385,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G924",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G924",
       "@type": "Module",
       "code": "G924",
       "title": "Information Retrieval",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/datenkompetenz",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/datenkompetenz",
       "goals": "Kenntnisse über die Grundlagen des Information Retrievel; Kenntnisse über Suchmaschinen-Technologien; Fähigkeiten zur Vorbereitung, Durchführung und Nachbereitung von Recherchen.",
       "topics": [
         "formale Grundlagen des Information Retrieval",
@@ -399,7 +399,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G924/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G924/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -410,7 +410,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G924/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G924/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -423,12 +423,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G807",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G807",
       "@type": "Module",
       "code": "G807",
       "title": "Methoden der Bibliotheks-und Informationswissenschaft",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Kenntnisse über Verlauf und Methoden des wissenschaftlichen Erkenntnisprozesses; Kenntnisse über die Methoden quantitativer und qualitativer Sozialforschung sowie ihre Anwendungsfälle in der Bibliotheks- und Informationswissenschaft; Kenntnisse, Fähigkeiten und Fertigkeiten zur Planung, Realisierung und Evaluierung einer quantitativen empirischen Untersuchung; sichere Anwendung der beschreibenden Statistik und der Software SPSS; Kenntnisse, Fähigkeiten und Fertigkeiten des Projektmanagements; Kenntnisse, Fähigkeiten und Fertigkeiten zur Entwicklung von Teamfähigkeit.",
       "topics": [
         "Wissenschaftlicher Erkenntnisprozess und seine Phasen",
@@ -441,7 +441,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G807/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G807/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -452,7 +452,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G807/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G807/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -463,7 +463,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G807/mapping/quadriga-dlf-1_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G807/mapping/quadriga-dlf-1_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
@@ -476,12 +476,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/C603",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/C603",
       "@type": "Module",
       "code": "C603",
       "title": "Grundlagen der Informatik",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Die Studierenden kennen den Aufbau, die grundlegenden Funktionsweisen und die Interaktionsarten moderner Computer und der auf ihnen installierten Softwarearten. Sie kennen die Unterschiede zwischen iOS-/Android-Geräten und Desktops/Laptops in der grundsätzlichen Handhabung. Sie sind befähigt, in der Beschaffung bzw. Bestandsverwaltung sachkundig über die Leistungsparameter von Computern und Computerzubehör zu urteilen. Mit der Nutzung der Standardsoftware Microsoft Office unter Microsoft Windows für Arbeitsprozesse sind sie in vertieftem Maße vertraut. Sie sind für Digitalisierungsprozesse, Datensicherheit, Ergonomie, Usability, User Experience und Barrierefreiheit sensibilisiert. Die Arbeitsabläufe in IT-gestützten Bibliotheksprozessen sind ihnen technologisch vertraut. Persönlich haben sie Selbstvertrauen im Umgang mit Computern erworben, das im Umgang mit Kunden zur Konzentration auf den Geschäftsprozess befähigt.",
       "topics": [
         "Informationstechnologie mit Relevanz für Bibliotheken",
@@ -501,7 +501,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/C603/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/C603/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -512,7 +512,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/C603/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/C603/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -525,12 +525,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G469",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G469",
       "@type": "Module",
       "code": "G469",
       "title": "Typologie und Strukturen des deutschen Bibliotheks- und Informationswesens",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Die Studierenden können: gewinnen einen Überblick über die grundlegenden Voraussetzungen für die gegenwärtigen Aufgaben, Funktionen und Arbeitsweisen von Bibliotheken aller Typen sowie anderer informationsvermittelnder Einrichtungen in Deutschland und können die für das Themenfeld erforderliche Terminologie anwenden.; nutzen Basiskenntnisse zur Orientierung innerhalb der historisch gewachsenen und/oder funktional bestimmten Strukturen des deutschen Bibliotheks- und Informationswesens.; kennen und verstehen den grundlegenden rechtlichen und organisatorischen Rahmen, in dem Bibliotheken und Bibliothekssysteme, regionale und zentrale Institutionen, Organisationen, Verbände und Vereine im Bibliotheks- und Informationswesen arbeiten.; gewinnen Verständnis für das Konzept einer arbeitsteiligen überregionalen Literaturversorgung durch funktionsbezogene Kooperation.; lernen durch Themenfindung und -abgrenzung individuell zu erarbeitender Referate und deren mündliche und schriftliche Präsentation erste bibliothekstypologische Forschungsfragen zu formulieren und geeignete Methoden zu deren Beantwortung zu finden.",
       "topics": [
         "Das deutsche Bibliotheks- und Informationswesen im Kontext gesellschaftlich relevanter Strukturen und Aufgaben in Kultur, Wissenschaft und Bildung",
@@ -541,7 +541,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G469/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G469/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G469/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G469/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -565,12 +565,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G215",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G215",
       "@type": "Module",
       "code": "G215",
       "title": "Medientheorie und Medienkunde",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Grundlegende Kenntnis der Begriffe Kommunikation und Medien, ihrer Varietät und ihrer Bedeutungsebenen; Kenntnisse der theoretischen Grundlagen von Kommunikation; Umfassende Kenntnisse zur Typologie bibliothekarisch relevanter Medienarten und damit verknüpften Problemen hinsichtlich ihrer Erwerbung, Bewahrungund Vermittlung; Verständnis aktueller Entwicklungen des Medienmarktes und ihrer Konsequenzen für die Bibliotheken; Kenntnis der Möglichkeiten und Grenzen von Medienkonversion und Medientransfers; Grundkenntnisse zu bibliothekarisch relevanten Aspekten des Medien- und Informationsrechts.",
       "topics": [
         "Kommunikation und Medien : Definition und Modelle",
@@ -584,7 +584,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G215/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G215/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -597,12 +597,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G456",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G456",
       "@type": "Module",
       "code": "G456",
       "title": "Grundlagen der Medienerschließung",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Beherrschung der fachbezogenen Terminologie; Kenntnis wesentlicher Methoden der Medien- und Bestandserschließung; Grundkenntnisse über Regelwerke und Standards der Formalerschließung; Fähigkeit zur Recherche in historischen Informationsressourcen, z.B. in nach den Regeln der Preußischen Instruktionen geordneten Zettel- und Imagekatalogen; Fähigkeit zur Anwendung alphabetischer Ordnungsprinzipien und -regeln; Überblickskenntnisse zur Inhaltserschließung.",
       "topics": [
         "Die Funktion von Katalogen, Bibliographien und anderen Informationsressourcen",
@@ -614,7 +614,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G456/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G456/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -625,7 +625,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G456/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G456/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -638,12 +638,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G426",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G426",
       "@type": "Module",
       "code": "G426",
       "title": "Benutzungsmanagement",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Einsicht in die Ziele Benutzerorientiertheit, Verfügbarkeit und Benutzbarkeit des Benutzungsmanagements; Kenntnisse der Organisationsmodelle von Freihand-, Magazin- und Präsenzbestand, der Ausleihorganisation sowie der Zusatzdienste und Services, Fähigkeit zur Prozessleitung in der bibliothekarischen Praxis; Kenntnisse über Evaluierungmöglichkeiten von Benutzungsmanagement und ihre Konsequenzen in der bibliothekarischen Praxis; Kenntnisse, Fähigkeiten und Fertigkeiten zur Anwendung von Schulungskomponenten zur Entwicklung von Bibliothekskompetenz.",
       "topics": [
         "Einordnung des Benutzungsmanagements in den Bibliotheksbetrieb",
@@ -654,7 +654,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G426/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G426/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -665,7 +665,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G426/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G426/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -678,12 +678,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G356",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G356",
       "@type": "Module",
       "code": "G356",
       "title": "Datenbanken",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Grundkenntnisse über Datenbankmanagementsysteme; Kenntnisse über die unterschiedlichen Datenmodelle; Fähigkeiten zur Konzeption und Strukturierung von Datenbanken (z.B. bibliographische Datenbanken); Fähigkeiten und Fertigkeiten zur Anwendung von Standarddatenbanksystemen bei Abfragen mittels SQL; Kenntnisse über unterschiedliche Datenaustauschformate (bibliographische Intern- und Externformate).",
       "topics": [
         "Datenstrukturierung, Datenbankentwurf",
@@ -695,7 +695,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G356/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G356/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -706,7 +706,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G356/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G356/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -717,7 +717,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G356/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G356/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -730,12 +730,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G308",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G308",
       "@type": "Module",
       "code": "G308",
       "title": "Aufgaben und Organisationsformen von Informationseinrichtungen",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Grundkenntnisse über Strukturen, Funktionen und Arbeitsweisen von einzelnen IuDEinrichtungen in Deutschland; Grundkenntnisse über das deutsche Archiv- und Museumswesen auf der Basis exemplarisch betrachteter Archive und Museen; Veranschaulichung und Vertiefung der im 1. Fachsemester erworbenen theoretischen Kenntnisse zur Bibliothekstypologie sowie zu Qualifizierung und den erforderlichen aufgabenspezifischen Kompetenzen bibliothekarischen Fachpersonals.",
       "topics": [
         "Informationswirtschaft und -praxis in Deutschland: Spezifische Arbeitsweisen und Organisationsstrukturen einzelner Einrichtungen",
@@ -746,7 +746,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G308/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G308/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -757,7 +757,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G308/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G308/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -770,12 +770,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G607",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G607",
       "@type": "Module",
       "code": "G607",
       "title": "Bibliographische Information",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Die Studierenden können: grundlegende allgemeinbibliographische Informationsmittel beschreiben und charakterisieren,; Funktion, Aufbau und Typen bibliographischer Informationsmittel erläutern,; die Diversifizierung bibliographischer Informationsmittel mit Bezug auf spezifische Anforderungen diskutieren,; Stand und Entwicklung der nationalbibliographischen Verzeichnung in Deutschland darstellen,; gezielt geeignete Informationsmittel auswählen und bewerten,; in konventionellen und digitalen Informationsmitteln professionell recherchieren.",
       "topics": [
         "Bibliographische Grundbegriffe",
@@ -787,7 +787,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G607/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G607/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -798,7 +798,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G607/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G607/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -811,12 +811,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G234",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G234",
       "@type": "Module",
       "code": "G234",
       "title": "Formalerschließung 1",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Die Studierenden kennen die Standardelemente für die umfassende Beschreibung von einteiligen Ressourcen im internationalen Regelwerk Resource Description and Access (RDA).; Sie sind in der Lage, bibliographische Datensätze von einteiligen Ressourcen nach RDA anzufertigen.; Sie haben Grundkenntnisse der computergestützten Formalerschließung, der RDA Standardelemente für Personen und Personendatensätze in der Gemeinsamen Normdatei (GND) und der bibliographischen Beschreibung nach den Regeln für die alphabetische Katalogisierung (RAK).",
       "topics": [
         "Standardelemente für die Beschreibung einteiliger Ressourcen nach RDA",
@@ -827,7 +827,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G234/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G234/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -838,7 +838,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G234/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G234/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -851,12 +851,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G956",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G956",
       "@type": "Module",
       "code": "G956",
       "title": "Buch- und Bibliotheksgeschichte",
       "credits": 6,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Kenntnisse über die Geschichte der Schrift und des Buches; Überblickskenntnisse zur Buchherstellung und Buchgestaltung von den Anfängen bis zur Gegenwart; Kenntnisse über die Geschichte der Bibliotheken und des Bibliothekswesens insbesondere in Europa; Verständnis für den Zusammenhang zwischen Bibliotheksgeschichte und heutiger Bibliothekslandschaft; Kenntnisse über das sich verändernde Leseverhalten und Verständnis für die Rolle der Kulturtechnik Lesen in der gesellschaftlichen Entwicklung.",
       "topics": [
         "Buch- u. Bibliotheksgeschichte bis zum Mittelalter:",
@@ -869,7 +869,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G956/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G956/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -882,12 +882,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/F521",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/F521",
       "@type": "Module",
       "code": "F521",
       "title": "Fachsprache Englisch: Bibliotheks- und Informationswissenschaft",
       "credits": 4,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Nach erfolgreichem Abschluss des Moduls sind die Studierenden in der Lage:; komplexe studien- und berufsrelevante Hör- und Lesetexte, auch zu weniger vertrauten Themen, zu verstehen;; unter Verwendung vielfältiger, auch komplexer sprachlicher Mittel studien- und berufsrelevante Texte aus bekannten Themenbereichen zu verfassen;; unter Verwendung vielfältiger, auch komplexer sprachlicher Mittel studien- und berufsrelevante Gesprächssituationen, in denen es um komplexe Themen aus bekannten Themenbereichen geht, sicher zu bewältigen;; Sachverhalte ausführlich zu erläutern und Standpunkte zu verteidigen.",
       "topics": [
         "Fachsprache Englisch 1:",
@@ -908,7 +908,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/F521/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/F521/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -921,12 +921,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G851",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G851",
       "@type": "Module",
       "code": "G851",
       "title": "Bibliotheksmarketing",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Kenntnisse über den Begriff Marketing und sicherer Umgang mit Begriffen des Marketing; Kenntnisse von Grundprinzipien des Marketing sowie des Marketingzyklus; Kenntnisse der theoretischen Grundlagen von Kommunikation und der Kommunikationsgestaltung als Instrument im Marketing-Mix; Kenntnisse der Mittel der Kommunikationsgestaltung sowie Kenntnisse und grundlegende Fähigkeiten zur Beurteilung der Qualität verschiedener Mittel; Kenntnisse und grundlegende Fähigkeiten zur Anwendung der externen und internen Kommunikationsgestaltung in der Praxis.",
       "topics": [
         "Modell des Austauschprozesses zur Produktkonsumtion; Bestimmung seiner Elemente und deren Konkretisierung in unterschiedlichen Marktbeziehungen eines Non-for-ProfitUnternehmens",
@@ -939,7 +939,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G851/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G851/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -950,7 +950,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G851/mapping/quadriga-dlf-5_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G851/mapping/quadriga-dlf-5_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.2",
@@ -963,12 +963,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G931",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G931",
       "@type": "Module",
       "code": "G931",
       "title": "Deutschsprachige Gegenwartsliteratur",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Die Studierenden kennen die Akteure und Funktionsweisen des Literaturmarktes im deutschsprachigen Raum.; Sie sind in der Lage, die Spezifik literarischer Texte sowie deren Erscheinungsvielfalt zu erkennen und in die aktuelle deutschsprachige Gegenwartsliteratur einzuordnen.; Sie können literarische Texte nach bibliothekarischen Gesichtspunkten analysieren und bewerten.; Sie sind für die Bedeutung der Literaturvermittlung sensibilisiert und erproben ein Format praktisch.",
       "topics": [
         "Spezifik literarischer Texte und literarischer Gattungen",
@@ -981,7 +981,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G931/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G931/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -994,12 +994,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G211",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G211",
       "@type": "Module",
       "code": "G211",
       "title": "Grundlagen der Inhaltserschließung",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Die Studierenden können: theoretische Grundlagen der Inhaltserschließung erklären,; ausgewählte Klassifikationen aus dem Bereich der öffentlichen und wissenschaftlichen Bibliotheken sowie das aktuelle Regelwerk für die Schlagwortkatalogisierung beschreiben und charakterisieren,; in einfachen Fällen Verfahren zur Inhaltsanalyse und -verdichtung anwenden,; Dokumenteninhalte durch Vergabe von Notationen und Schlagwörtern in ausgewählten Sachgebieten wiedergeben.",
       "topics": [
         "Ziele und Funktionen der Inhaltserschließung; Repräsentation und Ordnung von Gegenständen und Begriffen, Typen von Dokumentationssprachen",
@@ -1009,7 +1009,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G211/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G211/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -1020,7 +1020,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G211/mapping/quadriga-dlf-1_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G211/mapping/quadriga-dlf-1_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.2",
@@ -1033,12 +1033,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G005",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G005",
       "@type": "Module",
       "code": "G005",
       "title": "Auskunfts- und Informationstätigkeit in Bibliotheken",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Die Studierenden können: die Auskunfts- und Informationstätigkeit in Bibliotheken unterschiedlichen Typs darstellen,; qualifiziert unter Berücksichtigung professioneller Standards und bibliotheksethischer Grundsätze Auskunfts-, Beratungs- und Informationstätigkeit in Öffentlichen und Wissenschaftlichen Bibliotheken durchführen,; eine Informationsinfrastruktur an der Bibliothek aufbauen,; wichtige Informationsressourcen gezielt auswählen und für die professionelle Recherche nutzen,; Rechercheergebnisse nutzergerecht präsentieren und vermitteln.",
       "topics": [
         "Die Bibliothek als Informationsdienstleister: Auskunfts- und Informationspraxis in Bibliotheken unterschiedlichen Typs",
@@ -1051,7 +1051,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G005/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G005/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -1062,7 +1062,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G005/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G005/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1075,12 +1075,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G512",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G512",
       "@type": "Module",
       "code": "G512",
       "title": "Formalerschließung 2",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Die Studierenden kennen die Standardelemente für die hierarchische, umfassende und analytische Beschreibung von Ressourcen im internationalen Regelwerk Resource Description and Access (RDA),; sind in der Lage, bibliographische Datensätze von mehrteiligen und integrierenden Ressourcen sowie Teilen von Ressourcen anzufertigen,; haben Kenntnisse der computergestützten Formalerschließung in Bibliotheksverbünden und bei der Nutzung lokaler Bibliothekssoftware und haben Grundkenntnisse zu RDAStandardelementen für Körperschaften und Körperschaftsdatensätzen in der Gemeinsamen Normdatei (GND).",
       "topics": [
         "Standardelemente für die hierarchische, umfassende und analytische Beschreibung von Ressourcen nach RDA",
@@ -1091,7 +1091,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G512/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G512/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -1104,12 +1104,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G277",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G277",
       "@type": "Module",
       "code": "G277",
       "title": "IT-Systeme in Bibliotheken",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Kenntnisse unterschiedlicher Datenbankmanagementsysteme für den Aufbau bibliographischer Datenbanken und zur Unterstützung des bibliothekarischen Geschäftsgangs; Fähigkeit zum methodischen Vorgehen bei Softwarevergleich und -wahl sowie Fähigkeiten und Fertigkeiten zur Anwendung ausgewählter Bibliotheksinformationssysteme; Kenntnisse über neue Entwicklungen von Standards mit Relevanz für Datengenerierung, - speicherung, -bereitstellung und -austausch durch und zwischen Bibliotheken; Kenntnisse über Ansätze zur Verbesserung kundenorientierter Dienstleistungen und ausgewählter Aspekte der Informationsbereitstellung in Bibliotheken.",
       "topics": [
         "Bibliotheksspezifische Vertiefung auf dem Gebiet \"Anwendung von Datenbanksystemen\"",
@@ -1122,7 +1122,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G277/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G277/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -1133,7 +1133,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G277/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G277/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -1144,7 +1144,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G277/mapping/quadriga-dlf-5_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G277/mapping/quadriga-dlf-5_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.1",
@@ -1157,12 +1157,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G119",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G119",
       "@type": "Module",
       "code": "G119",
       "title": "Förderung von Lese-, Medien- und Informationskompetenz",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Die Studierenden können: erkennen die Notwendigkeit der Förderung von Lese-, Medien- und Informationskompetenz.; können theoretische Grundlagen der Förderung von Lese-, Medien- und Informationskompetenz sowie mögliche Formen und Methoden erklären und in den wissenschaftlichen Kontext einordnen.; können für eine konkrete Zielgruppe unter Anwendung pädagogisch-didaktischer Grundkenntnisse ein Grobkonzept zur Kompetenzförderung in Bibliotheken entwickeln.",
       "topics": [
         "Begriffe Lese-, Medien- und Informationskompetenz",
@@ -1176,7 +1176,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G119/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G119/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1187,7 +1187,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G119/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G119/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -1200,12 +1200,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G373",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G373",
       "@type": "Module",
       "code": "G373",
       "title": "Bestandsentwicklung und Erwerbungsmanagement",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Umfassende Kenntnisse zu Aufbau und Optimierung von Medienbeständen in verschiedenen Typen von Wissenschaftlichen und Öffentlichen Bibliotheken; Kenntnis allgemeiner und spezieller Qualitätsmaßstäbe für Erwerbungspraxis und Bestandsentwicklung; Fähigkeit zur Entwicklung von Bestandskonzeptionen auf der Basis von informationslogistischen Rollen, statistischen Auswertungen und qualitativen Leitlinien.",
       "topics": [
         "Bestandsstrukturen und -profile in verschiedenen Bibliothekstypen und Methoden zu ihrer Untersuchung (Bestandsanalyse, Bestandsrevision, Bestandsevaluierung)",
@@ -1215,7 +1215,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G373/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G373/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -1226,7 +1226,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G373/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G373/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -1239,19 +1239,19 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/U862",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/U862",
       "@type": "Module",
       "code": "U862",
       "title": "Schlüsselqualifikation",
       "credits": 4,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Der Studierende erhält eine grundlegende Lernkompetenz, wird zum selbständigen Wissenserwerb befähigt und schult seine Kommunikationsfähigkeit. Er erlernt eine fachübergreifende Arbeits- und Denkweise, erlangt soziale und kulturelle Kompetenzen und erlernt ethisches Denken. Diese Fähigkeiten sind neben dem fachspezifischen Wissen Voraussetzung für den beruflichen Werdegang und die Persönlichkeitsentwicklung. Die konkreten Qualifikationsziele hängen von der gewählten Lehreinheit \"Schlüsselqualifikation\" aus dem jährlich vom Fakultätsrat beschlossenen Angebotskatalog der.",
       "topics": [
         "Die konkreten Lehrinhalte hängen von der gewählten Lehreinheit \"Schlüsselqualifikation\" aus dem jährlich vom Fakultätsrat beschlossenen Angebotskatalog der Fakultät ab."
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/U862/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/U862/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1264,19 +1264,19 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/U006",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/U006",
       "@type": "Module",
       "code": "U006",
       "title": "Studium generale",
       "credits": 1,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Im Studium generale sollen der fachübergreifende Charakter von Lehre und Forschung sowie die Zusammenhänge von Theorie und Praxis vermittelt werden. Der Studierende soll dabei befähigt werden, über sein eigenes Handeln zu reflektieren, sein Wissen einzuordnen und Zusammenhänge zu erkennen. Durch die offene und kontroverse Auseinandersetzung anhand eines ausgewählten Themas soll das Urteils- und Handlungsvermögen in politischen, ökonomischen, ökologischen und interkulturellen Bereichen ausgebildet werden.",
       "topics": [
         "Im Studium Generale werden gesellschaftsrelevante Themen und wissenschaftlich/technologische Fragestellungen mit fachübergreifendem Charakter behandelt. Dabei soll der Blick auf die Funktions- und Kommunikationsmechanismen in unserer Gesellschaft geschärft werden. Die Bearbeitung eines Themas erfolgt aus möglichst unterschiedlichen Perspektiven. Zur Realisierung des Lernziels werden Lehrveranstaltungen mit unterschiedlichen Lehrinhalten angeboten, aus denen je nach Platzangebot frei gewählt werden kann."
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/U006/mapping/quadriga-dlf-1_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/U006/mapping/quadriga-dlf-1_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
@@ -1289,12 +1289,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G673",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G673",
       "@type": "Module",
       "code": "G673",
       "title": "Projekt",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "vgl. § 9 Abs. 1 PrüfO-BKB; Fähigkeit zur Entwicklung, Durchsetzung und Präsentation von Ideen; Fähigkeit, innerhalb komplexer Aufgabenstellungen Ziele zu definieren sowie in Teamarbeit problemorientierte Lösungsvorschläge und praxisbezogene Realisierungskonzepte zu erarbeiten.",
       "topics": [
         "Auswahl aus dem aktuellen Projektangebot des Studiengangs",
@@ -1302,7 +1302,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G673/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G673/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -1313,7 +1313,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G673/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G673/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1326,12 +1326,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G748",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G748",
       "@type": "Module",
       "code": "G748",
       "title": "Strukturen und Ressourcen für Kultur- und Wissenschaftseinrichtungen",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Die Studierenden kennen die gesellschaftlichen, gesetzlichen und ökonomischen Rahmenbedingungen für Kultur- und Wissenschaftseinrichtungen. Sie besitzen die Kompetenz, ihre eigene künftige Position im Organisationsgefüge einzuschätzen, Wege der Einflussnahme zu bemerken und zu nutzen. Die Studierenden verfügen über die Kompetenz, sich mit dem betreffenden Personal- und Finanzmanagement über die Bedarfe einer Kultureinrichtung zu verständigen.",
       "topics": [
         "Kultureinrichtungen zwischen der Erfüllung öffentlicher Aufgaben, gemeinnützigem und kulturwirtschaftlichem Engagement",
@@ -1345,7 +1345,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G748/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G748/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -1356,7 +1356,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G748/mapping/quadriga-dlf-5_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G748/mapping/quadriga-dlf-5_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.2",
@@ -1369,12 +1369,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G266",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G266",
       "@type": "Module",
       "code": "G266",
       "title": "Zielgruppenorientierte Dienstleistungen",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Erkennen möglicher Profile von Bibliotheken und Einsicht in ihre Notwendigkeit; Einsicht in die Notwendigkeit kurz-, mittel- und langfristiger Zielgruppen-Strategien; Kenntnisse, Fähigkeiten und Fertigkeiten zur Bestimmung von Marktsegmenten in der konkreten Praxissituation; Kenntnisse, Fähigkeiten und Fertigkeiten zur Anwendung des Marketing-Mix auf ein Marktsegment und ein Produkt.",
       "topics": [
         "Konzeptuelle Überlegungen zur Ausrichtung von Bibliotheksdienstleistungen auf den Absatzmarkt; Einflussfaktoren und Rahmenbedingungen",
@@ -1385,7 +1385,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G266/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G266/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1396,7 +1396,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G266/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G266/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -1409,12 +1409,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/F978",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/F978",
       "@type": "Module",
       "code": "F978",
       "title": "Latein zur Erschließung von Medien und Musealien",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "goals": "Grundkenntnisse der lateinischen Grammatik; Fähigkeit, dokumentarisch wichtige lateinische Begriffe und Abkürzungen auf historischen Objekten zu erkennen und zu verstehen.",
       "topics": [
         "Grundregeln der Deklination und Konjugation im Lateinischen",
@@ -1427,7 +1427,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/F978/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/F978/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -1440,12 +1440,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G075",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G075",
       "@type": "Module",
       "code": "G075",
       "title": "Kollaborative und automatisierte Inhaltserschließung",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "goals": "Die Studierenden können: automatisierten Verfahren der Inhaltserschließung erläutern, einsetzen und evaluieren; kollaborative Verfahren für nutzergenerierte Metadaten zur Verzeichnung von Medien verschiedener Gattungen diskutieren; die Verwendungsmöglichkeiten verschiedener Verfahren der Inhaltserschließung vergleichen; Kriterien für die Indexierungsqualität erläutern und entsprechende Qualitätsmaße berechnen.",
       "topics": [
         "Funktionsweise und bibliothekarische Anwendung automatisierter Verfahren der Inhaltserschließung",
@@ -1455,7 +1455,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G075/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G075/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -1466,7 +1466,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G075/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G075/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -1479,12 +1479,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G127",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G127",
       "@type": "Module",
       "code": "G127",
       "title": "Öffentlichkeitsarbeit",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Kenntnisse und grundlegende Fähigkeiten zur Planung von Öffentlichkeitsarbeit, Erkennen notwendiger Ressourcen; Kenntnisse, Fähigkeiten und Fertigkeiten der notwendigen Arbeitsschritte für die Realisierung einzelner Maßnahmen der Öffentlichkeitsarbeit; Fähigkeit zur Adaption des Einzelbeispiels auf andere Anwendungsfälle.",
       "topics": [
         "Ziele, Zielgruppen und Methoden der Öffentlichkeitsarbeit von Bibliotheken und Informationseinrichtungen",
@@ -1495,7 +1495,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G127/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G127/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1506,7 +1506,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G127/mapping/quadriga-dlf-4_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G127/mapping/quadriga-dlf-4_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.2",
@@ -1519,12 +1519,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G131",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G131",
       "@type": "Module",
       "code": "G131",
       "title": "Literaturbewertung und -vermittlung",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Die Studierenden verfügen über Kenntnisse und Fähigkeiten, Trends und Entwicklungen auf dem Literatur- und Medienmarkt zu beobachten und für die Bibliothek nutzbar zu machen; kennen bedeutsame literarische Titel und ausgewählte populäre Genres der Unterhaltungsliteratur als Voraussetzung für den Bestandsaufbau und die Benutzerberatung; können Literatur bewerten und zielgruppenspezifisch vermitteln.",
       "topics": [
         "Literatur- und Medienmarkt, Informationsquellen für die Beobachtung des Marktes und für den Bestandsaufbau",
@@ -1536,7 +1536,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G131/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G131/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1547,7 +1547,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G131/mapping/quadriga-dlf-1_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G131/mapping/quadriga-dlf-1_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.2",
@@ -1560,12 +1560,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G188",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G188",
       "@type": "Module",
       "code": "G188",
       "title": "Historische Bestände",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "goals": "Kenntnis der Grundsätze der Bestandserhaltung; Fähigkeit zum sachgerechten Umgang mit dem historischen Bestand; Fähigkeit zur Beurteilung von Schäden am Bibliotheksbestand; Kenntnis wesentlicher Maßnahmen der Bestandserhaltung zur Prävention und Behebung von Bestandsschäden; Kenntnis der Spezifik historischer Bestände und ihrer besonderen Anforderungen; Kenntnisse über Institutionen und Programme der Pflege historischer Bestände in Deutschland; Kenntnis grundlegender Informationsressourcen zum Nachweis alter Drucke und Fähigkeit zu ihrer professionellen Benutzung; Fähigkeit zur formalen Erschließung alter Drucke.",
       "topics": [
         "Bestandserhaltung:",
@@ -1580,7 +1580,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G188/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G188/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -1591,7 +1591,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G188/mapping/quadriga-dlf-5_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G188/mapping/quadriga-dlf-5_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.1",
@@ -1604,12 +1604,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G278",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G278",
       "@type": "Module",
       "code": "G278",
       "title": "Archivkunde",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "goals": "Die Studentinnen/Studenten besitzen Kenntnisse über die verschiedenen archivalischen Quellengattungen und die Fähigkeit zu deren Identifizierung. Sie verfügen über Grundkenntnisse zur Organisationsstruktur des Archivwesens und zur Überlieferungsbildung sowie -erschließung in Archiven. Sie kennen die grundsätzlichen Anforderungen der Magazinierung, der Handhabung und des Bestandsschutzes von archivischen Beständen. Sie sind fähig, archivische von musealen Verfahrensweisen zu unterscheiden und Archive als Dienstleister wahrzunehmen sowie zu nutzen.",
       "topics": [
         "Typologie und Organisation des deutschen Archivwesens",
@@ -1623,7 +1623,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G278/mapping/quadriga-dlf-5_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G278/mapping/quadriga-dlf-5_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.1",
@@ -1634,7 +1634,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G278/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G278/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -1647,12 +1647,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G371",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G371",
       "@type": "Module",
       "code": "G371",
       "title": "Internationales Bibliotheks- und Informationswesen",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "goals": "Kenntnisse über das Bibliotheks- und Informationswesen einzelner Länder innerhalb und außerhalb Europas; Fähigkeit zur vergleichenden Analyse und Einordnung nationaler Traditionen und Besonderheiten der Organisation der Literaturversorgung in den behandelten Ländern.",
       "topics": [
         "Das Eigene im Fremden: Comparative Librarianship vs. Alternative Konzepte zur Analyse der \"Anderen\"",
@@ -1663,7 +1663,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G371/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G371/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1674,7 +1674,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G371/mapping/quadriga-dlf-1_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G371/mapping/quadriga-dlf-1_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
@@ -1687,12 +1687,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G498",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G498",
       "@type": "Module",
       "code": "G498",
       "title": "Buchhandel/Verlagswirtschaft",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Kenntnisse über Struktur und Arbeitsweise des herstellenden und verbreitenden Buchhandels sowie des Verlagswesens (Presse- und Buchverlage); Printmedienunternehmen als Verhandlungspartner verstehen; Grundlagenwissen zu wirtschaftlichen Prozessen in der Buch- und Medienbranche; Fähigkeit zu einfacher berufspraktischer Tätigkeit in Printmedienunternehmen (Buchverlage, Presseverlage, Handelsunternehmen); Fähigkeit zu einfacher berufspraktischer Tätigkeit in Unternehmen der Buchbranche.",
       "topics": [
         "Einführung in grundlegende Strukturen und Tendenzen des Buchmarktes",
@@ -1704,7 +1704,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G498/mapping/quadriga-dlf-5_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G498/mapping/quadriga-dlf-5_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.2",
@@ -1715,7 +1715,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G498/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G498/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1728,12 +1728,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G511",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G511",
       "@type": "Module",
       "code": "G511",
       "title": "Information - Gedächtnis - Kulturerbe",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "goals": "Die Studentinnen/Studenten kennen den aktuellen Diskussionsstand zu Metastrukturen für Archive, Bibliotheken und Museen, insbesondere zu deren konkurrierenden Theorieentwürfen bezüglich der Bewahrung und Vermittlung von Kulturgütern. Sie können ein reales Fallbeispiel hinsichtlich dessen Bezugnahme auf diese Metastrukturen untersuchen und deren Auswirkung auf das jeweilige Leistungsangebot beurteilen. Die Studentinnen/Studenten erwerben so die Kompetenz, ihr künftiges berufliches Handeln mit unterschiedlichen theoretischen Grundierungen zu versehen sowie die Relevanz und Akzeptanz dieser Haltung einzuschätzen.",
       "topics": [
         "Charakteristika der drei Arten von Gedächtnisinstitutionen (Archive, Bibliotheken, Museen), Typologien dieser Institutionen, Abgrenzungsmerkmale, Hybridformen, internationale Ausprägungen",
@@ -1745,7 +1745,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G511/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G511/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1756,7 +1756,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G511/mapping/quadriga-dlf-1_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G511/mapping/quadriga-dlf-1_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
@@ -1769,12 +1769,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G664",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G664",
       "@type": "Module",
       "code": "G664",
       "title": "Medienvermittlung",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Die Studierenden erkennen die vermittelnde Funktion von Informationsdienstleistungen zwischen Bibliotheksbeschäftigten und -nutzenden. Die Studierenden wissen, mittels welcher Quellen, sie sich über die Entwicklung auf dem deutschen Sachbuchmarkt und in der internationalen Film-, Musik- und Gaming-Szene informieren können. Sie können Medien dieser Genres bewerten und Formate für deren Vermittlung entwickeln. Die Studierenden kennen die Besonderheiten der zielgruppenspezifischen Medienvermittlung in unterschiedlichen Bibliothekstypen.",
       "topics": [
         "Marktsichtung und -analyse in den Genres: wissenschaftliche Literatur, Sachliteratur, Zeitungen und Zeitschriften, digitalen und Online-Medien einschließlich Streaming-Diensten, Film-, Musikmedien und Videospiele",
@@ -1786,7 +1786,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G664/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G664/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1799,12 +1799,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G775",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G775",
       "@type": "Module",
       "code": "G775",
       "title": "Kunstmarketing, Kunstverleih",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "goals": "Die Studentinnen/Studenten besitzen Kenntnisse der besonderen Rahmenbedingungen bildender Gegenwartskunst sowie einschlägiger Förderinstrumente. Sie kennen die rechtlichen und organisatorischen Besonderheiten der Artotheksarbeit. Die Studentinnen/Studenten besitzen die Fähigkeit, ein Artothek-Angebot zu planen und zu organisieren.",
       "topics": [
         "Grundverständnis von bildender Kunst aus den Perspektiven der Produktion und Rezeption",
@@ -1820,7 +1820,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G775/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G775/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1831,7 +1831,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G775/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G775/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -1844,12 +1844,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G812",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G812",
       "@type": "Module",
       "code": "G812",
       "title": "Kinder- und Jugendliteratur",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Die Studierenden kennen die Entwicklung und die Vielfalt der Genres und Themen in der Kinder- und Jugendliteratur; sind in der Lage, den Kinder- und Jugendbuchmarkt gezielt zu sichten und nach pädagogischen Gesichtpunkten geeignete Titel zu unterschiedlichen Themen auszuwählen und zu bewerten; können Kinder- und Jugendliteratur altersspezifisch vermitteln.",
       "topics": [
         "Entwicklung der Kinder- und Jugendliteratur im deutschsprachigen Raum",
@@ -1861,7 +1861,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G812/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G812/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1874,12 +1874,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G873",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G873",
       "@type": "Module",
       "code": "G873",
       "title": "Erschließungstechniken aus den Historischen Hilfswissenschaften",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "goals": "Die Studentinnen/Studenten verfügen über Überblickskenntnisse zu museumsrelevanten Historischen Hilfswissenschaften und ihren Quellengruppen. Sie haben Fähigkeiten und Fertigkeiten erworben, um Grundsätze und Methoden von ausgewählten Historischen Hilfswissenschaften bei der Bestimmung, der Datierung und Beschreibung von Musealien anzuwenden. Die Studentinnen/Studenten besitzen Überblickskenntnisse zur Schriftentwicklung seit der ausgehenden Antike und sind in der Lage, handschriftliche Dokumente ab dem späten 18. Jahrhundert zu lesen, zu transkribieren und zeitlich einzuordnen.",
       "topics": [
         "Quellenbegriff der Historischen Hilfswissenschaften und der Geschichtswissenschaften; Überblick zu Quellengattungen verschiedener textlicher, bildlicher sowie dreidimensionaler Art",
@@ -1895,7 +1895,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G873/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G873/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -1906,7 +1906,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G873/mapping/quadriga-dlf-1_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G873/mapping/quadriga-dlf-1_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.2",
@@ -1919,12 +1919,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G903",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G903",
       "@type": "Module",
       "code": "G903",
       "title": "Musikbibliotheken",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "goals": "Überblickskenntnisse in Musiktheorie und Musikgeschichte; Kenntnis der wesentlichen musikalischen Formen und Gattungen; Verständnis der Bestandsspezifik in Musikbibliotheken und Kenntnis musikbezogener Bestandsgruppen und ihrer Spezifik hinsichtlich Erwerbung, Erschließung und Vermittlung; Kenntnis der Typologie und Organisation des Musikinformationswesens; Kenntnis musikspezifischer Typen von Informationsressourcen zur bibliographischen und Faktenrecherche; Kenntnis ausgewählter grundlegender musikrelevanter Informationsressourcen und Fähigkeit zu ihrer professionellen Benutzung; Fähigkeit zur formalen Erschließung von Musikdrucken und Musikton- bzw. MusikBildtonträgern nach RDA.",
       "topics": [
         "Einführung in die musikbibliothekarische Arbeit:",
@@ -1935,7 +1935,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G903/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G903/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -1946,7 +1946,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G903/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G903/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1959,12 +1959,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G916",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G916",
       "@type": "Module",
       "code": "G916",
       "title": "Rezensionen als wertende Metatexte",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/wahlpflicht",
       "goals": "Fähigkeit zur Analyse unterschiedlicher Rezensionstypen als bibliothekarisch relevanten Metatexten; Kenntnis unterschiedlicher textsortenspezifischer Bewertungsmechanismen in Abhängigkeit von der Zielgruppe der Rezensenten; Fähigkeit zur Anwendung der Analyseergebnisse beim Verfassen eigener wertender Metatexte für unterschiedliche Zielgruppen.",
       "topics": [
         "Analyse wertender Metatexte (u.a. LK-Besprechungen, Feuilletonkritiken in Zeitungen und Online-Medien, wissenschaftliche Fachrezensionen, Kundenkritiken auf OnlineBuchhandelsportalen) hinsichtlich ihrer Wirkungsmechanismen sowie ihrer referierenden bzw. einordnenden Qualitäten",
@@ -1975,7 +1975,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G916/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G916/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -1986,7 +1986,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G916/mapping/quadriga-dlf-1_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G916/mapping/quadriga-dlf-1_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.2",
@@ -1999,12 +1999,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G945",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G945",
       "@type": "Module",
       "code": "G945",
       "title": "Bibliotheksarbeit mit Kindern und Jugendlichen",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Die Studierenden kennen die Aufgaben und die Arbeitsfelder der Bibliotheksarbeit mit Kindern und Jugendlichen; verfügen über fundierte Kenntnisse im Umgang mit den betreffenden Zielgruppen und kennen die spezifischen, den Lebensabschnitten Kindheit und Jugend angepassten Formen und Methoden der Medien- und Literaturvermittlung; sind in der Lage, bibliothekspädagogische Angebote für Kinder und Jugendliche umzusetzen und weiterzuentwickeln.",
       "topics": [
         "Entwicklung der Kinder- und Jugendbibliotheksarbeit",
@@ -2018,7 +2018,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G945/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G945/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -2029,7 +2029,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G945/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G945/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -2042,12 +2042,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/I397",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/I397",
       "@type": "Module",
       "code": "I397",
       "title": "Medienkompetenz/Medienherstellung",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/vertiefung",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/vertiefung",
       "goals": "Die Studierenden haben Computer- und Videospiele kennengelernt und einen Überblick über verschiedene Spielertypen und Spielegenres erworben. Sie wissen, wie sich Computer- und Videospiele pädagogisch beurteilen lassen. Die Studierenden haben Medienkompetenz und die in neuen medialen Handlungsfeldern des Internets erforderlichen Rechtskenntnisse erworben. Die Studierenden haben Fähigkeiten zur Nutzung, Gestaltung und Herstellung interaktiver Medien im Hinblick auf die Durchführung von medienpädagogischen Projekten erworben.",
       "topics": [
         "Computer- und Videospiele: Genres, Spielertypen, Bewertung und praktische Anwendung",
@@ -2057,7 +2057,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/I397/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/I397/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -2068,7 +2068,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/I397/mapping/quadriga-dlf-4_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/I397/mapping/quadriga-dlf-4_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.2",
@@ -2081,19 +2081,19 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G867",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G867",
       "@type": "Module",
       "code": "G867",
       "title": "Bachelormodul",
       "credits": 15,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/category/pflicht",
       "goals": "Fähigkeit, in der Bachelorarbeit ein fachspezifisches Problem innerhalb einer vorgegebenen Frist selbstständig nach wissenschaftlichen Methoden zu bearbeiten; Fähigkeit, im begleitenden Bachelorseminar die Probleme, Ziele und Lösungsansätze der eigenen Bachelorarbeit zu reflektieren und zu präsentieren sowie in den aktuellen wissenschaftlichen Kontext einzuordnen.",
       "topics": [
         "Bachelorseminar: Vgl. § 20 PrüfO-BKB: Das Bachelorseminar (3 Leistungspunkte) findet begleitend zur Bachelorarbeit (12 Leistungspunkte) statt und beinhaltet eine Präsentation. Bachelorarbeit: Vgl. § 20 PrüfO-BKB: Bearbeitung eines fachspezifischen Problems innerhalb einer vorgegebenen Frist selbstständig nach wissenschaftlichen Methoden"
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G867/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G867/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -2104,7 +2104,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G867/mapping/quadriga-dlf-4_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G867/mapping/quadriga-dlf-4_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.3",
@@ -2115,7 +2115,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-biw-ba/module/G867/mapping/quadriga-dlf-1_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/htwk-leipzig-ba-biw/module/G867/mapping/quadriga-dlf-1_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",

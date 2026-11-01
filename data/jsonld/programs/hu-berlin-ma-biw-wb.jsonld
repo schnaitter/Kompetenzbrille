@@ -1,8 +1,8 @@
 {
   "@context": "https://schnaitter.github.io/Kompetenzbrille/data/schemas/program-context.jsonld",
-  "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb",
+  "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb",
   "@type": "StudyProgram",
-  "id": "hu-berlin-biw-ma-wb",
+  "id": "hu-berlin-ma-biw-wb",
   "title": "MA Bibliotheks- und Informationswissenschaft (weiterbildend, Fernstudium)",
   "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
   "institutionAbbr": "HU",
@@ -12,13 +12,13 @@
   "source": "https://schnaitter.github.io/Kompetenzbrille/assets/lesefassung-fs-master-2023.pdf",
   "categories": [
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/category/pflicht",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/category/pflicht",
       "@type": "ModuleCategory",
       "id": "pflicht",
       "label": "Pflicht"
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/category/wahlpflicht",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/category/wahlpflicht",
       "@type": "ModuleCategory",
       "id": "wahlpflicht",
       "label": "Wahlpflicht"
@@ -26,12 +26,12 @@
   ],
   "modules": [
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M1",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M1",
       "@type": "Module",
       "code": "M1",
       "title": "Handlungsfelder & Dienstleistungen",
       "credits": 20,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/category/pflicht",
       "goals": "Das Modul behandelt nach grundlegenden Themen wie „Typologie der Bibliotheks- und Informationseinrichtungen“ und „Elektronisches Publizieren und Open Access“ insbesondere Fragen der Beschaffung und Beschreibung von konventionellen und digitalen Informationsressourcen mit dem Schwerpunkt der Anwendung in Bibliotheken. Nach Abschluss des Moduls verfügen die Studierenden über Grundlagenkenntnisse des Bibliothekswesens. Die Studierenden haben praxisorientierte Kenntnisse über bibliothekarische Arbeitsabläufe mit herkömmlichen und digitalen Medien.",
       "topics": [
         "Typologie der Bibliotheks- und Informationseinrichtungen",
@@ -54,7 +54,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M1/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M1/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -65,7 +65,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M1/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M1/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -76,7 +76,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M1/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M1/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -87,7 +87,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M1/mapping/quadriga-dlf-5_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M1/mapping/quadriga-dlf-5_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.1",
@@ -98,7 +98,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M1/mapping/quadriga-dlf-5_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M1/mapping/quadriga-dlf-5_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.2",
@@ -109,7 +109,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M1/mapping/quadriga-dlf-2_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M1/mapping/quadriga-dlf-2_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
@@ -122,12 +122,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M2",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M2",
       "@type": "Module",
       "code": "M2",
       "title": "Management & Technik",
       "credits": 20,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/category/pflicht",
       "goals": "Das Modul behandelt insbesondere Fragen der betriebswirtschaftlichen und technischen Leitung von Institutionen der Bibliotheks- und Informationspraxis und der hier zur Anwendung kommenden Theorien. Nach Abschluss dieses Moduls haben die Studierenden Kenntnisse über die Leitung von Einrichtungen der Bibliotheks- und Informationspraxis erworben und sich grundlegende Rechtskenntnisse, die für die Informationspraxis wichtig sind, angeeignet. Die Studierenden können Aussagen zu Fragen des Bibliotheksbaues und des Managements von BID-Einrichtungen machen.",
       "topics": [
         "Management und Marketing von Institutionen der Bibliotheks- und Informationspraxis",
@@ -139,7 +139,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M2/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M2/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -150,7 +150,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M2/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M2/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -163,12 +163,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M3",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M3",
       "@type": "Module",
       "code": "M3",
       "title": "Kontext & Vernetzung",
       "credits": 20,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/category/pflicht",
       "goals": "Das Modul beschreibt die historischen Grundlagen und die Bibliotheks- und Informationspraxis und ihre Institutionen in Gesellschaft und Politik. Nach Abschluss dieses Moduls haben die Studierenden Kenntnisse über Funktionen und Strukturen des Bibliothekswesens erworben und sich Fragestellungen und Methoden der Bibliotheks- und Informationswissenschaft angeeignet. Sie können historische und gegenwärtige bibliothekspolitische Probleme korrekt einordnen und haben anwendungsorientierte Kenntnisse in bibliotheksbezogener Informationstechnik.",
       "topics": [
         "Förderpolitik & Drittmittelakquise",
@@ -180,7 +180,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M3/mapping/quadriga-dlf-1_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M3/mapping/quadriga-dlf-1_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
@@ -193,12 +193,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M4",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M4",
       "@type": "Module",
       "code": "M4",
       "title": "Berufspraktische Tätigkeit",
       "credits": 25,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/category/pflicht",
       "goals": "Nach Abschluss des berufspraktischen Moduls haben die Studierenden ein Verständnis für wissenschaftliche, politische, kulturelle, soziale, rechtliche und wirtschaftliche Fragen in BID-Einrichtungen. Sie sind zu aktiver und passiver Kritik fähig und haben ein trainiertes Führungs- und Durchsetzungsvermögen. Sie sind innovativ und verfügen ein für BID-Einrichtungen nötiges Problembewusstsein.",
       "topics": [
         "Tätigkeit in einem dem Studiengang affinen Bereich (z.B. Bibliothek, Informationspraxis, Archiv, Museum, Buchhandel)",
@@ -207,12 +207,12 @@
       "mappings": []
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M5",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M5",
       "@type": "Module",
       "code": "M5",
       "title": "Vertiefungsbereich",
       "credits": 5,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/category/wahlpflicht",
       "goals": "Das Modul „Vertiefungsbereich“ behandelt vertieft Fragen um den Aufbau digitaler Bibliotheken und Fragen um das „Alte Buch“ und betont dabei Praxisaspekte. Nach Abschluss dieses Moduls haben die Studierenden vertiefte und praxisorientierte Kenntnisse in dem gewählten Bereich erworben. Die Studierenden haben einen Überblick über die wesentlichen Komponenten, Aufgaben und Entwicklungsstrategien im ausgewählten Vertiefungsbereich. Die Studierenden können das Thema eigenständig und kritisch reflektieren, haben praktische Anwendungskenntnisse und nehmen an aktueller Forschung teil.",
       "topics": [
         "Semantic Web & Linked Open Data",
@@ -223,7 +223,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M5/mapping/quadriga-dlf-3_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M5/mapping/quadriga-dlf-3_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.2",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M5/mapping/quadriga-dlf-5_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M5/mapping/quadriga-dlf-5_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.1",
@@ -247,12 +247,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M6",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M6",
       "@type": "Module",
       "code": "M6",
       "title": "Masterarbeit und Verteidigung",
       "credits": 30,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/category/pflicht",
       "goals": "Die Studierenden weisen mit der Masterarbeit die im Studiengang erworbenen Kenntnisse und Fähigkeiten des selbstständigen und wissenschaftlichen Arbeitens nach. In der anschließenden Verteidigung wird festgestellt, ob die Studierenden die erforderlichen fachlichen Kenntnisse und Fähigkeiten für die wissenschaftliche Arbeit in Bibliotheken und Informationseinrichtungen besitzen.",
       "topics": [
         "Masterarbeit (17 Wochen, ca. 50 Seiten)",
@@ -260,7 +260,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-biw-ma-wb/module/M6/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-biw-wb/module/M6/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",

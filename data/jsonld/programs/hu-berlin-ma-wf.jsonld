@@ -1,8 +1,8 @@
 {
   "@context": "https://schnaitter.github.io/Kompetenzbrille/data/schemas/program-context.jsonld",
-  "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma",
+  "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf",
   "@type": "StudyProgram",
-  "id": "hu-berlin-wf-ma",
+  "id": "hu-berlin-ma-wf",
   "title": "MA Wissenschaftsforschung",
   "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
   "institutionAbbr": "HU",
@@ -12,13 +12,13 @@
   "source": "https://schnaitter.github.io/Kompetenzbrille/assets/AMB-40_2026_SPO_MA_Wissenschaftsforschung.pdf",
   "categories": [
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/pflicht",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/pflicht",
       "@type": "ModuleCategory",
       "id": "pflicht",
       "label": "Pflicht"
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/wahlpflicht",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/wahlpflicht",
       "@type": "ModuleCategory",
       "id": "wahlpflicht",
       "label": "Wahlpflicht"
@@ -26,12 +26,12 @@
   ],
   "modules": [
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP1",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP1",
       "@type": "Module",
       "code": "MP1",
       "title": "Einführung in die Wissenschaftsforschung",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/pflicht",
       "goals": "Die Student*innen kennen verschiedene Ansätze der Wissenschaftsforschung aus Soziologie, Ethnologie, Philosophie und Geschichte sowie dem interdisziplinären Feld der Science and Technology Studies. Die Student*innen können unterschiedliche Forschungsfragen der Wissenschaftsforschung einordnen und bewerten. Sie können zentrale methodische Probleme der Wissenschaftsforschung benennen und kennen unterschiedliche Zugänge zur Bearbeitung von Forschungsfragen der Wissenschaftsforschung.",
       "topics": [
         "Zentrale Fragestellungen, Konzepte und Paradigmen der Wissenschaftsforschung",
@@ -46,12 +46,12 @@
       "mappings": []
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP2",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP2",
       "@type": "Module",
       "code": "MP2",
       "title": "Methoden der Wissenschaftsforschung",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/pflicht",
       "goals": "Die Student*innen erwerben ein grundlegendes Verständnis für zentrale Fragestellungen und die damit verbundenen methodischen Konzepte der Wissenschaftsforschung. Sie erhalten einen systematischen Überblick über die wichtigsten methodischen Zugänge (quantitative, qualitative, bibliometrische und netzwerkanalytische Verfahren) und können diese wissenschaftstheoretisch einordnen und bewerten. Auf Basis konkreter Forschungsfragen aus dem Bereich der Wissenschaftsforschung entwickeln die Student*innen eigenständig angemessene methodische Designs. Dabei lernen sie erkenntnistheoretische Grundpositionen kennen und können Forschungsmethoden hinsichtlich ihrer jeweiligen Möglichkeiten und Grenzen kritisch einschätzen.",
       "topics": [
         "Einblick in den Methodenkanon der Wissenschaftsforschung",
@@ -63,7 +63,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP2/mapping/quadriga-dlf-2_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP2/mapping/quadriga-dlf-2_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
@@ -74,7 +74,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP2/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP2/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -85,7 +85,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP2/mapping/quadriga-dlf-4_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP2/mapping/quadriga-dlf-4_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.3",
@@ -98,12 +98,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP3",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP3",
       "@type": "Module",
       "code": "MP3",
       "title": "Einführung in die Bibliometrie",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/pflicht",
       "goals": "Die Student*innen erwerben Kompetenzen im reflexiven Umgang mit bibliometrischen und szientometrischen Verfahren unter Nutzung offener bibliographischer Dateninfrastrukturen. Sie erhalten einen systematischen Einblick in evaluative Verfahren zur Bewertung von Wissenschaft und Wissenschaftler*innen sowie in explorative Verfahren zur Kartierung und Aufdeckung von Dynamiken und Strukturen in Wissenschaftsfeldern. Darüber hinaus werden die Student*innen mit kurativen Verfahren vertraut gemacht und lernen, unterschiedliche Aspekte der Datenqualität bibliographischer Daten zu bewerten. Sie erwerben praktische Fertigkeiten im Umgang mit einschlägigen Web-Schnittstellen und in der statistischen Programmierung mit Schwerpunkt auf der Programmiersprache R.",
       "topics": [
         "Grundzüge bibliographischer Datenbanken und ihrer Spezifika",
@@ -120,7 +120,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP3/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP3/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -131,7 +131,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP3/mapping/quadriga-dlf-1_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP3/mapping/quadriga-dlf-1_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.2",
@@ -142,7 +142,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP3/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP3/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -153,7 +153,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP3/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP3/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP3/mapping/quadriga-dlf-4_2",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP3/mapping/quadriga-dlf-4_2",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.2",
@@ -175,7 +175,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP3/mapping/quadriga-dlf-4_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP3/mapping/quadriga-dlf-4_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.3",
@@ -188,12 +188,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP4",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP4",
       "@type": "Module",
       "code": "MP4",
       "title": "Wissenschaft organisieren und gestalten",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/pflicht",
       "goals": "Die Student*innen erwerben fundierte Kenntnisse über die gesellschaftliche Einbettung des Wissenschaftssystems und verstehen die komplexen Wechselwirkungen und Interaktionsformen der Wissenschaft mit anderen gesellschaftlichen Teilbereichen wie Medien, Politik und Wirtschaft. Sie setzen sich intensiv mit den Institutionen und Verfahren des Wissenstransfers auseinander. Darauf aufbauend entwickeln die Student*innen ein differenziertes Verständnis für die vielschichtigen Legitimations-, Gestaltungs- und Steuerungsmuster der Wissenschaft und werden befähigt, eigenständig Forschungsfragen in diesem Themenbereich zu entwickeln.",
       "topics": [
         "Grundlegende Steuerungs- und Legitimationsmuster der Wissenschaft",
@@ -203,7 +203,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP4/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP4/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -216,12 +216,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP5",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP5",
       "@type": "Module",
       "code": "MP5",
       "title": "Projektmodul",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/pflicht",
       "goals": "Projektmodule dienen der problembezogenen Vertiefung fachwissenschaftlicher Kenntnisse und Methoden. Die Student*innen sind in der Lage, eine größere Aufgabenstellung in Abstimmung mit den beteiligten Mitstudent*innen und unter Anleitung der Lehrer*innen zu bearbeiten. Neben den jeweils fachlichen haben sie sich während der Projektarbeit auch überfachliche Qualifikationen (z. B. Entwicklung von Teamfähigkeit, Kommunikationsfähigkeit, Zeitmanagement) angeeignet.",
       "topics": [
         "Fokussierung auf eine Fragestellung aus der Forschung und Praxis",
@@ -231,7 +231,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP5/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP5/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -244,12 +244,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP6",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP6",
       "@type": "Module",
       "code": "MP6",
       "title": "Praktikum",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/pflicht",
       "goals": "Das Praktikum im Masterstudiengang Wissenschaftsforschung verfolgt das Ziel, den Student*innen einen vertieften Einblick in die Praxis wissenschaftsbezogener Arbeitsfelder zu ermöglichen. Es soll Student*innen befähigen, ihr im Studium erworbenes theoretisches Wissen auf konkrete Fragestellungen, Problemlagen und Organisationszusammenhänge anzuwenden und dabei ihre methodischen, analytischen und kommunikativen Kompetenzen weiterzuentwickeln. Student*innen lernen Organisationen kennen, in denen wissenschaftsbezogene Forschung, Politikberatung, Evaluation, Wissenschaftsmanagement oder Wissenschaftskommunikation betrieben werden. Im Rahmen konkreter Aufgaben oder Projekte wenden die Student*innen qualitative, quantitative oder theoretisch-konzeptionelle Ansätze an, reflektieren deren Einsatzmöglichkeiten und -grenzen in der Praxis. Die Student*innen lernen, komplexe wissenschaftsbezogene Problemlagen zu strukturieren, systematisch zu bearbeiten und in institutionelle oder gesellschaftliche Kontexte einzuordnen. Je nach Einsatzfeld erwerben die Student*innen praktische Fähigkeiten im Projektmanagement, in der Datenaufbereitung und -analyse, in der Berichtslegung oder in der Kommunikation wissenschaftlicher Inhalte. Durch das Praktikum entwickeln die Student*innen ein besseres Verständnis für mögliche Karrierewege, ihre eigenen Interessen und Kompetenzen sowie für Anforderungen und Bedingungen wissenschaftsbezogener Berufsfelder.",
       "topics": [
         "Forschungsinstitutionen mit Bezug zur Wissenschaftsforschung",
@@ -259,7 +259,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP6/mapping/quadriga-dlf-3_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP6/mapping/quadriga-dlf-3_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/3.1",
@@ -270,7 +270,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP6/mapping/quadriga-dlf-2_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP6/mapping/quadriga-dlf-2_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.3",
@@ -281,7 +281,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP6/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP6/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -292,7 +292,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP6/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP6/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -305,12 +305,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP7",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP7",
       "@type": "Module",
       "code": "MP7",
       "title": "Masterarbeit und Verteidigung",
       "credits": 30,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/pflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/pflicht",
       "goals": "Die Studierenden weisen die Befähigung zum selbständigen wissenschaftlichen Arbeiten durch die schriftliche Bearbeitung einer Problemstellung aus der Wissenschaftsforschung nach. Bei der Anfertigung der Masterarbeit erhalten die Studierenden Unterstützung in einem obligatorischen Begleitcolloquium, in dem sie lernen, ihre Fragestellung methodisch umzusetzen und in dem sie den Entwurf ihrer Arbeit erörtern können. Die Masterarbeit zeigt, dass die Student*innen in der Lage sind, innerhalb einer vorgegebenen Zeit eine Fragestellung aus dem Bereich der Wissenschaftsforschung eigenständig mit wissenschaftlichen Methoden zu bearbeiten.",
       "topics": [
         "Masterarbeitsthemen aus aktuellen Forschungsschwerpunkten bzw. Problemkontexten der Wissenschaftsforschung",
@@ -319,7 +319,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MP7/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MP7/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -332,12 +332,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP1",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP1",
       "@type": "Module",
       "code": "MWP1",
       "title": "Wissenschaftsethnographie",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/wahlpflicht",
       "goals": "Die Student*innen erwerben die Fähigkeit, wissenschaftliche Erkenntnisprozesse in ihren technischen, sozialen und politischen Verflechtungen ethnographisch zu erforschen und zu analysieren. Im Mittelpunkt stehen dabei die Praktiken und die Situiertheit von Wissensproduktion und -aushandlung in gesellschaftlich relevanten Feldern. Das Modul vermittelt ein Verständnis von Wissenschaft als soziotechnische Praxis, in der Akteure, Artefakte, Diskurse und Technologien ko-konstituiert werden. Die Student*innen erwerben vertiefte Kenntnisse zentraler sozial- und kulturwissenschaftlicher Theorien zu Wissen, Praxis und Materialität und entwickeln eine methodische Sensibilität im Umgang mit ethnographischen Methoden – insbesondere teilnehmender Beobachtung, dichter Beschreibung, kollaborativen Ansätzen und forschungspraktischer Reflexion. Dabei setzen sie sich kritisch mit Fragen von Nähe und Distanz, Teilhabe, Autor*innenschaft und Macht auseinander. Das Modul vermittelt darüber hinaus Reflexionswissen, das es ermöglicht, Wissenschaften nicht nur als Untersuchungsgegenstand, sondern auch als Kooperationspartner eines ethnographisch informierten Erkenntnisprozesses zu verstehen. Die Student*innen erkennen die epistemischen und politischen Potenziale einer Wissenschaftsethnographie, die Wissenschaft nicht von außen beschreibt, sondern als Teil gesellschaftlicher Aushandlungsprozesse und materieller Ökologien begreift. Sie haben die Gelegenheit, ethnographische Zugänge praktisch zu erproben und eigene forschende Perspektiven zu entwickeln.",
       "topics": [
         "Sozialanthropologische Ansätze der Wissenschafts- und Technikforschung",
@@ -347,7 +347,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP1/mapping/quadriga-dlf-2_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP1/mapping/quadriga-dlf-2_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
@@ -358,7 +358,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP1/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP1/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -371,12 +371,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP2",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP2",
       "@type": "Module",
       "code": "MWP2",
       "title": "Wissenschaftsphilosophie",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/wahlpflicht",
       "goals": "Die Student*innen kennen spezifische philosophische Probleme, Theorieansätze und Argumente, die für die Wissenschaftsforschung relevant sind, insbesondere solche aus philosophischer Wissenschafts- und Erkenntnistheorie. Sie entwickeln ein reflektiertes Verständnis der Bedingungen und Grenzen verlässlichen Wissens angesichts der Pluralität und Komplexität moderner Wissenschaften, und sie lernen, wissenschaftliches Wissen auf seine erkenntnistheoretischen, methodologischen und metaphysischen Voraussetzungen hin zu befragen.",
       "topics": [
         "Philosophische Wissenschafts- und Erkenntnistheorie",
@@ -385,7 +385,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP2/mapping/quadriga-dlf-4_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP2/mapping/quadriga-dlf-4_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.3",
@@ -398,12 +398,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP3",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP3",
       "@type": "Module",
       "code": "MWP3",
       "title": "Hochschulforschung",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/wahlpflicht",
       "goals": "Die Student*innen können, aufbauend auf den erworbenen wissenschaftlichen Methodenkompetenzen, wissenschaftliche Fragestellungen eigenständig bearbeiten, die Ergebnisse auswerten und darstellen. Sie haben Kenntnisse zu ausgewählten theoretischen Konzepten und Methoden sowie der damit verbundenen Diskurse zum Zusammenspiel von Wissenschaft, Hochschule und Bildung erworben. Die Student*innen sind in der Lage, sich relevante theoretische Ansätze systematisch zu erschließen, diese miteinander zu vergleichen und sowohl implizite als auch explizite theoretische und methodologische Voraussetzungen in Bezug auf bestimmte Gegenstandsbereiche kritisch zu differenzieren und zu beurteilen. Darüber hinaus können sie eigenständig Forschungsfragestellungen entwickeln und diese methodologisch fundiert reflektieren.",
       "topics": [
         "Grundlegende Kenntnisse empirischer Hochschulforschung",
@@ -413,7 +413,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP3/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP3/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -424,7 +424,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP3/mapping/quadriga-dlf-5_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP3/mapping/quadriga-dlf-5_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/5.3",
@@ -437,12 +437,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP4",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP4",
       "@type": "Module",
       "code": "MWP4",
       "title": "Wissenschaftsgeschichte",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/wahlpflicht",
       "goals": "Im Zentrum der Ausbildung in der Wissenschaftsgeschichte steht die Herausbildung der modernen Wissenschaft. Student*innen lernen Wissenschaft als sowohl historisch kontingente als auch historisch situierte Form der Weltaneignung und kulturgeleitete Wirklichkeitsproduktion zu begreifen und als Prozess zu analysieren. Sie lernen, wie Erkenntnispraktiken, Theorien und Begriffe nicht zeitlos, sondern von sozialen, politischen und kulturellen Bedingungen geprägt sind. Sie lernen, dominante Fortschritts- und Rationalitätsnarrative zu hinterfragen und alternative Perspektiven, etwa postkoloniale, feministische oder infrastrukturgeschichtliche Ansätze, systematisch in ihre Analysen einzubeziehen und dadurch, Wissenschaftsgeschichte als Geschichte gesellschaftlicher Aushandlungsprozesse zu verstehen; einschließlich der Verwobenheit wissenschaftlicher Diskurse mit Kultur, Macht, Geschlecht, Technik, Medien und Politik. Die Student*innen entwickeln methodische Sensibilität für den Umgang mit historischen Texten, Objekten, Daten und Materialien. Sie sind in der Lage, wissenschaftliche Aussagen im historischen Diskursraum kritisch einzuordnen und eigene Forschungsvorhaben zu entwickeln. Ein Verständnis für die historisch entstandenen Strukturen der Wissenschaft ermöglicht einen breiteren Zugang zu zentralen Themen der Wissenschaftsforschung.",
       "topics": [
         "Exemplarisch vertiefendes Wissen zur Geschichte der modernen Wissenschaft",
@@ -452,12 +452,12 @@
       "mappings": []
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP5",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP5",
       "@type": "Module",
       "code": "MWP5",
       "title": "Informationswissenschaft",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/wahlpflicht",
       "goals": "Die Student*innen kennen spezifische Theorien, Methoden und Strömungen der Informationswissenschaft und können diese anwenden, wobei Möglichkeiten der Nutzung, Organisation und der Repräsentation von Informationen im Vordergrund stehen. Sie kennen zentrale Prinzipien der Planung und Durchführung von Forschungsdesigns zur Bearbeitung informationswissenschaftlicher Forschungsfragen und haben einige Instrumente an Beispielen angewandt. Sie sind dadurch in der Lage, eigene informationswissenschaftliche Studien durchzuführen. Die Student*innen können Zusammenhänge zwischen informationswissenschaftlichen Fragestellungen und praktischen Anwendungsfeldern herstellen. Die Teilnehmer*innen sind in der Lage, Informationsprozesse und Informationspraktiken in wissenschaftlichen und gesellschaftlichen Zusammenhängen systematisch zu analysieren, zu evaluieren und zu reflektieren.",
       "topics": [
         "Informationswissenschaftliche Theorien und Strömungen",
@@ -470,7 +470,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP5/mapping/quadriga-dlf-1_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP5/mapping/quadriga-dlf-1_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.1",
@@ -481,7 +481,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP5/mapping/quadriga-dlf-1_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP5/mapping/quadriga-dlf-1_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/1.3",
@@ -492,7 +492,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP5/mapping/quadriga-dlf-2_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP5/mapping/quadriga-dlf-2_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
@@ -503,7 +503,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP5/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP5/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -516,12 +516,12 @@
       ]
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP6",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP6",
       "@type": "Module",
       "code": "MWP6",
       "title": "Aktuelle Themen und Theorien der Wissenschaftsforschung",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/wahlpflicht",
       "goals": "Die Student*innen haben sich mit spezifischen Forschungsansätzen der Wissenschaftsforschung vertieft auseinandergesetzt. Sie sind in der Lage, den Forschungsstand im Fachgebiet einzuordnen und Forschungsergebnisse kritisch zu analysieren. Das erworbene Reflexionswissen erlaubt Student*innen unterschiedliche, z.T. auch konkurrierende, Theoriestränge differenziert einzuordnen und auf aktuelle Themen anzuwenden.",
       "topics": [
         "Überblick über aktuelle theoriegeleitete Debatten der Wissenschaftsforschung",
@@ -532,12 +532,12 @@
       "mappings": []
     },
     {
-      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP7",
+      "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP7",
       "@type": "Module",
       "code": "MWP7",
       "title": "Fortgeschrittene Methoden der Wissenschaftsforschung",
       "credits": 10,
-      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/category/wahlpflicht",
+      "category": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/category/wahlpflicht",
       "goals": "Die Student*innen haben ihre methodischen Kenntnisse in der Wissenschaftsforschung vertieft. Aufbauend auf den erworbenen methodischen Kompetenzen der Einführungsveranstaltungen sind sie in der Lage, mit speziellen methodischen Instrumenten spezifische Fragestellungen zu bearbeiten. Dabei haben sich die Student*innen im Rahmen eines speziellen Forschungsseminars mit einer für die Wissenschaftsforschung besonders relevanten Methode vertieft auseinandergesetzt.",
       "topics": [
         "Aktuelle methodologische Debatten der quantitativen Wissenschaftsforschung",
@@ -550,7 +550,7 @@
       ],
       "mappings": [
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP7/mapping/quadriga-dlf-2_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP7/mapping/quadriga-dlf-2_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/2.1",
@@ -561,7 +561,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP7/mapping/quadriga-dlf-4_1",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP7/mapping/quadriga-dlf-4_1",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.1",
@@ -572,7 +572,7 @@
           }
         },
         {
-          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-wf-ma/module/MWP7/mapping/quadriga-dlf-4_3",
+          "@id": "https://schnaitter.github.io/Kompetenzbrille/programs/hu-berlin-ma-wf/module/MWP7/mapping/quadriga-dlf-4_3",
           "@type": "CompetencyMapping",
           "framework": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4",
           "competency": "https://schnaitter.github.io/Kompetenzbrille/frameworks/quadriga-dlf/4/competency/4.3",
