@@ -2,7 +2,6 @@ programs:
   - data/programs/hu-berlin-ba-biw.yaml
   - data/programs/hu-berlin-ma-is.yaml
   - data/programs/hu-berlin-ma-biw-wb.yaml
-  - data/programs/hu-berlin-ma-wf.yaml
   - data/programs/htwk-leipzig-ba-biw.yaml
   - data/programs/fhgr-graubuenden-ba-is.yaml
 
