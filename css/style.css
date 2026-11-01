@@ -950,6 +950,7 @@ a.view-tab.active { color: #fff; }
   box-shadow: var(--shadow);
 }
 .ed-fw-comp[hidden] { display: none; }
+.ed-fw-orientation { --phase-color: var(--phase-0); }
 .ed-fw-comp-head { display: flex; align-items: baseline; gap: 6px; }
 .ed-fw-code { font-weight: 800; color: var(--phase-color); white-space: nowrap; }
 .ed-fw-title { font-weight: 600; flex: 1; }

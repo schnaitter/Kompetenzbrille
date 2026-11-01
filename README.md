@@ -39,8 +39,8 @@ The QUADRIGA **Orientierungswissen** (English: “conceptual knowledge”) is
 stored as **phase 0** in the data, but presented as an unnumbered,
 phase-less competency before all other competencies, with its description
 shown in the same detail layout as competency cards. It lies outside the
-data-flow phases, forms the foundation of all of them, and is currently not
-mapped to individual modules.
+data-flow phases and forms the foundation of all of them. Modules can be
+mapped to it with the reserved target `__orientation`.
 
 A single **Language** switcher (Sprache) controls the UI strings, the framework
 translation and the bilingual mapping notes at once.
@@ -87,11 +87,11 @@ What it can do:
 - **Load** a program from `data/manifest.yaml`, **upload** a local `.yaml` file,
   or **create** a new program from a template.
 - Edit the base information, module categories, modules (code, title, credits,
-  category, goals, topics) and per-module **mappings** (framework, competency,
-  depth 1–3, bilingual rationale). Framework and competency dropdowns are
-  data-driven from the `frameworks:` list in `data/manifest.yaml` (currently
-  only `quadriga-dlf`); add new framework files here and they appear
-  automatically.
+  category, goals, topics) and per-module **mappings** (framework, competency or
+  the reserved `__orientation` target, depth 1–3, bilingual rationale).
+  Framework and competency dropdowns are data-driven from the `frameworks:` list
+  in `data/manifest.yaml` (currently only `quadriga-dlf`); add new framework
+  files here and they appear automatically.
 - **Mark for deletion** modules, mappings, topics and categories (strikethrough,
   dimmed); they are stripped on export. Newly added empty rows get a direct
   **Remove** button instead.
@@ -198,6 +198,24 @@ modules:
           en: …
 ```
 
+A module can also be mapped to the **Orientierungswissen** of a framework that
+declares a phase `0` (e.g. QUADRIGA). Use the reserved target
+`__orientation` instead of a competency code:
+
+```yaml
+    mappings:
+      - framework: quadriga-dlf
+        competency: __orientation
+        level: 2
+        note:
+          de: …
+          en: …
+```
+
+In the generated JSON-LD this mapping points to the framework's phase-0 IRI
+(`…/phase/0`), because the Orientierungswissen is a phase-level concept rather
+than a numbered competency.
+
 **Note:** the module ↔ competency mappings are an editorial approximation
 derived from the module descriptions; adjust `level`/`note` in the data files
 to refine them. Careful with YAML types: quote codes like `"1.1"` and ids like
@@ -229,7 +247,8 @@ via a top-level `$schema:` key):
 | `data/jsonld/*.jsonld` | JSON-LD serializations of all data files (generated) |
 
 Cross-file constraints that JSON Schema cannot express (phase/category/
-framework/competency references) are listed in each schema's `$comment2`.
+framework/competency references, including the reserved `__orientation` target)
+are listed in each schema's `$comment2`.
 Data files reference their schema via a `$schema:` key; both schemas also
 declare the JSON-LD keywords (`@context`, `@id`, `@type`) so a single JSON
 document can be valid JSON-LD *and* schema-valid data.
