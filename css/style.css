@@ -91,6 +91,18 @@ html, body {
   color: var(--ink);
   max-width: 230px;
 }
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  color: var(--ink-soft);
+  line-height: 0;
+  transition: color .15s, background .15s;
+}
+.github-link:hover, .github-link:focus-visible { color: var(--ink); background: var(--accent-soft); }
+.github-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 /* ---------- layout ---------- */
 .layout {

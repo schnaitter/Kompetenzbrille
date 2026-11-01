@@ -373,6 +373,11 @@
 
   function renderChrome() {
     document.getElementById("lbl-language").textContent = t("language");
+    var ghLink = document.querySelector(".github-link");
+    if (ghLink) {
+      ghLink.setAttribute("aria-label", t("githubRepo"));
+      ghLink.setAttribute("title", t("githubRepo"));
+    }
 
     var tabs = document.getElementById("view-tabs");
     tabs.innerHTML = "";
