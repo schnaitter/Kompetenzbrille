@@ -304,6 +304,9 @@ html, body {
 }
 .comp-card.unaddressed { opacity: .62; }
 .orientation-section { margin-bottom: 26px; }
+/* the orientation card spans the whole row (all competency columns) so its
+ * long description needs noticeably less height */
+.orientation-section .comp-card { grid-column: 1 / -1; }
 .orientation-card { cursor: pointer; }
 .orientation-card:hover { border-color: var(--phase-color, var(--line)); }
 .orientation-card .comp-title { cursor: pointer; }
