@@ -36,6 +36,8 @@ for (const f of fs.readdirSync('data/programs').filter(f=>f.endsWith('.yaml'))) 
   const d = yaml.load(fs.readFileSync('data/programs/'+f,'utf8'));
   if (!validators.program(d)) { fail++; console.log('FAIL program', f, JSON.stringify(validators.program.errors,null,1)); }
   else console.log('ok   program', f);
+  const expectedId = f.replace(/\.yaml$/, '');
+  if (d.id !== expectedId) { fail++; console.log('FAIL program', f, 'id', d.id, 'does not match file name (expected', expectedId + ')'); }
   programs[d.id] = d;
 }
 // cross-file checks

@@ -19,7 +19,7 @@
       "type": "string",
       "maxLength": 64,
       "pattern": "^[a-z][a-z0-9-]*$",
-      "description": "Stable identifier of the study program (e.g. hu-berlin-biw-ma-wb)."
+      "description": "Stable identifier of the study program. Format: <institution abbreviation>-<location>-<degree abbreviation>-<short name>, e.g. hu-berlin-ba-biw. Must match the file name (data/programs/<id>.yaml)."
     },
     "title": { "type": "string", "minLength": 1 },
     "institution": { "type": "string", "minLength": 1 },
@@ -160,7 +160,7 @@
   "$comment2": "Cross-file constraints not expressible in JSON Schema alone: each modules[].category must equal some categories[].id; each mappings[].framework must identify a framework present in data/frameworks/; each mappings[].competency must be a code declared by that framework; modules registered in data/manifest.yaml.",
   "examples": [
     {
-      "id": "hu-berlin-biw-ma-wb",
+      "id": "hu-berlin-ma-biw-wb",
       "title": "MA Bibliotheks- und Informationswissenschaft (weiterbildend, Fernstudium)",
       "institution": "Humboldt-Universität zu Berlin, Philosophische Fakultät",
       "institutionAbbr": "HU",

@@ -1,5 +1,5 @@
 $schema: data/schemas/program-schema.json
-id: hu-berlin-wf-ma
+id: hu-berlin-ma-wf
 title: MA Wissenschaftsforschung
 institution: Humboldt-Universität zu Berlin, Philosophische Fakultät
 institutionAbbr: HU
