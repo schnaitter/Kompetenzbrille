@@ -3,6 +3,7 @@
 window.I18N = {
   de: {
     language: "Sprache",
+    githubRepo: "GitHub-Repository",
     viewProgram: "Programm-Sicht",
     viewFramework: "Framework-Sicht",
     viewMatrix: "Matrix",
@@ -79,6 +80,7 @@ window.I18N = {
   },
   en: {
     language: "Language",
+    githubRepo: "GitHub repository",
     viewProgram: "Program view",
     viewFramework: "Framework view",
     viewMatrix: "Matrix",

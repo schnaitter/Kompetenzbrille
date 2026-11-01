@@ -1747,6 +1747,11 @@
     if (sel) sel.value = state.lang;
     var lbl = byId("lbl-language");
     if (lbl) lbl.textContent = t("language");
+    var ghLink = document.querySelector(".github-link");
+    if (ghLink) {
+      ghLink.setAttribute("aria-label", t("githubRepo"));
+      ghLink.setAttribute("title", t("githubRepo"));
+    }
     var nv = byId("nav-view");
     if (nv) nv.textContent = t("editorNavView");
     var ne = byId("nav-editor");
