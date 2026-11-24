@@ -269,6 +269,32 @@ check that the generated JSON-LD files are up to date.
 Run everything at once — regenerate the JSON-LD serializations and the favicon,
 then validate — with `npm run all`.
 
+## Accessibility checks (WCAG 2.2 AA)
+
+The `Accessibility` GitHub Actions workflow
+(`.github/workflows/accessibility.yml`) scans the app with
+[Playwright](https://playwright.dev/) + the
+[IBM Equal Access Accessibility Checker](https://www.npmjs.com/package/accessibility-checker)
+(policy `WCAG_2_2`) on **every pull request and every push to `main`** — no
+local setup needed. It starts its own static server, scans nine states
+(program / framework / matrix views in DE + EN, help modal, module modal,
+editor) driven by the app's hash parameters, and uploads the JSON + HTML
+reports as the `a11y-report` artifact. Configuration: `aceconfig.js`,
+scan definitions: `tests/a11y/run.js`.
+
+Currently the scan step is **report-only** (phase 0 of issue #58); once
+baselines are committed in `tests/a11y/baselines/`, new violations will
+block the PR.
+
+Optional local run (not required — CI covers it):
+
+```sh
+npm install
+npx playwright install chromium
+npm run serve &        # static server on http://127.0.0.1:4173
+npm run test:a11y      # reports land in results/
+```
+
 ## Branding
 
 The favicon is generated from the SVG logo (`assets/logo.svg`):
@@ -300,6 +326,8 @@ data/programs/           study program representations — HU Berlin (BA BIW,
 data/schemas/            JSON Schema + JSON-LD context for the data formats
 data/jsonld/             JSON-LD serializations (generated from the YAML)
 scripts/                 data validation + YAML→JSON-LD + favicon generation
+tests/a11y/              Playwright + IBM Equal Access WCAG 2.2 scans
+aceconfig.js             accessibility-checker configuration (WCAG_2_2)
 assets/                  brand assets (logo.svg, generated favicon.ico) + source PDFs
-.github/workflows/       GitHub Pages deployment
+.github/workflows/       GitHub Pages deployment, data validation, accessibility scans
 ```
