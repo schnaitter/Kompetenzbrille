@@ -290,7 +290,7 @@
                 "dom": "/html[1]/body[1]/div[1]/aside[1]/section[1]/select[1]",
                 "aria": "/document[1]/complementary[1]/combobox[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -333,7 +333,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cselect%20aria-label%3D%5C%22Minimum%20depth%5C%22%20data-action%3D%5C%22set-minlevel%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -353,49 +353,18 @@
             "apiArgs": [],
             "bounds": {
                 "left": 37,
-                "top": 437,
-                "height": 14,
-                "width": 19
+                "top": 435,
+                "height": 24,
+                "width": 25
             },
             "snippet": "<button data-action=\"phases-all\">",
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-all%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
-            "ruleId": "target_spacing_sufficient",
-            "value": [
-                "VIOLATION",
-                "FAIL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[2]/div[1]/button[1]",
-                "aria": "/document[1]/complementary[1]/group[2]/button[1]"
-            },
-            "ruleTime": 0,
-            "reasonId": "violation_spacing",
-            "message": "Undersized target \"button\" does not have sufficient spacing of 12 CSS pixels from another target \"button\"",
-            "messageArgs": [
-                "button",
-                "button"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 437,
-                "height": 14,
-                "width": 19
-            },
-            "snippet": "<button data-action=\"phases-all\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "violation",
-            "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html#%7B%22message%22%3A%22Undersized%20target%20%5C%22button%5C%22%20does%20not%20have%20sufficient%20spacing%20of%2012%20CSS%20pixels%20from%20another%20target%20%5C%22button%5C%22%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-all%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22violation_spacing%22%2C%22ruleId%22%3A%22target_spacing_sufficient%22%2C%22msgArgs%22%3A%5B%22button%22%2C%22button%22%5D%7D"
-        },
-        {
             "ruleId": "style_focus_visible",
             "value": [
                 "VIOLATION",
@@ -411,50 +380,19 @@
             "messageArgs": [],
             "apiArgs": [],
             "bounds": {
-                "left": 56,
-                "top": 437,
-                "height": 14,
-                "width": 33
+                "left": 62,
+                "top": 435,
+                "height": 24,
+                "width": 39
             },
             "snippet": "<button data-action=\"phases-none\">",
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
-            "ruleId": "target_spacing_sufficient",
-            "value": [
-                "VIOLATION",
-                "FAIL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[2]/div[1]/button[2]",
-                "aria": "/document[1]/complementary[1]/group[2]/button[2]"
-            },
-            "ruleTime": 0,
-            "reasonId": "violation_spacing",
-            "message": "Undersized target \"button\" does not have sufficient spacing of 12 CSS pixels from another target \"button\"",
-            "messageArgs": [
-                "button",
-                "button"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 56,
-                "top": 437,
-                "height": 14,
-                "width": 33
-            },
-            "snippet": "<button data-action=\"phases-none\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "violation",
-            "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html#%7B%22message%22%3A%22Undersized%20target%20%5C%22button%5C%22%20does%20not%20have%20sufficient%20spacing%20of%2012%20CSS%20pixels%20from%20another%20target%20%5C%22button%5C%22%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22violation_spacing%22%2C%22ruleId%22%3A%22target_spacing_sufficient%22%2C%22msgArgs%22%3A%5B%22button%22%2C%22button%22%5D%7D"
-        },
-        {
             "ruleId": "style_focus_visible",
             "value": [
                 "VIOLATION",
@@ -464,56 +402,25 @@
                 "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[3]/div[1]/button[1]",
                 "aria": "/document[1]/complementary[1]/group[3]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
             "apiArgs": [],
             "bounds": {
                 "left": 37,
-                "top": 620,
-                "height": 14,
-                "width": 19
+                "top": 624,
+                "height": 24,
+                "width": 25
             },
             "snippet": "<button data-action=\"comps-all\">",
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-all%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
-            "ruleId": "target_spacing_sufficient",
-            "value": [
-                "VIOLATION",
-                "FAIL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[3]/div[1]/button[1]",
-                "aria": "/document[1]/complementary[1]/group[3]/button[1]"
-            },
-            "ruleTime": 0,
-            "reasonId": "violation_spacing",
-            "message": "Undersized target \"button\" does not have sufficient spacing of 12 CSS pixels from another target \"button\"",
-            "messageArgs": [
-                "button",
-                "button"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 620,
-                "height": 14,
-                "width": 19
-            },
-            "snippet": "<button data-action=\"comps-all\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "violation",
-            "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html#%7B%22message%22%3A%22Undersized%20target%20%5C%22button%5C%22%20does%20not%20have%20sufficient%20spacing%20of%2012%20CSS%20pixels%20from%20another%20target%20%5C%22button%5C%22%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-all%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22violation_spacing%22%2C%22ruleId%22%3A%22target_spacing_sufficient%22%2C%22msgArgs%22%3A%5B%22button%22%2C%22button%22%5D%7D"
-        },
-        {
             "ruleId": "style_focus_visible",
             "value": [
                 "VIOLATION",
@@ -529,48 +436,17 @@
             "messageArgs": [],
             "apiArgs": [],
             "bounds": {
-                "left": 56,
-                "top": 620,
-                "height": 14,
-                "width": 33
+                "left": 62,
+                "top": 624,
+                "height": 24,
+                "width": 39
             },
             "snippet": "<button data-action=\"comps-none\">",
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
-        },
-        {
-            "ruleId": "target_spacing_sufficient",
-            "value": [
-                "VIOLATION",
-                "FAIL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[3]/div[1]/button[2]",
-                "aria": "/document[1]/complementary[1]/group[3]/button[2]"
-            },
-            "ruleTime": 0,
-            "reasonId": "violation_spacing",
-            "message": "Undersized target \"button\" does not have sufficient spacing of 12 CSS pixels from another target \"button\"",
-            "messageArgs": [
-                "button",
-                "button"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 56,
-                "top": 620,
-                "height": 14,
-                "width": 33
-            },
-            "snippet": "<button data-action=\"comps-none\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "violation",
-            "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html#%7B%22message%22%3A%22Undersized%20target%20%5C%22button%5C%22%20does%20not%20have%20sufficient%20spacing%20of%2012%20CSS%20pixels%20from%20another%20target%20%5C%22button%5C%22%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22violation_spacing%22%2C%22ruleId%22%3A%22target_spacing_sufficient%22%2C%22msgArgs%22%3A%5B%22button%22%2C%22button%22%5D%7D"
         },
         {
             "ruleId": "style_focus_visible",
@@ -582,7 +458,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/thead[1]/tr[1]/th[2]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[1]/row[1]/columnheader[2]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -722,7 +598,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/thead[1]/tr[1]/th[7]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[1]/row[1]/columnheader[7]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1002,7 +878,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/thead[1]/tr[1]/th[17]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[1]/row[1]/columnheader[17]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1030,7 +906,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/thead[1]/tr[1]/th[18]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[1]/row[1]/columnheader[18]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1058,7 +934,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[1]/tr[1]/th[1]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[2]/row[1]/rowheader[1]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1086,7 +962,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[2]/tr[2]/th[1]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[3]/row[2]/rowheader[1]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1114,7 +990,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[2]/tr[2]/td[6]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[3]/row[2]/cell[6]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1142,7 +1018,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[2]/tr[2]/td[9]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[3]/row[2]/cell[9]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1170,7 +1046,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[2]/tr[3]/th[1]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[3]/row[3]/rowheader[1]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1198,7 +1074,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[2]/tr[3]/td[2]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[3]/row[3]/cell[2]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1282,7 +1158,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[2]/tr[4]/td[1]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[3]/row[4]/cell[1]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1310,7 +1186,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[2]/tr[4]/td[8]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[3]/row[4]/cell[8]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1366,7 +1242,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[2]/tr[4]/td[13]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[3]/row[4]/cell[13]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1422,7 +1298,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[3]/tr[2]/th[1]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[4]/row[2]/rowheader[1]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1450,7 +1326,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[3]/tr[2]/td[2]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[4]/row[2]/cell[2]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1618,7 +1494,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[3]/tr[3]/td[16]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[4]/row[3]/cell[16]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1730,7 +1606,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[3]/tr[4]/td[11]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[4]/row[4]/cell[11]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1814,7 +1690,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[4]/tr[2]/td[3]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[5]/row[2]/cell[3]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1842,7 +1718,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[4]/tr[2]/td[6]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[5]/row[2]/cell[6]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1870,7 +1746,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[4]/tr[2]/td[10]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[5]/row[2]/cell[10]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1926,7 +1802,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[4]/tr[2]/td[15]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[5]/row[2]/cell[15]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1954,7 +1830,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[4]/tr[2]/td[16]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[5]/row[2]/cell[16]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1982,7 +1858,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[4]/tr[2]/td[17]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[5]/row[2]/cell[17]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2038,7 +1914,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[4]/tr[3]/td[10]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[5]/row[3]/cell[10]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2206,7 +2082,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[5]/tr[2]/td[11]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[6]/row[2]/cell[11]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2486,7 +2362,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/div[2]/table[1]/tbody[6]/tr[2]/td[10]/button[1]",
                 "aria": "/document[1]/main[1]/table[1]/rowgroup[7]/row[2]/cell[10]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2674,7 +2550,7 @@
         }
     ],
     "numExecuted": 5839,
-    "ruleTime": 136,
+    "ruleTime": 139,
     "nls": {
         "aria_content_in_landmark": {
             "0": "All content must reside within an element with a landmark role",
@@ -2692,10 +2568,6 @@
             "0": "The keyboard focus indicator should be visible when default border or outline is modified by CSS",
             "potential_focus_not_visible": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'"
         },
-        "target_spacing_sufficient": {
-            "0": "The target must be sufficiently sized or spaced from other targets",
-            "violation_spacing": "Undersized target \"{0}\" does not have sufficient spacing of 12 CSS pixels from another target \"{1}\""
-        },
         "aria_complementary_label_visible": {
             "0": "Each element with \"complementary\" role should have a visible label that describes its purpose",
             "Fail_1": "Element with \"complementary\" role does not have a visible label"
@@ -2703,16 +2575,16 @@
     },
     "summary": {
         "counts": {
-            "ignored": 86,
+            "ignored": 91,
             "elements": 92,
-            "elementsViolation": 4,
-            "elementsViolationReview": 6,
-            "violation": 4,
-            "potentialviolation": 5,
+            "elementsViolation": 0,
+            "elementsViolationReview": 1,
+            "violation": 0,
+            "potentialviolation": 0,
             "recommendation": 0,
             "potentialrecommendation": 5,
             "manual": 1,
-            "pass": 5738
+            "pass": 5742
         },
         "scanTime": 249,
         "ruleArchive": "Latest Deployment (latest)",
@@ -2724,10 +2596,10 @@
             "potentialviolation",
             "recommendation"
         ],
-        "startScan": 1795618334771,
+        "startScan": 1795618430134,
         "URL": "http://127.0.0.1:4173/index.html#view=matrix&lang=en&program=hu-berlin-ma-is"
     },
-    "scanID": "24c9ead1-ba2d-4d18-9844-c3522d7c4354",
+    "scanID": "b202d82f-bc71-4289-8d8b-64a1fc4d1a09",
     "toolID": "accessibility-checker-v4.0.35",
     "label": "viewer-matrix-en"
 }

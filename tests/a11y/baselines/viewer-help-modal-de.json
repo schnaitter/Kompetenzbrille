@@ -66,7 +66,7 @@
                 "dom": "/html[1]/body[1]/main[1]/div[1]/div[1]/button[1]",
                 "aria": "/document[1]/main[1]/dialog[1]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -114,7 +114,7 @@
             "manual": 1,
             "pass": 439
         },
-        "scanTime": 22,
+        "scanTime": 23,
         "ruleArchive": "Latest Deployment (latest)",
         "policies": [
             "WCAG_2_2"
@@ -124,10 +124,10 @@
             "potentialviolation",
             "recommendation"
         ],
-        "startScan": 1795618335784,
+        "startScan": 1795618431144,
         "URL": "about:blank"
     },
-    "scanID": "24c9ead1-ba2d-4d18-9844-c3522d7c4354",
+    "scanID": "b202d82f-bc71-4289-8d8b-64a1fc4d1a09",
     "toolID": "accessibility-checker-v4.0.35",
     "label": "viewer-help-modal-de"
 }

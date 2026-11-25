@@ -38,7 +38,7 @@
                 "dom": "/html[1]/head[1]/style[1]",
                 "aria": "/document[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "Potential_1",
             "message": "Verify color is not used as the only visual means of conveying information",
             "messageArgs": [],
@@ -198,7 +198,7 @@
             "manual": 2,
             "pass": 335
         },
-        "scanTime": 22,
+        "scanTime": 21,
         "ruleArchive": "Latest Deployment (latest)",
         "policies": [
             "WCAG_2_2"
@@ -208,10 +208,10 @@
             "potentialviolation",
             "recommendation"
         ],
-        "startScan": 1795618336539,
+        "startScan": 1795618431899,
         "URL": "about:blank"
     },
-    "scanID": "24c9ead1-ba2d-4d18-9844-c3522d7c4354",
+    "scanID": "b202d82f-bc71-4289-8d8b-64a1fc4d1a09",
     "toolID": "accessibility-checker-v4.0.35",
     "label": "viewer-module-modal-de"
 }

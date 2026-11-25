@@ -1281,6 +1281,9 @@
   document.addEventListener("focusin", function (e) {
     var el = e.target.closest && e.target.closest("[data-pop]");
     if (el) queueShowPopover(el);
+    /* keep focused matrix cells/rows clear of the sticky first column */
+    var cell = e.target.closest && e.target.closest("table.matrix .cell-btn, table.matrix .row-head button");
+    if (cell && cell.scrollIntoView) cell.scrollIntoView({ block: "nearest", inline: "nearest" });
   });
   document.addEventListener("focusout", function (e) {
     var to = e.relatedTarget;
