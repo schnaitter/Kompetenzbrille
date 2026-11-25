@@ -551,8 +551,8 @@
     });
     h += "</select>";
     h += '<div class="ed-btn-row">';
-    h += '<label class="ed-btn ed-btn-file">' + esc(t("editorUpload")) +
-      '<input type="file" accept=".yaml,.yml,text/yaml" data-action="upload" hidden></label>';
+    h += '<button type="button" class="ed-btn ed-btn-file" data-action="upload-trigger">' + esc(t("editorUpload")) + "</button>";
+    h += '<input type="file" id="ed-upload-input" accept=".yaml,.yml,text/yaml" data-action="upload" hidden>';
     h += '<button type="button" class="ed-btn" data-action="new-program">' + esc(t("editorNew")) + "</button>";
     h += "</div>";
     h += '<p class="small muted ed-hint">' + esc(t("editorUnsafeHint")) + "</p>";
@@ -1058,7 +1058,7 @@
       diff.categories.forEach(function (c) {
         var label = (c.orig && c.orig.label) || (c.draft && c.draft.label) || c.id;
         var cls = c.status === "added" ? "ed-diff-new" : (c.status === "removed" ? "ed-diff-old" : "");
-        h += '<span class="cat-badge ' + cls + '">' + esc(label) + "</span>";
+        h += '<span class="cat-badge ' + cls + '">' + (c.status !== "same" ? '<span class="visually-hidden">' + esc(t("editorDiff" + cap(c.status))) + ": </span>" : "") + esc(label) + "</span>";
       });
       h += "</div>";
     }
@@ -1085,7 +1085,7 @@
       h += '<ul class="topics">';
       entry.topics.forEach(function (tp) {
         var cls = tp.status === "added" ? "ed-diff-new" : (tp.status === "removed" ? "ed-diff-old" : "");
-        h += '<li class="' + cls + '">' + esc(tp.text) + "</li>";
+        h += '<li class="' + cls + '">' + (tp.status !== "same" ? '<span class="visually-hidden">' + esc(t("editorDiff" + cap(tp.status))) + ": </span>" : "") + esc(tp.text) + "</li>";
       });
       h += "</ul>";
     }
@@ -1811,6 +1811,7 @@
 
   function removeItem(el) {
     var kind = el.getAttribute("data-kind");
+    var mi = el.getAttribute("data-mi");
     var p = state.program;
     if (kind === "category") {
       p.categories.splice(parseInt(el.getAttribute("data-ci"), 10), 1);
@@ -1824,6 +1825,12 @@
     markDirty();
     renderMain();
     renderSidebar();
+    /* keep focus near the removal: the add button of the same list */
+    var addSel = kind === "module" ? '[data-action="add-module"]'
+      : kind === "category" ? '[data-action="add-category"]'
+      : kind === "topic" ? '[data-action="add-topic"][data-mi="' + mi + '"]'
+      : '[data-action="add-mapping"][data-mi="' + mi + '"]';
+    focusControl(addSel);
   }
 
   function toggleDeleted(el) {
@@ -1831,10 +1838,31 @@
     if (!target || !target.obj) return;
     /* empty/default items are removed right away instead of being marked */
     if (itemIsEmpty(el.getAttribute("data-kind"), target.obj)) { removeItem(el); return; }
+    var key = itemKey(el);
     target.obj._deleted = !target.obj._deleted;
     markDirty();
     refreshItem(el);
     renderSidebar();
+    var again = document.querySelector(key);
+    var btn = again && ownButton(again, "mark");
+    if (btn) btn.focus();
+  }
+
+  /* stable selector for an item row, to re-find it after a refresh */
+  function itemKey(el) {
+    var sel = '.ed-item[data-kind="' + el.getAttribute("data-kind") + '"]';
+    ["data-mi", "data-ci", "data-ti", "data-mpi"].forEach(function (at) {
+      if (el.hasAttribute(at)) sel += '[' + at + '="' + el.getAttribute(at) + '"]';
+    });
+    return sel;
+  }
+
+  function focusControl(sel) {
+    var el = document.querySelector(sel);
+    if (el && el.focus) {
+      el.focus();
+      if (el.scrollIntoView) el.scrollIntoView({ block: "nearest" });
+    }
   }
 
   /* ================= events ================= */
@@ -1995,6 +2023,7 @@
       case "add-category":
         state.program.categories.push({ id: "", label: "", _uid: nextUid(), _isNew: true });
         markDirty(); renderMain(); renderSidebar();
+        focusControl('[data-kind="category"][data-field="id"][data-ci="' + (state.program.categories.length - 1) + '"]');
         break;
       case "add-module": addModule(); break;
       case "add-topic": addTopic(el); break;
@@ -2018,6 +2047,11 @@
         if (e.target === el || el.classList.contains("modal-close")) closeModal();
         break;
       case "open-help": openHelpDialog(); break;
+      case "upload-trigger": {
+        var up = byId("ed-upload-input");
+        if (up) up.click();
+        break;
+      }
       default: break;
     }
   }
@@ -2034,6 +2068,7 @@
     state.openModules[m._uid] = true;
     state.activeModuleUid = m._uid;
     markDirty(); renderMain(); renderSidebar();
+    focusControl('[data-kind="module"][data-field="code"][data-mi="' + (state.program.modules.length - 1) + '"]');
   }
 
   function addTopic(el) {
@@ -2042,6 +2077,7 @@
     var tp = { text: "", _uid: nextUid(), _isNew: true };
     m.topics.push(tp);
     markDirty(); renderMain(); renderSidebar();
+    focusControl('input[data-kind="topic"][data-mi="' + mi + '"][data-ti="' + (m.topics.length - 1) + '"]');
   }
 
   function addMapping(el) {
@@ -2055,6 +2091,7 @@
     });
     state.openModules[m._uid] = true;
     markDirty(); renderMain(); renderSidebar();
+    focusControl('select[data-kind="mapping"][data-field="competency"][data-mi="' + mi + '"][data-mpi="' + (m.mappings.length - 1) + '"]');
   }
 
   function scrollToError(err) {
