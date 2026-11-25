@@ -165,6 +165,12 @@
   }
 
   function levelLabel(l) { return t("level" + l); }
+  /* screen-reader text for matrix cells: depth as words, not just color */
+  function levelText(l) { return t("levelLabel") + " " + l + ": " + levelLabel(l); }
+  function emptyMatrixCell(titleAttr) {
+    return '<td class="cell empty"' + (titleAttr || "") + '><span aria-hidden="true">' + esc(t("emptyMatrixCell")) +
+      '</span><span class="visually-hidden">' + esc(t("notMapped")) + "</span></td>";
+  }
 
   function levelDots(l) {
     var s = '<span class="lvl-dots" title="' + esc(levelLabel(l)) + '">';
@@ -1030,7 +1036,7 @@
     var h = "";
 
     /* legend */
-    h += '<div class="legend"><strong>' + esc(t("legend")) + ":</strong>";
+    h += '<div class="legend" id="matrix-legend"><strong>' + esc(t("legend")) + ":</strong>";
     [1, 2, 3].forEach(function (l) {
       h += '<span class="item"><span class="cell-block l' + l + '"></span>' + esc(l + " – " + t("level" + l)) + "</span>";
     });
@@ -1038,29 +1044,31 @@
 
     if (!mods.length) { main.innerHTML = h + '<div class="hint-box">' + esc(t("noModulesSelected")) + "</div>"; return; }
 
-    h += '<div class="matrix-wrap"><table class="matrix"><thead><tr><th></th>';
+    h += '<div class="matrix-wrap"><table class="matrix" aria-describedby="matrix-legend">' +
+      '<caption class="visually-hidden">' + esc(t("matrixCaption").replace("{program}", p.title)) + "</caption>" +
+      '<thead><tr><th scope="col" id="matrix-corner"><span class="visually-hidden">' + esc(t("matrixCompetencyCol")) + "</span></th>";
     mods.forEach(function (m) {
-      h += '<th><button type="button" data-action="open-module" data-pop="module" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '">' + esc(m.code) + "</button></th>";
+      h += '<th scope="col"><button type="button" data-action="open-module" data-pop="module" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '">' + esc(m.code) + "</button></th>";
     });
-    h += "</tr></thead><tbody>";
+    h += "</tr></thead>";
 
     /* Orientierungswissen: unnumbered competency without a phase, before all competencies */
     var oph = orientationPhase(f);
     if (oph && compsPass(ORIENTATION_CODE)) {
-      h += '<tr class="orientation-row" style="--phase-color:' + phaseColorVar(oph.id) + '">' +
-        '<td class="row-head orientation-head">' +
-        '<button type="button" class="comp-title" data-action="open-orientation" title="' + esc(oph.text || oph.note || "") + '">' + esc(oph.title) + "</button></td>";
+      h += '<tbody><tr class="orientation-row" style="--phase-color:' + phaseColorVar(oph.id) + '">' +
+        '<th scope="row" class="row-head orientation-head">' +
+        '<button type="button" class="comp-title" data-action="open-orientation" title="' + esc(oph.text || oph.note || "") + '">' + esc(oph.title) + "</button></th>";
       mods.forEach(function (m) {
         var oEntries = (idx[ORIENTATION_CODE] || []).filter(function (e) { return e.module.code === m.code; });
         if (oEntries.length) {
           var oBest = oEntries.reduce(function (a, b) { return a.mapping.level >= b.mapping.level ? a : b; });
           h += '<td class="cell"><button type="button" class="cell-btn" data-action="open-cell" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '" data-comp="' + ORIENTATION_CODE + '" title="' +
-            esc(m.code + " × " + oph.title + " – " + levelLabel(oBest.mapping.level)) + '"><span class="cell-block l' + oBest.mapping.level + '"></span></button></td>';
+            esc(m.code + " × " + oph.title + " – " + levelLabel(oBest.mapping.level)) + '"><span class="cell-block l' + oBest.mapping.level + '"></span><span class="visually-hidden">' + esc(levelText(oBest.mapping.level)) + "</span></button></td>";
         } else {
-          h += '<td class="cell empty" title="' + esc(t("notMapped")) + '">' + esc(t("emptyMatrixCell")) + "</td>";
+          h += emptyMatrixCell(' title="' + esc(t("notMapped")) + '"');
         }
       });
-      h += "</tr>";
+      h += "</tr></tbody>";
     }
 
     f.phases.forEach(function (ph) {
@@ -1069,32 +1077,33 @@
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id && compsPass(c.code); });
       if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
         /* phase without competencies — a lone phase row, description as tooltip */
-        h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
-          '<td class="phase-head" title="' + esc(ph.note || ph.text || "") + '">' + esc(phaseTitle(ph)) + "</td>" +
-          '<td class="phase-fill" colspan="' + mods.length + '"></td></tr>';
+        h += '<tbody><tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+          '<th scope="row" class="phase-head" headers="matrix-corner" title="' + esc(ph.note || ph.text || "") + '">' + esc(phaseTitle(ph)) + "</th>" +
+          '<td class="phase-fill" colspan="' + mods.length + '"></td></tr></tbody>';
         return;
       }
       if (!comps.length) return;
       /* the phase label sits in the fixed first column; the fill scrolls with the module columns */
-      h += '<tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
-        '<td class="phase-head">' + esc(phaseTitle(ph)) + "</td>" +
+      h += '<tbody><tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+        '<th scope="row" class="phase-head" headers="matrix-corner">' + esc(phaseTitle(ph)) + "</th>" +
         '<td class="phase-fill" colspan="' + mods.length + '"></td></tr>';
       comps.forEach(function (c) {
-        h += '<tr style="--phase-color:' + phaseColorVar(c.phase) + '"><td class="row-head"><button type="button" data-action="open-comp" data-pop="comp" data-comp="' + esc(c.code) + '"><span class="code">' + esc(c.code) + "</span>" + esc(c.title) + "</button></td>";
+        h += '<tr style="--phase-color:' + phaseColorVar(c.phase) + '"><th scope="row" class="row-head"><button type="button" data-action="open-comp" data-pop="comp" data-comp="' + esc(c.code) + '"><span class="code">' + esc(c.code) + "</span>" + esc(c.title) + "</button></th>";
         mods.forEach(function (m) {
           var entries = (idx[c.code] || []).filter(function (e) { return e.module.code === m.code; });
           if (entries.length) {
             var best = entries.reduce(function (a, b) { return a.mapping.level >= b.mapping.level ? a : b; });
             h += '<td class="cell"><button type="button" class="cell-btn" data-action="open-cell" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '" data-comp="' + esc(c.code) + '" title="' +
-              esc(m.code + " × " + c.code + " – " + levelLabel(best.mapping.level)) + '"><span class="cell-block l' + best.mapping.level + '"></span></button></td>';
+              esc(m.code + " × " + c.code + " – " + levelLabel(best.mapping.level)) + '"><span class="cell-block l' + best.mapping.level + '"></span><span class="visually-hidden">' + esc(levelText(best.mapping.level)) + "</span></button></td>";
           } else {
-            h += '<td class="cell empty">' + esc(t("emptyMatrixCell")) + "</td>";
+            h += emptyMatrixCell();
           }
         });
         h += "</tr>";
       });
+      h += "</tbody>";
     });
-    h += "</tbody></table></div>";
+    h += "</table></div>";
     main.innerHTML = h;
   }
 
