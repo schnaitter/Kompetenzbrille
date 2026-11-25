@@ -276,11 +276,13 @@ The `Accessibility` GitHub Actions workflow
 [Playwright](https://playwright.dev/) + the
 [IBM Equal Access Accessibility Checker](https://www.npmjs.com/package/accessibility-checker)
 (policy `WCAG_2_2`) on **every pull request and every push to `main`** — no
-local setup needed. It starts its own static server, scans nine states
+local setup needed. It starts its own static server, scans ten states
 (program / framework / matrix views in DE + EN, help modal, module modal,
-editor) driven by the app's hash parameters, and uploads the JSON + HTML
-reports as the `a11y-report` artifact. Configuration: `aceconfig.js`,
-scan definitions: `tests/a11y/run.js`.
+editor, accessibility statement) driven by the app's hash parameters, and
+uploads the JSON + HTML reports as the `a11y-report` artifact. Configuration:
+`aceconfig.js`, scan definitions: `tests/a11y/run.js`. Static markup is
+additionally checked with `html-validate` (`npm run test:html`). Manual
+test procedures and the release checklist: `docs/accessibility-testing.md`.
 
 The scan is **blocking**: results are compared against committed baselines
 in `tests/a11y/baselines/`, so new violations fail the PR/push. When a change
