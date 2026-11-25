@@ -1156,7 +1156,7 @@
 
   function getPopover() {
     var root = document.getElementById("popover-root");
-    if (!root.firstChild) root.innerHTML = '<div id="popover" class="popover" hidden></div>';
+    if (!root.firstChild) root.innerHTML = '<div id="popover" class="popover" role="tooltip" hidden></div>';
     return root.firstChild;
   }
 
@@ -1246,6 +1246,7 @@
       var html = popoverHtmlFor(popAnchor);
       if (!html) return;
       pop.innerHTML = html;
+      popAnchor.setAttribute("aria-describedby", "popover");
       positionPopover(popAnchor, pop);
     }, 160);
   }
@@ -1258,6 +1259,7 @@
   function hidePopover() {
     clearTimeout(popShowTimer);
     clearTimeout(popHideTimer);
+    if (popAnchor) popAnchor.removeAttribute("aria-describedby");
     popAnchor = null;
     var pop = document.getElementById("popover");
     if (pop) { pop.hidden = true; pop.innerHTML = ""; }
@@ -1272,6 +1274,21 @@
     } else {
       scheduleHidePopover();
     }
+  });
+
+  /* keyboard parity: focus shows the popover, blur hides it, Esc dismisses
+   * it without moving focus (WCAG 1.4.13) */
+  document.addEventListener("focusin", function (e) {
+    var el = e.target.closest && e.target.closest("[data-pop]");
+    if (el) queueShowPopover(el);
+  });
+  document.addEventListener("focusout", function (e) {
+    var to = e.relatedTarget;
+    if (to && to.closest && (to.closest("#popover") || to.closest("[data-pop]"))) return;
+    scheduleHidePopover();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") hidePopover();
   });
 
   window.addEventListener("scroll", hidePopover, true);
