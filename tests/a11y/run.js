@@ -82,6 +82,9 @@ const scans = [
 ];
 
 (async () => {
+  /* reports are generated artifacts: start clean so stale labels (e.g. from
+   * experiments) can never leak into a baseline update */
+  fs.rmSync(path.join(__dirname, "../../results"), { recursive: true, force: true });
   const browser = await chromium.launch();
   const summary = [];
   let failed = 0;
