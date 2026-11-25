@@ -101,24 +101,37 @@ const scans = [
 
       /* Modal states: scan only the dialog. The background is inert/aria-hidden
        * while a dialog is open, so scanning the whole page would report
-       * findings for content that is intentionally unreachable. */
-      let content = page;
+       * findings for content that is intentionally unreachable. The fragment
+       * is rendered in its own Playwright page (same wrapper document) so no
+       * separate puppeteer browser is needed. */
+      let scanPage = page;
       if (s.dialog) {
         const html = await page.locator(".modal").evaluate((el) => el.outerHTML);
-        content =
+        scanPage = await browser.newPage();
+        await scanPage.setContent(
           '<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Dialog scan</title><style>' +
-          CSS + "</style></head><body><main>" + html + "</main></body></html>";
+          CSS + "</style></head><body><main>" + html + "</main></body></html>"
+        );
       }
 
-      const { report } = await aChecker.getCompliance(content, s.label);
+      const { report } = await aChecker.getCompliance(scanPage, s.label);
+      if (scanPage !== page) await scanPage.close();
       const code = aChecker.assertCompliance(report);
-      const violations =
-        (report.summary && report.summary.counts && report.summary.counts.violation) ?? "?";
+      /* with a committed baseline, matched findings are reported as "ignored";
+       * show both numbers so fixes and regressions stay visible */
+      const violations = report.results.filter((r) => r.value[0] === "VIOLATION" && r.value[1] === "FAIL").length;
+      const baselined = (report.summary && report.summary.counts && report.summary.counts.ignored) || 0;
       const ok = code === 0;
       if (!ok) failed++;
-      summary.push({ label: s.label, ok, violations });
-      console.log(`[${ok ? "PASS" : "FAIL"}] ${s.label} (violations: ${violations})`);
-      if (!ok) console.log(aChecker.stringifyResults(report));
+      summary.push({ label: s.label, ok, violations, baselined });
+      console.log(`[${ok ? "PASS" : "FAIL"}] ${s.label} (violations: ${violations}, baselined: ${baselined})`);
+      if (!ok) {
+        console.log(aChecker.stringifyResults(report));
+        if (code === 1) {
+          console.log("Baseline mismatch — review the diff, then update deliberately:");
+          console.log("  npm run test:a11y && npm run test:a11y:baseline");
+        }
+      }
     } catch (err) {
       failed++;
       summary.push({ label: s.label, ok: false, violations: "error" });
@@ -133,7 +146,7 @@ const scans = [
 
   console.log("\n=== Summary ===");
   for (const r of summary) {
-    console.log(`${r.ok ? "PASS" : "FAIL"}  ${r.label}  (violations: ${r.violations})`);
+    console.log(`${r.ok ? "PASS" : "FAIL"}  ${r.label}  (violations: ${r.violations}, baselined: ${r.baselined})`);
   }
   console.log(`${summary.length - failed}/${summary.length} scans passed`);
   process.exit(failed ? 1 : 0);
