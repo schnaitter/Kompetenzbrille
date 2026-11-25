@@ -680,6 +680,8 @@ table.matrix td.cell.empty:hover { outline: none; }
 }
 .modal-head { display: flex; align-items: flex-start; gap: 12px; }
 .modal-head h2 { margin: 0; font-size: 19px; flex: 1; }
+.modal-head h2:focus { outline: none; } /* programmatic focus target for AT, not a tab stop */
+.modal-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .modal-close {
   border: none;
   background: #eceff3;

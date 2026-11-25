@@ -13,6 +13,11 @@
 
 const { chromium } = require("playwright");
 const aChecker = require("accessibility-checker");
+const fs = require("fs");
+const path = require("path");
+
+/* inlined into isolated dialog scans so color/spacing rules keep their styles */
+const CSS = fs.readFileSync(path.join(__dirname, "../../css/style.css"), "utf8");
 
 const BASE = process.env.BASE_URL || "http://127.0.0.1:4173";
 const PROGRAM = "hu-berlin-ma-is";
@@ -53,6 +58,7 @@ const scans = [
     label: "viewer-help-modal-de",
     path: `index.html#view=program&lang=de&program=${PROGRAM}`,
     wait: ".coverage",
+    dialog: true,
     action: async (page) => {
       await page.click('[data-action="open-help"]');
       await page.waitForSelector(".modal #modal-title");
@@ -62,6 +68,7 @@ const scans = [
     label: "viewer-module-modal-de",
     path: `index.html#view=program&lang=de&program=${PROGRAM}`,
     wait: ".coverage",
+    dialog: true,
     action: async (page) => {
       await page.click('.mod-chip[data-action="open-module"]');
       await page.waitForSelector(".modal #modal-title");
@@ -89,7 +96,18 @@ const scans = [
       await page.waitForSelector(s.wait);
       if (s.action) await s.action(page);
 
-      const { report } = await aChecker.getCompliance(page, s.label);
+      /* Modal states: scan only the dialog. The background is inert/aria-hidden
+       * while a dialog is open, so scanning the whole page would report
+       * findings for content that is intentionally unreachable. */
+      let content = page;
+      if (s.dialog) {
+        const html = await page.locator(".modal").evaluate((el) => el.outerHTML);
+        content =
+          '<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Dialog scan</title><style>' +
+          CSS + "</style></head><body><main>" + html + "</main></body></html>";
+      }
+
+      const { report } = await aChecker.getCompliance(content, s.label);
       const code = aChecker.assertCompliance(report);
       const violations =
         (report.summary && report.summary.counts && report.summary.counts.violation) ?? "?";

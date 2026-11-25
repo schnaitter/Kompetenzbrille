@@ -1234,19 +1234,15 @@
   /* ================= modal ================= */
 
   function openModal(html) {
-    var root = document.getElementById("modal-root");
-    root.innerHTML = '<div class="modal-overlay" data-action="close-modal"><div class="modal" role="dialog" aria-modal="true">' +
-      '<div class="modal-head"><h2 id="modal-title"></h2><button class="modal-close" data-action="close-modal" title="' + esc(t("close")) + '">✕</button></div>' +
-      '<div id="modal-body"></div></div></div>';
-    document.getElementById("modal-title").innerHTML = html.title;
-    document.getElementById("modal-body").innerHTML = html.body;
-    document.addEventListener("keydown", escClose);
+    window.KB_DIALOG.open({
+      root: document.getElementById("modal-root"),
+      titleHTML: html.title,
+      bodyHTML: html.body,
+      closeLabel: esc(t("close")),
+      onRequestClose: closeModal
+    });
   }
-  function escClose(e) { if (e.key === "Escape") closeModal(); }
-  function closeModal() {
-    document.getElementById("modal-root").innerHTML = "";
-    document.removeEventListener("keydown", escClose);
-  }
+  function closeModal() { window.KB_DIALOG.close(); }
 
   /* the read-only views share one help document (see js/help.js) */
   function openHelp() {
