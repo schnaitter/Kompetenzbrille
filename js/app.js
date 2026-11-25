@@ -639,8 +639,8 @@
     if (!ph) return "";
     var entries = ((idx && idx[ORIENTATION_CODE]) || []).slice();
     entries.sort(function (a, b) { return b.mapping.level - a.mapping.level || a.module.code.localeCompare(b.module.code); });
-    var h = '<article class="comp-card orientation-card" style="--phase-color:' + phaseColorVar(ph.id) + '" data-action="open-orientation">' +
-      '<div class="comp-card-head"><span class="comp-title">' + esc(ph.title) + "</span></div>" +
+    var h = '<article class="comp-card orientation-card" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+      '<div class="comp-card-head"><button type="button" class="comp-title" data-action="open-orientation">' + esc(ph.title) + "</button></div>" +
       orientationDims(ph) +
       '<div class="comp-mods"><span class="comp-mods-label">' + esc(t("addressedIn")) + ":</span>";
     if (entries.length) entries.forEach(function (e) { h += moduleChip(e); });
@@ -678,8 +678,8 @@
   }
 
   function moduleChip(entry) {
-    return '<span class="mod-chip" data-action="open-module" data-program="' + esc(entry.program.id) + '" data-module="' + esc(entry.module.code) + '">' +
-      '<span class="code">' + esc(entry.module.code) + "</span>" + levelDots(entry.mapping.level) + "</span>";
+    return '<button type="button" class="mod-chip" data-action="open-module" data-program="' + esc(entry.program.id) + '" data-module="' + esc(entry.module.code) + '">' +
+      '<span class="code">' + esc(entry.module.code) + "</span>" + levelDots(entry.mapping.level) + "</button>";
   }
 
   /* ================= program view ================= */
@@ -751,8 +751,8 @@
         var entries = idx[c.code] || [];
         var cls = "comp-card" + (entries.length ? "" : " unaddressed");
         h += '<article class="' + cls + '">' +
-          '<div class="comp-card-head"><span class="comp-code" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(c.code) + '</span>' +
-          '<span class="comp-title" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(c.title) + "</span></div>" +
+          '<div class="comp-card-head"><button type="button" class="comp-code" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(c.code) + '</button>' +
+          '<button type="button" class="comp-title" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(c.title) + "</button></div>" +
           dimRows(f, c) +
           '<div class="comp-mods"><span class="comp-mods-label">' + esc(t("addressedIn")) + ":</span>";
         if (entries.length) {
@@ -781,7 +781,7 @@
           (isOrientationComp(c.code) || phasesPass(c.phase)) && compsPass(m.competency);
       });
       h += '<article class="mod-card"><div class="mod-card-head">' +
-        '<span class="mod-code" data-action="open-module" data-program="' + esc(p.id) + '" data-module="' + esc(mod.code) + '">' + esc(mod.code) + "</span>" +
+        '<button type="button" class="mod-code" data-action="open-module" data-program="' + esc(p.id) + '" data-module="' + esc(mod.code) + '">' + esc(mod.code) + "</button>" +
         '<span class="mod-title">' + esc(mod.title) + "</span>" +
         '<span class="cat-badge ' + esc(mod.category) + '">' + esc(catLabel(p, mod.category)) + "</span>" +
         '<span class="mod-meta">' + esc(mod.credits + " " + t("credits")) + "</span></div>";
@@ -792,7 +792,7 @@
         maps.forEach(function (m) {
           var c = compForMapping(f, m.competency);
           h += '<div class="mapping-row" style="--phase-color:' + phaseColorVar(c.phase) + '">' +
-            '<div><span class="m-comp" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(compLabel(c)) + "</span>" +
+            '<div><button type="button" class="m-comp" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(compLabel(c)) + "</button>" +
             '<div class="mapping-lvl">' + levelDots(m.level) + " " + esc(levelLabel(m.level)) + "</div></div>" +
             '<div class="m-note">' + esc(noteText(m)) + "</div></div>";
         });
@@ -861,7 +861,7 @@
   /* one module card as used in the framework detail list */
   function frameworkModuleCard(e, showProgram) {
     return '<article class="mod-card"><div class="mod-card-head">' +
-      '<span class="mod-code" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' + esc(e.module.code) + "</span>" +
+      '<button type="button" class="mod-code" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' + esc(e.module.code) + "</button>" +
       '<span class="mod-title">' + esc(e.module.title) + "</span>" +
       '<span class="cat-badge ' + esc(e.module.category) + '">' + esc(catLabel(e.program, e.module.category)) + "</span>" +
       '<span class="mod-meta">' + esc((showProgram ? e.program.title + " · " : "") + e.module.credits + " " + t("credits")) + "</span></div>" +
@@ -1040,7 +1040,7 @@
 
     h += '<div class="matrix-wrap"><table class="matrix"><thead><tr><th></th>';
     mods.forEach(function (m) {
-      h += '<th data-action="open-module" data-pop="module" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '">' + esc(m.code) + "</th>";
+      h += '<th><button type="button" data-action="open-module" data-pop="module" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '">' + esc(m.code) + "</button></th>";
     });
     h += "</tr></thead><tbody>";
 
@@ -1048,14 +1048,14 @@
     var oph = orientationPhase(f);
     if (oph && compsPass(ORIENTATION_CODE)) {
       h += '<tr class="orientation-row" style="--phase-color:' + phaseColorVar(oph.id) + '">' +
-        '<td class="row-head orientation-head" data-action="open-orientation" title="' + esc(oph.text || oph.note || "") + '">' +
-        '<span class="comp-title">' + esc(oph.title) + "</span></td>";
+        '<td class="row-head orientation-head">' +
+        '<button type="button" class="comp-title" data-action="open-orientation" title="' + esc(oph.text || oph.note || "") + '">' + esc(oph.title) + "</button></td>";
       mods.forEach(function (m) {
         var oEntries = (idx[ORIENTATION_CODE] || []).filter(function (e) { return e.module.code === m.code; });
         if (oEntries.length) {
           var oBest = oEntries.reduce(function (a, b) { return a.mapping.level >= b.mapping.level ? a : b; });
-          h += '<td class="cell" data-action="open-cell" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '" data-comp="' + ORIENTATION_CODE + '" title="' +
-            esc(m.code + " × " + oph.title + " – " + levelLabel(oBest.mapping.level)) + '"><span class="cell-block l' + oBest.mapping.level + '"></span></td>';
+          h += '<td class="cell"><button type="button" class="cell-btn" data-action="open-cell" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '" data-comp="' + ORIENTATION_CODE + '" title="' +
+            esc(m.code + " × " + oph.title + " – " + levelLabel(oBest.mapping.level)) + '"><span class="cell-block l' + oBest.mapping.level + '"></span></button></td>';
         } else {
           h += '<td class="cell empty" title="' + esc(t("notMapped")) + '">' + esc(t("emptyMatrixCell")) + "</td>";
         }
@@ -1080,13 +1080,13 @@
         '<td class="phase-head">' + esc(phaseTitle(ph)) + "</td>" +
         '<td class="phase-fill" colspan="' + mods.length + '"></td></tr>';
       comps.forEach(function (c) {
-        h += '<tr style="--phase-color:' + phaseColorVar(c.phase) + '"><td class="row-head" data-action="open-comp" data-pop="comp" data-comp="' + esc(c.code) + '"><span class="code">' + esc(c.code) + "</span>" + esc(c.title) + "</td>";
+        h += '<tr style="--phase-color:' + phaseColorVar(c.phase) + '"><td class="row-head"><button type="button" data-action="open-comp" data-pop="comp" data-comp="' + esc(c.code) + '"><span class="code">' + esc(c.code) + "</span>" + esc(c.title) + "</button></td>";
         mods.forEach(function (m) {
           var entries = (idx[c.code] || []).filter(function (e) { return e.module.code === m.code; });
           if (entries.length) {
             var best = entries.reduce(function (a, b) { return a.mapping.level >= b.mapping.level ? a : b; });
-            h += '<td class="cell" data-action="open-cell" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '" data-comp="' + esc(c.code) + '" title="' +
-              esc(m.code + " × " + c.code + " – " + levelLabel(best.mapping.level)) + '"><span class="cell-block l' + best.mapping.level + '"></span></td>';
+            h += '<td class="cell"><button type="button" class="cell-btn" data-action="open-cell" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '" data-comp="' + esc(c.code) + '" title="' +
+              esc(m.code + " × " + c.code + " – " + levelLabel(best.mapping.level)) + '"><span class="cell-block l' + best.mapping.level + '"></span></button></td>';
           } else {
             h += '<td class="cell empty">' + esc(t("emptyMatrixCell")) + "</td>";
           }
@@ -1168,7 +1168,7 @@
     pop.hidden = false;
     var w = pop.offsetWidth, h = pop.offsetHeight;
     var x, y;
-    if (anchor.tagName === "TH") {
+    if (anchor.closest("thead")) {
       x = r.left + r.width / 2 - w / 2;   /* centered below the column header */
       y = r.bottom + 8;
     } else {
@@ -1273,7 +1273,7 @@
       maps.forEach(function (m) {
         var c = compForMapping(f, m.competency);
         body += '<div class="mapping-row" style="--phase-color:' + phaseColorVar(c.phase) + '">' +
-          '<div><span class="m-comp" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(compLabel(c)) + "</span>" +
+          '<div><button type="button" class="m-comp" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(compLabel(c)) + "</button>" +
           '<div class="mapping-lvl">' + levelDots(m.level) + " " + esc(levelLabel(m.level)) + "</div></div>" +
           '<div class="m-note">' + esc(noteText(m)) + "</div></div>";
       });
@@ -1300,8 +1300,8 @@
       body += '<div class="mod-mappings">';
       entries.forEach(function (e) {
         body += '<div class="mapping-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
-          '<div><span class="m-comp" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' +
-          esc(e.module.code + " – " + e.module.title) + "</span>" +
+          '<div><button type="button" class="m-comp" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' +
+          esc(e.module.code + " – " + e.module.title) + "</button>" +
           '<div class="mapping-lvl">' + levelDots(e.mapping.level) + " " + esc(levelLabel(e.mapping.level)) + " · " + esc(e.program.title) + "</div></div>" +
           '<div class="m-note">' + esc(noteText(e.mapping)) + "</div></div>";
       });
@@ -1332,8 +1332,8 @@
     if (entries.length) {
       body += '<div class="mod-mappings">';
       entries.forEach(function (e) {
-        body += '<div class="mapping-row"><div><span class="m-comp" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' +
-          esc(e.module.code + " – " + e.module.title) + "</span>" +
+        body += '<div class="mapping-row"><div><button type="button" class="m-comp" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' +
+          esc(e.module.code + " – " + e.module.title) + "</button>" +
           '<div class="mapping-lvl">' + levelDots(e.mapping.level) + " " + esc(levelLabel(e.mapping.level)) + " · " + esc(e.program.title) + "</div></div>" +
           '<div class="m-note">' + esc(noteText(e.mapping)) + "</div></div>";
       });
@@ -1357,8 +1357,8 @@
       '<div><span class="m-comp">' + esc(compLabel(c)) + "</span>" +
       '<div class="mapping-lvl">' + levelDots(m ? m.level : 1) + " " + esc(m ? levelLabel(m.level) : "") + "</div></div>" +
       '<div class="m-note">' + esc(m ? noteText(m) : "") + "</div></div>";
-    body += '<p style="margin-top:14px"><button class="view-tab" data-action="open-module" data-program="' + esc(pid) + '" data-module="' + esc(code) + '">' + esc(t("modules")) + ": " + esc(mod.code) + '</button> ' +
-      '<button class="view-tab" data-action="open-comp" data-comp="' + esc(compCode) + '">' +
+    body += '<p style="margin-top:14px"><button type="button" class="view-tab" data-action="open-module" data-program="' + esc(pid) + '" data-module="' + esc(code) + '">' + esc(t("modules")) + ": " + esc(mod.code) + '</button> ' +
+      '<button type="button" class="view-tab" data-action="open-comp" data-comp="' + esc(compCode) + '">' +
       (isOrientationComp(c.code) ? esc(c.title) : esc(t("competencies")) + ": " + esc(c.code)) + "</button></p>";
     openModal({ title: esc(mod.code + " × " + compLabel(c)), body: body });
   }
