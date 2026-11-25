@@ -93,6 +93,9 @@
   }
 
   function phaseColorVar(phaseId) { return "var(--phase-" + phaseId + ")"; }
+  /* darker variant for text/badges (>= 4.5:1 on white); fills keep --phase-color */
+  function phaseTextVar(phaseId) { return "var(--phase-" + phaseId + "-text)"; }
+  function phaseVars(phaseId) { return "--phase-color:" + phaseColorVar(phaseId) + ";--phase-text:" + phaseTextVar(phaseId); }
 
   /* phases outside the data flow (Orientierungswissen, id "0") are shown without a number */
   function phaseNumbered(ph) { return ph.id !== "0"; }
@@ -645,7 +648,7 @@
     if (!ph) return "";
     var entries = ((idx && idx[ORIENTATION_CODE]) || []).slice();
     entries.sort(function (a, b) { return b.mapping.level - a.mapping.level || a.module.code.localeCompare(b.module.code); });
-    var h = '<article class="comp-card orientation-card" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+    var h = '<article class="comp-card orientation-card" style="' + phaseVars(ph.id) + '">' +
       '<div class="comp-card-head"><button type="button" class="comp-title" data-action="open-orientation">' + esc(ph.title) + "</button></div>" +
       orientationDims(ph) +
       '<div class="comp-mods"><span class="comp-mods-label">' + esc(t("addressedIn")) + ":</span>";
@@ -722,6 +725,13 @@
       h += '<span style="width:' + w + "%;background:" + phaseColorVar(ph.id) + ";opacity:" + op.toFixed(2) + '" title="' +
         esc(ph.title + ": " + cov + "/" + comps.length) + '"></span>';
     });
+    h += '</div><div class="coverage-numbers">';
+    f.phases.forEach(function (ph) {
+      var comps = f.competencies.filter(function (c) { return c.phase === ph.id; });
+      if (!comps.length) return;
+      var cov = comps.filter(function (c) { return idx[c.code] && idx[c.code].length; }).length;
+      h += "<span>" + esc(phaseTitle(ph)) + ": " + cov + "/" + comps.length + "</span>";
+    });
     h += '</div><p class="coverage-note">' + esc(t("editorialNote")) + "</p></div>";
     return h;
   }
@@ -739,7 +749,7 @@
       if (state.onlyAddressed) comps = comps.filter(function (c) { return idx[c.code] && idx[c.code].length; });
       if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
         /* phase without competencies — show its description */
-        h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+        h += '<section class="phase-section" style="' + phaseVars(ph.id) + '">' +
           '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2></div>" +
           phaseBlurb(ph) + "</section>";
         return;
@@ -749,7 +759,7 @@
       var cov = f.competencies.filter(function (c) { return c.phase === ph.id && idx[c.code] && idx[c.code].length; }).length;
       var all = f.competencies.filter(function (c) { return c.phase === ph.id; }).length;
 
-      h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+      h += '<section class="phase-section" style="' + phaseVars(ph.id) + '">' +
         '<div class="phase-header">' + phaseNoBadge(ph) + "<h2>" + esc(ph.title) + "</h2>" +
         '<span class="coverage-mini">' + cov + "/" + all + " " + esc(t("competenciesAddressed")) + '</span></div><div class="comp-grid">';
 
@@ -797,7 +807,7 @@
         maps.sort(compareMappingTargets);
         maps.forEach(function (m) {
           var c = compForMapping(f, m.competency);
-          h += '<div class="mapping-row" style="--phase-color:' + phaseColorVar(c.phase) + '">' +
+          h += '<div class="mapping-row" style="' + phaseVars(c.phase) + '">' +
             '<div><button type="button" class="m-comp" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(compLabel(c)) + "</button>" +
             '<div class="mapping-lvl">' + levelDots(m.level) + " " + esc(levelLabel(m.level)) + "</div></div>" +
             '<div class="m-note">' + esc(noteText(m)) + "</div></div>";
@@ -913,6 +923,15 @@
       else if (isCompareCommon(idx, c.code)) cls += " shared";
     }
     var h = '<button class="' + cls + '" data-action="select-comp" data-comp="' + esc(c.code) + '">';
+    if (cmp) {
+      /* comparison status as shape + text, not only background color */
+      var kind = isCompareGap(idx, c.code) ? "gap" : isCompareAnchor(idx, c.code) ? "anchor" : isCompareCommon(idx, c.code) ? "shared" : "";
+      if (kind) {
+        var sym = kind === "gap" ? "\u25B3" : kind === "anchor" ? "\u25B2" : "\u25CF";
+        h += '<span class="cmp-mark" aria-hidden="true">' + sym + '</span><span class="visually-hidden">' +
+          esc(t(kind === "gap" ? "compareFilterGap" : kind === "anchor" ? "compareFilterAnchor" : "compareFilterShared")) + "</span>";
+      }
+    }
     if (!isOrientationComp(c.code)) h += '<span class="code">' + esc(c.code) + "</span>";
     h += '<span class="picker-title">' + esc(c.title) + "</span>" +
       '<span class="count' + (n ? "" : " zero") + '">' + n + "</span>";
@@ -921,8 +940,10 @@
       state.programIds.forEach(function (pid) {
         var on = addrs.indexOf(pid) >= 0;
         var pp = programById(pid);
-        h += '<span class="pdot ' + programColorClass(pid) + (on ? "" : " off") + '" title="' +
-          esc(programLabel(pp) + " \u2013 " + (on ? t("addressedShort") : t("notAddressedShort"))) + '"></span>';
+        h += '<span class="pick-prog"><span class="pdot ' + programColorClass(pid) + (on ? "" : " off") + '" title="' +
+          esc(programLabel(pp) + " \u2013 " + (on ? t("addressedShort") : t("notAddressedShort"))) + '"></span>' +
+          '<span class="pick-prog-label' + (on ? "" : " off") + '">' + esc(programShortLabel(pp)) + "</span>" +
+          '<span class="visually-hidden">' + esc(programLabel(pp) + " \u2013 " + (on ? t("addressedShort") : t("notAddressedShort"))) + "</span></span>";
       });
       h += "</span>";
     }
@@ -944,7 +965,7 @@
     /* Orientierungswissen: an unnumbered competency without a phase, before all competencies */
     var oph = orientationPhase(f);
     if (oph) {
-      h += '<div class="fw-orientation" style="--phase-color:' + phaseColorVar(oph.id) + '">' +
+      h += '<div class="fw-orientation" style="' + phaseVars(oph.id) + '">' +
         pickerButton({ code: ORIENTATION_CODE, title: oph.title }, idx, cmp, "orientation-picker") +
         "</div>";
     }
@@ -958,14 +979,14 @@
       }
       if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
         /* phase without competencies — compact blurb row */
-        h += '<section class="fw-phase" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+        h += '<section class="fw-phase" style="' + phaseVars(ph.id) + '">' +
           '<div class="fw-phase-head"><span class="phase-dot"></span><h3>' + esc(phaseTitle(ph)) + "</h3></div>" +
           phaseBlurb(ph) + "</section>";
         return;
       }
       if (!comps.length) return;
       /* one compact row per phase: phase label on the left, competency chips on the right */
-      h += '<section class="fw-phase" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+      h += '<section class="fw-phase" style="' + phaseVars(ph.id) + '">' +
         '<div class="fw-phase-head"><span class="phase-dot"></span><h3>' + esc(phaseTitle(ph)) + "</h3></div>" +
         '<div class="fw-chips">';
       comps.forEach(function (c) {
@@ -981,7 +1002,7 @@
           var orientationEntries = (idx[ORIENTATION_CODE] || []).slice().sort(function (a, b) {
             return b.mapping.level - a.mapping.level || a.program.title.localeCompare(b.program.title) || a.module.code.localeCompare(b.module.code);
           });
-          h += '<section class="phase-section orientation-detail" style="--phase-color:' + phaseColorVar(oph.id) + '">' +
+          h += '<section class="phase-section orientation-detail" style="' + phaseVars(oph.id) + '">' +
             '<div class="phase-header"><h2>' + esc(oph.title) + "</h2></div>" +
             '<div class="comp-card" style="margin-bottom:14px">' + orientationDims(oph) + "</div>";
           h += '<h3 style="margin:0 0 10px">' + esc(t("addressedIn")) + " (" + orientationEntries.length + ")</h3>";
@@ -1000,7 +1021,7 @@
           var entries = (idx[c.code] || []).slice().sort(function (a, b) {
             return b.mapping.level - a.mapping.level || a.program.title.localeCompare(b.program.title) || a.module.code.localeCompare(b.module.code);
           });
-          h += '<section class="phase-section" style="--phase-color:' + phaseColorVar(c.phase) + '">' +
+          h += '<section class="phase-section" style="' + phaseVars(c.phase) + '">' +
             '<div class="phase-header"><span class="phase-no">' + esc(c.code) + "</span><h2>" + esc(c.title) + "</h2>" +
             '<span class="coverage-mini">' + esc(phaseById(f, c.phase).title) + '</span></div>' +
             '<div class="comp-card" style="margin-bottom:14px">' + dimRows(f, c) + "</div>";
@@ -1055,7 +1076,7 @@
     /* Orientierungswissen: unnumbered competency without a phase, before all competencies */
     var oph = orientationPhase(f);
     if (oph && compsPass(ORIENTATION_CODE)) {
-      h += '<tbody><tr class="orientation-row" style="--phase-color:' + phaseColorVar(oph.id) + '">' +
+      h += '<tbody><tr class="orientation-row" style="' + phaseVars(oph.id) + '">' +
         '<th scope="row" class="row-head orientation-head">' +
         '<button type="button" class="comp-title" data-action="open-orientation" title="' + esc(oph.text || oph.note || "") + '">' + esc(oph.title) + "</button></th>";
       mods.forEach(function (m) {
@@ -1063,7 +1084,7 @@
         if (oEntries.length) {
           var oBest = oEntries.reduce(function (a, b) { return a.mapping.level >= b.mapping.level ? a : b; });
           h += '<td class="cell"><button type="button" class="cell-btn" data-action="open-cell" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '" data-comp="' + ORIENTATION_CODE + '" title="' +
-            esc(m.code + " × " + oph.title + " – " + levelLabel(oBest.mapping.level)) + '"><span class="cell-block l' + oBest.mapping.level + '"></span><span class="visually-hidden">' + esc(levelText(oBest.mapping.level)) + "</span></button></td>";
+            esc(m.code + " × " + oph.title + " – " + levelLabel(oBest.mapping.level)) + '"><span class="cell-block l' + oBest.mapping.level + '" aria-hidden="true">' + oBest.mapping.level + '</span><span class="visually-hidden">' + esc(levelText(oBest.mapping.level)) + "</span></button></td>";
         } else {
           h += emptyMatrixCell(' title="' + esc(t("notMapped")) + '"');
         }
@@ -1077,24 +1098,24 @@
       var comps = f.competencies.filter(function (c) { return c.phase === ph.id && compsPass(c.code); });
       if (!f.competencies.some(function (c) { return c.phase === ph.id; })) {
         /* phase without competencies — a lone phase row, description as tooltip */
-        h += '<tbody><tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+        h += '<tbody><tr class="phase-row" style="' + phaseVars(ph.id) + '">' +
           '<th scope="row" class="phase-head" headers="matrix-corner" title="' + esc(ph.note || ph.text || "") + '">' + esc(phaseTitle(ph)) + "</th>" +
           '<td class="phase-fill" colspan="' + mods.length + '"></td></tr></tbody>';
         return;
       }
       if (!comps.length) return;
       /* the phase label sits in the fixed first column; the fill scrolls with the module columns */
-      h += '<tbody><tr class="phase-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+      h += '<tbody><tr class="phase-row" style="' + phaseVars(ph.id) + '">' +
         '<th scope="row" class="phase-head" headers="matrix-corner">' + esc(phaseTitle(ph)) + "</th>" +
         '<td class="phase-fill" colspan="' + mods.length + '"></td></tr>';
       comps.forEach(function (c) {
-        h += '<tr style="--phase-color:' + phaseColorVar(c.phase) + '"><th scope="row" class="row-head"><button type="button" data-action="open-comp" data-pop="comp" data-comp="' + esc(c.code) + '"><span class="code">' + esc(c.code) + "</span>" + esc(c.title) + "</button></th>";
+        h += '<tr style="' + phaseVars(c.phase) + '"><th scope="row" class="row-head"><button type="button" data-action="open-comp" data-pop="comp" data-comp="' + esc(c.code) + '"><span class="code">' + esc(c.code) + "</span>" + esc(c.title) + "</button></th>";
         mods.forEach(function (m) {
           var entries = (idx[c.code] || []).filter(function (e) { return e.module.code === m.code; });
           if (entries.length) {
             var best = entries.reduce(function (a, b) { return a.mapping.level >= b.mapping.level ? a : b; });
             h += '<td class="cell"><button type="button" class="cell-btn" data-action="open-cell" data-program="' + esc(p.id) + '" data-module="' + esc(m.code) + '" data-comp="' + esc(c.code) + '" title="' +
-              esc(m.code + " × " + c.code + " – " + levelLabel(best.mapping.level)) + '"><span class="cell-block l' + best.mapping.level + '"></span><span class="visually-hidden">' + esc(levelText(best.mapping.level)) + "</span></button></td>";
+              esc(m.code + " × " + c.code + " – " + levelLabel(best.mapping.level)) + '"><span class="cell-block l' + best.mapping.level + '" aria-hidden="true">' + best.mapping.level + '</span><span class="visually-hidden">' + esc(levelText(best.mapping.level)) + "</span></button></td>";
           } else {
             h += emptyMatrixCell();
           }
@@ -1142,7 +1163,7 @@
     for (var i = 0; i < shown; i++) {
       var m = maps[i];
       var c = compForMapping(f, m.competency);
-      h += "<li>" + (isOrientationComp(c.code) ? "" : '<span class="code" style="color:' + phaseColorVar(c.phase) + '">' + esc(c.code) + "</span>") +
+      h += "<li>" + (isOrientationComp(c.code) ? "" : '<span class="code" style="color:' + phaseTextVar(c.phase) + '">' + esc(c.code) + "</span>") +
         '<span class="pop-comp-title">' + esc(c.title) + "</span>" + levelDots(m.level) + "</li>";
     }
     h += "</ul>";
@@ -1159,7 +1180,7 @@
     var idx = competencyIndex([state.programId]);
     var n = (idx[c.code] || []).length;
 
-    var h = '<div class="pop-head"><span class="pop-code" style="color:' + phaseColorVar(c.phase) + '">' + esc(c.code) + "</span>" + esc(c.title) + "</div>";
+    var h = '<div class="pop-head"><span class="pop-code" style="color:' + phaseTextVar(c.phase) + '">' + esc(c.code) + "</span>" + esc(c.title) + "</div>";
     h += '<p class="pop-kv">' + esc(phaseTitle(ph)) + "</p>";
     f.dimensions.forEach(function (d) {
       if (!c[d.id]) return;
@@ -1277,7 +1298,7 @@
       maps.sort(compareMappingTargets);
       maps.forEach(function (m) {
         var c = compForMapping(f, m.competency);
-        body += '<div class="mapping-row" style="--phase-color:' + phaseColorVar(c.phase) + '">' +
+        body += '<div class="mapping-row" style="' + phaseVars(c.phase) + '">' +
           '<div><button type="button" class="m-comp" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(compLabel(c)) + "</button>" +
           '<div class="mapping-lvl">' + levelDots(m.level) + " " + esc(levelLabel(m.level)) + "</div></div>" +
           '<div class="m-note">' + esc(noteText(m)) + "</div></div>";
@@ -1304,7 +1325,7 @@
     if (entries.length) {
       body += '<div class="mod-mappings">';
       entries.forEach(function (e) {
-        body += '<div class="mapping-row" style="--phase-color:' + phaseColorVar(ph.id) + '">' +
+        body += '<div class="mapping-row" style="' + phaseVars(ph.id) + '">' +
           '<div><button type="button" class="m-comp" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' +
           esc(e.module.code + " – " + e.module.title) + "</button>" +
           '<div class="mapping-lvl">' + levelDots(e.mapping.level) + " " + esc(levelLabel(e.mapping.level)) + " · " + esc(e.program.title) + "</div></div>" +
@@ -1358,7 +1379,7 @@
     if (!mod || !c) return;
     var m = moduleMappings(mod).filter(function (x) { return x.competency === compCode; })[0];
     var body = '<p class="kv">' + esc(p.title) + "</p>";
-    body += '<div class="mapping-row" style="--phase-color:' + phaseColorVar(c.phase) + ';border-top:none">' +
+    body += '<div class="mapping-row" style="' + phaseVars(c.phase) + ';border-top:none">' +
       '<div><span class="m-comp">' + esc(compLabel(c)) + "</span>" +
       '<div class="mapping-lvl">' + levelDots(m ? m.level : 1) + " " + esc(m ? levelLabel(m.level) : "") + "</div></div>" +
       '<div class="m-note">' + esc(m ? noteText(m) : "") + "</div></div>";

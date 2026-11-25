@@ -764,7 +764,7 @@
       known[String(ph.id)] = true;
       var list = byPhase[String(ph.id)];
       if (!list || !list.length) return;
-      h += '<div class="ed-fw-phase" style="--phase-color:' + phaseColorVar(ph.id) + '">';
+      h += '<div class="ed-fw-phase" style="' + phaseVars(ph.id) + '">';
       h += '<div class="ed-fw-phase-title">';
       if (String(ph.id) !== "0") h += '<span class="ed-fw-phase-no">' + esc(ph.id) + "</span>";
       h += "<span>" + esc(ph.title) + "</span>";
@@ -777,7 +777,7 @@
       if (known[String(c.phase)]) return;
       if (!known["__orphans"]) {
         known["__orphans"] = true;
-        h += '<div class="ed-fw-phase" style="--phase-color:' + phaseColorVar("0") + '">';
+        h += '<div class="ed-fw-phase" style="' + phaseVars("0") + '">';
       }
       h += renderFwComp(c, fwd, fid);
     });
@@ -791,6 +791,9 @@
     if (isNaN(n) || n < 0 || n > 5) n = 0;
     return "var(--phase-" + n + ")";
   }
+  /* darker variant for text/badges (>= 4.5:1 on white); fills keep --phase-color */
+  function phaseTextVar(id) { return phaseColorVar(id).replace(")", "-text)"); }
+  function phaseVars(id) { return "--phase-color:" + phaseColorVar(id) + ";--phase-text:" + phaseTextVar(id); }
 
   function renderFwOrientation(ph, fid) {
     var search = (ph.title + " " + (ph.text || "") + " " + (ph.note || "")).toLowerCase();
@@ -1099,7 +1102,7 @@
     var changedLevel = md.status === "changed" && toInt(md.orig.level) !== toInt(md.draft.level);
     var changedComp = md.orig && md.draft && String(md.orig.competency) !== String(md.draft.competency);
     var h = '<div class="mapping-row ed-ro-mapping' + (md.status !== "same" ? " is-" + md.status : "") +
-      '" style="--phase-color:' + phaseColorVar(competencyPhase(mp)) + '">';
+      '" style="' + phaseVars(competencyPhase(mp)) + '">';
     h += '<div><span class="m-comp">';
     if (md.status === "added") h += '<span class="ed-diff-new">' + esc(competencyLabel(md.draft)) + "</span>";
     else if (md.status === "removed") h += '<span class="ed-diff-old">' + esc(competencyLabel(md.orig)) + "</span>";
