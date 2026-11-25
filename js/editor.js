@@ -1715,15 +1715,18 @@
 
   function openModal(title, bodyHtml) {
     var root = byId("modal-root");
-    if (!root) return;
-    root.innerHTML = '<div class="modal-overlay" data-action="close-modal"><div class="modal" role="dialog" aria-modal="true">' +
-      '<div class="modal-head"><h2>' + esc(title) + '</h2><button type="button" class="modal-close" data-action="close-modal" aria-label="' + esc(t("close")) + '">×</button></div>' +
-      '<div class="modal-body">' + bodyHtml + "</div></div></div>";
+    if (!root || !window.KB_DIALOG) return;
+    window.KB_DIALOG.open({
+      root: root,
+      titleHTML: esc(title),
+      bodyHTML: bodyHtml,
+      closeLabel: esc(t("close")),
+      onRequestClose: closeModal
+    });
   }
 
   function closeModal() {
-    var root = byId("modal-root");
-    if (root) root.innerHTML = "";
+    if (window.KB_DIALOG) window.KB_DIALOG.close();
   }
 
   /* the editor has its own help document (see js/help.js) */
@@ -2088,9 +2091,6 @@
     onChange(e);
   });
   document.addEventListener("click", onClick);
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeModal();
-  });
   document.addEventListener("focusin", function (e) {
     if (!e.target || !e.target.closest) return;
     var mod = e.target.closest(".ed-item-module");
