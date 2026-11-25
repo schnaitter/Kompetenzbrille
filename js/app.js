@@ -186,6 +186,14 @@
     if (typeof mapping.note === "string") return mapping.note;
     return mapping.note[state.lang] || mapping.note.de || mapping.note.en || "";
   }
+  /* language actually used by noteText, for lang= markup of foreign content */
+  function noteLang(mapping) {
+    if (!mapping.note) return state.lang;
+    if (typeof mapping.note === "string") return "de";
+    if (mapping.note[state.lang]) return state.lang;
+    return mapping.note.de ? "de" : "en";
+  }
+  function langAttr(l) { return l && l !== state.lang ? ' lang="' + esc(l) + '"' : ""; }
 
   function catLabel(program, catId) {
     var c = (program.categories || []).filter(function (x) { return x.id === catId; })[0];
@@ -201,7 +209,7 @@
   function programOptions(selectedId, disabledIds) {
     return PROGRAMS.map(function (p) {
       var disabled = disabledIds.indexOf(p.id) >= 0 && p.id !== selectedId;
-      return '<option value="' + esc(p.id) + '"' + (p.id === selectedId ? " selected" : "") +
+      return '<option value="' + esc(p.id) + '"' + langAttr(p.language) + (p.id === selectedId ? " selected" : "") +
         (disabled ? " disabled" : "") + ">" + esc(programLabel(p)) + "</option>";
     }).join("");
   }
@@ -465,6 +473,7 @@
   /* ================= chrome (header/tabs/selects) ================= */
 
   function renderChrome() {
+    document.documentElement.lang = state.lang;
     document.getElementById("lbl-language").textContent = t("language");
     var skip = document.getElementById("skip-link");
     if (skip) skip.textContent = t("skipToMain");
@@ -539,7 +548,7 @@
     } else {
       h += '<section class="filter-section"><h3>' + esc(t("program")) + '</h3><select data-action="set-program">';
       PROGRAMS.forEach(function (p) {
-        h += '<option value="' + esc(p.id) + '"' + (state.programId === p.id ? " selected" : "") + ">" + esc(programLabel(p)) + "</option>";
+        h += '<option value="' + esc(p.id) + '"' + langAttr(p.language) + (state.programId === p.id ? " selected" : "") + ">" + esc(programLabel(p)) + "</option>";
       });
       h += "</select>";
       var curProg = programById(state.programId);
@@ -804,7 +813,7 @@
       });
       h += '<article class="mod-card"><div class="mod-card-head">' +
         '<button type="button" class="mod-code" data-action="open-module" data-program="' + esc(p.id) + '" data-module="' + esc(mod.code) + '">' + esc(mod.code) + "</button>" +
-        '<h2 class="mod-title">' + esc(mod.title) + "</h2>" +
+        '<h2 class="mod-title"' + langAttr(p.language) + '">' + esc(mod.title) + "</h2>" +
         '<span class="cat-badge ' + esc(mod.category) + '">' + esc(catLabel(p, mod.category)) + "</span>" +
         '<span class="mod-meta">' + esc(mod.credits + " " + t("credits")) + "</span></div>";
 
@@ -816,7 +825,7 @@
           h += '<div class="mapping-row" style="' + phaseVars(c.phase) + '">' +
             '<div><button type="button" class="m-comp" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(compLabel(c)) + "</button>" +
             '<div class="mapping-lvl">' + levelDots(m.level) + " " + esc(levelLabel(m.level)) + "</div></div>" +
-            '<div class="m-note">' + esc(noteText(m)) + "</div></div>";
+            '<div class="m-note"' + langAttr(noteLang(m)) + '">' + esc(noteText(m)) + "</div></div>";
         });
         h += "</div>";
       } else {
@@ -884,15 +893,15 @@
   function frameworkModuleCard(e, showProgram) {
     return '<article class="mod-card"><div class="mod-card-head">' +
       '<button type="button" class="mod-code" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' + esc(e.module.code) + "</button>" +
-      '<h2 class="mod-title">' + esc(e.module.title) + "</h2>" +
+      '<h2 class="mod-title"' + langAttr(e.program.language) + '">' + esc(e.module.title) + "</h2>" +
       '<span class="cat-badge ' + esc(e.module.category) + '">' + esc(catLabel(e.program, e.module.category)) + "</span>" +
       '<span class="mod-meta">' + esc((showProgram ? e.program.title + " · " : "") + e.module.credits + " " + t("credits")) + "</span></div>" +
       '<div class="mapping-lvl" style="margin-top:6px">' + levelDots(e.mapping.level) + " " + esc(levelLabel(e.mapping.level)) + "</div>" +
-      '<p class="m-note" style="margin:6px 0 0">' + esc(noteText(e.mapping)) + "</p>" +
+      '<p class="m-note" style="margin:6px 0 0"' + langAttr(noteLang(e.mapping)) + '">' + esc(noteText(e.mapping)) + "</p>" +
       '<details class="mod-extra"><summary>' + esc(t("showDetails")) + "</summary>" +
-      '<h3>' + esc(t("goals")) + '</h3><p class="goals">' + esc(e.module.goals) + "</p>" +
+      '<h3>' + esc(t("goals")) + '</h3><p class="goals"' + langAttr(e.program.language) + '">' + esc(e.module.goals) + "</p>" +
       (e.module.topics && e.module.topics.length ?
-        '<h3>' + esc(t("topics")) + '</h3><ul class="topics">' +
+        '<h3>' + esc(t("topics")) + '</h3><ul class="topics"' + langAttr(e.program.language) + '">' +
         e.module.topics.map(function (tp) { return "<li>" + esc(tp) + "</li>"; }).join("") + "</ul>" : "") +
       "</details></article>";
   }
@@ -1291,11 +1300,11 @@
     var mod = p && moduleByCode(p, code);
     if (!mod) return;
     var f = fw();
-    var body = '<p class="kv">' + esc(p.title) + " · " + esc(mod.credits + " " + t("creditsLong")) + " · " +
+    var body = '<p class="kv"><span' + langAttr(p.language) + '">' + esc(p.title) + "</span> · " + esc(mod.credits + " " + t("creditsLong")) + " · " +
       '<span class="cat-badge ' + esc(mod.category) + '">' + esc(catLabel(p, mod.category)) + "</span></p>";
-    if (mod.goals) body += "<h3>" + esc(t("goals")) + "</h3><p>" + esc(mod.goals) + "</p>";
+    if (mod.goals) body += "<h3>" + esc(t("goals")) + "</h3><p" + langAttr(p.language) + ">" + esc(mod.goals) + "</p>";
     if (mod.topics && mod.topics.length) {
-      body += "<h3>" + esc(t("topics")) + '</h3><ul class="topics">' + mod.topics.map(function (tp) { return "<li>" + esc(tp) + "</li>"; }).join("") + "</ul>";
+      body += "<h3>" + esc(t("topics")) + '</h3><ul class="topics"' + langAttr(p.language) + '">' + mod.topics.map(function (tp) { return "<li>" + esc(tp) + "</li>"; }).join("") + "</ul>";
     }
     var maps = moduleMappings(mod).filter(function (m) { return compForMapping(f, m.competency); });
     body += "<h3>" + esc(t("mappedCompetencies")) + " (" + maps.length + ")</h3>";
@@ -1307,7 +1316,7 @@
         body += '<div class="mapping-row" style="' + phaseVars(c.phase) + '">' +
           '<div><button type="button" class="m-comp" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(compLabel(c)) + "</button>" +
           '<div class="mapping-lvl">' + levelDots(m.level) + " " + esc(levelLabel(m.level)) + "</div></div>" +
-          '<div class="m-note">' + esc(noteText(m)) + "</div></div>";
+          '<div class="m-note"' + langAttr(noteLang(m)) + '">' + esc(noteText(m)) + "</div></div>";
       });
       body += "</div>";
     } else {
@@ -1315,7 +1324,7 @@
     }
     if (p.source) body += '<p class="modal-src">' + esc(t("source")) + ': <a href="' + esc(p.source) + '" target="_blank" rel="noopener">' + esc(p.sourceLabel || p.title) + "</a></p>";
     if (p.institution) body += '<p class="modal-src">' + esc(t("institution")) + ': ' + institutionAnchor(p) + "</p>";
-    openModal({ title: esc(mod.code + " – " + mod.title), body: body });
+    openModal({ title: esc(mod.code + " – ") + "<span" + langAttr(p.language) + ">" + esc(mod.title) + "</span>", body: body });
   }
 
   function openOrientationModal() {
@@ -1335,7 +1344,7 @@
           '<div><button type="button" class="m-comp" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' +
           esc(e.module.code + " – " + e.module.title) + "</button>" +
           '<div class="mapping-lvl">' + levelDots(e.mapping.level) + " " + esc(levelLabel(e.mapping.level)) + " · " + esc(e.program.title) + "</div></div>" +
-          '<div class="m-note">' + esc(noteText(e.mapping)) + "</div></div>";
+          '<div class="m-note"' + langAttr(noteLang(e.mapping)) + '>' + esc(noteText(e.mapping)) + "</div></div>";
       });
       body += "</div>";
     } else {
@@ -1367,7 +1376,7 @@
         body += '<div class="mapping-row"><div><button type="button" class="m-comp" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' +
           esc(e.module.code + " – " + e.module.title) + "</button>" +
           '<div class="mapping-lvl">' + levelDots(e.mapping.level) + " " + esc(levelLabel(e.mapping.level)) + " · " + esc(e.program.title) + "</div></div>" +
-          '<div class="m-note">' + esc(noteText(e.mapping)) + "</div></div>";
+          '<div class="m-note"' + langAttr(noteLang(e.mapping)) + '>' + esc(noteText(e.mapping)) + "</div></div>";
       });
       body += "</div>";
     } else {
@@ -1388,7 +1397,7 @@
     body += '<div class="mapping-row" style="' + phaseVars(c.phase) + ';border-top:none">' +
       '<div><span class="m-comp">' + esc(compLabel(c)) + "</span>" +
       '<div class="mapping-lvl">' + levelDots(m ? m.level : 1) + " " + esc(m ? levelLabel(m.level) : "") + "</div></div>" +
-      '<div class="m-note">' + esc(m ? noteText(m) : "") + "</div></div>";
+      '<div class="m-note"' + langAttr(noteLang(m)) + '">' + esc(m ? noteText(m) : "") + "</div></div>";
     body += '<p style="margin-top:14px"><button type="button" class="view-tab" data-action="open-module" data-program="' + esc(pid) + '" data-module="' + esc(code) + '">' + esc(t("modules")) + ": " + esc(mod.code) + '</button> ' +
       '<button type="button" class="view-tab" data-action="open-comp" data-comp="' + esc(compCode) + '">' +
       (isOrientationComp(c.code) ? esc(c.title) : esc(t("competencies")) + ": " + esc(c.code)) + "</button></p>";

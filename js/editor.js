@@ -1800,6 +1800,7 @@
   }
 
   function renderLangSelect() {
+    document.documentElement.lang = state.lang;
     var sel = byId("sel-lang");
     if (sel) sel.value = state.lang;
     var lbl = byId("lbl-language");
