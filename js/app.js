@@ -546,7 +546,7 @@
       if (insts.length) h += '<p class="inst-link">' + esc(t(insts.length > 1 ? "institutions" : "institution")) + ": " + insts.map(institutionAnchor).join(" · ") + "</p>";
       h += "</section>";
     } else {
-      h += '<section class="filter-section"><h3>' + esc(t("program")) + '</h3><select data-action="set-program">';
+      h += '<section class="filter-section"><h3>' + esc(t("program")) + '</h3><select data-action="set-program" aria-label="' + esc(t("program")) + '">';
       PROGRAMS.forEach(function (p) {
         h += '<option value="' + esc(p.id) + '"' + langAttr(p.language) + (state.programId === p.id ? " selected" : "") + ">" + esc(programLabel(p)) + "</option>";
       });
@@ -560,9 +560,9 @@
     if (state.view === "framework") {
       h += '<section class="filter-section"><h3>' + esc(t("compare")) + '</h3>';
       if (compareActive()) {
-        h += '<div class="seg seg-4">';
+        h += '<div class="seg seg-4" role="group" aria-label="' + esc(t("compare")) + '">';
         [["all", t("compareFilterAll")], ["gap", t("compareFilterGap")], ["anchor", t("compareFilterAnchor")], ["shared", t("compareFilterShared")]].forEach(function (o) {
-          h += '<button type="button" data-action="set-compare-filter" data-value="' + o[0] + '" class="' +
+          h += '<button type="button" data-action="set-compare-filter" data-value="' + o[0] + '" aria-pressed="' + (state.compareFilter === o[0] ? "true" : "false") + '" class="' +
             (state.compareFilter === o[0] ? "active" : "") + '">' + esc(o[1]) + "</button>";
         });
         h += "</div>";
@@ -574,9 +574,9 @@
 
     /* --- arrangement (program view only) --- */
     if (state.view === "program") {
-      h += '<section class="filter-section"><h3>' + esc(t("arrangement")) + '</h3><div class="seg">' +
-        '<button data-action="set-arrange" data-value="byCompetency" class="' + (state.arrange === "byCompetency" ? "active" : "") + '">' + esc(t("arrangeByCompetency")) + "</button>" +
-        '<button data-action="set-arrange" data-value="byModule" class="' + (state.arrange === "byModule" ? "active" : "") + '">' + esc(t("arrangeByModule")) + "</button>" +
+      h += '<section class="filter-section"><h3>' + esc(t("arrangement")) + '</h3><div class="seg" role="group" aria-label="' + esc(t("arrangement")) + '">' +
+        '<button data-action="set-arrange" data-value="byCompetency" aria-pressed="' + (state.arrange === "byCompetency" ? "true" : "false") + '" class="' + (state.arrange === "byCompetency" ? "active" : "") + '">' + esc(t("arrangeByCompetency")) + "</button>" +
+        '<button data-action="set-arrange" data-value="byModule" aria-pressed="' + (state.arrange === "byModule" ? "true" : "false") + '" class="' + (state.arrange === "byModule" ? "active" : "") + '">' + esc(t("arrangeByModule")) + "</button>" +
         "</div></section>";
     }
 
@@ -585,16 +585,16 @@
     PROGRAMS.forEach(function (p) { (p.categories || []).forEach(function (c) { cats[c.id] = c.label; }); });
     var catIds = Object.keys(cats);
     if (catIds.length) {
-      h += '<section class="filter-section"><h3>' + esc(t("moduleCategories")) + '</h3>';
+      h += '<fieldset class="filter-section"><legend>' + esc(t("moduleCategories")) + '</legend>';
       catIds.forEach(function (cid) {
         h += '<label><input type="checkbox" data-action="toggle-cat" value="' + esc(cid) + '"' +
           (!state.cats || state.cats.has(cid) ? " checked" : "") + "> " + esc(cats[cid]) + "</label>";
       });
-      h += "</section>";
+      h += "</fieldset>";
     }
 
     /* --- min level --- */
-    h += '<section class="filter-section"><h3>' + esc(t("minLevel")) + '</h3><select data-action="set-minlevel">';
+    h += '<section class="filter-section"><h3>' + esc(t("minLevel")) + '</h3><select data-action="set-minlevel" aria-label="' + esc(t("minLevel")) + '">';
     [1, 2, 3].forEach(function (l) {
       h += '<option value="' + l + '"' + (state.minLevel === l ? " selected" : "") + ">≥ " + l + " – " + esc(t("level" + l)) + "</option>";
     });
@@ -602,7 +602,7 @@
 
     /* --- phases / competencies / dimensions (program + matrix views) --- */
     if (state.view !== "framework" && f) {
-      h += '<section class="filter-section"><h3>' + esc(t("phases")) + '</h3>' +
+      h += '<fieldset class="filter-section"><legend>' + esc(t("phases")) + '</legend>' +
         '<div class="check-tools"><button data-action="phases-all">' + esc(t("all")) + '</button><button data-action="phases-none">' + esc(t("none")) + "</button></div>";
       f.phases.forEach(function (ph) {
         if (isOrientationPhase(ph)) return;   /* not a phase — shown as an unnumbered competency */
@@ -610,9 +610,9 @@
           (!state.phases || state.phases.has(ph.id) ? " checked" : "") + '><span><span class="phase-dot" style="background:' +
           phaseColorVar(ph.id) + '"></span>' + esc(phaseTitle(ph)) + "</span></label>";
       });
-      h += "</section>";
+      h += "</fieldset>";
 
-      h += '<section class="filter-section"><h3>' + esc(t("competencies")) + '</h3>' +
+      h += '<fieldset class="filter-section"><legend>' + esc(t("competencies")) + '</legend>' +
         '<div class="check-tools"><button data-action="comps-all">' + esc(t("all")) + '</button><button data-action="comps-none">' + esc(t("none")) + "</button></div>";
       var oph = orientationPhase(f);
       if (oph) {
@@ -629,14 +629,14 @@
             (!state.comps || state.comps.has(c.code) ? " checked" : "") + "> " + esc(c.code + " " + c.title) + "</label>";
         });
       });
-      h += "</section>";
+      h += "</fieldset>";
 
-      h += '<section class="filter-section"><h3>' + esc(t("dimensions")) + '</h3>';
+      h += '<fieldset class="filter-section"><legend>' + esc(t("dimensions")) + '</legend>';
       f.dimensions.forEach(function (d) {
         h += '<label><input type="checkbox" data-action="toggle-dim" value="' + esc(d.id) + '"' +
           (state.dims[d.id] !== false ? " checked" : "") + "> " + esc(d.label) + "</label>";
       });
-      h += "</section>";
+      h += "</fieldset>";
 
       if (state.view === "program") {
         h += '<section class="filter-section"><label><input type="checkbox" data-action="toggle-only-addressed"' +
