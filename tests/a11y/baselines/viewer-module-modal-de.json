@@ -10,7 +10,7 @@
                 "dom": "/html[1]",
                 "aria": "/document[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "Potential_1",
             "message": "Verify there is a way to bypass blocks of content that are repeated on multiple Web pages",
             "messageArgs": [],
@@ -66,7 +66,7 @@
                 "dom": "/html[1]/body[1]/main[1]/div[1]/div[1]/button[1]",
                 "aria": "/document[1]/main[1]/dialog[1]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -94,7 +94,7 @@
                 "dom": "/html[1]/body[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]",
                 "aria": "/document[1]/main[1]/dialog[1]/button[2]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -170,7 +170,7 @@
         }
     ],
     "numExecuted": 345,
-    "ruleTime": 9,
+    "ruleTime": 7,
     "nls": {
         "html_skipnav_exists": {
             "0": "Provide a way to bypass blocks of content that are repeated on multiple Web pages",
@@ -198,7 +198,7 @@
             "manual": 2,
             "pass": 335
         },
-        "scanTime": 21,
+        "scanTime": 22,
         "ruleArchive": "Latest Deployment (latest)",
         "policies": [
             "WCAG_2_2"
@@ -208,10 +208,10 @@
             "potentialviolation",
             "recommendation"
         ],
-        "startScan": 1795618921223,
+        "startScan": 1795619272191,
         "URL": "about:blank"
     },
-    "scanID": "5f0970fb-fa2c-4263-bb0c-3fc9cb5126b6",
+    "scanID": "5b5ade93-d013-411a-8df4-ba96c85f07b0",
     "toolID": "accessibility-checker-v4.0.35",
     "label": "viewer-module-modal-de"
 }

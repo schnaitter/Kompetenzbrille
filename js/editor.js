@@ -1900,6 +1900,8 @@
     if (ne) ne.textContent = t("editorNavEditor");
     var skip = byId("skip-link");
     if (skip) skip.textContent = t("skipToMain");
+    var a11yLink = byId("link-a11y");
+    if (a11yLink) a11yLink.textContent = t("a11yStatement");
     var esb = byId("editor-sidebar");
     if (esb) esb.setAttribute("aria-label", t("editorSidebarLabel"));
     var fsb = byId("framework-sidebar");
