@@ -10,12 +10,14 @@
     "serve": "http-server . -p 4173 -c-1",
     "test:a11y": "node tests/a11y/run.js",
     "test:a11y:baseline": "node tests/a11y/update-baseline.js",
+    "test:html": "html-validate index.html editor.html accessibility.html",
     "all": "npm run jsonld && npm run favicon && npm run validate"
   },
   "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",
     "accessibility-checker": "^4.0.35",
     "ajv": "^8.18.0",
+    "html-validate": "^11.22.1",
     "http-server": "^14.1.1",
     "playwright": "^1.65.1",
     "wait-on": "^9.5.1"

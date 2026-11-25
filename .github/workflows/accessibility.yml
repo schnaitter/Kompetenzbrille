@@ -47,3 +47,6 @@ jobs:
         with:
           name: a11y-report
           path: results/
+
+      - name: Static HTML validation
+        run: npm run test:html
