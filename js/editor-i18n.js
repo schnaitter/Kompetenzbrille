@@ -6,6 +6,8 @@ window.EDITOR_I18N = {
     /* chrome */
     editorNavView: "Anzeige",
     editorNavEditor: "Editor",
+    editorSidebarLabel: "Studiengang bearbeiten",
+    frameworkSidebarLabel: "Framework-Kompetenzen",
     editorBadge: "Editor",
     editorHeading: "Studiengang-Editor",
 
@@ -176,6 +178,8 @@ window.EDITOR_I18N = {
   en: {
     editorNavView: "View",
     editorNavEditor: "Editor",
+    editorSidebarLabel: "Edit study program",
+    frameworkSidebarLabel: "Framework competencies",
     editorBadge: "Editor",
     editorHeading: "Study-program editor",
 

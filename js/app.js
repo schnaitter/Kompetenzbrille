@@ -466,6 +466,10 @@
 
   function renderChrome() {
     document.getElementById("lbl-language").textContent = t("language");
+    var skip = document.getElementById("skip-link");
+    if (skip) skip.textContent = t("skipToMain");
+    var sb = document.getElementById("sidebar");
+    if (sb) sb.setAttribute("aria-label", t("sidebarLabel"));
     var ghLink = document.querySelector(".github-link");
     if (ghLink) {
       ghLink.setAttribute("aria-label", t("githubRepo"));
@@ -479,9 +483,11 @@
 
     var tabs = document.getElementById("view-tabs");
     tabs.innerHTML = "";
+    tabs.setAttribute("aria-label", t("navViews"));
     [["program", t("viewProgram")], ["framework", t("viewFramework")], ["matrix", t("viewMatrix")]].forEach(function (v) {
       var b = document.createElement("button");
       b.className = "view-tab" + (state.view === v[0] ? " active" : "");
+      if (state.view === v[0]) b.setAttribute("aria-current", "page");
       b.textContent = v[1];
       b.setAttribute("data-action", "set-view");
       b.setAttribute("data-value", v[0]);
@@ -504,7 +510,7 @@
   function renderSidebar() {
     var sb = document.getElementById("sidebar");
     var f = fw();
-    var h = "";
+    var h = '<h2 class="visually-hidden">' + esc(t("sidebarLabel")) + "</h2>";
 
     /* --- program selectors --- */
     if (state.view === "framework") {
@@ -649,7 +655,7 @@
     var entries = ((idx && idx[ORIENTATION_CODE]) || []).slice();
     entries.sort(function (a, b) { return b.mapping.level - a.mapping.level || a.module.code.localeCompare(b.module.code); });
     var h = '<article class="comp-card orientation-card" style="' + phaseVars(ph.id) + '">' +
-      '<div class="comp-card-head"><button type="button" class="comp-title" data-action="open-orientation">' + esc(ph.title) + "</button></div>" +
+      '<h2 class="comp-card-head"><button type="button" class="comp-title" data-action="open-orientation">' + esc(ph.title) + "</button></h2>" +
       orientationDims(ph) +
       '<div class="comp-mods"><span class="comp-mods-label">' + esc(t("addressedIn")) + ":</span>";
     if (entries.length) entries.forEach(function (e) { h += moduleChip(e); });
@@ -767,8 +773,8 @@
         var entries = idx[c.code] || [];
         var cls = "comp-card" + (entries.length ? "" : " unaddressed");
         h += '<article class="' + cls + '">' +
-          '<div class="comp-card-head"><button type="button" class="comp-code" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(c.code) + '</button>' +
-          '<button type="button" class="comp-title" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(c.title) + "</button></div>" +
+          '<h2 class="comp-card-head"><button type="button" class="comp-code" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(c.code) + '</button>' +
+          '<button type="button" class="comp-title" data-action="open-comp" data-comp="' + esc(c.code) + '">' + esc(c.title) + "</button></h2>" +
           dimRows(f, c) +
           '<div class="comp-mods"><span class="comp-mods-label">' + esc(t("addressedIn")) + ":</span>";
         if (entries.length) {
@@ -798,7 +804,7 @@
       });
       h += '<article class="mod-card"><div class="mod-card-head">' +
         '<button type="button" class="mod-code" data-action="open-module" data-program="' + esc(p.id) + '" data-module="' + esc(mod.code) + '">' + esc(mod.code) + "</button>" +
-        '<span class="mod-title">' + esc(mod.title) + "</span>" +
+        '<h2 class="mod-title">' + esc(mod.title) + "</h2>" +
         '<span class="cat-badge ' + esc(mod.category) + '">' + esc(catLabel(p, mod.category)) + "</span>" +
         '<span class="mod-meta">' + esc(mod.credits + " " + t("credits")) + "</span></div>";
 
@@ -878,7 +884,7 @@
   function frameworkModuleCard(e, showProgram) {
     return '<article class="mod-card"><div class="mod-card-head">' +
       '<button type="button" class="mod-code" data-action="open-module" data-program="' + esc(e.program.id) + '" data-module="' + esc(e.module.code) + '">' + esc(e.module.code) + "</button>" +
-      '<span class="mod-title">' + esc(e.module.title) + "</span>" +
+      '<h2 class="mod-title">' + esc(e.module.title) + "</h2>" +
       '<span class="cat-badge ' + esc(e.module.category) + '">' + esc(catLabel(e.program, e.module.category)) + "</span>" +
       '<span class="mod-meta">' + esc((showProgram ? e.program.title + " · " : "") + e.module.credits + " " + t("credits")) + "</span></div>" +
       '<div class="mapping-lvl" style="margin-top:6px">' + levelDots(e.mapping.level) + " " + esc(levelLabel(e.mapping.level)) + "</div>" +
@@ -957,7 +963,7 @@
     var idx = competencyIndex(state.programIds);
     var cmp = compareActive();
 
-    var h = "";
+    var h = '<h2 class="visually-hidden">' + esc(t("viewFramework")) + "</h2>";
 
     /* comparison summary */
     if (compareActive()) h += compareSummary(f, idx);
@@ -1054,7 +1060,7 @@
     var mods = p.modules.filter(catsPass);
     var idx = competencyIndex([p.id]);
 
-    var h = "";
+    var h = '<h2 class="visually-hidden">' + esc(t("viewMatrix")) + "</h2>";
 
     /* legend */
     h += '<div class="legend" id="matrix-legend"><strong>' + esc(t("legend")) + ":</strong>";

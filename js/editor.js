@@ -1818,6 +1818,14 @@
     if (nv) nv.textContent = t("editorNavView");
     var ne = byId("nav-editor");
     if (ne) ne.textContent = t("editorNavEditor");
+    var skip = byId("skip-link");
+    if (skip) skip.textContent = t("skipToMain");
+    var esb = byId("editor-sidebar");
+    if (esb) esb.setAttribute("aria-label", t("editorSidebarLabel"));
+    var fsb = byId("framework-sidebar");
+    if (fsb) fsb.setAttribute("aria-label", t("frameworkSidebarLabel"));
+    var enav = document.querySelector(".view-tabs");
+    if (enav) enav.setAttribute("aria-label", t("navViews"));
     var badge = document.querySelector(".editor-badge");
     if (badge) badge.textContent = t("editorBadge");
   }
