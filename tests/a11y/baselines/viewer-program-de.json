@@ -10,7 +10,7 @@
                 "dom": "/html[1]/head[1]/link[3]",
                 "aria": "/document[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 2,
             "reasonId": "Potential_1",
             "message": "Verify color is not used as the only visual means of conveying information",
             "messageArgs": [],
@@ -25,8 +25,64 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_color_misuse.html#%7B%22message%22%3A%22Verify%20color%20is%20not%20used%20as%20the%20only%20visual%20means%20of%20conveying%20information%22%2C%22snippet%22%3A%22%3Clink%20href%3D%5C%22css%2Fstyle.css%5C%22%20rel%3D%5C%22stylesheet%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22style_color_misuse%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "RECOMMENDATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/a[1]",
+                "aria": "/document[1]/link[1]"
+            },
+            "ruleTime": 1,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": -9999,
+                "top": 0,
+                "height": 39,
+                "width": 172
+            },
+            "snippet": "<a href=\"#main\" id=\"skip-link\" class=\"skip-link\">",
+            "source": null,
+            "category": "Accessibility",
+            "level": "recommendation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23main%5C%22%20id%3D%5C%22skip-link%5C%22%20class%3D%5C%22skip-link%5C%22%3E%22%2C%22value%22%3A%5B%22RECOMMENDATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "element_tabbable_visible",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/a[1]",
+                "aria": "/document[1]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_visible",
+            "message": "Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": -9999,
+                "top": 0,
+                "height": 39,
+                "width": 172
+            },
+            "snippet": "<a href=\"#main\" id=\"skip-link\" class=\"skip-link\">",
+            "source": null,
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_tabbable_visible.html#%7B%22message%22%3A%22Confirm%20the%20element%20should%20be%20tabbable%20and%20if%20so%2C%20it%20becomes%20visible%20when%20it%20has%20keyboard%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23main%5C%22%20id%3D%5C%22skip-link%5C%22%20class%3D%5C%22skip-link%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_visible%22%2C%22ruleId%22%3A%22element_tabbable_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
             "ruleId": "style_focus_visible",
@@ -38,7 +94,7 @@
                 "dom": "/html[1]/body[1]/header[1]/div[1]/nav[1]/button[1]",
                 "aria": "/document[1]/banner[1]/navigation[1]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -49,12 +105,12 @@
                 "height": 27,
                 "width": 128
             },
-            "snippet": "<button data-value=\"program\" data-action=\"set-view\" class=\"view-tab active\">",
+            "snippet": "<button data-value=\"program\" data-action=\"set-view\" aria-current=\"page\" class=\"view-tab active\">",
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-value%3D%5C%22program%5C%22%20data-action%3D%5C%22set-view%5C%22%20class%3D%5C%22view-tab%20active%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+            "ignored": true,
+            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-value%3D%5C%22program%5C%22%20data-action%3D%5C%22set-view%5C%22%20aria-current%3D%5C%22page%5C%22%20class%3D%5C%22view-tab%20active%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
             "ruleId": "style_focus_visible",
@@ -66,7 +122,7 @@
                 "dom": "/html[1]/body[1]/header[1]/div[1]/nav[1]/button[2]",
                 "aria": "/document[1]/banner[1]/navigation[1]/button[2]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -81,7 +137,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-value%3D%5C%22framework%5C%22%20data-action%3D%5C%22set-view%5C%22%20class%3D%5C%22view-tab%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -94,7 +150,7 @@
                 "dom": "/html[1]/body[1]/header[1]/div[1]/nav[1]/button[3]",
                 "aria": "/document[1]/banner[1]/navigation[1]/button[3]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -109,7 +165,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-value%3D%5C%22matrix%5C%22%20data-action%3D%5C%22set-view%5C%22%20class%3D%5C%22view-tab%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -137,7 +193,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22editor.html%5C%22%20class%3D%5C%22view-tab%20editor-link%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -165,7 +221,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cselect%20id%3D%5C%22sel-lang%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -193,13 +249,13 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20title%3D%5C%22Hilfe%5C%22%20aria-label%3D%5C%22Hilfe%5C%22%20data-action%3D%5C%22open-help%5C%22%20class%3D%5C%22help-link%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
-            "ruleId": "aria_complementary_labelled",
+            "ruleId": "aria_complementary_label_visible",
             "value": [
-                "VIOLATION",
+                "RECOMMENDATION",
                 "FAIL"
             ],
             "path": {
@@ -208,7 +264,7 @@
             },
             "ruleTime": 0,
             "reasonId": "Fail_1",
-            "message": "Element with \"complementary\" role does not have a label",
+            "message": "Element with \"complementary\" role does not have a visible label",
             "messageArgs": [],
             "apiArgs": [],
             "bounds": {
@@ -217,12 +273,12 @@
                 "height": 810,
                 "width": 280
             },
-            "snippet": "<aside class=\"sidebar\" id=\"sidebar\">",
+            "snippet": "<aside aria-label=\"Auswahl und Filter\" class=\"sidebar\" id=\"sidebar\">",
             "source": null,
             "category": "Accessibility",
-            "level": "violation",
+            "level": "recommendation",
             "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_complementary_labelled.html#%7B%22message%22%3A%22Element%20with%20%5C%22complementary%5C%22%20role%20does%20not%20have%20a%20label%22%2C%22snippet%22%3A%22%3Caside%20class%3D%5C%22sidebar%5C%22%20id%3D%5C%22sidebar%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_complementary_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_complementary_label_visible.html#%7B%22message%22%3A%22Element%20with%20%5C%22complementary%5C%22%20role%20does%20not%20have%20a%20visible%20label%22%2C%22snippet%22%3A%22%3Caside%20aria-label%3D%5C%22Auswahl%20und%20Filter%5C%22%20class%3D%5C%22sidebar%5C%22%20id%3D%5C%22sidebar%5C%22%3E%22%2C%22value%22%3A%5B%22RECOMMENDATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_complementary_label_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
             "ruleId": "style_focus_visible",
@@ -234,7 +290,7 @@
                 "dom": "/html[1]/body[1]/div[1]/aside[1]/section[1]/select[1]",
                 "aria": "/document[1]/complementary[1]/combobox[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -249,7 +305,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cselect%20data-action%3D%5C%22set-program%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -279,7 +335,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "violation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_label_exists.html#%7B%22message%22%3A%22Form%20control%20element%20%3Cselect%3E%20has%20no%20associated%20label%22%2C%22snippet%22%3A%22%3Cselect%20data-action%3D%5C%22set-program%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22input_label_exists%22%2C%22msgArgs%22%3A%5B%22select%22%5D%7D"
         },
         {
@@ -307,7 +363,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20class%3D%5C%22active%5C%22%20data-value%3D%5C%22byCompetency%5C%22%20data-action%3D%5C%22set-arrange%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -335,7 +391,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20class%3D%5C%22%5C%22%20data-value%3D%5C%22byModule%5C%22%20data-action%3D%5C%22set-arrange%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -365,7 +421,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22pflicht%5C%22%20data-action%3D%5C%22toggle-cat%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -395,7 +451,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22wahlpflicht%5C%22%20data-action%3D%5C%22toggle-cat%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -425,7 +481,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22vertiefung%5C%22%20data-action%3D%5C%22toggle-cat%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -455,7 +511,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22datenkompetenz%5C%22%20data-action%3D%5C%22toggle-cat%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -483,7 +539,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cselect%20data-action%3D%5C%22set-minlevel%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -513,7 +569,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "violation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_label_exists.html#%7B%22message%22%3A%22Form%20control%20element%20%3Cselect%3E%20has%20no%20associated%20label%22%2C%22snippet%22%3A%22%3Cselect%20data-action%3D%5C%22set-minlevel%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22input_label_exists%22%2C%22msgArgs%22%3A%5B%22select%22%5D%7D"
         },
         {
@@ -541,7 +597,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-all%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -569,7 +625,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -582,7 +638,7 @@
                 "dom": "/html[1]/body[1]/div[1]/aside[1]/section[5]/div[1]/button[2]",
                 "aria": "/document[1]/complementary[1]/button[4]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "violation_spacing",
             "message": "Undersized target \"button\" does not have sufficient spacing of 12 CSS pixels from another target \"button\"",
             "messageArgs": [
@@ -600,7 +656,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "violation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html#%7B%22message%22%3A%22Undersized%20target%20%5C%22button%5C%22%20does%20not%20have%20sufficient%20spacing%20of%2012%20CSS%20pixels%20from%20another%20target%20%5C%22button%5C%22%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22violation_spacing%22%2C%22ruleId%22%3A%22target_spacing_sufficient%22%2C%22msgArgs%22%3A%5B%22button%22%2C%22button%22%5D%7D"
         },
         {
@@ -630,7 +686,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%221%5C%22%20data-action%3D%5C%22toggle-phase%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -660,7 +716,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%222%5C%22%20data-action%3D%5C%22toggle-phase%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -690,7 +746,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%223%5C%22%20data-action%3D%5C%22toggle-phase%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -720,7 +776,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%224%5C%22%20data-action%3D%5C%22toggle-phase%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -750,7 +806,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%225%5C%22%20data-action%3D%5C%22toggle-phase%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -778,7 +834,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-all%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -806,7 +862,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -837,7 +893,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "violation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html#%7B%22message%22%3A%22Undersized%20target%20%5C%22button%5C%22%20does%20not%20have%20sufficient%20spacing%20of%2012%20CSS%20pixels%20from%20another%20target%20%5C%22button%5C%22%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22violation_spacing%22%2C%22ruleId%22%3A%22target_spacing_sufficient%22%2C%22msgArgs%22%3A%5B%22button%22%2C%22button%22%5D%7D"
         },
         {
@@ -867,7 +923,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22__orientation%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -897,7 +953,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%221.1%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -927,7 +983,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%221.2%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -957,7 +1013,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%221.3%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -987,7 +1043,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%222.1%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1017,7 +1073,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%222.2%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1047,7 +1103,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%222.3%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1077,7 +1133,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%223.1%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1107,7 +1163,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%223.2%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1137,7 +1193,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%224.1%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1167,7 +1223,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%224.2%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1197,7 +1253,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%224.3%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1227,7 +1283,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%225.1%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1257,7 +1313,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%225.2%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1287,7 +1343,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%225.3%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1317,7 +1373,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22knowledge%5C%22%20data-action%3D%5C%22toggle-dim%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1347,7 +1403,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22skills%5C%22%20data-action%3D%5C%22toggle-dim%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1377,7 +1433,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22examples%5C%22%20data-action%3D%5C%22toggle-dim%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1407,7 +1463,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20data-action%3D%5C%22toggle-only-addressed%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1435,7 +1491,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/list_markup_review.html#%7B%22message%22%3A%22Verify%20this%20is%20a%20list%20and%20if%20so%2C%20modify%20to%20use%20proper%20HTML%20elements%20for%20the%20list%22%2C%22snippet%22%3A%22%3Cspan%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_list%22%2C%22ruleId%22%3A%22list_markup_review%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1445,8 +1501,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[1]/div[1]/article[1]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[1]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[1]/div[1]/article[1]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[1]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1473,8 +1529,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[2]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[2]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1501,8 +1557,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[2]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[2]/heading[1]/button[2]"
             },
             "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
@@ -1529,8 +1585,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[2]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[2]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1557,8 +1613,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/div[3]/button[2]",
-                "aria": "/document[1]/main[1]/article[2]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/div[2]/button[2]",
+                "aria": "/document[1]/main[1]/article[2]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1585,8 +1641,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[2]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[3]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[2]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[3]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1613,8 +1669,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[2]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[3]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[2]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[3]/heading[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1641,10 +1697,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[2]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[3]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[2]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[3]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1669,10 +1725,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[2]/div[3]/button[2]",
-                "aria": "/document[1]/main[1]/article[3]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[2]/div[2]/button[2]",
+                "aria": "/document[1]/main[1]/article[3]/button[2]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1697,8 +1753,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[4]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[4]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1725,8 +1781,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[4]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[4]/heading[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1753,8 +1809,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[4]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[4]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1781,8 +1837,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[3]/button[2]",
-                "aria": "/document[1]/main[1]/article[4]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[2]/button[2]",
+                "aria": "/document[1]/main[1]/article[4]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1809,8 +1865,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[3]/button[3]",
-                "aria": "/document[1]/main[1]/article[4]/button[5]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[2]/button[3]",
+                "aria": "/document[1]/main[1]/article[4]/button[3]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1837,8 +1893,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[3]/button[4]",
-                "aria": "/document[1]/main[1]/article[4]/button[6]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[2]/button[4]",
+                "aria": "/document[1]/main[1]/article[4]/button[4]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1865,8 +1921,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[3]/button[5]",
-                "aria": "/document[1]/main[1]/article[4]/button[7]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[3]/div[2]/button[5]",
+                "aria": "/document[1]/main[1]/article[4]/button[5]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1893,8 +1949,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[5]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[5]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1921,8 +1977,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[5]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[5]/heading[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1949,8 +2005,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[5]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[5]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -1977,10 +2033,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/div[3]/button[2]",
-                "aria": "/document[1]/main[1]/article[5]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/div[2]/button[2]",
+                "aria": "/document[1]/main[1]/article[5]/button[2]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2005,10 +2061,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/div[3]/button[3]",
-                "aria": "/document[1]/main[1]/article[5]/button[5]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/div[2]/button[3]",
+                "aria": "/document[1]/main[1]/article[5]/button[3]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2033,10 +2089,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/div[3]/button[4]",
-                "aria": "/document[1]/main[1]/article[5]/button[6]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/div[2]/button[4]",
+                "aria": "/document[1]/main[1]/article[5]/button[4]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2061,10 +2117,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[2]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[6]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[2]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[6]/heading[1]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2089,10 +2145,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[2]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[6]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[2]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[6]/heading[1]/button[2]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2117,8 +2173,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[2]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[6]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[2]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[6]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2145,8 +2201,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[2]/div[3]/button[2]",
-                "aria": "/document[1]/main[1]/article[6]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[2]/div[2]/button[2]",
+                "aria": "/document[1]/main[1]/article[6]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2173,8 +2229,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[7]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[7]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2201,8 +2257,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[7]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[7]/heading[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2229,8 +2285,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[7]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[7]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2257,8 +2313,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/div[3]/button[2]",
-                "aria": "/document[1]/main[1]/article[7]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/div[2]/button[2]",
+                "aria": "/document[1]/main[1]/article[7]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2285,8 +2341,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/div[3]/button[3]",
-                "aria": "/document[1]/main[1]/article[7]/button[5]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/div[2]/button[3]",
+                "aria": "/document[1]/main[1]/article[7]/button[3]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2313,8 +2369,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/div[3]/button[4]",
-                "aria": "/document[1]/main[1]/article[7]/button[6]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/div[2]/button[4]",
+                "aria": "/document[1]/main[1]/article[7]/button[4]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2341,10 +2397,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[8]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[8]/heading[1]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2369,8 +2425,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[8]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[8]/heading[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2397,8 +2453,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[8]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[8]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2425,8 +2481,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[3]/button[2]",
-                "aria": "/document[1]/main[1]/article[8]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[2]/button[2]",
+                "aria": "/document[1]/main[1]/article[8]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2453,8 +2509,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[3]/button[3]",
-                "aria": "/document[1]/main[1]/article[8]/button[5]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[2]/button[3]",
+                "aria": "/document[1]/main[1]/article[8]/button[3]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2481,8 +2537,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[3]/button[4]",
-                "aria": "/document[1]/main[1]/article[8]/button[6]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[2]/button[4]",
+                "aria": "/document[1]/main[1]/article[8]/button[4]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2509,8 +2565,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[3]/button[5]",
-                "aria": "/document[1]/main[1]/article[8]/button[7]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[2]/button[5]",
+                "aria": "/document[1]/main[1]/article[8]/button[5]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2537,8 +2593,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[3]/button[6]",
-                "aria": "/document[1]/main[1]/article[8]/button[8]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[2]/button[6]",
+                "aria": "/document[1]/main[1]/article[8]/button[6]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2565,8 +2621,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[3]/button[7]",
-                "aria": "/document[1]/main[1]/article[8]/button[9]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/div[2]/button[7]",
+                "aria": "/document[1]/main[1]/article[8]/button[7]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2593,8 +2649,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[2]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[9]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[2]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[9]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2621,8 +2677,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[2]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[9]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[2]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[9]/heading[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2649,10 +2705,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[2]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[9]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[2]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[9]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2677,10 +2733,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[10]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[10]/heading[1]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2705,8 +2761,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[10]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[10]/heading[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2733,10 +2789,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[10]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[10]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2761,10 +2817,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[3]/button[2]",
-                "aria": "/document[1]/main[1]/article[10]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[2]/button[2]",
+                "aria": "/document[1]/main[1]/article[10]/button[2]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2789,10 +2845,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[3]/button[3]",
-                "aria": "/document[1]/main[1]/article[10]/button[5]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[2]/button[3]",
+                "aria": "/document[1]/main[1]/article[10]/button[3]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2817,10 +2873,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[3]/button[4]",
-                "aria": "/document[1]/main[1]/article[10]/button[6]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[2]/button[4]",
+                "aria": "/document[1]/main[1]/article[10]/button[4]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2845,10 +2901,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[3]/button[5]",
-                "aria": "/document[1]/main[1]/article[10]/button[7]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[2]/button[5]",
+                "aria": "/document[1]/main[1]/article[10]/button[5]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2873,10 +2929,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[3]/button[6]",
-                "aria": "/document[1]/main[1]/article[10]/button[8]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[2]/button[6]",
+                "aria": "/document[1]/main[1]/article[10]/button[6]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2901,8 +2957,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[2]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[11]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[2]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[11]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2929,10 +2985,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[2]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[11]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[2]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[11]/heading[1]/button[2]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2957,8 +3013,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[2]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[11]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[2]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[11]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -2985,10 +3041,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[12]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[12]/heading[1]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3013,8 +3069,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[12]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[12]/heading[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3041,8 +3097,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[12]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[12]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3069,8 +3125,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[3]/button[2]",
-                "aria": "/document[1]/main[1]/article[12]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[2]/button[2]",
+                "aria": "/document[1]/main[1]/article[12]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3097,8 +3153,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[3]/button[3]",
-                "aria": "/document[1]/main[1]/article[12]/button[5]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[2]/button[3]",
+                "aria": "/document[1]/main[1]/article[12]/button[3]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3125,8 +3181,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[3]/button[4]",
-                "aria": "/document[1]/main[1]/article[12]/button[6]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[2]/button[4]",
+                "aria": "/document[1]/main[1]/article[12]/button[4]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3153,8 +3209,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[1]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[13]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[1]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[13]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3181,8 +3237,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[1]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[13]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[1]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[13]/heading[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3209,8 +3265,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[1]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[13]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[1]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[13]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3237,8 +3293,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[2]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[14]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[2]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[14]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3265,10 +3321,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[2]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[14]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[2]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[14]/heading[1]/button[2]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3293,8 +3349,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[2]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[14]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[2]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[14]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3321,8 +3377,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/div[1]/button[1]",
-                "aria": "/document[1]/main[1]/article[15]/button[1]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/h2[1]/button[1]",
+                "aria": "/document[1]/main[1]/article[15]/heading[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3349,8 +3405,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/div[1]/button[2]",
-                "aria": "/document[1]/main[1]/article[15]/button[2]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/h2[1]/button[2]",
+                "aria": "/document[1]/main[1]/article[15]/heading[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -3377,10 +3433,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/div[3]/button[1]",
-                "aria": "/document[1]/main[1]/article[15]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/div[2]/button[1]",
+                "aria": "/document[1]/main[1]/article[15]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3405,10 +3461,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/div[3]/button[2]",
-                "aria": "/document[1]/main[1]/article[15]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/div[2]/button[2]",
+                "aria": "/document[1]/main[1]/article[15]/button[2]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3433,10 +3489,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/div[3]/button[3]",
-                "aria": "/document[1]/main[1]/article[15]/button[5]"
+                "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/div[2]/button[3]",
+                "aria": "/document[1]/main[1]/article[15]/button[3]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3455,12 +3511,20 @@
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP1%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         }
     ],
-    "numExecuted": 4076,
-    "ruleTime": 113,
+    "numExecuted": 4159,
+    "ruleTime": 127,
     "nls": {
+        "aria_content_in_landmark": {
+            "0": "All content must reside within an element with a landmark role",
+            "Fail_1": "Content is not within a landmark element"
+        },
         "style_color_misuse": {
             "0": "Combine color and descriptive markup to convey information",
             "Potential_1": "Verify color is not used as the only visual means of conveying information"
+        },
+        "element_tabbable_visible": {
+            "0": "A tabbable element should be visible on the screen when it has keyboard focus",
+            "potential_visible": "Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus"
         },
         "style_focus_visible": {
             "0": "The keyboard focus indicator should be visible when default border or outline is modified by CSS",
@@ -3474,9 +3538,9 @@
             "0": "Each form control must have an associated label",
             "Fail_1": "Form control element <{0}> has no associated label"
         },
-        "aria_complementary_labelled": {
-            "0": "Each element with \"complementary\" role must have a label that describes its purpose",
-            "Fail_1": "Element with \"complementary\" role does not have a label"
+        "aria_complementary_label_visible": {
+            "0": "Each element with \"complementary\" role should have a visible label that describes its purpose",
+            "Fail_1": "Element with \"complementary\" role does not have a visible label"
         },
         "input_checkboxes_grouped": {
             "0": "Related sets of radio buttons or checkboxes should be programmatically grouped",
@@ -3489,18 +3553,18 @@
     },
     "summary": {
         "counts": {
-            "ignored": 0,
-            "elements": 119,
-            "elementsViolation": 5,
-            "elementsViolationReview": 117,
-            "violation": 5,
-            "potentialviolation": 116,
-            "recommendation": 0,
+            "ignored": 48,
+            "elements": 120,
+            "elementsViolation": 0,
+            "elementsViolationReview": 74,
+            "violation": 0,
+            "potentialviolation": 73,
+            "recommendation": 2,
             "potentialrecommendation": 5,
             "manual": 1,
-            "pass": 3949
+            "pass": 4030
         },
-        "scanTime": 189,
+        "scanTime": 191,
         "ruleArchive": "Latest Deployment (latest)",
         "policies": [
             "WCAG_2_2"
@@ -3510,10 +3574,10 @@
             "potentialviolation",
             "recommendation"
         ],
-        "startScan": 1795616164003,
+        "startScan": 1795616933881,
         "URL": "http://127.0.0.1:4173/index.html#view=program&lang=de&program=hu-berlin-ma-is"
     },
-    "scanID": "cfcdb8c2-e534-4333-83ad-d18cb7ccf023",
+    "scanID": "7784bb3f-2f31-4707-b9a7-02b0069e2d03",
     "toolID": "accessibility-checker-v4.0.35",
     "label": "viewer-program-de"
 }
