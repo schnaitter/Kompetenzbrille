@@ -770,8 +770,8 @@
     var fid = panelFrameworkId();
     var fwd = frameworkData(fid);
     h += '<div class="ed-fw-head">';
-    h += '<select data-action="pick-framework">' + frameworkOptionsPanel(fid) + "</select>";
-    h += '<input type="text" class="ed-fw-filter" data-action="framework-filter" placeholder="' +
+    h += '<select data-action="pick-framework" aria-label="' + esc(t("editorFrameworkPanel")) + '">' + frameworkOptionsPanel(fid) + "</select>";
+    h += '<input type="text" class="ed-fw-filter" data-action="framework-filter" aria-label="' + esc(t("editorFrameworkFilter")) + '" placeholder="' +
       esc(t("editorFrameworkFilter")) + '" value="' + esc(state.frameworkFilter) + '">';
     h += "</div>";
     h += fwd ? renderFrameworkCompetencies(fwd, fid)
@@ -783,9 +783,9 @@
   function renderPanelTabs() {
     function tab(value, label) {
       return '<button type="button" class="ed-panel-tab' + (state.panelMode === value ? " active" : "") +
-        '" data-action="panel-mode" data-value="' + value + '">' + esc(label) + "</button>";
+        '" aria-pressed="' + (state.panelMode === value ? "true" : "false") + '" data-action="panel-mode" data-value="' + value + '">' + esc(label) + "</button>";
     }
-    return '<div class="ed-panel-tabs">' + tab("framework", t("editorPanelFramework")) +
+    return '<div class="ed-panel-tabs" role="group" aria-label="' + esc(t("editorFrameworkPanel")) + '">' + tab("framework", t("editorPanelFramework")) +
       tab("original", t("editorPanelOriginal")) + "</div>";
   }
 

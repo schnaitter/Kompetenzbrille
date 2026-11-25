@@ -53,7 +53,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "recommendation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23main%5C%22%20id%3D%5C%22skip-link%5C%22%20class%3D%5C%22skip-link%5C%22%3E%22%2C%22value%22%3A%5B%22RECOMMENDATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -81,7 +81,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_tabbable_visible.html#%7B%22message%22%3A%22Confirm%20the%20element%20should%20be%20tabbable%20and%20if%20so%2C%20it%20becomes%20visible%20when%20it%20has%20keyboard%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23main%5C%22%20id%3D%5C%22skip-link%5C%22%20class%3D%5C%22skip-link%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_visible%22%2C%22ruleId%22%3A%22element_tabbable_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -94,7 +94,7 @@
                 "dom": "/html[1]/body[1]/header[1]/div[1]/nav[1]/button[1]",
                 "aria": "/document[1]/banner[1]/navigation[1]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -150,7 +150,7 @@
                 "dom": "/html[1]/body[1]/header[1]/div[1]/nav[1]/button[3]",
                 "aria": "/document[1]/banner[1]/navigation[1]/button[3]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -206,7 +206,7 @@
                 "dom": "/html[1]/body[1]/header[1]/div[2]/label[1]/select[1]",
                 "aria": "/document[1]/banner[1]/combobox[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -277,7 +277,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "recommendation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_complementary_label_visible.html#%7B%22message%22%3A%22Element%20with%20%5C%22complementary%5C%22%20role%20does%20not%20have%20a%20visible%20label%22%2C%22snippet%22%3A%22%3Caside%20aria-label%3D%5C%22Selection%20and%20filters%5C%22%20class%3D%5C%22sidebar%5C%22%20id%3D%5C%22sidebar%5C%22%3E%22%2C%22value%22%3A%5B%22RECOMMENDATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_complementary_label_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -290,7 +290,7 @@
                 "dom": "/html[1]/body[1]/div[1]/aside[1]/section[1]/select[1]",
                 "aria": "/document[1]/complementary[1]/combobox[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -301,42 +301,12 @@
                 "height": 29,
                 "width": 246
             },
-            "snippet": "<select data-action=\"set-program\">",
+            "snippet": "<select aria-label=\"Study program\" data-action=\"set-program\">",
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
             "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cselect%20data-action%3D%5C%22set-program%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
-        },
-        {
-            "ruleId": "input_label_exists",
-            "value": [
-                "VIOLATION",
-                "FAIL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[1]/select[1]",
-                "aria": "/document[1]/complementary[1]/combobox[1]"
-            },
-            "ruleTime": 0,
-            "reasonId": "Fail_1",
-            "message": "Form control element <select> has no associated label",
-            "messageArgs": [
-                "select"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 120,
-                "height": 29,
-                "width": 246
-            },
-            "snippet": "<select data-action=\"set-program\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "violation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_label_exists.html#%7B%22message%22%3A%22Form%20control%20element%20%3Cselect%3E%20has%20no%20associated%20label%22%2C%22snippet%22%3A%22%3Cselect%20data-action%3D%5C%22set-program%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22input_label_exists%22%2C%22msgArgs%22%3A%5B%22select%22%5D%7D"
+            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cselect%20aria-label%3D%5C%22Study%20program%5C%22%20data-action%3D%5C%22set-program%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
             "ruleId": "style_focus_visible",
@@ -346,7 +316,7 @@
             ],
             "path": {
                 "dom": "/html[1]/body[1]/div[1]/aside[1]/section[2]/div[1]/button[1]",
-                "aria": "/document[1]/complementary[1]/button[1]"
+                "aria": "/document[1]/complementary[1]/group[1]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -359,12 +329,12 @@
                 "height": 26,
                 "width": 122
             },
-            "snippet": "<button class=\"active\" data-value=\"byCompetency\" data-action=\"set-arrange\">",
+            "snippet": "<button class=\"active\" aria-pressed=\"true\" data-value=\"byCompetency\" data-action=\"set-arrange\">",
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
             "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20class%3D%5C%22active%5C%22%20data-value%3D%5C%22byCompetency%5C%22%20data-action%3D%5C%22set-arrange%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20class%3D%5C%22active%5C%22%20aria-pressed%3D%5C%22true%5C%22%20data-value%3D%5C%22byCompetency%5C%22%20data-action%3D%5C%22set-arrange%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
             "ruleId": "style_focus_visible",
@@ -374,7 +344,7 @@
             ],
             "path": {
                 "dom": "/html[1]/body[1]/div[1]/aside[1]/section[2]/div[1]/button[2]",
-                "aria": "/document[1]/complementary[1]/button[2]"
+                "aria": "/document[1]/complementary[1]/group[1]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -387,132 +357,12 @@
                 "height": 26,
                 "width": 122
             },
-            "snippet": "<button class=\"\" data-value=\"byModule\" data-action=\"set-arrange\">",
+            "snippet": "<button class=\"\" aria-pressed=\"false\" data-value=\"byModule\" data-action=\"set-arrange\">",
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
             "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20class%3D%5C%22%5C%22%20data-value%3D%5C%22byModule%5C%22%20data-action%3D%5C%22set-arrange%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[3]/label[1]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[1]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 302,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"pflicht\" data-action=\"toggle-cat\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22pflicht%5C%22%20data-action%3D%5C%22toggle-cat%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[3]/label[2]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[2]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 326,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"wahlpflicht\" data-action=\"toggle-cat\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22wahlpflicht%5C%22%20data-action%3D%5C%22toggle-cat%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[3]/label[3]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[3]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 350,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"vertiefung\" data-action=\"toggle-cat\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22vertiefung%5C%22%20data-action%3D%5C%22toggle-cat%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[3]/label[4]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[4]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 374,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"datenkompetenz\" data-action=\"toggle-cat\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22datenkompetenz%5C%22%20data-action%3D%5C%22toggle-cat%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
+            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20class%3D%5C%22%5C%22%20aria-pressed%3D%5C%22false%5C%22%20data-value%3D%5C%22byModule%5C%22%20data-action%3D%5C%22set-arrange%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
             "ruleId": "style_focus_visible",
@@ -521,7 +371,7 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[4]/select[1]",
+                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[3]/select[1]",
                 "aria": "/document[1]/complementary[1]/combobox[2]"
             },
             "ruleTime": 0,
@@ -535,42 +385,12 @@
                 "height": 29,
                 "width": 246
             },
-            "snippet": "<select data-action=\"set-minlevel\">",
+            "snippet": "<select aria-label=\"Minimum depth\" data-action=\"set-minlevel\">",
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cselect%20data-action%3D%5C%22set-minlevel%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
-        },
-        {
-            "ruleId": "input_label_exists",
-            "value": [
-                "VIOLATION",
-                "FAIL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[4]/select[1]",
-                "aria": "/document[1]/complementary[1]/combobox[2]"
-            },
-            "ruleTime": 0,
-            "reasonId": "Fail_1",
-            "message": "Form control element <select> has no associated label",
-            "messageArgs": [
-                "select"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 434,
-                "height": 29,
-                "width": 246
-            },
-            "snippet": "<select data-action=\"set-minlevel\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "violation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_label_exists.html#%7B%22message%22%3A%22Form%20control%20element%20%3Cselect%3E%20has%20no%20associated%20label%22%2C%22snippet%22%3A%22%3Cselect%20data-action%3D%5C%22set-minlevel%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22input_label_exists%22%2C%22msgArgs%22%3A%5B%22select%22%5D%7D"
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cselect%20aria-label%3D%5C%22Minimum%20depth%5C%22%20data-action%3D%5C%22set-minlevel%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
             "ruleId": "style_focus_visible",
@@ -579,8 +399,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[5]/div[1]/button[1]",
-                "aria": "/document[1]/complementary[1]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[2]/div[1]/button[1]",
+                "aria": "/document[1]/complementary[1]/group[3]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -597,7 +417,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": true,
+            "ignored": false,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-all%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -607,8 +427,8 @@
                 "FAIL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[5]/div[1]/button[1]",
-                "aria": "/document[1]/complementary[1]/button[3]"
+                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[2]/div[1]/button[1]",
+                "aria": "/document[1]/complementary[1]/group[3]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "violation_spacing",
@@ -628,7 +448,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "violation",
-            "ignored": true,
+            "ignored": false,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html#%7B%22message%22%3A%22Undersized%20target%20%5C%22button%5C%22%20does%20not%20have%20sufficient%20spacing%20of%2012%20CSS%20pixels%20from%20another%20target%20%5C%22button%5C%22%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-all%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22violation_spacing%22%2C%22ruleId%22%3A%22target_spacing_sufficient%22%2C%22msgArgs%22%3A%5B%22button%22%2C%22button%22%5D%7D"
         },
         {
@@ -638,8 +458,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[5]/div[1]/button[2]",
-                "aria": "/document[1]/complementary[1]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[2]/div[1]/button[2]",
+                "aria": "/document[1]/complementary[1]/group[3]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -656,7 +476,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": true,
+            "ignored": false,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -666,8 +486,8 @@
                 "FAIL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[5]/div[1]/button[2]",
-                "aria": "/document[1]/complementary[1]/button[4]"
+                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[2]/div[1]/button[2]",
+                "aria": "/document[1]/complementary[1]/group[3]/button[2]"
             },
             "ruleTime": 0,
             "reasonId": "violation_spacing",
@@ -687,158 +507,8 @@
             "source": null,
             "category": "Accessibility",
             "level": "violation",
-            "ignored": true,
+            "ignored": false,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html#%7B%22message%22%3A%22Undersized%20target%20%5C%22button%5C%22%20does%20not%20have%20sufficient%20spacing%20of%2012%20CSS%20pixels%20from%20another%20target%20%5C%22button%5C%22%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22phases-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22violation_spacing%22%2C%22ruleId%22%3A%22target_spacing_sufficient%22%2C%22msgArgs%22%3A%5B%22button%22%2C%22button%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[5]/label[1]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[5]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 530,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"1\" data-action=\"toggle-phase\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%221%5C%22%20data-action%3D%5C%22toggle-phase%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[5]/label[2]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[6]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 554,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"2\" data-action=\"toggle-phase\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%222%5C%22%20data-action%3D%5C%22toggle-phase%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[5]/label[3]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[7]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 578,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"3\" data-action=\"toggle-phase\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%223%5C%22%20data-action%3D%5C%22toggle-phase%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[5]/label[4]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[8]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 602,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"4\" data-action=\"toggle-phase\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%224%5C%22%20data-action%3D%5C%22toggle-phase%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[5]/label[5]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[9]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 627,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"5\" data-action=\"toggle-phase\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%225%5C%22%20data-action%3D%5C%22toggle-phase%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
             "ruleId": "style_focus_visible",
@@ -847,8 +517,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/div[1]/button[1]",
-                "aria": "/document[1]/complementary[1]/button[5]"
+                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[3]/div[1]/button[1]",
+                "aria": "/document[1]/complementary[1]/group[4]/button[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
@@ -865,7 +535,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": true,
+            "ignored": false,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-all%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -875,8 +545,8 @@
                 "FAIL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/div[1]/button[1]",
-                "aria": "/document[1]/complementary[1]/button[5]"
+                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[3]/div[1]/button[1]",
+                "aria": "/document[1]/complementary[1]/group[4]/button[1]"
             },
             "ruleTime": 1,
             "reasonId": "violation_spacing",
@@ -896,7 +566,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "violation",
-            "ignored": true,
+            "ignored": false,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html#%7B%22message%22%3A%22Undersized%20target%20%5C%22button%5C%22%20does%20not%20have%20sufficient%20spacing%20of%2012%20CSS%20pixels%20from%20another%20target%20%5C%22button%5C%22%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-all%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22violation_spacing%22%2C%22ruleId%22%3A%22target_spacing_sufficient%22%2C%22msgArgs%22%3A%5B%22button%22%2C%22button%22%5D%7D"
         },
         {
@@ -906,10 +576,10 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/div[1]/button[2]",
-                "aria": "/document[1]/complementary[1]/button[6]"
+                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[3]/div[1]/button[2]",
+                "aria": "/document[1]/complementary[1]/group[4]/button[2]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -924,7 +594,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": true,
+            "ignored": false,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -934,10 +604,10 @@
                 "FAIL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/div[1]/button[2]",
-                "aria": "/document[1]/complementary[1]/button[6]"
+                "dom": "/html[1]/body[1]/div[1]/aside[1]/fieldset[3]/div[1]/button[2]",
+                "aria": "/document[1]/complementary[1]/group[4]/button[2]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "violation_spacing",
             "message": "Undersized target \"button\" does not have sufficient spacing of 12 CSS pixels from another target \"button\"",
             "messageArgs": [
@@ -955,7 +625,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "violation",
-            "ignored": true,
+            "ignored": false,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html#%7B%22message%22%3A%22Undersized%20target%20%5C%22button%5C%22%20does%20not%20have%20sufficient%20spacing%20of%2012%20CSS%20pixels%20from%20another%20target%20%5C%22button%5C%22%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22comps-none%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22violation_spacing%22%2C%22ruleId%22%3A%22target_spacing_sufficient%22%2C%22msgArgs%22%3A%5B%22button%22%2C%22button%22%5D%7D"
         },
         {
@@ -965,548 +635,8 @@
                 "POTENTIAL"
             ],
             "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[1]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[10]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 713,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"__orientation\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22__orientation%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[2]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[11]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 766,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"1.1\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%221.1%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[3]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[12]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 790,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"1.2\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%221.2%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[4]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[13]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 814,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"1.3\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%221.3%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[5]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[14]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 867,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"2.1\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%222.1%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[6]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[15]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 892,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"2.2\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%222.2%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[7]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[16]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 916,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"2.3\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%222.3%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[8]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[17]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 969,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"3.1\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%223.1%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[9]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[18]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 993,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"3.2\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%223.2%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[10]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[19]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 1046,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"4.1\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%224.1%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[11]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[20]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 1070,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"4.2\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%224.2%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[12]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[21]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 1095,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"4.3\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%224.3%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[13]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[22]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 1148,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"5.1\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%225.1%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[14]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[23]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 1172,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"5.2\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%225.2%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[6]/label[15]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[24]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 1196,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"5.3\" data-action=\"toggle-comp\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%225.3%5C%22%20data-action%3D%5C%22toggle-comp%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[7]/label[1]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[25]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 1260,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"knowledge\" data-action=\"toggle-dim\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22knowledge%5C%22%20data-action%3D%5C%22toggle-dim%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[7]/label[2]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[26]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 1285,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"skills\" data-action=\"toggle-dim\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22skills%5C%22%20data-action%3D%5C%22toggle-dim%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[7]/label[3]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[27]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_unnamedcheckbox",
-            "message": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-            "messageArgs": [
-                "Checkbox"
-            ],
-            "apiArgs": [],
-            "bounds": {
-                "left": 37,
-                "top": 1309,
-                "height": 13,
-                "width": 13
-            },
-            "snippet": "<input checked=\"\" value=\"examples\" data-action=\"toggle-dim\" type=\"checkbox\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": true,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20checked%3D%5C%22%5C%22%20value%3D%5C%22examples%5C%22%20data-action%3D%5C%22toggle-dim%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
-        },
-        {
-            "ruleId": "input_checkboxes_grouped",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[8]/label[1]/input[1]",
-                "aria": "/document[1]/complementary[1]/checkbox[28]"
+                "dom": "/html[1]/body[1]/div[1]/aside[1]/section[4]/label[1]/input[1]",
+                "aria": "/document[1]/complementary[1]/checkbox[1]"
             },
             "ruleTime": 0,
             "reasonId": "potential_unnamedcheckbox",
@@ -1525,7 +655,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": true,
+            "ignored": false,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_checkboxes_grouped.html#%7B%22message%22%3A%22Verify%20that%20this%20un-named%2C%20ungrouped%20checkbox%20input%20is%20not%20related%20to%20other%20checkboxes%22%2C%22snippet%22%3A%22%3Cinput%20data-action%3D%5C%22toggle-only-addressed%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_unnamedcheckbox%22%2C%22ruleId%22%3A%22input_checkboxes_grouped%22%2C%22msgArgs%22%3A%5B%22Checkbox%22%5D%7D"
         },
         {
@@ -1581,7 +711,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-action%3D%5C%22open-orientation%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1594,7 +724,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/h2[1]/button[1]",
                 "aria": "/document[1]/main[1]/article[2]/heading[1]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1609,7 +739,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%221.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1622,7 +752,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/h2[1]/button[2]",
                 "aria": "/document[1]/main[1]/article[2]/heading[1]/button[2]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1637,7 +767,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%221.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1650,7 +780,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[2]/article[1]/div[2]/button[1]",
                 "aria": "/document[1]/main[1]/article[2]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -1665,7 +795,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP4%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1693,7 +823,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP1%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1721,7 +851,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%221.2%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1749,7 +879,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%221.2%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1777,7 +907,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP2%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1805,7 +935,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP4%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1833,7 +963,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%221.3%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1861,7 +991,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%221.3%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1889,7 +1019,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP10%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1917,7 +1047,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP3%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1945,7 +1075,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP1%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -1973,7 +1103,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP5%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2001,7 +1131,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP8%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2014,7 +1144,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[1]/h2[1]/button[1]",
                 "aria": "/document[1]/main[1]/article[5]/heading[1]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2029,7 +1159,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%222.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2057,7 +1187,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%222.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2085,7 +1215,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP2%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2113,7 +1243,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP2%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2141,7 +1271,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP5%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2169,7 +1299,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP9%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2197,7 +1327,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%222.2%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2225,7 +1355,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%222.2%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2253,7 +1383,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP11%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2281,7 +1411,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP7%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2309,7 +1439,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%222.3%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2322,7 +1452,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[2]/article[3]/h2[1]/button[2]",
                 "aria": "/document[1]/main[1]/article[7]/heading[1]/button[2]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2337,7 +1467,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%222.3%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2365,7 +1495,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP2%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2393,7 +1523,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP1%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2421,7 +1551,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP6%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2449,7 +1579,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP7%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2477,7 +1607,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%223.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2490,7 +1620,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[2]/article[1]/h2[1]/button[2]",
                 "aria": "/document[1]/main[1]/article[8]/heading[1]/button[2]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2505,7 +1635,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%223.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2533,7 +1663,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP5%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2561,7 +1691,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP7%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2589,7 +1719,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP3%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2617,7 +1747,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP1%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2645,7 +1775,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP10%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2673,7 +1803,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP11%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2701,7 +1831,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP12%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2729,7 +1859,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%223.2%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2757,7 +1887,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%223.2%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2785,7 +1915,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP5%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2813,7 +1943,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%224.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2841,7 +1971,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%224.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2854,7 +1984,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[2]/button[1]",
                 "aria": "/document[1]/main[1]/article[10]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2869,7 +1999,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP2%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2882,7 +2012,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[2]/button[2]",
                 "aria": "/document[1]/main[1]/article[10]/button[2]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2897,7 +2027,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP1%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2910,7 +2040,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[2]/button[3]",
                 "aria": "/document[1]/main[1]/article[10]/button[3]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2925,7 +2055,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP6%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2938,7 +2068,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[1]/div[2]/button[4]",
                 "aria": "/document[1]/main[1]/article[10]/button[4]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -2953,7 +2083,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP9%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -2981,7 +2111,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP2%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3009,7 +2139,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP4%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3037,7 +2167,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%224.2%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3065,7 +2195,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%224.2%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3093,7 +2223,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP2%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3106,7 +2236,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/h2[1]/button[1]",
                 "aria": "/document[1]/main[1]/article[12]/heading[1]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3121,7 +2251,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%224.3%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3149,7 +2279,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%224.3%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3162,7 +2292,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[2]/button[1]",
                 "aria": "/document[1]/main[1]/article[12]/button[1]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3177,7 +2307,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP6%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3205,7 +2335,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP2%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3218,7 +2348,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[2]/button[3]",
                 "aria": "/document[1]/main[1]/article[12]/button[3]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3233,7 +2363,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP1%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3246,7 +2376,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[2]/article[3]/div[2]/button[4]",
                 "aria": "/document[1]/main[1]/article[12]/button[4]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3261,7 +2391,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP2%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3289,7 +2419,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%225.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3317,7 +2447,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%225.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3330,7 +2460,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[1]/div[2]/button[1]",
                 "aria": "/document[1]/main[1]/article[13]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3345,7 +2475,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP5%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3373,7 +2503,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%225.2%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3401,7 +2531,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%225.2%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3414,7 +2544,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[2]/div[2]/button[1]",
                 "aria": "/document[1]/main[1]/article[14]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3429,7 +2559,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MWP5%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3457,7 +2587,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%225.3%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-code%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3470,7 +2600,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/h2[1]/button[2]",
                 "aria": "/document[1]/main[1]/article[15]/heading[1]/button[2]"
             },
-            "ruleTime": 0,
+            "ruleTime": 1,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3485,7 +2615,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%225.3%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22comp-title%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3498,7 +2628,7 @@
                 "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[2]/article[3]/div[2]/button[1]",
                 "aria": "/document[1]/main[1]/article[15]/button[1]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -3513,7 +2643,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP2%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3541,7 +2671,7 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP5%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         },
         {
@@ -3569,12 +2699,12 @@
             "source": null,
             "category": "Accessibility",
             "level": "potentialviolation",
-            "ignored": false,
+            "ignored": true,
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-module%3D%5C%22MP1%5C%22%20data-program%3D%5C%22hu-berlin-ma-is%5C%22%20data-action%3D%5C%22open-module%5C%22%20class%3D%5C%22mod-chip%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         }
     ],
-    "numExecuted": 4159,
-    "ruleTime": 116,
+    "numExecuted": 4183,
+    "ruleTime": 119,
     "nls": {
         "aria_content_in_landmark": {
             "0": "All content must reside within an element with a landmark role",
@@ -3596,10 +2726,6 @@
             "0": "The target must be sufficiently sized or spaced from other targets",
             "violation_spacing": "Undersized target \"{0}\" does not have sufficient spacing of 12 CSS pixels from another target \"{1}\""
         },
-        "input_label_exists": {
-            "0": "Each form control must have an associated label",
-            "Fail_1": "Form control element <{0}> has no associated label"
-        },
         "aria_complementary_label_visible": {
             "0": "Each element with \"complementary\" role should have a visible label that describes its purpose",
             "Fail_1": "Element with \"complementary\" role does not have a visible label"
@@ -3615,18 +2741,18 @@
     },
     "summary": {
         "counts": {
-            "ignored": 50,
-            "elements": 120,
-            "elementsViolation": 0,
-            "elementsViolationReview": 74,
-            "violation": 0,
-            "potentialviolation": 73,
-            "recommendation": 2,
+            "ignored": 86,
+            "elements": 93,
+            "elementsViolation": 4,
+            "elementsViolationReview": 7,
+            "violation": 4,
+            "potentialviolation": 6,
+            "recommendation": 0,
             "potentialrecommendation": 5,
             "manual": 1,
-            "pass": 4028
+            "pass": 4081
         },
-        "scanTime": 184,
+        "scanTime": 187,
         "ruleArchive": "Latest Deployment (latest)",
         "policies": [
             "WCAG_2_2"
@@ -3636,10 +2762,10 @@
             "potentialviolation",
             "recommendation"
         ],
-        "startScan": 1795616934762,
+        "startScan": 1795618331572,
         "URL": "http://127.0.0.1:4173/index.html#view=program&lang=en&program=hu-berlin-ma-is"
     },
-    "scanID": "7784bb3f-2f31-4707-b9a7-02b0069e2d03",
+    "scanID": "24c9ead1-ba2d-4d18-9844-c3522d7c4354",
     "toolID": "accessibility-checker-v4.0.35",
     "label": "viewer-program-en"
 }

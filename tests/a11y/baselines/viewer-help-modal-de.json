@@ -86,7 +86,7 @@
         }
     ],
     "numExecuted": 443,
-    "ruleTime": 5,
+    "ruleTime": 7,
     "nls": {
         "html_skipnav_exists": {
             "0": "Provide a way to bypass blocks of content that are repeated on multiple Web pages",
@@ -114,7 +114,7 @@
             "manual": 1,
             "pass": 439
         },
-        "scanTime": 23,
+        "scanTime": 22,
         "ruleArchive": "Latest Deployment (latest)",
         "policies": [
             "WCAG_2_2"
@@ -124,10 +124,10 @@
             "potentialviolation",
             "recommendation"
         ],
-        "startScan": 1795616939001,
+        "startScan": 1795618335784,
         "URL": "about:blank"
     },
-    "scanID": "7784bb3f-2f31-4707-b9a7-02b0069e2d03",
+    "scanID": "24c9ead1-ba2d-4d18-9844-c3522d7c4354",
     "toolID": "accessibility-checker-v4.0.35",
     "label": "viewer-help-modal-de"
 }

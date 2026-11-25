@@ -94,7 +94,7 @@
                 "dom": "/html[1]/body[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]",
                 "aria": "/document[1]/main[1]/dialog[1]/button[2]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -122,7 +122,7 @@
                 "dom": "/html[1]/body[1]/main[1]/div[1]/div[2]/div[1]/div[2]/div[1]/button[1]",
                 "aria": "/document[1]/main[1]/dialog[1]/button[3]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -150,7 +150,7 @@
                 "dom": "/html[1]/body[1]/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/button[1]",
                 "aria": "/document[1]/main[1]/dialog[1]/button[4]"
             },
-            "ruleTime": 1,
+            "ruleTime": 0,
             "reasonId": "potential_focus_not_visible",
             "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
             "messageArgs": [],
@@ -169,7 +169,7 @@
             "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Cbutton%20data-comp%3D%5C%224.1%5C%22%20data-action%3D%5C%22open-comp%5C%22%20class%3D%5C%22m-comp%5C%22%20type%3D%5C%22button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
         }
     ],
-    "numExecuted": 338,
+    "numExecuted": 345,
     "ruleTime": 9,
     "nls": {
         "html_skipnav_exists": {
@@ -196,9 +196,9 @@
             "recommendation": 0,
             "potentialrecommendation": 2,
             "manual": 2,
-            "pass": 328
+            "pass": 335
         },
-        "scanTime": 21,
+        "scanTime": 22,
         "ruleArchive": "Latest Deployment (latest)",
         "policies": [
             "WCAG_2_2"
@@ -208,10 +208,10 @@
             "potentialviolation",
             "recommendation"
         ],
-        "startScan": 1795616939764,
+        "startScan": 1795618336539,
         "URL": "about:blank"
     },
-    "scanID": "7784bb3f-2f31-4707-b9a7-02b0069e2d03",
+    "scanID": "24c9ead1-ba2d-4d18-9844-c3522d7c4354",
     "toolID": "accessibility-checker-v4.0.35",
     "label": "viewer-module-modal-de"
 }
