@@ -21,7 +21,7 @@ const CSS = fs.readFileSync(path.join(__dirname, "../../css/style.css"), "utf8")
 
 const BASE = process.env.BASE_URL || "http://127.0.0.1:4173";
 const PROGRAM = "hu-berlin-ma-is";
-const PROGRAMS_2 = "hu-berlin-ma-is,hu-berlin-ma-wf";
+const PROGRAMS_2 = "hu-berlin-ma-is,hu-berlin-ba-biw";
 
 const scans = [
   {
