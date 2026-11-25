@@ -309,10 +309,16 @@ html, body {
 /* the orientation card spans the whole row (all competency columns) so its
  * long description needs noticeably less height */
 .orientation-section .comp-card { grid-column: 1 / -1; }
-.orientation-card { cursor: pointer; }
-.orientation-card:hover { border-color: var(--phase-color, var(--line)); }
-.orientation-card .comp-title { cursor: pointer; }
 .orientation-card .comp-title:hover { text-decoration: underline; }
+/* clickable text is rendered as native <button>s (keyboard + AT access);
+   :where() keeps specificity 0 so the component rules win over the reset */
+:where(button.comp-code, button.comp-title, button.mod-code, button.m-comp, button.mod-chip) {
+  background: none; border: 0; padding: 0; font: inherit; color: inherit; text-align: inherit;
+}
+button.comp-code:focus-visible, button.comp-title:focus-visible, button.mod-code:focus-visible,
+button.m-comp:focus-visible, button.mod-chip:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 1px;
+}
 .comp-card-head { display: flex; align-items: baseline; gap: 8px; }
 .comp-code {
   font-weight: 700;
@@ -534,9 +540,13 @@ table.matrix thead th {
   max-height: 190px;
   padding: 8px 5px;
   background: #fbfcfd;
-  cursor: pointer;
   white-space: nowrap;
 }
+table.matrix thead th button {
+  background: none; border: 0; padding: 0; font: inherit; color: inherit;
+  cursor: pointer; white-space: inherit;
+}
+table.matrix thead th button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 table.matrix thead th:hover { background: var(--accent-soft); }
 /* keep the competency column visible while the module columns scroll */
 table.matrix thead th:first-child {
@@ -549,15 +559,18 @@ table.matrix thead th:first-child {
 table.matrix .row-head {
   text-align: left;
   white-space: nowrap;
-  cursor: pointer;
   background: #fbfcfd;
   position: sticky;
   left: 0;
   z-index: 2;
   box-shadow: 1px 0 0 var(--line);
 }
+table.matrix .row-head button {
+  background: none; border: 0; padding: 0; font: inherit; color: inherit;
+  text-align: left; cursor: pointer; white-space: inherit;
+}
+table.matrix .row-head button:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
 table.matrix .row-head:hover { background: var(--accent-soft); }
-table.matrix .orientation-head { cursor: pointer; }
 table.matrix .orientation-head .comp-title { font-weight: 650; }
 table.matrix .row-head .code { font-weight: 800; color: var(--phase-color); margin-right: 6px; }
 table.matrix tr.phase-row td {
@@ -575,7 +588,9 @@ table.matrix tr.phase-row td.phase-head {
   white-space: nowrap;
   box-shadow: 1px 0 0 var(--line);
 }
-table.matrix td.cell { text-align: center; cursor: pointer; min-width: 34px; }
+table.matrix td.cell { text-align: center; min-width: 34px; }
+table.matrix td.cell .cell-btn { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+table.matrix td.cell .cell-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 table.matrix td.cell:hover { outline: 2px solid var(--accent); outline-offset: -2px; }
 table.matrix td.cell.empty { cursor: default; color: #c6ccd6; }
 table.matrix td.cell.empty:hover { outline: none; }
