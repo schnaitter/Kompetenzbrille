@@ -34,11 +34,12 @@ jobs:
       - name: Wait for server
         run: npx wait-on http://127.0.0.1:4173/index.html
 
-      # Phase 0: report-only. Remove continue-on-error once baselines are
-      # committed (issue #58, phase 1) so new violations block the PR/main.
+      # Blocking: scans compare against the committed baselines in
+      # tests/a11y/baselines/. New violations (or unreviewed baseline drift)
+      # fail the job. Update baselines deliberately via
+      # `npm run test:a11y:baseline` and commit them with the fix.
       - name: Run WCAG 2.2 AA scans
         run: npm run test:a11y
-        continue-on-error: true
 
       - name: Upload scan reports
         if: always()

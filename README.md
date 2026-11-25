@@ -282,9 +282,15 @@ editor) driven by the app's hash parameters, and uploads the JSON + HTML
 reports as the `a11y-report` artifact. Configuration: `aceconfig.js`,
 scan definitions: `tests/a11y/run.js`.
 
-Currently the scan step is **report-only** (phase 0 of issue #58); once
-baselines are committed in `tests/a11y/baselines/`, new violations will
-block the PR.
+The scan is **blocking**: results are compared against committed baselines
+in `tests/a11y/baselines/`, so new violations fail the PR/push. When a change
+legitimately removes findings (or shifts DOM paths), update the baselines
+deliberately and commit them with the change so the diff is reviewed:
+
+```sh
+npm run test:a11y            # produce results/
+npm run test:a11y:baseline   # accept as new baseline (prints accepted counts)
+```
 
 Optional local run (not required — CI covers it):
 
