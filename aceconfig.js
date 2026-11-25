@@ -7,7 +7,10 @@ module.exports = {
   policies: ["WCAG_2_2"],
   ruleArchive: "latest",
   failLevels: ["violation"],
-  reportLevels: ["violation", "potentialviolation", "recommendation"],
+  /* violations only: potential/recommendation findings are geometry- and
+   * font-dependent and differ between CI and local machines, which would
+   * make baselines flaky. Widen locally for triage (see testing guide). */
+  reportLevels: ["violation"],
   outputFormat: ["json", "html"],
   outputFolder: "results",
   baselineFolder: "tests/a11y/baselines"

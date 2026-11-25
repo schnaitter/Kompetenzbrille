@@ -77,6 +77,9 @@ Before tagging/deploying a release:
 - `violation` → fix, or file an issue with justification; never baseline away
   without review.
 - `potentialviolation` / `recommendation` → manual check; document the decision
-  in the PR if dismissed.
+  in the PR if dismissed. CI reports violations only (potentials are geometry-
+  and font-dependent across machines); to triage them locally, temporarily set
+  `reportLevels: ["violation", "potentialviolation", "recommendation"]` in
+  `aceconfig.js`, run `npm run test:a11y`, and revert before committing.
 - Baseline updates (`npm run test:a11y:baseline`) are deliberate commits whose
   diff is reviewed like code.

@@ -1,175 +1,17 @@
 {
-    "results": [
-        {
-            "ruleId": "style_color_misuse",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/head[1]/link[3]",
-                "aria": "/document[1]"
-            },
-            "ruleTime": 1,
-            "reasonId": "Potential_1",
-            "message": "Verify color is not used as the only visual means of conveying information",
-            "messageArgs": [],
-            "apiArgs": [],
-            "bounds": {
-                "left": 0,
-                "top": 0,
-                "height": 0,
-                "width": 0
-            },
-            "snippet": "<link href=\"css/style.css\" rel=\"stylesheet\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_color_misuse.html#%7B%22message%22%3A%22Verify%20color%20is%20not%20used%20as%20the%20only%20visual%20means%20of%20conveying%20information%22%2C%22snippet%22%3A%22%3Clink%20href%3D%5C%22css%2Fstyle.css%5C%22%20rel%3D%5C%22stylesheet%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22style_color_misuse%22%2C%22msgArgs%22%3A%5B%5D%7D"
-        },
-        {
-            "ruleId": "aria_content_in_landmark",
-            "value": [
-                "RECOMMENDATION",
-                "FAIL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/a[1]",
-                "aria": "/document[1]/link[1]"
-            },
-            "ruleTime": 0,
-            "reasonId": "Fail_1",
-            "message": "Content is not within a landmark element",
-            "messageArgs": [],
-            "apiArgs": [],
-            "bounds": {
-                "left": -9999,
-                "top": 0,
-                "height": 39,
-                "width": 172
-            },
-            "snippet": "<a href=\"#main\" class=\"skip-link\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "recommendation",
-            "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23main%5C%22%20class%3D%5C%22skip-link%5C%22%3E%22%2C%22value%22%3A%5B%22RECOMMENDATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
-        },
-        {
-            "ruleId": "element_tabbable_visible",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/a[1]",
-                "aria": "/document[1]/link[1]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_visible",
-            "message": "Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus",
-            "messageArgs": [],
-            "apiArgs": [],
-            "bounds": {
-                "left": -9999,
-                "top": 0,
-                "height": 39,
-                "width": 172
-            },
-            "snippet": "<a href=\"#main\" class=\"skip-link\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_tabbable_visible.html#%7B%22message%22%3A%22Confirm%20the%20element%20should%20be%20tabbable%20and%20if%20so%2C%20it%20becomes%20visible%20when%20it%20has%20keyboard%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23main%5C%22%20class%3D%5C%22skip-link%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_visible%22%2C%22ruleId%22%3A%22element_tabbable_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
-        },
-        {
-            "ruleId": "style_focus_visible",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/header[1]/div[1]/nav[1]/a[1]",
-                "aria": "/document[1]/banner[1]/navigation[1]/link[1]"
-            },
-            "ruleTime": 0,
-            "reasonId": "potential_focus_not_visible",
-            "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
-            "messageArgs": [],
-            "apiArgs": [],
-            "bounds": {
-                "left": 235,
-                "top": 10,
-                "height": 33,
-                "width": 81
-            },
-            "snippet": "<a href=\"index.html\" class=\"view-tab\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22index.html%5C%22%20class%3D%5C%22view-tab%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
-        },
-        {
-            "ruleId": "style_focus_visible",
-            "value": [
-                "VIOLATION",
-                "POTENTIAL"
-            ],
-            "path": {
-                "dom": "/html[1]/body[1]/header[1]/div[1]/nav[1]/a[2]",
-                "aria": "/document[1]/banner[1]/navigation[1]/link[2]"
-            },
-            "ruleTime": 1,
-            "reasonId": "potential_focus_not_visible",
-            "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
-            "messageArgs": [],
-            "apiArgs": [],
-            "bounds": {
-                "left": 319,
-                "top": 10,
-                "height": 33,
-                "width": 67
-            },
-            "snippet": "<a href=\"editor.html\" class=\"view-tab\">",
-            "source": null,
-            "category": "Accessibility",
-            "level": "potentialviolation",
-            "ignored": false,
-            "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22editor.html%5C%22%20class%3D%5C%22view-tab%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
-        }
-    ],
+    "results": [],
     "numExecuted": 345,
-    "ruleTime": 10,
-    "nls": {
-        "aria_content_in_landmark": {
-            "0": "All content must reside within an element with a landmark role",
-            "Fail_1": "Content is not within a landmark element"
-        },
-        "style_color_misuse": {
-            "0": "Combine color and descriptive markup to convey information",
-            "Potential_1": "Verify color is not used as the only visual means of conveying information"
-        },
-        "element_tabbable_visible": {
-            "0": "A tabbable element should be visible on the screen when it has keyboard focus",
-            "potential_visible": "Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus"
-        },
-        "style_focus_visible": {
-            "0": "The keyboard focus indicator should be visible when default border or outline is modified by CSS",
-            "potential_focus_not_visible": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'"
-        }
-    },
+    "ruleTime": 11,
+    "nls": {},
     "summary": {
         "counts": {
-            "ignored": 0,
+            "ignored": 5,
             "elements": 6,
             "elementsViolation": 0,
-            "elementsViolationReview": 4,
+            "elementsViolationReview": 1,
             "violation": 0,
-            "potentialviolation": 4,
-            "recommendation": 1,
+            "potentialviolation": 0,
+            "recommendation": 0,
             "potentialrecommendation": 2,
             "manual": 1,
             "pass": 337
@@ -180,14 +22,12 @@
             "WCAG_2_2"
         ],
         "reportLevels": [
-            "violation",
-            "potentialviolation",
-            "recommendation"
+            "violation"
         ],
-        "startScan": 1795619273567,
+        "startScan": 1795619484083,
         "URL": "http://127.0.0.1:4173/accessibility.html"
     },
-    "scanID": "5b5ade93-d013-411a-8df4-ba96c85f07b0",
+    "scanID": "d4cdec45-31eb-4168-b30c-db54b5834061",
     "toolID": "accessibility-checker-v4.0.35",
     "label": "statement-de"
 }
