@@ -78,6 +78,11 @@ const scans = [
     label: "editor-de",
     path: "editor.html",
     wait: "#ed-pick-program"
+  },
+  {
+    label: "statement-de",
+    path: "accessibility.html",
+    wait: ".statement"
   }
 ];
 

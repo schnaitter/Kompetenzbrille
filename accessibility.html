@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erklärung zur Barrierefreiheit – Kompetenzbrille</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1 class="app-title"><img class="app-logo" src="assets/logo.svg" alt="" width="30" height="30">Kompetenzbrille</h1>
+      <nav class="view-tabs" aria-label="Ansichten">
+        <a class="view-tab" href="index.html">Anzeige</a>
+        <a class="view-tab" href="editor.html">Editor</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main id="main" class="main statement" tabindex="-1">
+      <h2>Erklärung zur Barrierefreiheit</h2>
+      <p class="small muted">Stand: 25. November 2026 · Bewertungsmethode: automatisierte Prüfung
+        (IBM Equal Access Accessibility Checker, Policy WCAG 2.2) in der CI plus manuelle
+        Tastatur- und Screenreader-Tests gemäß <code>docs/accessibility-testing.md</code>.</p>
+
+      <h3>Geltungsbereich</h3>
+      <p>Diese Erklärung gilt für die Web-Anwendung „Kompetenzbrille“ (Anzeige und Editor)
+        unter <code>schnaitter.github.io/Kompetenzbrille/</code>.</p>
+
+      <h3>Konformitätsstatus</h3>
+      <p>Die Anwendung ist mit <strong>WCAG 2.2 Stufe AA</strong> weitgehend konform.
+        Alle automatisierten Prüfläufe (Programm-, Framework- und Matrix-Sicht in Deutsch
+        und Englisch, Hilfe- und Modul-Dialoge, Editor) melden keine Verstöße; Tastaturbedienung,
+        Fokusführung, Kontraste, Sprachumschaltung und Statusmeldungen wurden manuell geprüft.</p>
+
+      <h3>Bekannte Einschränkungen</h3>
+      <ul>
+        <li>Die eingebundenen Quellen-PDFs (Curricula und Framework-Dokument) sind nicht
+          durchgängig barrierefrei aufbereitet; sie werden schrittweise ersetzt
+          (siehe Issue&nbsp;#74 im Repository).</li>
+        <li>Die Matrix ist eine zweidimensionale Tabelle; auf sehr schmalen Bildschirmen
+          wird horizontal gescrollt (nach WCAG 1.4.10 für 2D-Inhalte zulässig). Die
+          sticky erste Spalte kann beim Scrollen Zellen überdecken; fokussierte Zellen
+          werden automatisch in den sichtbaren Bereich geholt.</li>
+      </ul>
+
+      <h3>Feedback und Kontakt</h3>
+      <p>Barrieren bitte als
+        <a href="https://github.com/schnaitter/Kompetenzbrille/issues" target="_blank" rel="noopener">Issue im GitHub-Repository</a>
+        melden (gern mit Reproduktionsschritten und Angabe der assistiven Technologie).
+        Wir bemühen uns um Antwort innerhalb von zwei Wochen.</p>
+
+      <h3>Durchsetzungsverfahren</h3>
+      <p>Bleibt eine Meldung ohne Reaktion, kann die für den Sitz der anbietenden Stelle
+        zuständige Marktüberwachungsbehörde bzw. Schlichtungsstelle eingeschaltet werden.</p>
+
+      <section lang="en">
+        <h2>Accessibility statement</h2>
+        <p class="small muted">Date: 25 November 2026 · Method: automated checks (IBM Equal
+          Access Accessibility Checker, WCAG 2.2 policy) in CI plus manual keyboard and
+          screen-reader tests per <code>docs/accessibility-testing.md</code>.</p>
+        <h3>Scope</h3>
+        <p>This statement covers the “Kompetenzbrille” web application (viewer and editor)
+          at <code>schnaitter.github.io/Kompetenzbrille/</code>.</p>
+        <h3>Conformance status</h3>
+        <p>The application is largely conformant with <strong>WCAG 2.2 level AA</strong>.
+          All automated scan states (program, framework and matrix views in German and
+          English, help and module dialogs, editor) report zero violations; keyboard
+          operation, focus management, contrast, language switching and status announcements
+          were tested manually.</p>
+        <h3>Known limitations</h3>
+        <ul>
+          <li>Embedded source PDFs (curricula and framework document) are not fully
+            accessible yet and are being replaced step by step (repository issue&nbsp;#74).</li>
+          <li>The matrix is a two-dimensional table and scrolls horizontally on very narrow
+            screens (permitted by WCAG 1.4.10 for 2D content). Focused cells are scrolled
+            into view automatically so the sticky first column cannot obscure them.</li>
+        </ul>
+        <h3>Feedback</h3>
+        <p>Please report barriers as
+          <a href="https://github.com/schnaitter/Kompetenzbrille/issues" target="_blank" rel="noopener">issues in the GitHub repository</a>,
+          ideally with reproduction steps and your assistive technology. We aim to respond
+          within two weeks.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <a href="index.html">Kompetenzbrille</a>
+  </footer>
+</body>
+</html>

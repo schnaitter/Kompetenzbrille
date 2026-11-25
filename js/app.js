@@ -480,6 +480,8 @@
     document.getElementById("lbl-language").textContent = t("language");
     var skip = document.getElementById("skip-link");
     if (skip) skip.textContent = t("skipToMain");
+    var a11yLink = document.getElementById("link-a11y");
+    if (a11yLink) a11yLink.textContent = t("a11yStatement");
     var sb = document.getElementById("sidebar");
     if (sb) sb.setAttribute("aria-label", t("sidebarLabel"));
     var ghLink = document.querySelector(".github-link");
