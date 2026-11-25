@@ -1865,6 +1865,10 @@
     }
   }
 
+  function scrollBehavior() {
+    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  }
+
   /* ================= events ================= */
 
   function buildLangSelect() {
@@ -2108,7 +2112,7 @@
       el.open = true;
       var inp = el.querySelector('[aria-invalid="true"]');
       if (inp) inp.focus();
-      else if (el.scrollIntoView) el.scrollIntoView({ block: "center", behavior: "smooth" });
+      else if (el.scrollIntoView) el.scrollIntoView({ block: "center", behavior: scrollBehavior() });
       el.classList.add("ed-flash");
       setTimeout(function () { el.classList.remove("ed-flash"); }, 1200);
     }
@@ -2151,7 +2155,7 @@
       if (el) {
         el.open = true;
         el.classList.add("ed-flash");
-        if (el.scrollIntoView) el.scrollIntoView({ block: "center", behavior: "smooth" });
+        if (el.scrollIntoView) el.scrollIntoView({ block: "center", behavior: scrollBehavior() });
         setTimeout(function () { el.classList.remove("ed-flash"); }, 1200);
       }
     }, 0);

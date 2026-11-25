@@ -194,6 +194,9 @@
     return mapping.note.de ? "de" : "en";
   }
   function langAttr(l) { return l && l !== state.lang ? ' lang="' + esc(l) + '"' : ""; }
+  function scrollBehavior() {
+    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  }
 
   function catLabel(program, catId) {
     var c = (program.categories || []).filter(function (x) { return x.id === catId; })[0];
@@ -1509,7 +1512,7 @@
         rerender();
         if (state.selectedComp) {
           var target = document.querySelector('.picker-btn[data-comp="' + code + '"]');
-          if (target && target.scrollIntoView) target.scrollIntoView({ block: "nearest", behavior: "smooth" });
+          if (target && target.scrollIntoView) target.scrollIntoView({ block: "nearest", behavior: scrollBehavior() });
         }
         break;
       }
