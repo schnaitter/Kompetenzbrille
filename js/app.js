@@ -1406,7 +1406,51 @@
 
   /* ================= events ================= */
 
-  function rerender() { validateState(); saveState(); renderAll(); }
+  function rerender() {
+    /* keep keyboard focus across the full re-render: find the same control
+     * again afterwards; focus that moved into #main lands on main itself */
+    var a = document.activeElement;
+    var key = null;
+    if (a && a.getAttribute && a.getAttribute("data-action")) {
+      key = '[data-action="' + a.getAttribute("data-action") + '"]';
+      ["data-value", "data-index", "data-comp", "data-module", "data-program", "value"].forEach(function (at) {
+        if (a.hasAttribute(at)) key += '[' + at + '="' + a.getAttribute(at) + '"]';
+      });
+    }
+    var main = document.getElementById("main");
+    var inMain = !!(a && main && main.contains(a));
+    validateState(); saveState(); renderAll();
+    var target = key ? document.querySelector(key) : null;
+    if (target) target.focus();
+    else if (inMain) main.focus();
+  }
+
+  /* announce view/filter results to screen readers */
+  function updateStatus() {
+    var el = document.getElementById("sr-status");
+    if (!el) return;
+    var msg = "";
+    if (state.view === "program") {
+      var p = programById(state.programId);
+      var f = fw();
+      if (p && f) {
+        var idx = competencyIndex([p.id]);
+        var addressed = f.competencies.filter(function (c) { return idx[c.code] && idx[c.code].length; }).length;
+        msg = t("viewProgram") + ": " + programLabel(p) + " – " + addressed + " " + t("coverageOf") + " " + f.competencies.length + " " + t("competenciesAddressed");
+      }
+    } else if (state.view === "framework") {
+      msg = t("viewFramework") + ": " + state.programIds.length + " " + t("programs");
+      if (state.selectedComp) msg += ", " + state.selectedComp;
+    } else {
+      var pm = programById(state.programId);
+      var fm = fw();
+      if (pm && fm) {
+        msg = t("viewMatrix") + ": " + pm.modules.filter(catsPass).length + " " + t("modules") + ", " +
+          fm.competencies.filter(function (c) { return compsPass(c.code); }).length + " " + t("competencies");
+      }
+    }
+    if (el.textContent !== msg) el.textContent = msg;
+  }
 
   function renderAll() {
     hidePopover();
@@ -1415,6 +1459,7 @@
     if (state.view === "program") renderProgramView();
     else if (state.view === "framework") renderFrameworkView();
     else renderMatrixView();
+    updateStatus();
   }
 
   function collectSet(action) {

@@ -409,31 +409,33 @@
     if (!p) return errs;
     var T = t;
 
-    function push(msg, mi) { errs.push({ msg: msg, mi: (mi === undefined ? null : mi) }); }
+    function push(msg, mi, spec) { errs.push({ msg: msg, mi: (mi === undefined ? null : mi), spec: spec || null }); }
 
     ["id", "title", "institution", "institutionAbbr", "institutionUrl", "language"].forEach(function (f) {
-      if (isEmptyStr(p[f])) push(T("valProgramRequired").replace("{field}", T(labelForField(f))), null);
+      if (isEmptyStr(p[f])) push(T("valProgramRequired").replace("{field}", T(labelForField(f))), null, { kind: "program", field: f });
     });
     if (!isEmptyStr(p.id)) {
-      if (p.id.length > 64) push(T("valProgramIdLong"), null);
-      else if (!/^[a-z][a-z0-9-]*$/.test(p.id)) push(T("valProgramIdPattern").replace("{value}", p.id), null);
+      if (p.id.length > 64) push(T("valProgramIdLong"), null, { kind: "program", field: "id" });
+      else if (!/^[a-z][a-z0-9-]*$/.test(p.id)) push(T("valProgramIdPattern").replace("{value}", p.id), null, { kind: "program", field: "id" });
     }
-    if (!isEmptyStr(p.institutionAbbr) && p.institutionAbbr.length > 24) push(T("valAbbrLong"), null);
+    if (!isEmptyStr(p.institutionAbbr) && p.institutionAbbr.length > 24) push(T("valAbbrLong"), null, { kind: "program", field: "institutionAbbr" });
     if (!isEmptyStr(p.language) && !/^[a-z]{2}(-[A-Za-z0-9]+)*$/.test(p.language)) {
-      push(T("valLanguage").replace("{value}", p.language), null);
+      push(T("valLanguage").replace("{value}", p.language), null, { kind: "program", field: "language" });
     }
     if (state.fileName && p.id !== fileBaseName(state.fileName)) {
-      push(T("valIdFileName").replace("{value}", p.id || "—").replace("{file}", state.fileName), null);
+      push(T("valIdFileName").replace("{value}", p.id || "—").replace("{file}", state.fileName), null, { kind: "program", field: "id" });
     }
 
     var cats = (p.categories || []).filter(function (c) { return !isDeleted(c); });
     if (!cats.length) push(T("valCategoriesMin"), null);
     var catIds = {};
-    cats.forEach(function (c, i) {
-      if (isEmptyStr(c.id) || isEmptyStr(c.label)) push(T("valCategoryRequired").replace("{index}", i + 1), null);
+    (p.categories || []).forEach(function (c, ci) {
+      if (isDeleted(c)) return;
+      var cspec = function (f) { return { kind: "category", field: f, indices: { ci: ci } }; };
+      if (isEmptyStr(c.id) || isEmptyStr(c.label)) push(T("valCategoryRequired").replace("{index}", ci + 1), null, cspec(isEmptyStr(c.id) ? "id" : "label"));
       if (!isEmptyStr(c.id)) {
-        if (!/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(c.id)) push(T("valCategoryIdent").replace("{value}", c.id), null);
-        if (catIds[c.id]) push(T("valCategoryDuplicate").replace("{value}", c.id), null);
+        if (!/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(c.id)) push(T("valCategoryIdent").replace("{value}", c.id), null, cspec("id"));
+        if (catIds[c.id]) push(T("valCategoryDuplicate").replace("{value}", c.id), null, cspec("id"));
         catIds[c.id] = true;
       }
     });
@@ -443,24 +445,28 @@
     var codes = {};
     mods.forEach(function (m, mi) {
       var code = m.code || ("#" + (mi + 1));
+      var rmi = miOfUid(m._uid);
+      var mspec = function (f) { return { kind: "module", field: f, indices: { mi: rmi } }; };
       ["code", "title", "category", "goals"].forEach(function (f) {
-        if (isEmptyStr(m[f])) push(T("valModuleRequired").replace("{code}", code).replace("{field}", T(labelForField(f))), m._uid);
+        if (isEmptyStr(m[f])) push(T("valModuleRequired").replace("{code}", code).replace("{field}", T(labelForField(f))), m._uid, mspec(f));
       });
       if (!isEmptyStr(m.code)) {
-        if (!/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(m.code)) push(T("valModuleCodeIdent").replace("{code}", code), m._uid);
-        if (codes[m.code]) push(T("valModuleDuplicate").replace("{code}", code), m._uid);
+        if (!/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(m.code)) push(T("valModuleCodeIdent").replace("{code}", code), m._uid, mspec("code"));
+        if (codes[m.code]) push(T("valModuleDuplicate").replace("{code}", code), m._uid, mspec("code"));
         codes[m.code] = true;
       }
       var cr = parseInt(m.credits, 10);
       if (m.credits === "" || isNaN(cr) || cr < 1 || cr > 60 || String(cr) !== String(m.credits).trim()) {
-        push(T("valCredits").replace("{code}", code), m._uid);
+        push(T("valCredits").replace("{code}", code), m._uid, mspec("credits"));
       }
       if (!isEmptyStr(m.category) && !catIds[m.category]) {
-        push(T("valCategoryRef").replace("{code}", code).replace("{value}", m.category), m._uid);
+        push(T("valCategoryRef").replace("{code}", code).replace("{value}", m.category), m._uid, mspec("category"));
       }
-      (m.mappings || []).filter(function (mp) { return !isDeleted(mp); }).forEach(function (mp, n) {
+      (m.mappings || []).forEach(function (mp, mpi) {
+        if (isDeleted(mp)) return;
+        var pspec = function (f) { return { kind: "mapping", field: f, indices: { mi: rmi, mpi: mpi } }; };
         if (isEmptyStr(mp.framework) || state.frameworkOrder.indexOf(mp.framework) < 0) {
-          push(T("valFramework").replace("{code}", code).replace("{n}", n + 1).replace("{value}", mp.framework || "—"), m._uid);
+          push(T("valFramework").replace("{code}", code).replace("{n}", mpi + 1).replace("{value}", mp.framework || "—"), m._uid, pspec("framework"));
         } else {
           var fwd = frameworkData(mp.framework);
           var known = fwd && (
@@ -468,15 +474,15 @@
             isOrientationTarget(mp, fwd)
           );
           if (isEmptyStr(mp.competency) || !known) {
-            push(T("valCompetency").replace("{code}", code).replace("{value}", mp.competency || "—").replace("{framework}", mp.framework), m._uid);
+            push(T("valCompetency").replace("{code}", code).replace("{value}", mp.competency || "—").replace("{framework}", mp.framework), m._uid, pspec("competency"));
           }
         }
-        if ([1, 2, 3].indexOf(toInt(mp.level)) < 0) push(T("valLevel").replace("{code}", code), m._uid);
+        if ([1, 2, 3].indexOf(toInt(mp.level)) < 0) push(T("valLevel").replace("{code}", code), m._uid, pspec("level"));
         var de = mp.note && mp.note.de;
         var en = mp.note && mp.note.en;
         if (isEmptyStr(de)) {
-          if (!isEmptyStr(en)) push(T("valNoteEn").replace("{code}", code), m._uid);
-          else push(T("valNoteDe").replace("{code}", code), m._uid);
+          if (!isEmptyStr(en)) push(T("valNoteEn").replace("{code}", code), m._uid, pspec("note.de"));
+          else push(T("valNoteDe").replace("{code}", code), m._uid, pspec("note.de"));
         }
       });
     });
@@ -581,7 +587,7 @@
         esc(state.errors.length === 1 ? t("editorProblemOne") : t("editorProblemMany").replace("{n}", state.errors.length)) + "</p>";
       h += '<ul class="ed-errors">';
       state.errors.forEach(function (e, i) {
-        h += '<li><button type="button" class="ed-link" data-action="goto-error" data-error="' + i + '">' + esc(e.msg) + "</button></li>";
+        h += '<li id="ed-error-' + i + '"><button type="button" class="ed-link" data-action="goto-error" data-error="' + i + '">' + esc(e.msg) + "</button></li>";
       });
       h += "</ul>";
     }
@@ -653,19 +659,60 @@
     if (!main) return;
     var h = "";
     if (state.notice) {
-      h += '<div class="ed-notice ed-notice-' + esc(state.notice.type) + '">' + esc(state.notice.text) + "</div>";
+      h += '<div class="ed-notice ed-notice-' + esc(state.notice.type) + '" role="' + (state.notice.type === "error" ? "alert" : "status") + '">' + esc(state.notice.text) + "</div>";
     }
     if (!state.program) {
       h += state.drafts.length
         ? renderDraftsOverview()
         : '<div class="hint-box">' + esc(t("editorNoProgram")) + "</div>";
       main.innerHTML = h;
+      afterRenderMain();
       return;
     }
     h += renderBaseInfo();
     h += renderCategories();
     h += renderModules();
     main.innerHTML = h;
+    afterRenderMain();
+  }
+
+  /* link validation messages to their inputs and announce status changes */
+  function afterRenderMain() {
+    applyErrorMarks();
+    updateEditorStatus();
+  }
+
+  function applyErrorMarks() {
+    var main = byId("editor-main");
+    if (main) main.querySelectorAll("[aria-invalid]").forEach(function (el) {
+      el.removeAttribute("aria-invalid");
+      var keep = (el.getAttribute("aria-describedby") || "").split(/\s+/).filter(function (x) { return x && x.indexOf("ed-error-") !== 0; });
+      if (keep.length) el.setAttribute("aria-describedby", keep.join(" "));
+      else el.removeAttribute("aria-describedby");
+    });
+    state.errors.forEach(function (e, i) {
+      if (!e.spec) return;
+      var sel = '[data-kind="' + e.spec.kind + '"][data-field="' + e.spec.field + '"]';
+      Object.keys(e.spec.indices || {}).forEach(function (k) {
+        sel += '[data-' + k + '="' + e.spec.indices[k] + '"]';
+      });
+      var el = document.querySelector(sel);
+      if (!el) return;
+      el.setAttribute("aria-invalid", "true");
+      var prev = el.getAttribute("aria-describedby");
+      el.setAttribute("aria-describedby", (prev ? prev + " " : "") + "ed-error-" + i);
+    });
+  }
+
+  function updateEditorStatus() {
+    var status = byId("sr-status");
+    if (status) {
+      var msg = !state.program ? ""
+        : state.errors.length
+          ? (state.errors.length === 1 ? t("editorProblemOne") : t("editorProblemMany").replace("{n}", state.errors.length))
+          : t("editorNoErrors");
+      if (status.textContent !== msg) status.textContent = msg;
+    }
   }
 
   /* welcome screen: all saved drafts, newest edit first */
@@ -1887,6 +1934,8 @@
     var item = el.closest(".ed-item");
     if (item) refreshItem(item);
     renderSidebar();
+    applyErrorMarks();
+    updateEditorStatus();
     if (state.panelMode === "original") renderFrameworkPanel();
   }
 
@@ -2009,11 +2058,20 @@
   }
 
   function scrollToError(err) {
-    if (!err || err.mi == null) return;
+    if (!err) return;
+    if (err.mi == null) {
+      if (err.spec) {
+        var base = document.querySelector('[data-kind="' + err.spec.kind + '"][data-field="' + err.spec.field + '"][aria-invalid="true"]');
+        if (base) base.focus();
+      }
+      return;
+    }
     var el = document.querySelector('.ed-item-module[data-mi="' + miOfUid(err.mi) + '"]');
     if (el) {
       el.open = true;
-      if (el.scrollIntoView) el.scrollIntoView({ block: "center", behavior: "smooth" });
+      var inp = el.querySelector('[aria-invalid="true"]');
+      if (inp) inp.focus();
+      else if (el.scrollIntoView) el.scrollIntoView({ block: "center", behavior: "smooth" });
       el.classList.add("ed-flash");
       setTimeout(function () { el.classList.remove("ed-flash"); }, 1200);
     }
